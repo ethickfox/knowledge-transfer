@@ -1,0 +1,21 @@
+---
+Interview graded: true
+Last edited time: 2023-07-16T20:26
+Needs Rework: false
+Status: Not started
+Topic:
+  - "[[Google Cloud]]"
+---
+# Cloud Bigtable - bigdata
+
+[![](https://lh4.googleusercontent.com/3Inpdpe05xrAwwkIbcUUnFdhKcMFfzxqhUAkMknSZrQ7Mvh88j6oq1t2DNi5s1tL94xS0rUcvKfRGsucaF3IMIVyN3-oqzd-gasPrqeoFJOsTFQCQ22LiF3_Ckz8tg3IPjnb9jX8DLieGR2p-pF7XzG0GFvoMd0qbMJIyoaASpf45G1_dxWR8Bvub9-_xA)](https://lh4.googleusercontent.com/3Inpdpe05xrAwwkIbcUUnFdhKcMFfzxqhUAkMknSZrQ7Mvh88j6oq1t2DNi5s1tL94xS0rUcvKfRGsucaF3IMIVyN3-oqzd-gasPrqeoFJOsTFQCQ22LiF3_Ckz8tg3IPjnb9jX8DLieGR2p-pF7XzG0GFvoMd0qbMJIyoaASpf45G1_dxWR8Bvub9-_xA)
+
+[![](https://lh5.googleusercontent.com/iuouWZZDiWXEPy69qU4fl-_PbfzDTqNY3PuKpn7jQTRX7_FBQA36XlsuepeH__WjZqQr263RCVJn8ei66CJGfBuTZbiQAEKKzrIrbIHT3sYC0-P4YWx3umrMLEf_bMx_HJgM6KreS9L-agxvvBkNyERXiAwFiLcKz8RQm4ppG7F-XGPmX0QDckSxuuiYeA)](https://lh5.googleusercontent.com/iuouWZZDiWXEPy69qU4fl-_PbfzDTqNY3PuKpn7jQTRX7_FBQA36XlsuepeH__WjZqQr263RCVJn8ei66CJGfBuTZbiQAEKKzrIrbIHT3sYC0-P4YWx3umrMLEf_bMx_HJgM6KreS9L-agxvvBkNyERXiAwFiLcKz8RQm4ppG7F-XGPmX0QDckSxuuiYeA)
+
+[![](https://lh6.googleusercontent.com/QZBW_q5b9r3BUOhGNp38YbKchpWtHt6YPi1x9uMWq27eUTnpbybIj8zlHRUYp_WWRk1nKlmnKzF9RkkWaw8prk4Xs7Zmd9DG5qnFlpAgmEffx6dWJIeu1TOzXbJNlzg56OgoA2lPt2DystxyLspURLarSV4JdlNMD5EVoiGvTwH9_H8-A_ZLJpqOrIAwBA)](https://lh6.googleusercontent.com/QZBW_q5b9r3BUOhGNp38YbKchpWtHt6YPi1x9uMWq27eUTnpbybIj8zlHRUYp_WWRk1nKlmnKzF9RkkWaw8prk4Xs7Zmd9DG5qnFlpAgmEffx6dWJIeu1TOzXbJNlzg56OgoA2lPt2DystxyLspURLarSV4JdlNMD5EVoiGvTwH9_H8-A_ZLJpqOrIAwBA)
+
+[![](https://lh6.googleusercontent.com/V9O1tSCr34kAK0OHcoTOLoy6t82u44bStndM2Bvw8fqkbh3iAs7-RKSF7ac6XP8qpF-9QIcX1WP-idS4jN67m4ZBXyQIdbx_FEmCCxULqodDKbXnR8sos3DVjhfz9l358s4XwTZHUXP65TY38fp0NHQZ5MWaKaS2nERm9qbD4jOuXhxbIPeqZANNEotNBA)](https://lh6.googleusercontent.com/V9O1tSCr34kAK0OHcoTOLoy6t82u44bStndM2Bvw8fqkbh3iAs7-RKSF7ac6XP8qpF-9QIcX1WP-idS4jN67m4ZBXyQIdbx_FEmCCxULqodDKbXnR8sos3DVjhfz9l358s4XwTZHUXP65TY38fp0NHQZ5MWaKaS2nERm9qbD4jOuXhxbIPeqZANNEotNBA)
+
+[![](https://lh4.googleusercontent.com/9w756lbkyWSq_54oXVOuyk0x6mmSCwD1lU0etBwhH-0IM_1RZBbN0pBkRpio6JH1JpyhcHK5atqo8ZvaPENhfQAxrV75Doon8KmI_X3SgprR88NMo5HnJLhzt91V4RfZGCsG0JjqlROrH6tp__TnCM_V3QRfuL9ftSBa_2LWb8mm_u94xULNXJNJVMcxzQ)](https://lh4.googleusercontent.com/9w756lbkyWSq_54oXVOuyk0x6mmSCwD1lU0etBwhH-0IM_1RZBbN0pBkRpio6JH1JpyhcHK5atqo8ZvaPENhfQAxrV75Doon8KmI_X3SgprR88NMo5HnJLhzt91V4RfZGCsG0JjqlROrH6tp__TnCM_V3QRfuL9ftSBa_2LWb8mm_u94xULNXJNJVMcxzQ)
+
+BigQuery is a data warehousing service that allows the storage of huge data sets while making them immediately processable without having to extract or run the processing in a separate service. Cloud SQL, a fully managed MySQL andPostgreSQL database service; Cloud Spanner, a relational database service with transactional consistency, global scale and high availability; Cloud Fire Store, a fully managed NoSQL document database; Cloud Bigtable, a fully managed NoSQLwide column database and Cloud Memorystore, a fully managed in-memory data store service for Redis. From an infrastructure perspective, the goal was to understand what services are available and how they are used in different circumstances.

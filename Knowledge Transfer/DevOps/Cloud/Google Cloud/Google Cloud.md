@@ -1,0 +1,22 @@
+---
+Key Topic:
+  - Cloud
+SubTopic:
+  - "[[Cloud SQL]]"
+  - "[[Cloud Spanner]]"
+  - "[[FireStore]]"
+  - "[[Cloud Bigtable]]"
+  - "[[App-Compute Engine]]"
+  - "[[Cloud Endpoints]]"
+  - "[[Apigee Edge]]"
+  - "[[Cloud Run]]"
+  - "[[Cloud Functions]]"
+  - "[[Cloud Logging]]"
+  - "[[VPC 2]]"
+  - "[[Cloud FileSystem]]"
+  - "[[Cloud Storage]]"
+  - "[[Anthos]]"
+  - "[[Cloud Shell]]"
+  - "[[Knowledge Transfer/DevOps/Identity Access Management (IAM)]]"
+  - "[[MemoryStore]]"
+---
