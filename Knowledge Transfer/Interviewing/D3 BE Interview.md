@@ -179,7 +179,7 @@ Topic:
         
 - [ ] Testing
     
-    [[Testing Basics 1]]
+    [[Testing]]
     
     - [ ] Test Case Management
         

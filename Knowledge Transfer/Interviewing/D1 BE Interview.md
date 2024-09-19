@@ -19,7 +19,7 @@ Topic:
     - [ ] Lambdas
     - [ ] Exceptions
         
-        [[Knowledge Transfer/Backend/Java/Java Core 1/Java Core]]
+        [[Java Core 1]]
         
     - [ ] String
         

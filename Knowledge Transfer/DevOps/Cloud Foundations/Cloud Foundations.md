@@ -7,6 +7,6 @@ Status: Not started
 Topic:
   - "[[Cloud]]"
 ---
-![[/Untitled 42.png|Untitled 42.png]]
+![[Untitled 42.png|Untitled 42.png]]
 
 ![[Untitled 1 7.png|Untitled 1 7.png]]

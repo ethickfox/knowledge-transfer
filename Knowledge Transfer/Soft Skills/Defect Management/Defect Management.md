@@ -54,7 +54,7 @@ A failure means that the application is not functioning or is unable to function
 
 **The Defect Life Cycle**
 
-![[/Untitled 46.png|Untitled 46.png]]
+![[Untitled 46.png|Untitled 46.png]]
 
 **Defect Discovery**
 

@@ -50,29 +50,29 @@ Redis supports [**asynchronous replication**](https://redis.io/topics/replicati
 
   
 
-![[/Untitled 99.png|Untitled 99.png]]
+![[Untitled 99.png|Untitled 99.png]]
 
-![[/Untitled 1 28.png|Untitled 1 28.png]]
+![[Untitled 1 28.png|Untitled 1 28.png]]
 
-![[/Untitled 2 20.png|Untitled 2 20.png]]
+![[Untitled 2 20.png|Untitled 2 20.png]]
 
-![[/Untitled 3 19.png|Untitled 3 19.png]]
+![[Untitled 3 19.png|Untitled 3 19.png]]
 
-![[/Untitled 4 14.png|Untitled 4 14.png]]
+![[Untitled 4 14.png|Untitled 4 14.png]]
 
-![[/Untitled 5 14.png|Untitled 5 14.png]]
+![[Untitled 5 14.png|Untitled 5 14.png]]
 
-![[/Untitled 6 14.png|Untitled 6 14.png]]
+![[Untitled 6 14.png|Untitled 6 14.png]]
 
-![[/Untitled 7 12.png|Untitled 7 12.png]]
+![[Untitled 7 12.png|Untitled 7 12.png]]
 
-![[/Untitled 8 12.png|Untitled 8 12.png]]
+![[Untitled 8 12.png|Untitled 8 12.png]]
 
-![[/Untitled 9 12.png|Untitled 9 12.png]]
+![[Untitled 9 12.png|Untitled 9 12.png]]
 
-![[/Untitled 10 12.png|Untitled 10 12.png]]
+![[Untitled 10 12.png|Untitled 10 12.png]]
 
-![[/Untitled 11 12.png|Untitled 11 12.png]]
+![[Untitled 11 12.png|Untitled 11 12.png]]
 
 ## Data types
 

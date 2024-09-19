@@ -8,7 +8,7 @@ Topic:
 ---
 AWS fully managed database services provide continuous monitoring, self-healing storage, and automated scaling to help you focus on application development.
 
-![[/Untitled 121.png|Untitled 121.png]]
+![[Untitled 121.png|Untitled 121.png]]
 
 ## Pricing considerations and free tier details:
 
@@ -27,7 +27,7 @@ AWS fully managed database services provide continuous monitoring, self-healing 
 |Time series|Internet of Things (IoT) applications, DevOps, industrial telemetry|Amazon Timestream|No|[Amazon Timestream Pricing](https://aws.amazon.com/timestream/pricing/)|
 |Ledger|Systems of record, supply chain, registrations, banking transactions|Amazon Ledger Database Services (QLDB)|No|[Amazon Ledger Database Services (QLDB)Pricing](https://aws.amazon.com/qldb/pricing/)|
 
-![[/Untitled 1 42.png|Untitled 1 42.png]]
+![[Untitled 1 42.png|Untitled 1 42.png]]
 
 ### RDS
 
@@ -51,7 +51,7 @@ It is a [data warehouse](https://en.wikipedia.org/wiki/Data_warehouse) product
 
 In memory Database. Supports Redis or Memcached as engine. Amazon ElastiCache for Redis is a manged version of Redis – in-memory data store used mainly for caching. It can be placed in front of a database, like DynamoDB or RDS, to speed reads operations. Two common caching strategies are [lazy loading and write-through](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html).
 
-![[/Untitled 2 30.png|Untitled 2 30.png]]
+![[Untitled 2 30.png|Untitled 2 30.png]]
 
 **Weakly consistent**
 
@@ -77,7 +77,7 @@ Redis allows writes and strongly consistent reads on the primary node of each sh
 
 MemoryDB for Redis aims to replace both cache and database in one component – provides microsecond read latency and data durability.
 
-![[/Untitled 3 25.png|Untitled 3 25.png]]
+![[Untitled 3 25.png|Untitled 3 25.png]]
 
 **Strong consistency** on the primary node, eventual consistency reads on replica nodes.
 
@@ -115,7 +115,7 @@ Amazon Neptune is a fast, scalable graph database service. Neptune efficiently s
 
 Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available, and managed Apache Cassandra–compatible database service. With Amazon Keyspaces (for Apache Cassandra), you can run your Cassandra workloads on AWS using the same Cassandra application code and developer tools that you use today.
 
-![[/Untitled 4 20.png|Untitled 4 20.png]]
+![[Untitled 4 20.png|Untitled 4 20.png]]
 
 ### QLDB
 

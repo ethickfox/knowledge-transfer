@@ -20,10 +20,10 @@ Sure, but not to test transaction boundaries. Remember that you can use also `@
 
   
 
-![[/Untitled 122.png|Untitled 122.png]]
+![[Untitled 122.png|Untitled 122.png]]
 
-![[/Untitled 1 43.png|Untitled 1 43.png]]
+![[Untitled 1 43.png|Untitled 1 43.png]]
 
-![[/Untitled 2 31.png|Untitled 2 31.png]]
+![[Untitled 2 31.png|Untitled 2 31.png]]
 
-![[/Untitled 3 26.png|Untitled 3 26.png]]
+![[Untitled 3 26.png|Untitled 3 26.png]]

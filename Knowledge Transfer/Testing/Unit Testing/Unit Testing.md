@@ -7,6 +7,13 @@ Status: Planned
 Topic:
   - "[[Knowledge Transfer/Computer Science/Development/Clean Code\\|Clean Code]]"
 ---
+Backend Testing
+[[JUnit]]
+Frontend Testing
+[[Jest]]
+Auto-Testing
+[[Cucumber]]
+
 **What does a unit test check?**
 
 A unit test checks the functionality of the smallest testable elements of an application―classes and functions―which allows developers to spot the failure and isolate it. Unit tests prove that given some input, the function returns the expected output. A collection of unit tests makes up a test suite.
@@ -35,7 +42,7 @@ A unit test does NOT require running an application. Your team can perform unit 
 
 As a part of the CI pipeline, unit testing can provide immediate feedback to the whole project team in case an author on your team misses the failure in the local environment.
 
-![[/Untitled 101.png|Untitled 101.png]]
+![[Untitled 101.png|Untitled 101.png]]
 
 Unit tests save time by helping your team ensure the existing functionality works even after introducing new features. This is particularly crucial if the application your team is developing for a project is going to be used for several years with more and more features introduced along the way.
 

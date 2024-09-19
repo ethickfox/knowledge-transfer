@@ -17,7 +17,7 @@ Spring Boot supports embedded containers:
 - _Jetty_
 - _Undertow_
 
-![[/Untitled 115.png|Untitled 115.png]]
+![[Untitled 115.png|Untitled 115.png]]
 
 Below are some key points which spring boot offers but spring doesn’t:
 

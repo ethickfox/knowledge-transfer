@@ -89,7 +89,7 @@ Lazy - загружаются все зависимые при необходи�
 
   
 
-![[/Untitled 38.png|Untitled 38.png]]
+![[Untitled 38.png|Untitled 38.png]]
 
 ![[Untitled 1 5.png|Untitled 1 5.png]]
 
@@ -150,11 +150,11 @@ JPA can work with following transaction managers:
 
 - `JpaTransactionManager` – recommended when working with one database and one Entity Manager
     
-    ![[/Untitled 2 3.png|Untitled 2 3.png]]
+    ![[Untitled 2 3.png|Untitled 2 3.png]]
     
 - `JtaTransactionManager` – recommended when working with multiple databases and Entity Managers, or when working with multiple databases and other transactional resources, for example one transaction needs to span Database and JMS Topic
     
-    ![[/Untitled 3 3.png|Untitled 3 3.png]]
+    ![[Untitled 3 3.png|Untitled 3 3.png]]
     
 
 ### @Query
@@ -212,39 +212,39 @@ List<User> findByNameOrAge(String name, Integer age);
 
 ### Criteria API
 
-![[/Untitled 4 2.png|Untitled 4 2.png]]
+![[Untitled 4 2.png|Untitled 4 2.png]]
 
 ### JPASpecificationExecutor
 
-![[/Untitled 5 2.png|Untitled 5 2.png]]
+![[Untitled 5 2.png|Untitled 5 2.png]]
 
-![[/Untitled 6 2.png|Untitled 6 2.png]]
+![[Untitled 6 2.png|Untitled 6 2.png]]
 
 ### QueryDSL
 
 Generates classes using plugin
 
-![[/Untitled 7 2.png|Untitled 7 2.png]]
+![[Untitled 7 2.png|Untitled 7 2.png]]
 
 All entities will have an implementation starting with Q
 
-![[/Untitled 8 2.png|Untitled 8 2.png]]
+![[Untitled 8 2.png|Untitled 8 2.png]]
 
 QueryDslPredicateExecutor
 
-![[/Untitled 9 2.png|Untitled 9 2.png]]
+![[Untitled 9 2.png|Untitled 9 2.png]]
 
-![[/Untitled 10 2.png|Untitled 10 2.png]]
+![[Untitled 10 2.png|Untitled 10 2.png]]
 
 ### QueryByExample
 
 JpaRepository already extends QueryByExampleExecutor
 
-![[/Untitled 11 2.png|Untitled 11 2.png]]
+![[Untitled 11 2.png|Untitled 11 2.png]]
 
-![[/Untitled 12 2.png|Untitled 12 2.png]]
+![[Untitled 12 2.png|Untitled 12 2.png]]
 
-![[/Untitled 13 2.png|Untitled 13 2.png]]
+![[Untitled 13 2.png|Untitled 13 2.png]]
 
 # **Spring Data JDBC**
 
@@ -280,17 +280,17 @@ Spring Data REST builds on top of Spring Data repositories, analyzes your applic
 - Currently supports JPA, MongoDB, Neo4j, Solr, Cassandra, Gemfire.
 - Allows [advanced customizations](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#customizing-sdr) of the default resources exposed.
 
-![[/Untitled 14 2.png|Untitled 14 2.png]]
+![[Untitled 14 2.png|Untitled 14 2.png]]
 
-![[/Untitled 15 2.png|Untitled 15 2.png]]
+![[Untitled 15 2.png|Untitled 15 2.png]]
 
-![[/Untitled 16 2.png|Untitled 16 2.png]]
+![[Untitled 16 2.png|Untitled 16 2.png]]
 
-![[/Untitled 17 2.png|Untitled 17 2.png]]
+![[Untitled 17 2.png|Untitled 17 2.png]]
 
-![[/Untitled 18 2.png|Untitled 18 2.png]]
+![[Untitled 18 2.png|Untitled 18 2.png]]
 
-![[/Untitled 19 2.png|Untitled 19 2.png]]
+![[Untitled 19 2.png|Untitled 19 2.png]]
 
 # **Spring Data MongoDB**
 

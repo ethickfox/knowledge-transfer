@@ -108,7 +108,7 @@ https://github.com/enhorse/java-interview
     }
     ```
     
-    ![[/Untitled 118.png|Untitled 118.png]]
+    ![[Untitled 118.png|Untitled 118.png]]
     
     If a thread Thread1 views the count as 10, it will be increased by 1 to 11. Simultaneously, if another thread Thread2 views the count as 10, it will be increased by 1 to 11. Thus, inconsistency in count values takes place because the expected final value is 12 but the actual final value we get will be 11.
     
@@ -127,7 +127,7 @@ https://github.com/enhorse/java-interview
     }
     ```
     
-    ![[/Untitled 1 40.png|Untitled 1 40.png]]
+    ![[Untitled 1 40.png|Untitled 1 40.png]]
     
     If a thread Thread1 views the count as 10, it will be increased by 1 to 11, then the thread Thread2 will view the count as 11, it will be increased by 1 to 12. Thus, consistency in count values takes place.
     
@@ -142,7 +142,7 @@ https://github.com/enhorse/java-interview
     **Tread** or class **ExecutorService**.  
     If an exception occurs in the thread that no one catches then it will terminate.  
     
-    ![[/Untitled 2 29.png|Untitled 2 29.png]]
+    ![[Untitled 2 29.png|Untitled 2 29.png]]
     
     From the operating system’s point of view, a process is an independent piece of software that runs in its own virtual memory space.
     
@@ -166,7 +166,7 @@ https://github.com/enhorse/java-interview
         - **Waiting state** if it is waiting for the signal to execute from another thread, i.e it waits for work until the signal is received.
     - **Terminated** – Once the run() method execution is completed, the thread is said to enter the TERMINATED step and is considered to not be alive.
     
-    ![[/Untitled 3 24.png|Untitled 3 24.png]]
+    ![[Untitled 3 24.png|Untitled 3 24.png]]
     
 - **Compare the** `sleep()` **and** `wait()` **methods in Java, including when and why you would use one vs. the other.**
     
@@ -331,7 +331,7 @@ https://github.com/enhorse/java-interview
     
     As CPUs can carry many instructions per second, fetching from RAM isn’t ideal for them. To improve this situation, processors use tricks like [Out of Order Execution](https://en.wikipedia.org/wiki/Out-of-order_execution), [Branch Prediction](https://en.wikipedia.org/wiki/Branch_predictor), [Speculative Execution](https://en.wikipedia.org/wiki/Speculative_execution), and Caching.
     
-    ![[/Untitled 4 19.png|Untitled 4 19.png]]
+    ![[Untitled 4 19.png|Untitled 4 19.png]]
     
     As different cores execute more instructions and manipulate more data, they fill their caches with more relevant data and instructions. **This will improve the overall performance at the expense of introducing** [**cache coherence**](https://en.wikipedia.org/wiki/Cache_coherence) **challenges**.
     
@@ -1399,7 +1399,7 @@ Here are some of the most common built-in endpoints Actuator provides:
 >  
 > [https://www.interviewbit.com/spring-security-interview-questions/?utm_source=pocket_saves](https://www.interviewbit.com/spring-security-interview-questions/?utm_source=pocket_saves)  
 
-![[/Untitled 5 19.png|Untitled 5 19.png]]
+![[Untitled 5 19.png|Untitled 5 19.png]]
 
 ## Spring Tests
 
@@ -1491,7 +1491,7 @@ When running integration tests for a Spring application, we must have an _Appli
     
     Discussing your experience with Big O notation can give the hiring manager more insights into your capabilities, so feel free to follow up the definition with an applicable example. Here’s one in our collection of [backend developer interview questions](https://anywhere.epam.com/en/blog/top-18-backend-developer-interview-questions-answered) comparing LinkedList and ArrayList in Java using Big O notation.
     
-    ![[/Untitled 6 17.png|Untitled 6 17.png]]
+    ![[Untitled 6 17.png|Untitled 6 17.png]]
     
 - **What could be the tradeoff between the usage of an unordered array versus the usage of an ordered array?**
     - The main advantage of having an ordered array is the reduced search time complexity of `O(log n)` whereas the time complexity in an unordered array is `O(n)`.
@@ -1506,7 +1506,7 @@ When running integration tests for a Spring application, we must have an _Appli
 
 All major programming languages have a built-in method for sorting. It is usually correct to assume and say sorting costs O(n * logn) is the number of elements being sorted. For completeness, here is a chart that lists many common sorting algorithms and their completeness.
 
-![[/Untitled 7 15.png|Untitled 7 15.png]]
+![[Untitled 7 15.png|Untitled 7 15.png]]
 
 [[Sorting Algorithms]]
 
@@ -1516,7 +1516,7 @@ All major programming languages have a built-in method for sorting. It is usuall
 
 ## Data Structures
 
-![[/Untitled 8 15.png|Untitled 8 15.png]]
+![[Untitled 8 15.png|Untitled 8 15.png]]
 
 Here's an example of a task:
 
@@ -1878,7 +1878,7 @@ Something very important to know about is Microservices. There are many framewor
         
         If there’s a failure and the consumer restarts, it will look at the last persisted offset. Since the offsets are persisted prior to actual event processing, we cannot establish whether every event received by the consumer was successfully processed or not. In this case, the consumer might end up missing some events.
         
-        ![[/Untitled 9 14.png|Untitled 9 14.png]]
+        ![[Untitled 9 14.png|Untitled 9 14.png]]
         
     - at-least-once
         
@@ -1890,7 +1890,7 @@ Something very important to know about is Microservices. There are many framewor
         
         The consumer would restart and read from the offset. **Here, the consumer reprocesses the events more than once because even though the message was successfully processed before the failure, the position of the last received event was not saved successfully:**
         
-        ![[/Untitled 10 14.png|Untitled 10 14.png]]
+        ![[Untitled 10 14.png|Untitled 10 14.png]]
         
         **In order to avoid processing the same event multiple times, we can use idempotent consumers**.
         
@@ -1932,7 +1932,7 @@ Something very important to know about is Microservices. There are many framewor
         
         Let’s see what happens when a consumer fails after processing the events  but without saving the offsets in the diagram below:
         
-        ![[/Untitled 11 14.png|Untitled 11 14.png]]
+        ![[Untitled 11 14.png|Untitled 11 14.png]]
         
         We can remove duplication in exactly-once semantics by having these:
         
@@ -2261,15 +2261,15 @@ Stashing is a powerful tool to put aside code that you just wrote, without pushi
     - [ ]
     - [ ] Code quality
     
-    ![[/Untitled 12 13.png|Untitled 12 13.png]]
+    ![[Untitled 12 13.png|Untitled 12 13.png]]
     
     - [ ] Design and Development Principles
         
-        ![[/Untitled 13 13.png|Untitled 13 13.png]]
+        ![[Untitled 13 13.png|Untitled 13 13.png]]
         
     - [ ] Architectural Patterns
         
-        ![[/Untitled 14 13.png|Untitled 14 13.png]]
+        ![[Untitled 14 13.png|Untitled 14 13.png]]
         
 
 ### **Sample 1: URL Shortening Service**

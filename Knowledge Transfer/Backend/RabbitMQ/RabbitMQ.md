@@ -35,7 +35,7 @@ Consumer
 
 ### Several Consumers
 
-![[/Untitled 91.png|Untitled 91.png]]
+![[Untitled 91.png|Untitled 91.png]]
 
 **Fair dispatch vs Round-robin dispatching**
 
@@ -48,7 +48,7 @@ The core idea in the messaging model in RabbitMQ is that the producer never send
 
 Instead, the producer can only send messages to an _exchange_. An exchange is a very simple thing. On one side it receives messages from producers and the other side it pushes them to queues. The exchange must know exactly what to do with a message it receives. Should it be appended to a particular queue? Should it be appended to many queues? Or should it get discarded. The rules for that are defined by the _exchange type_.
 
-![[/Untitled 1 22.png|Untitled 1 22.png]]
+![[Untitled 1 22.png|Untitled 1 22.png]]
 
 There are a few exchange types available: direct, topic, headers and fanout.
 

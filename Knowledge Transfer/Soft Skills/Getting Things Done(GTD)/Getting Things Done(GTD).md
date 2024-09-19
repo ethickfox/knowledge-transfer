@@ -6,7 +6,7 @@ Status: Not started
 Topic:
   - "[[Project Management]]"
 ---
-![[/Untitled 109.png|Untitled 109.png]]
+![[Untitled 109.png|Untitled 109.png]]
 
 ## Clarify
 
@@ -17,4 +17,4 @@ Topic:
 - If the task is no longer needed or actionable, delete it.
 - If a task requires more than one step, create a project to house all of the items associated with it and identify the one next action you can take to move the project forward.
 
-![[/Untitled 1 35.png|Untitled 1 35.png]]
+![[Untitled 1 35.png|Untitled 1 35.png]]

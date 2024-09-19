@@ -11,7 +11,7 @@ Topic:
 ---
 ==**Docker**== is a technology that allows you to build, run, test, and deploy distributed applications. It uses operating-system-level virtualization to deliver software in packages called **containers**.
 
-![[/Untitled 95.png|Untitled 95.png]]
+![[Untitled 95.png|Untitled 95.png]]
 
 ---
 

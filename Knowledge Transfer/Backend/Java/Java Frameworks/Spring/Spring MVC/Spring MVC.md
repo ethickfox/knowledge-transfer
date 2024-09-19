@@ -312,7 +312,7 @@ The DispatcherServlet is the main controller of the Spring MVC Application. All 
 
 Он реализует паттерн Front controller. https://en.m.wikipedia.org/wiki/Front_controller
 
-![[/Untitled 57.png|Untitled 57.png]]
+![[Untitled 57.png|Untitled 57.png]]
 
 1. После получения HTTP-запроса DispatcherServlet обращается к интерфейсу HandlerMapping, который определяет, какой Контроллер должен быть вызван, после чего, отправляет запрос в нужный Контроллер
 2. After receiving HTTP request, Application Server (Standalone or Embedded) searches for Servlet that can handle request, `DispatcherServlet` is selected based on Servlet Registration and url-pattern.

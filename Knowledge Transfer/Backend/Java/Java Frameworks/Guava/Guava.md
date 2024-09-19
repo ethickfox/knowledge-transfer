@@ -55,7 +55,7 @@ v3
 
 Consists of backingMap and rowMap
 
-![[/Untitled 55.png|Untitled 55.png]]
+![[Untitled 55.png|Untitled 55.png]]
 
 ### ==**BiMap**==
 

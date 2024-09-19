@@ -24,7 +24,7 @@ Topic:
 
 **The CI/CD Pipeline**
 
-![[/Untitled 107.png|Untitled 107.png]]
+![[Untitled 107.png|Untitled 107.png]]
 
 **CI/CD Pipeline as Code**
 

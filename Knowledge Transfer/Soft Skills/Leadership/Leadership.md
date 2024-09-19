@@ -6,6 +6,6 @@ Status: Not started
 Topic:
   - "[[Project Management]]"
 ---
-![[/Untitled 97.png|Untitled 97.png]]
+![[Untitled 97.png|Untitled 97.png]]
 
-![[/Untitled 1 26.png|Untitled 1 26.png]]
+![[Untitled 1 26.png|Untitled 1 26.png]]

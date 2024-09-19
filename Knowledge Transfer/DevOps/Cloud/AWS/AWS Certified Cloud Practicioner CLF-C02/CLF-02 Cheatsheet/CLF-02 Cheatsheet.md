@@ -505,7 +505,7 @@ Only the **Memcached** and **Redis** database engines can be used with **ElastiC
 
 ### VPC
 
-![[/Untitled 126.png|Untitled 126.png]]
+![[Untitled 126.png|Untitled 126.png]]
 
 - The following are the key concepts for VPCs:
     - Subnet — A range of IP addresses in your VPC.
@@ -1393,7 +1393,7 @@ AWS Service Health Dashboard publishes most up-to-the-minute information on the 
 
 ### AWS Shared Responsibility Model
 
-![[/Untitled 1 47.png|Untitled 1 47.png]]
+![[Untitled 1 47.png|Untitled 1 47.png]]
 
 - AWS is responsible for:
     - Software: Compute, storage, database, networking **infrastructures**.
@@ -1424,7 +1424,7 @@ AWS Service Health Dashboard publishes most up-to-the-minute information on the 
 5. Security
 6. Operations
 
-![[/Untitled 2 34.png|Untitled 2 34.png]]
+![[Untitled 2 34.png|Untitled 2 34.png]]
 
 ### AWS CAF tasks that a company should perform when planning to migrate to the AWS Cloud
 

@@ -16,7 +16,7 @@ Status: Not started
 - Search structured data and text blocks
 - Document database - not as standardized as SQL
 
-![[/Untitled 58.png|Untitled 58.png]]
+![[Untitled 58.png|Untitled 58.png]]
 
 How Cluster of Nodes Work?
 
@@ -25,7 +25,7 @@ How Cluster of Nodes Work?
 - Leaders are distributed for redundancy
 - Data nodes are assigned as needed
 
-![[/Untitled 1 16.png|Untitled 1 16.png]]
+![[Untitled 1 16.png|Untitled 1 16.png]]
 
 ## DSL
 
@@ -243,7 +243,7 @@ DELETE bowled_over/_doc/2
 
   
 
-![[/Untitled 2 12.png|Untitled 2 12.png]]
+![[Untitled 2 12.png|Untitled 2 12.png]]
 
 Create the schema
 
@@ -263,44 +263,44 @@ PUT simple_schema
 
 Nested
 
-![[/Untitled 3 12.png|Untitled 3 12.png]]
+![[Untitled 3 12.png|Untitled 3 12.png]]
 
-![[/Untitled 4 9.png|Untitled 4 9.png]]
+![[Untitled 4 9.png|Untitled 4 9.png]]
 
-![[/Untitled 5 9.png|Untitled 5 9.png]]
+![[Untitled 5 9.png|Untitled 5 9.png]]
 
 Compute multiple fields for search\
 
 Creates field monikers from first and last name
 
-![[/Untitled 6 9.png|Untitled 6 9.png]]
+![[Untitled 6 9.png|Untitled 6 9.png]]
 
 Fuzziness
 
-![[/Untitled 7 7.png|Untitled 7 7.png]]
+![[Untitled 7 7.png|Untitled 7 7.png]]
 
-![[/Untitled 8 7.png|Untitled 8 7.png]]
+![[Untitled 8 7.png|Untitled 8 7.png]]
 
-![[/Untitled 9 7.png|Untitled 9 7.png]]
+![[Untitled 9 7.png|Untitled 9 7.png]]
 
 Conditional pipelines
 
-![[/Untitled 10 7.png|Untitled 10 7.png]]
+![[Untitled 10 7.png|Untitled 10 7.png]]
 
-![[/Untitled 11 7.png|Untitled 11 7.png]]
+![[Untitled 11 7.png|Untitled 11 7.png]]
 
-![[/Untitled 12 7.png|Untitled 12 7.png]]
+![[Untitled 12 7.png|Untitled 12 7.png]]
 
   
 
-![[/Untitled 13 7.png|Untitled 13 7.png]]
+![[Untitled 13 7.png|Untitled 13 7.png]]
 
-![[/Untitled 14 7.png|Untitled 14 7.png]]
+![[Untitled 14 7.png|Untitled 14 7.png]]
 
 search by several indexes
 
-![[/Untitled 15 6.png|Untitled 15 6.png]]
+![[Untitled 15 6.png|Untitled 15 6.png]]
 
 Scripts
 
-![[/Untitled 16 6.png|Untitled 16 6.png]]
+![[Untitled 16 6.png|Untitled 16 6.png]]

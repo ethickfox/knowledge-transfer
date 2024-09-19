@@ -6,7 +6,7 @@ Status: Not started
 Topic:
   - "[[Web Services Architecture]]"
 ---
-![[/Untitled 41.png|Untitled 41.png]]
+![[Untitled 41.png|Untitled 41.png]]
 
 # **Microservices**
 
@@ -159,25 +159,25 @@ Minuses
 
 ![[Untitled 1 6.png|Untitled 1 6.png]]
 
-![[/Untitled 2 4.png|Untitled 2 4.png]]
+![[Untitled 2 4.png|Untitled 2 4.png]]
 
-![[/Untitled 3 4.png|Untitled 3 4.png]]
+![[Untitled 3 4.png|Untitled 3 4.png]]
 
   
 
-![[/Untitled 4 3.png|Untitled 4 3.png]]
+![[Untitled 4 3.png|Untitled 4 3.png]]
 
-![[/Untitled 5 3.png|Untitled 5 3.png]]
+![[Untitled 5 3.png|Untitled 5 3.png]]
 
-![[/Untitled 6 3.png|Untitled 6 3.png]]
+![[Untitled 6 3.png|Untitled 6 3.png]]
 
-![[/Untitled 7 3.png|Untitled 7 3.png]]
+![[Untitled 7 3.png|Untitled 7 3.png]]
 
-![[/Untitled 8 3.png|Untitled 8 3.png]]
+![[Untitled 8 3.png|Untitled 8 3.png]]
 
-![[/Untitled 9 3.png|Untitled 9 3.png]]
+![[Untitled 9 3.png|Untitled 9 3.png]]
 
-![[/Untitled 10 3.png|Untitled 10 3.png]]
+![[Untitled 10 3.png|Untitled 10 3.png]]
 
 Instead of ACID
 
@@ -189,18 +189,18 @@ Data Layer
 
 Circuit breaker
 
-![[/Untitled 11 3.png|Untitled 11 3.png]]
+![[Untitled 11 3.png|Untitled 11 3.png]]
 
-![[/Untitled 12 3.png|Untitled 12 3.png]]
+![[Untitled 12 3.png|Untitled 12 3.png]]
 
-![[/Untitled 13 3.png|Untitled 13 3.png]]
+![[Untitled 13 3.png|Untitled 13 3.png]]
 
-![[/Untitled 14 3.png|Untitled 14 3.png]]
+![[Untitled 14 3.png|Untitled 14 3.png]]
 
   
 
 ### Atomic Transaction Microservices
 
-![[/Untitled 15 3.png|Untitled 15 3.png]]
+![[Untitled 15 3.png|Untitled 15 3.png]]
 
-![[/Untitled 16 3.png|Untitled 16 3.png]]
+![[Untitled 16 3.png|Untitled 16 3.png]]

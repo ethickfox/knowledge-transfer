@@ -27,9 +27,9 @@ Since filters need to be declared in the web.xml so that the Servlet container
 
 The Spring Security framework uses a chain of filters to apply various security concerns like intercepting the request, detecting (absence of) authentication, redirecting to the authentication entry point, or pass the request to authorization service, and eventually let the request either hit the servlet or throw a security exception (unauthenticated or unauthorized).
 
-![[/Untitled 60.png|Untitled 60.png]]
+![[Untitled 60.png|Untitled 60.png]]
 
-![[/Untitled 1 18.png|Untitled 1 18.png]]
+![[Untitled 1 18.png|Untitled 1 18.png]]
 
 The DelegatingFitlerProxy glues these filters together and forms the security filter chain. That's why you see the name "springSecurityFilterChain" when we declare DelegatingFilterProxy as a filter in web.xml.
 
@@ -62,7 +62,7 @@ if (principal instanceof UserDetails) {
 }
 ```
 
-![[/Untitled 2 13.png|Untitled 2 13.png]]
+![[Untitled 2 13.png|Untitled 2 13.png]]
 
 If you ever need to know current logged-in user details like, in Spring MVC controller, I suggest you declare a dependency and let Spring provide you the Principal object, rather you querying for them and create a tightly coupled system.
 
@@ -109,9 +109,9 @@ You will need to include the following xml snippet in your _Spring Security Con
 
 Проверка разрешений на доступ к тому или иному ресурсу
 
-![[/Untitled 3 13.png|Untitled 3 13.png]]
+![[Untitled 3 13.png|Untitled 3 13.png]]
 
-![[/Untitled 4 10.png|Untitled 4 10.png]]
+![[Untitled 4 10.png|Untitled 4 10.png]]
 
   
 
@@ -337,13 +337,13 @@ password encoder, default - bcrypt
   }
 ```
 
-![[/Untitled 5 10.png|Untitled 5 10.png]]
+![[Untitled 5 10.png|Untitled 5 10.png]]
 
 ## Form based auth
 
-![[/Untitled 6 10.png|Untitled 6 10.png]]
+![[Untitled 6 10.png|Untitled 6 10.png]]
 
-![[/Untitled 7 8.png|Untitled 7 8.png]]
+![[Untitled 7 8.png|Untitled 7 8.png]]
 
 ## **Digest authentication**
 
@@ -376,13 +376,13 @@ An OAuth authorization server is responsible for authenticating the users and is
 </dependency>
 ```
 
-![[/Untitled 8 8.png|Untitled 8 8.png]]
+![[Untitled 8 8.png|Untitled 8 8.png]]
 
-![[/Untitled 9 8.png|Untitled 9 8.png]]
+![[Untitled 9 8.png|Untitled 9 8.png]]
 
-![[/Untitled 10 8.png|Untitled 10 8.png]]
+![[Untitled 10 8.png|Untitled 10 8.png]]
 
-![[/Untitled 11 8.png|Untitled 11 8.png]]
+![[Untitled 11 8.png|Untitled 11 8.png]]
 
 ### Security Server
 
@@ -477,11 +477,11 @@ public ProviderSettings providerSettings() {
 }
 ```
 
-![[/Untitled 12 8.png|Untitled 12 8.png]]
+![[Untitled 12 8.png|Untitled 12 8.png]]
 
   
 
-![[/Untitled 13 8.png|Untitled 13 8.png]]
+![[Untitled 13 8.png|Untitled 13 8.png]]
 
 **@EnableWebSecurity**
 
@@ -519,12 +519,12 @@ public ProviderSettings providerSettings() {
 
 Authentication is a process to verify that the user is the one who he claims to be. It is generally implemented using a username and password. If a user enters the correct username and password then authentication is successful, otherwise, authentication failed.
 
-![[/Untitled 14 8.png|Untitled 14 8.png]]
+![[Untitled 14 8.png|Untitled 14 8.png]]
 
 # Authorisation
 
 Authorisation provides access control. For example, only the admin can see some pages in a web application. To implement that, the admin must have some admin-related permissions or roles.
 
-![[/Untitled 15 7.png|Untitled 15 7.png]]
+![[Untitled 15 7.png|Untitled 15 7.png]]
 
-![[/Untitled 16 7.png|Untitled 16 7.png]]
+![[Untitled 16 7.png|Untitled 16 7.png]]

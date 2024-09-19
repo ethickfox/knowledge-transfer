@@ -8,7 +8,7 @@ Topic:
 ---
 **Amazon Elastic Compute Cloud (Amazon EC2)** provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few **virtual servers** as you need, configure security and networking, and manage storage. Amazon EC2 enables you to scale up or down to handle changes in requirements or spikes in popularity, reducing your need to forecast traffic.
 
-![[/Untitled 48.png|Untitled 48.png]]
+![[Untitled 48.png|Untitled 48.png]]
 
 AMI - preconfigured server image with OS and other applications
 
@@ -56,15 +56,15 @@ The following diagram summarizes the AMI lifecycle. After you create and registe
 
 Amazon EC2 provides a wide selection of instance types optimized for different use cases. To determine which instance types meet your requirements, such as supported Regions, compute resources, or storage resources, see [Find an Amazon EC2 instance type.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-discovery.html)
 
-![[/Untitled 2 9.png|Untitled 2 9.png]]
+![[Untitled 2 9.png|Untitled 2 9.png]]
 
-![[/Untitled 3 9.png|Untitled 3 9.png]]
+![[Untitled 3 9.png|Untitled 3 9.png]]
 
-![[/Untitled 4 7.png|Untitled 4 7.png]]
+![[Untitled 4 7.png|Untitled 4 7.png]]
 
-![[/Untitled 5 7.png|Untitled 5 7.png]]
+![[Untitled 5 7.png|Untitled 5 7.png]]
 
-![[/Untitled 6 7.png|Untitled 6 7.png]]
+![[Untitled 6 7.png|Untitled 6 7.png]]
 
   
 
@@ -83,7 +83,7 @@ There are several types of instances:
     
     Figure: T4 instance type specifications
     
-    ![[/Untitled 7 5.png|Untitled 7 5.png]]
+    ![[Untitled 7 5.png|Untitled 7 5.png]]
     
 - [Compute optimized instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html) are ideal for compute-bound applications that benefit from high-performance processors.
 - [Memory optimized instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/memory-optimized-instances.html) are designed to deliver fast performance for workloads that process large data sets in memory.
@@ -96,7 +96,7 @@ The T instance family provides a baseline CPU performance with the ability to bu
 
 Differences between the burstable instance types:
 
-![[/Untitled 8 5.png|Untitled 8 5.png]]
+![[Untitled 8 5.png|Untitled 8 5.png]]
 
 ### [User data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html)
 
@@ -129,7 +129,7 @@ To view all categories of instance metadata from within a running instance, use 
 
 ### Shared responsibility
 
-![[/Untitled 9 5.png|Untitled 9 5.png]]
+![[Untitled 9 5.png|Untitled 9 5.png]]
 
 ## EC2 purchasing options:
 
@@ -222,7 +222,7 @@ When you request a fleet of Spot Instances, you can define the capacity units th
 
 The following tables provide examples of calculations to determine the price per unit for a Spot Fleet request with a target capacity of 10:
 
-![[/Untitled 10 5.png|Untitled 10 5.png]]
+![[Untitled 10 5.png|Untitled 10 5.png]]
 
 ### Use cases / Considerations
 
@@ -235,11 +235,11 @@ The following tables provide examples of calculations to determine the price per
 
 ## **EC2 Auto Scaling**
 
-![[/Untitled 11 5.png|Untitled 11 5.png]]
+![[Untitled 11 5.png|Untitled 11 5.png]]
 
 **Amazon EC2 Auto Scaling** helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups. You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes above this size. If you specify the desired capacity, either when you create the group or at any time thereafter, Amazon EC2 Auto Scaling ensures that your group has this many instances. If you specify scaling policies, then Amazon EC2 Auto Scaling can launch or terminate instances as demand on your application increases or decreases.
 
-![[/Untitled 12 5.png|Untitled 12 5.png]]
+![[Untitled 12 5.png|Untitled 12 5.png]]
 
 ## Use cases:
 
@@ -257,7 +257,7 @@ Your AWS account has the default quotas, for Amazon EC2 Auto Scaling Groups, Sca
 
 To view the current quotas for your account, open the Amazon EC2 console at [https://console.aws.amazon.com/ec2/](https://console.aws.amazon.com/ec2/) and navigate to the Limits page. You can also use the describe-account-limits command. To request an increase, use the Auto Scaling Limits form.
 
-![[/Untitled 13 5.png|Untitled 13 5.png]]
+![[Untitled 13 5.png|Untitled 13 5.png]]
 
   
 
@@ -265,7 +265,7 @@ To view the current quotas for your account, open the Amazon EC2 console at [ht
 
 A **load balancer** serves as the single point of contact for clients. The load balancer distributes incoming application traffic across multiple targets, such as EC2 instances, in multiple Availability Zones. This increases the availability and fault tolerance of your application. Elastic Load Balancing detects unhealthy instances and routes traffic only to healthy targets.
 
-![[/Untitled 14 5.png|Untitled 14 5.png]]
+![[Untitled 14 5.png|Untitled 14 5.png]]
 
   
 

@@ -1,5 +1,0 @@
----
-Status: Backlog
-Topic:
-  - DevOps
----

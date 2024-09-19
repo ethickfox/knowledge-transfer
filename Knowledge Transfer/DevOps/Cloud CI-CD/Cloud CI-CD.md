@@ -6,7 +6,7 @@ Status: Not started
 Topic:
   - "[[AWS]]"
 ---
-![[/Untitled 54.png|Untitled 54.png]]
+![[Untitled 54.png|Untitled 54.png]]
 
 **Continuous integration** is a DevOps software development practice where developers regularly merge their code changes into a central repository, after which automated builds and tests are run. Continuous integration most often refers to the build or integration stage of the software release process and entails both an automation component (e.g. a CI or build service) and a cultural component (e.g. learning to integrate frequently).
 
@@ -57,7 +57,7 @@ CI/CD field has a wide variety of tools to choose from. The most well-known solu
 
   
 
-![[/Untitled 2 11.png|Untitled 2 11.png]]
+![[Untitled 2 11.png|Untitled 2 11.png]]
 
 1. As input, you must provide CodeBuild with a build project. A build project includes information about how to run a build, including where to get the source code, which build environment to use, which build commands to run, and where to store the build output. A build environment represents a combination of operating system, programming language runtime, and tools that CodeBuild uses to run a build.
 2. CodeBuild uses the build project to create the build environment.
@@ -86,7 +86,7 @@ CodeDeploy primary components include:
     - To retrieve information about CloudWatch alarms to set up alarm monitoring for deployments.
 - [AppSpec file](https://docs.aws.amazon.com/codedeploy/latest/userguide/application-specification-files.html) is a YAML-formatted or JSON-formatted file. The AppSpec file is used to manage each deployment as a series of lifecycle event hooks, which are defined in the file.
 
-![[/Untitled 3 11.png|Untitled 3 11.png]]
+![[Untitled 3 11.png|Untitled 3 11.png]]
 
 ## Your goals
 

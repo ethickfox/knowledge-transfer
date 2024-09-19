@@ -6,4 +6,4 @@ Status: Not started
 Topic:
   - "[[AWS]]"
 ---
-![[/Untitled 112.png|Untitled 112.png]]
+![[Untitled 112.png|Untitled 112.png]]

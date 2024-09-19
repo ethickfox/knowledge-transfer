@@ -60,7 +60,7 @@ Code review results in several benefits
 
 No matter what type of code review your team chooses, there is a universal workflow that applies.
 
-![[/Untitled 51.png|Untitled 51.png]]
+![[Untitled 51.png|Untitled 51.png]]
 
 **Key Areas of Code Review**
 
