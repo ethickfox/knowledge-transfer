@@ -4,7 +4,7 @@ The **seller** of an option **has** the **obligation** to **buy/sell** a
 
 A **Call option** gives the right to **buy**, a **Put option** gives the right to **sell** a currency. The **seller** of the option **receives a premium** for giving this right to the buyer. This **premium** has to be **paid** **on the day the option is traded.**
 
-![[image 3.png|image 3.png]]
+![image](./image%203.png)
 
 ### **Dates in the option contract**
 
