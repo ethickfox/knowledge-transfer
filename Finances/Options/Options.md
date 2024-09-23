@@ -57,3 +57,20 @@ A **Call option** gives the right to **buy**, a **Put option** gives the r
         - call strike: 1.2000, instrike: 1.2500 - the option appears if spot rises above 1.2500
         - put strike: 1.2000б instrike: 1.1500 - the option appears if spot falls below 1.1500
     - A **double knock-out/knock-in options** have **two barrier** levels. They **expire** worthless (start to exist) **if** **one** of them is **reached** in the spot market.
+
+  
+**TouchStrike** refers to a specific type of binary options contract, typically used in financial markets, where the payoff depends on whether the underlying asset's price touches or surpasses a predetermined strike price (or trigger level) at any point before the contract expires.
+- The option is "in the money" (payout occurs) if the underlying asset’s price touches or surpasses the predetermined strike price at any point during the contract period.
+- The option is "out of the money" (no payout) if the price does not touch the strike price before the expiration time.
+* The strike price (or trigger) is a predetermined level set at the start of the contract.
+* in a TouchStrike contract, the payout is typically fixed.
+* A key feature of TouchStrike options is that the moment the price touches the strike, the contract is immediately settled, and the payout is made, even if the price later moves away from the strike level before the expiration date.
+
+
+**A digital option** is a transaction where a specified amount will be paid if the spot rate is above the strike at expiry for calls 
+
+**One touch** is a transaction where a specified amount will be paid only if spot rate is dealt at the touchstrike or an exceeding exchange rate before expiration at least once.
+
+**No touch options** will pay a specified amount if spot rate is not dealt at the touchstrike(price does not touch the strike price).
+
+Factors affecting the option price
