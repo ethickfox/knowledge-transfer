@@ -1,15 +1,6 @@
----
-Interview graded: true
-Last edited time: 2023-11-25T18:30
-Last recall: 2023-11-25
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[[Knowledge Transfer/Testing/Testing Basics\\|Testing Basics]]"
----
-## **Пирамида тестирования**
 
-Визуальная метафора для понимания, что более изолированные тесты более быстрые и «недорогие», поэтому использовать в приложении их нужно больше, чем более медленных service тестов, которых в свою очередь нужно использовать больше, чем еще более медленных UI тестов.
+## **Testing pyramid**
+Visual mythaphor for understanding that more isolated tests are faster and "cheaper", so they should be used more than slover services tests which should be used more than even mslower UI tests.
 
 [![](https://lh5.googleusercontent.com/hbuKkHKntbWkUd39AFTSVV6nTtvN2sE9IxO3xwjxvIVPgwOBJ-qZkcgAb0ojCLVHgt4JAVfzMgZibHsuLMBzjNITawFsUkJYKTP7asV7BA50qh1Ec-fKTlumT6zr6vnoj3ZTdMjSUJu33RVnCl3EJ0A77KhxwSmZ5L1WnZpJfbRso2Om6nh5EPblGeLn)](https://lh5.googleusercontent.com/hbuKkHKntbWkUd39AFTSVV6nTtvN2sE9IxO3xwjxvIVPgwOBJ-qZkcgAb0ojCLVHgt4JAVfzMgZibHsuLMBzjNITawFsUkJYKTP7asV7BA50qh1Ec-fKTlumT6zr6vnoj3ZTdMjSUJu33RVnCl3EJ0A77KhxwSmZ5L1WnZpJfbRso2Om6nh5EPblGeLn)
 
