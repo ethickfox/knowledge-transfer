@@ -23,6 +23,7 @@ Spot rates are usually **quoted in two rates**, the **bid rate**(rate at which
 > EUR/USD 50-60
 
 ![[image 2.png|image 2.png]]
+![image info](../image.png)
 
 **Market-maker** (quoting bank) **buys at bid rate** and **sells at offer rate**.
 
