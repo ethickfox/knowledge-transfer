@@ -1,5 +1,5 @@
 # Topics
-Terms - [Gloassary](Glossary.md)
+Terms - [Glossary](Glossary.md)
 
 [Financial Mathematics](Financial%20Mathematics/Financial%20Mathematics.md)
 
