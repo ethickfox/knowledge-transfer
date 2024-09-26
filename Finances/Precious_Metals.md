@@ -32,6 +32,7 @@ Instead of buying the metal value forward a market participant could also buy th
 2. Backwardation - depot that forward price has from spot price. There are mainly two reasons for this deport for the longer forwards:
 	1. Commodities are produced day-to-day and commodity producers can sell them value forward. With the effort to hedge future productions against price decreases long-term, producers can squeeze the long forward prices to a lower level.
 	2. On the other hand you have companies who need commodities for their productions. A demand surplus can lead to higher premiums for being deliverable for short periods.
+ 
 In contrary to the contango the backwardation is not limited and with an extreme demand surplus it can lead to spot prices well higher than forward prices.
 ## Lending/ Borrowing Metals
 
