@@ -1,9 +1,5 @@
-[[Financial Mathematics]]
-
+# Topics
 [Financial Mathematics](Financial%20Mathematics/Financial%20Mathematics.md)
-
 [Spot](Spot/Spot.md)
-
 [Options](Options/Options.md)
-
 [Precious Metals](Precious_Metals.md)
