@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "1b19e90d40c6b642",
+    "type": "split",
+    "children": [
+      {
+        "id": "d24c48528bf0f362",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5c45364aabb514e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Frontend/TypeScript/TypeScript 4.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b1d8c2e2a5125da3",
+    "type": "split",
+    "children": [
+      {
+        "id": "f29267e7085d3b40",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e26991f50eebd23",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "49e6c954cd021ce5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ac41650d38770726",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4cd7eadb1bf0ec7a",
+    "type": "split",
+    "children": [
+      {
+        "id": "173e6df18019078d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6d800ce1fec36cc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Frontend/TypeScript/TypeScript 4.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e38b98015cfdc99f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Frontend/TypeScript/TypeScript 4.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c396cc062dbb41ef",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b13a3b414705ca68",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Frontend/TypeScript/TypeScript 4.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "5c45364aabb514e8",
+  "lastOpenFiles": [
+    "Frontend/TypeScript/TypeScript 3.md",
+    "Frontend/TypeScript/TypeScript 2.md",
+    "Frontend/React Basics/React Basics.md",
+    "Frontend/TypeScript/TypeScript.md",
+    "Frontend/TypeScript/TypeScript 4.md",
+    "Frontend/React Basics/React Basics 2.md",
+    "Frontend/TypeScript/TypeScript(2).md",
+    "Frontend/React Basics/React Basics(2).md",
+    "Frontend/TypeScript/TypeScript(1).md",
+    "Frontend/React Basics/React Basics(1).md",
+    "Frontend/NPM.md",
+    "Frontend/JSON.md",
+    "Frontend/TypeScript",
+    "Startups/Building a startup.md",
+    "Backend/Java/Java Core/Concurrency/Concurrency Deep Dive/Concurrency Deep Dive.md",
+    "Backend/Java/Java Core/Concurrency/Concurrency Deep Dive",
+    "Backend/Java/Java Frameworks/Jackson/Jackson(1).md",
+    "DevOps/Generics(1).md",
+    "Testing/Test Automation.md",
+    "Testing/JavaScript Testing.md",
+    "Testing/Testing Basics.md",
+    "Software Architecture/Service Registry.md",
+    "Untitled 37.png",
+    "Untitled 43.png",
+    "Untitled 36.png",
+    "_img/Untitled 3 26.png",
+    "_img/Untitled 3 8.png",
+    "_img/Untitled 2 23.png",
+    "_img/Untitled 2 7.png",
+    "Backend/Java/Java Frameworks/Spring/Spring MVC/Spring MVC.md",
+    "Backend/Java/Java Frameworks/Spring/Spring Test/Spring Test.md",
+    "Backend/Java/Java Frameworks/Spring/Spring Security/Spring Security.md",
+    "Backend/Java/Java Frameworks/Spring/Spring JMS/Spring JMS.md",
+    "Backend/Java/Java Frameworks/Spring/Spring Data/Spring Data.md",
+    "Backend/Java/Java Core/Concurrency/img/Untitled 43.png",
+    "Backend/Java/Java Frameworks/Spring/Spring MVC",
+    "Backend/Java/Java Frameworks/Spring/Spring Test",
+    "Backend/Java/Java Frameworks/Spring/Spring Security",
+    "Backend/Java/Java Frameworks/Spring/Spring JMS",
+    "Backend/Java/Java Frameworks/Spring/Spring Data",
+    "Backend/Java/Java Frameworks/Spring/Spring Boot",
+    "Backend/Java/Java Frameworks/Spring/Spring Cloud",
+    "Backend/Java/Java Frameworks/Spring/Spring AOP",
+    "Backend/Untitled.jpeg",
+    "Backend/Untitled 1 8.png",
+    "Untitled.canvas"
+  ]
+}
