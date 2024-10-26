@@ -1,4 +1,0 @@
----
-SubTopic:
-  - "[[Go Basics]]"
----

@@ -64,7 +64,7 @@ Topic:
 - [ ] Web Basics
     - [ ] JSON
         
-        [[Frontend/JSON/JSON]]
+        [[JSON]]
         
 - [ ] Spring
     - [ ] Spring Core
