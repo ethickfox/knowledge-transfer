@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2024-05-28T15:51
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[[Knowledge Transfer/Backend/Java/Java Core/Java Core\\|Java Core]]"
----
 ### Intro
 
 **Fairness.** Multiple users and programs may have equal claims on the machine’s  
@@ -74,7 +66,6 @@ Example
 
 Race condition in Lazy initialization - you check if object is instantiated, if not - instantiate it
 
-  
 
 **Atomic operations** - operation A and B are atomic with respect to each other if from perspective of thread executing A, when another thread executes A, all operations B are executed or not started
 
@@ -120,7 +111,7 @@ There is no guarantee that reading thread will see variable written by another t
 
 In this case program might output 42, 0 or stuck
 
-![[/Untitled 3 5.png|Untitled 3 5.png]]
+![[./Untitled 3 5.png|Untitled 3 5.png]]
 
 This might happen due to **reordering.** In order to have a better performance compiler might cache and reorder operations. When the main thread writes first to number and then to ready without synchronisation, the reader thread could see these operations in different order or not at all.
 

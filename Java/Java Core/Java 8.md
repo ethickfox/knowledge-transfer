@@ -1,5 +1,4 @@
 ---
-Interview graded: true
 Last edited time: 2024-04-03T18:07
 Last recall: 2024-03-29
 Needs Rework: false

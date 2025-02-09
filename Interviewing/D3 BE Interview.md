@@ -144,7 +144,7 @@ Topic:
         - [ ] Patterns
 - [ ] CI/CD
     
-    [[DevOps/CI-CD 1/CI-CD]]
+    [[CI-CD]]
     
     - [ ] Docker
         - [ ] Docker
@@ -310,7 +310,7 @@ Topic:
             
         - [ ] IAM
             
-            [[DevOps/Identity Access Management (IAM)/Identity Access Management (IAM)|Identity Access Management (IAM)]]
+            [[DevOps/Cloud/AWS/Identity Access Management (IAM)|Identity Access Management (IAM)]]
             
     - [ ] Google Cloud
         
@@ -380,6 +380,6 @@ Topic:
             
         - [ ] IAM
             
-            [[DevOps/Identity Access Management (IAM)]]
+            [[DevOps/Cloud/Identity Access Management (IAM)]]
             
         - [ ]

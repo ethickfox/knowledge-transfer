@@ -37,12 +37,18 @@ With Kubernetes you can:
 
 ==**cloud-controller-manager (c-c-m)**== - is a Kubernetes control plane component that embeds cloud-specific control logic. The cloud controller manager lets you link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that only interact with your cluster. The cloud-controller-manager only runs controllers that are specific to your cloud provider. If you are running Kubernetes on your own premises, or in a learning environment inside your own PC, the cluster does not have a cloud controller manager.
 
+### Main parts
 **==Nodes==** - these machines perform the requested tasks assigned by the control plane.
 
 - **Worker node** - regular node where containers run
 - **Master node** - main node which manages worker nodes
 
-**==Pod==** - a group of one or more containers deployed to a single node. All containers in a pod share an IP address, IPC, hostname, and other resources. Pods abstract network and storage from the underlying container. This lets you move containers around the cluster more easily.
+**==Pod==** - smallest unit in Kubernetes. A group of one or more containers deployed to a single node. All containers in a pod share an IP address, IPC, hostname, and other resources. Pods abstract network and storage from the underlying container. This lets you move containers around the cluster more easily.
+
+**==Deployments==** 
+- Ensures the desired number of **Pods** are running.
+- Provides **rolling updates** and **rollbacks**.
+**==Services==**
 
 **Namespaces** - let you isolate and organise your workloads
 
@@ -63,7 +69,16 @@ metadata:
 
 ==**kubectl**== - the command line configuration tool for Kubernetes.
 
-  
+```
+kubectl create deployment my-app --image=nginx
+kubectl get nodes  # List available nodes
+kubectl get deployments  # Check deployments
+kubectl get pods  # Check running pods
+kubectl expose deployment my-app --type=NodePort --port=80
+kubectl scale deployment my-app --replicas=3
+kubectl delete deployment my-app
+kubectl delete service my-app
+```
 
 ### **How to create Spring Boot Java project with Kubernetes?**
 
@@ -376,3 +391,11 @@ kubectl delete pod pod-info-development-78bbb77995-4mdf8 -n development
 
 kubectl logs pod-info-development-78bbb77995-l47xp -n development
 ```
+
+
+### Managing Kubernetes for development
+```Shell
+minikube start
+kubectl get nodes  # Verify cluster is running
+```
+

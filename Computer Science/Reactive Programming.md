@@ -1,4 +1,0 @@
----
-SubTopic:
-  - "[[Java Rx]]"
----

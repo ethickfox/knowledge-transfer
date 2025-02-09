@@ -17,6 +17,6 @@ SubTopic:
   - "[[Cloud Storage]]"
   - "[[Anthos]]"
   - "[[Cloud Shell]]"
-  - "[[DevOps/Identity Access Management (IAM)]]"
+  - "[[DevOps/Cloud/Identity Access Management (IAM)]]"
   - "[[MemoryStore]]"
 ---

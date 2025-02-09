@@ -1,26 +1,10 @@
----
-Assignee: Nikita Katyshev
-Interview graded: true
-Last edited time: 2024-02-23T15:27
-Last recall: 2023-11-26
-Needs Rework: false
-Status: In progress
-Topic:
-  - "[[Java Core\\|Java Core]]"
----
 Newer Java versions now follow every 6 months. Hence, Java 21 is scheduled for September 2023, Java 22 for March 2024 and so on. In the past, Java release cycles were _much longer_, up to 3-5 years. This graphic demonstrates that:
 
 ![[Untitled 52.png|Untitled 52.png]]
-
-  
-
-[[Java 8 (LTS)]]
-
-[[Java 11 (LTS)]]
-
-[[Java 17 (LTS)]]
-
-[[Java 21 (LTS)]]
+- [[Java 8 (LTS)]]
+- [[Java 11 (LTS)]]
+- [[Java 17 (LTS)]]
+- [[Java 21 (LTS)]]
 
 # **Java Distributions**
 

@@ -4,24 +4,55 @@
     "type": "split",
     "children": [
       {
-        "id": "06dc816044d17a9d",
+        "id": "381b2dae90bfdaf0",
         "type": "tabs",
         "children": [
           {
-            "id": "e0591c6f33018ba6",
+            "id": "b611844d8770bbb8",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Java/Java Core/Java 8.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Java 8"
+            }
+          },
+          {
+            "id": "14fb9b9053ed45a2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/Java Core/Effective Java/Effective Java.md",
+                "file": "Java/Java Core/Java 8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Effective Java"
+              "title": "Java 8"
+            }
+          },
+          {
+            "id": "3c4b302ca3b5a9b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DevOps/Kubernetes/Kubernetes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Kubernetes"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -40,7 +71,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -77,7 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 267.5
   },
   "right": {
     "id": "4cd7eadb1bf0ec7a",
@@ -162,57 +194,58 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "e0591c6f33018ba6",
+  "active": "7e26991f50eebd23",
   "lastOpenFiles": [
-    "Java/Java Core/Effective Java/Creating and Destroying Objects.md",
-    "Java/Java Core/Effective Java/Methods Common to All Objects.md",
-    "Java/Java Core/Effective Java/Effective Java.md",
-    "JavaScript/TypeScript/TypeScript.md",
+    "Java/Java Core/Java 8.md",
+    "DevOps/Kubernetes/Helm.md",
+    "DevOps/Kubernetes/Kubernetes.md",
+    "Software Architecture/Microservices Architecture/Microservices Architecture.md",
+    "Software Architecture/Rate Limiter.md",
+    "NoSQL/Redis/Redis.md",
+    "Software Architecture/MVP.md",
+    "Software Architecture/Web Patterns.md",
+    "DevOps/Jenkins.md",
+    "Communication/Network Layers.md",
+    "DevOps/SCM.md",
+    "Communication/Network.md",
+    "Communication/Ip.md",
+    "DevOps/Cloud/Identity Access Management (IAM).md",
+    "Java/Java Core/Generics.md",
+    "DevOps/Cloud/Google Cloud/FireStore.md",
+    "DevOps/Cloud/Google Cloud/Cloud Storage.md",
+    "DevOps/Cloud/Google Cloud/Cloud SQL.md",
+    "DevOps/Cloud/Google Cloud/Cloud Spanner.md",
+    "DevOps/Cloud/Google Cloud/Cloud Run.md",
+    "DevOps/Cloud/Google Cloud/Cloud Shell.md",
+    "DevOps/Cloud/Google Cloud/Cloud Logging.md",
+    "DevOps/Cloud/Google Cloud/Cloud Functions.md",
+    "DevOps/Cloud/Google Cloud/Cloud FileSystem.md",
+    "DevOps/Cloud/Google Cloud/Cloud Endpoints.md",
+    "DevOps/Cloud/Google Cloud/Cloud Bigtable.md",
+    "DevOps/Google Cloud",
+    "DevOps/AWS",
+    "Java/_img/Untitled 3 3.png",
+    "Java/_img/Untitled 8 2.png",
+    "MessageQueue/_img/Untitled 7 6.png",
+    "Software Architecture/_img/Untitled 7 10.png",
+    "Software Architecture/_img/Untitled 2 14.png",
+    "Untitled.canvas",
+    "Java/_img/Pasted image 20250202142014.png",
+    "Java/_img/Untitled 6 2.png",
+    "Java/Java Core/Concurrency/Concurrency Deep Dive/Untitled 3 5.png",
     "NoSQL/Redis/_img/Untitled 3 19.png",
     "Untitled 2 2.png",
-    "NoSQL/Redis/_img/Untitled 6 14.png",
-    "NoSQL/Redis/_img/Untitled 7 12.png",
-    "NoSQL/Redis/_img/Untitled 4 14.png",
-    "NoSQL/Redis/_img/Untitled 4 19.png",
-    "NoSQL/MongoDb/_img/Untitled 4 5.png",
-    "NoSQL/Redis/_img/Untitled 2 20.png",
-    "NoSQL/MongoDb/_img/Untitled 3 7.png",
     "NoSQL/MongoDb/_img",
-    "Computer Science/_img/Untitled 8 10.png",
     "Computer Science/_img",
-    "Computer Science/Git.md",
-    "Communication/JAX-RS.md",
-    "Communication/HTTP.md",
-    "Communication/gRPC.md",
-    "Communication/GraphQL.md",
-    "Communication/CORS.md",
     "Soft Skills/_img",
     "Security/_img",
     "Communication/_img",
     "MessageQueue/_img",
     "DevOps/_img",
-    "JavaScript/Chrome DevTools.md",
-    "Java/_img",
-    "JavaScript/Vanilla JavaScript/Vanilla JavaScript.md",
-    "JavaScript/JSON.md",
-    "JavaScript/JavaScript.md",
-    "JavaScript/TypeScript/TypeScript 4.md",
-    "JavaScript/TypeScript/TypeScript 3.md",
-    "JavaScript/TypeScript/TypeScript 2.md",
-    "JavaScript/Redux.md",
-    "JavaScript/NPM.md",
-    "JavaScript/Next.js.md",
-    "JavaScript/React/React Basics.md",
-    "JavaScript/React/React Basics.md",
-    "JavaScript/Angular/Angular Basics.md",
-    "JavaScript/Angular/Angular.md",
-    "JavaScript/Interviewing SoftSkills.md",
-    "JavaScript/_img",
-    "JavaScript/JSON Api.md",
-    "NoSQL/Redis/_img",
-    "Untitled.canvas"
+    "Java/_img"
   ]
 }

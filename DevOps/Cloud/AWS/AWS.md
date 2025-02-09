@@ -3,7 +3,7 @@ Key Topic:
   - Cloud
 SubTopic:
   - "[[Elastic Compute Cloud (EC2)]]"
-  - "[[DevOps/Identity Access Management (IAM)/Identity Access Management (IAM)\\|Identity Access Management (IAM)]]"
+  - "[[DevOps/Cloud/AWS/Identity Access Management (IAM)\\|Identity Access Management (IAM)]]"
   - "[[AWS Storage Services (S3)]]"
   - "[[VPC]]"
   - "[[CloudFormation]]"
