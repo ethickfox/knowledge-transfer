@@ -1,3 +1,12 @@
+
+- JSR 335, JEP 126: Language-level support for [lambda expressions](https://en.wikipedia.org/wiki/Lambda_(programming)) (officially, lambda expressions; unofficially, [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming))) under Project Lambda and default methods (virtual [extension methods](https://en.wikipedia.org/wiki/Extension_method)) which can be used to add methods to interfaces without breaking existing implementations. There was an ongoing debate in the Java community on whether to add support for lambda expressions. Sun later declared that lambda expressions would be included in Java and asked for community input to refine the feature. Supporting lambda expressions also enables [functional](https://en.wikipedia.org/wiki/Functional_programming)style operations on streams of elements, such as [MapReduce](https://en.wikipedia.org/wiki/MapReduce)inspired transformations on collections. Default methods can be used by an author of an API to add new methods to an interface without breaking the old code using it. Although it was not their primary intent, default methods can also be used for multiple inheritance of behavior (but not state)
+- [JEP 104: Annotation on Java types](https://openjdk.java.net/jeps/104)
+- Unsigned integer arithmetic
+- [JEP 120: Repeating annotations](https://openjdk.java.net/jeps/120)
+- [JEP 150: Date and time API](https://openjdk.java.net/jeps/150)
+- [JEP 178: Statically-linked JNI libraries](https://openjdk.java.net/jeps/178)
+- [JEP 122: Remove the permanent generation](https://openjdk.java.net/jeps/122)
+
 ### **Why are companies still stuck with Java 8?**
 
 There’s a mix of different reasons some companies are still stuck with Java 8. To name a few:
@@ -271,20 +280,13 @@ public class UserNotAllowedForThisActionException
 - Compressed 64-bit pointers (available in Java 6 with `XX:+UseCompressedOops`)
 - These small language changes (grouped under a project named Coin):
 
-• Strings in [switch](https://en.wikipedia.org/wiki/Switch_statement)[[94]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-94)  
-•  
-Automatic resource management in try-statement aka _try-with-resources statement_[[95]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-95)  
-•  
-Improved [type inference](https://en.wikipedia.org/wiki/Type_inference) for generic instance creation, aka _the diamond operator_ `<>`[[96]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-96)  
-•  
-Simplified varargs method declaration[[97]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-97)  
-•  
-Binary integer literals[[98]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-98)  
-•  
-Allowing underscores in numeric literals[[99]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-99)  
-•  
-Catching multiple exception types and rethrowing exceptions with improved type checking[[100]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-100)
-
+- Strings in switch
+- Automatic resource management in try-statement aka _try-with-resources statement
+- Improved [type inference](https://en.wikipedia.org/wiki/Type_inference) for generic instance creation, aka _the diamond operator_ `<>`
+- Simplified varargs method declaration
+- Binary integer literals
+- Allowing underscores in numeric literals
+- Catching multiple exception types and rethrowing exceptions with improved type checking
 - Concurrency utilities under JSR 166
 - New file [I/O](https://en.wikipedia.org/wiki/I/O) library (defined by JSR 203) adding support for multiple file systems, file metadata and symbolic links. The new packages are `java.nio.file`, `java.nio.file.attribute` and `java.nio.file.spi`
 - [Timsort](https://en.wikipedia.org/wiki/Timsort) is used to sort collections and arrays of objects instead of [merge sort](https://en.wikipedia.org/wiki/Merge_sort)
@@ -292,13 +294,3 @@ Catching multiple exception types and rethrowing exceptions with improved type c
 - Enhanced library-level support for new network protocols, including [SCTP](https://en.wikipedia.org/wiki/Stream_Control_Transmission_Protocol) and [Sockets Direct Protocol](https://en.wikipedia.org/wiki/Sockets_Direct_Protocol)
 - [Upstream](https://en.wikipedia.org/wiki/Upstream_(software_development)) updates to [XML](https://en.wikipedia.org/wiki/XML) and [Unicode](https://en.wikipedia.org/wiki/Unicode)
 - Java deployment rule sets
-
-### Java 8
-
-- JSR 335, JEP 126: Language-level support for [lambda expressions](https://en.wikipedia.org/wiki/Lambda_(programming)) (officially, lambda expressions; unofficially, [closures](https://en.wikipedia.org/wiki/Closure_(computer_programming))) under Project Lambda and default methods (virtual [extension methods](https://en.wikipedia.org/wiki/Extension_method)) which can be used to add methods to interfaces without breaking existing implementations. There was an ongoing debate in the Java community on whether to add support for lambda expressions. Sun later declared that lambda expressions would be included in Java and asked for community input to refine the feature. Supporting lambda expressions also enables [functional](https://en.wikipedia.org/wiki/Functional_programming)style operations on streams of elements, such as [MapReduce](https://en.wikipedia.org/wiki/MapReduce)inspired transformations on collections. Default methods can be used by an author of an API to add new methods to an interface without breaking the old code using it. Although it was not their primary intent, default methods can also be used for multiple inheritance of behavior (but not state)
-- [JEP 104: Annotation on Java types](https://openjdk.java.net/jeps/104)
-- Unsigned integer arithmetic
-- [JEP 120: Repeating annotations](https://openjdk.java.net/jeps/120)
-- [JEP 150: Date and time API](https://openjdk.java.net/jeps/150)
-- [JEP 178: Statically-linked JNI libraries](https://openjdk.java.net/jeps/178)
-- [JEP 122: Remove the permanent generation](https://openjdk.java.net/jeps/122)

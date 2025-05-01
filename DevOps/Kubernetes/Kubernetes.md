@@ -1,18 +1,16 @@
----
-Assignee: Mikhail Krasikov
-Duration: 2022-11-18
-Interview graded: true
-Last edited time: 2023-08-22T11:18
-Last recall: 2023-07-22
-Needs Rework: false
-Status: In progress
-Topic:
-  - "[[DevOps/CI-CD/Docker\\|Docker]]"
----
 ==**Kubernetes**== (also known as k8s or “kube”) is an open source container orchestration platform that automates many of the manual processes involved in deploying, managing, and scaling containerized applications.
 
-With Kubernetes you can:
-
+**Upsides**
+- Self-Healing
+- Automated Rollbacks
+- Horizontal scaling
+- High availability
+- Portability - allows to deploy and manage apps on different envs and clouds
+- Disaster recovery - backup and restore
+**Downsides**
+- Complexity of distributed systems - complex to setup and operate
+- Highter resources consumption
+**With Kubernetes you can:**
 - Orchestrate containers across multiple hosts.
 - Make better use of hardware to maximize resources needed to run your enterprise apps.
 - Control and automate application deployments and updates.
@@ -22,35 +20,68 @@ With Kubernetes you can:
 - Health-check and self-heal your apps with autoplacement, autorestart, autoreplication, and autoscaling.
 
 ![[Untitled 120.png|Untitled 120.png]]
-
+### Main parts
 ==**Cluster**== - is a grouping of nodes that run containerized apps in an efficient, automated, distributed, and scalable manner. A Kubernetes cluster consists of a set of worker machines, called nodes, that run containerized applications. Every cluster has at least one worker node.
 
 ==**Control plane**== **-** the collection of processes that control Kubernetes nodes. This is where all task assignments originate.
+- ==**kube-apiserver (api)**== - is a component of the Kubernetes control plane that exposes the Kubernetes API. The API server is the external interface (synonym = front end) for the Kubernetes control plane.
+- ==**etcd**== - is a consistent (stable) and highly-available key value store used as Kubernetes' backing store for all cluster data and used by other control pane copmponents ([link](https://www.ibm.com/topics/etcd) how it works).
+- ==**kube-scheduler**== - is a control plane component that watches for newly created pods with no assigned node, and selects a node for them to run on. 
+	Factors taken into account for scheduling decisions include: 
+	- individual and collective resource requirements, 
+	- hardware/software/policy constraints, 
+	- affinity (closeness) and anti-affinity specifications, 
+	- data locality, 
+	- inter-workload interference
+	- deadlines.
+- ==**kube-controller-manager (c-m)**== - is a control plane component that runs controller processes. Controller - a control loop that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired state.
+> [!warn] Example
+> **ReplciationController** - checks if there are requred number of replicas
+> **DeploymentController** - Rolling updates and rollbacks of deployments
+- ==**cloud-controller-manager (c-c-m)**== - is a Kubernetes control plane component that embeds cloud-specific control logic. The cloud controller manager lets you link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that only interact with your cluster. The cloud-controller-manager only runs controllers that are specific to your cloud provider. If you are running Kubernetes on your own premises, or in a learning environment inside your own PC, the cluster does not have a cloud controller manager.
 
-==**kube-apiserver (api)**== - is a component of the Kubernetes control plane that exposes the Kubernetes API. The API server is the external interface (synonym = front end) for the Kubernetes control plane.
-
-==**etcd**== - is a consistent (stable) and highly-available key value store used as Kubernetes' backing store for all cluster data ([link](https://www.ibm.com/topics/etcd) how it works).
-
-==**kube-scheduler**== - is a control plane component that watches for newly created pods with no assigned node, and selects a node for them to run on. Factors taken into account for scheduling decisions include: individual and collective resource requirements, hardware/software/policy constraints, affinity (closeness) and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
-
-==**kube-controller-manager (c-m)**== - is a control plane component that runs controller processes. Controller - a control loop that watches the shared state of the cluster through the apiserver and makes changes attempting to move the current state towards the desired state.
-
-==**cloud-controller-manager (c-c-m)**== - is a Kubernetes control plane component that embeds cloud-specific control logic. The cloud controller manager lets you link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that only interact with your cluster. The cloud-controller-manager only runs controllers that are specific to your cloud provider. If you are running Kubernetes on your own premises, or in a learning environment inside your own PC, the cluster does not have a cloud controller manager.
-
-### Main parts
 **==Nodes==** - these machines perform the requested tasks assigned by the control plane.
-
 - **Worker node** - regular node where containers run
+	- **kublet** - deamon that communicates with control plane, starts containers
+	- **container runtime** - pulls container from registry, running and stopping them and managing resources
+	- **kube proxy** -network proxy that routes traffic from service to pod, provides loadbalancing
 - **Master node** - main node which manages worker nodes
-
+	- **Api Server** - cluster gateway
+		- allows to interact with k8s cluster
+		- acts as gatekeeper for authentication to allow only authorized interacvtions with cluster
+	- **Scheduler** - decides on which worker nodes pods will be created 
+	- **Controller manager** - detects state changes - like pod's dying
+	- **etcd** - key-value store for cluster changes, like pods created etc
 **==Pod==** - smallest unit in Kubernetes. A group of one or more containers deployed to a single node. All containers in a pod share an IP address, IPC, hostname, and other resources. Pods abstract network and storage from the underlying container. This lets you move containers around the cluster more easily.
-
+- Abstraction over container - no need to bind to specific container technology
+- In most cases only one container inside
+- They are ephemeral - could die easily and be recreated
+- They are stateless, so all data after restart is gone
+**==Network==** - k8s provides a virtual network
+- Each pod has it's own internal ip address
+- Each time pod is recreated it gets a new address
+- 
 **==Deployments==** 
 - Ensures the desired number of **Pods** are running.
 - Provides **rolling updates** and **rollbacks**.
-**==Services==**
+==**StatefulSet**== - like deployment, but supposed to be used by stateful apps(like DB)
+- Difficult in configuration
+- dbs usually hosted outside k8s
+**==Services==** - manages access to pod and it's replicas
+- Exposes static ip address for the Pod, so if it's restarted, address won't be change
+- Lifecycle of pod and service are not connected
+- Serves as Load Balancer
+- External - exposes address outside of k8s network
+- Internal - address is reachable only in k8s network
+**==Ingress==** - forwards requests to the particular k8s service
 
-**Namespaces** - let you isolate and organise your workloads
+==**ConfigMap**== - configuration storage for application. Not suitable for passwords etc
+==**Secret**== - stores data like ConfigMap, but securely. Could contain passwords
+- Stores everything base64 encoded
+==**Volume**==  - data storage outside of k8s, attached to cluster
+- Local storage
+- Remote storage
+**Namespaces** - let you isolate and organize your workloads
 
 ```YAML
 apiVersion: v1
@@ -79,96 +110,6 @@ kubectl scale deployment my-app --replicas=3
 kubectl delete deployment my-app
 kubectl delete service my-app
 ```
-
-### **How to create Spring Boot Java project with Kubernetes?**
-
-1. Install and set up Kubernetes on your local machine or cloud platform. If you use GCP, you **[can](https://iamgique.medium.com/deploy-springboot-to-gke-from-scratch-in-7-minutes-c6d3534f69be)** create Kubernetes cluster using Google Kubernetes Engine.
-2. Create a new Spring Boot project using any IDE of your choice or use the Spring Initializr website ([**https://start.spring.io/**](https://start.spring.io/)) to generate a project template.
-3. Add the necessary dependencies in your `**pom.xml**` or `**build.gradle**` file. These dependencies should include the Spring Boot Starter Web and the Kubernetes Java client libraries.
-4. Create a Dockerfile in the root directory of your project that specifies how to build your application image. Here is an example Dockerfile for a Spring Boot application:
-    
-    ```Docker
-    FROM openjdk:11-jre-slim
-    WORKDIR /app
-    COPY target/*.jar app.jar
-    ENTRYPOINT ["java", "-jar", "app.jar"]
-    ```
-    
-    This Dockerfile uses the official OpenJDK 11 JRE image as the base image, sets the working directory to `**/app**`, copies the JAR file generated by the Maven build into the container, and specifies the entry point command to run the JAR file.
-    
-5. Build a Docker image of your application using the Dockerfile created in step 4. Run the following command in your project directory:
-    
-    ```Shell
-    docker build -t <image-name>:<tag> .
-    ```
-    
-    This command builds a Docker image tagged with a name and a version specified in `**<image-name>**` and `**<tag>**`, respectively.
-    
-6. Push the Docker image to a container registry of your choice. For example, to push the image to Docker Hub, run the following command:
-    
-    ```Shell
-    docker push <image-name>:<tag>
-    ```
-    
-7. Create a Kubernetes deployment YAML file that specifies how to deploy your application as a containerized workload. Here is an example deployment YAML file:
-    
-    ```YAML
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: <deployment-name>
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: <app-name>
-      template:
-        metadata:
-          labels:
-            app: <app-name>
-        spec:
-          containers:
-          - name: <container-name>
-            image: <image-name>:<tag>
-            ports:
-            - containerPort: 8080
-    ```
-    
-    This YAML file specifies a deployment with one replica, a container image specified by `**<image-name>**` and `**<tag>**`, and a container port set to 8080.
-    
-8. Create a Kubernetes service YAML file that specifies how to expose your application as a network service. Here is an example service YAML file:
-    
-    ```YAML
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: <service-name>
-    spec:
-      selector:
-        app: <app-name>
-      ports:
-      - protocol: TCP
-        port: 80
-        targetPort: 8080
-    ```
-    
-    This YAML file specifies a network service with a name of `**<service-name>**`, which routes traffic to the deployment selector with the `**app**` label set to `**<app-name>**`. The port configuration maps the container port of 8080 to the service port of 80.
-    
-9. Apply the deployment and service YAML files to your Kubernetes cluster using the `**kubectl apply**` command. Run the following commands:
-    
-    ```YAML
-    kubectl apply -f <deployment-file>.yaml
-    kubectl apply -f <service-file>.yaml
-    ```
-    
-    These commands create the Kubernetes deployment and service objects in the cluster.
-    
-10. Verify that your application is running by accessing the service URL in a web browser or by using the `**curl**` command:
-    
-    ```Shell
-    curl http://<
-    ```
-    
 
 ### Kubernetes Explanation in Pictures
 
@@ -398,4 +339,4 @@ kubectl logs pod-info-development-78bbb77995-l47xp -n development
 minikube start
 kubectl get nodes  # Verify cluster is running
 ```
-
+- [Spring Boot with Kubernetes](Spring%20Boot%20with%20Kubernetes.md)

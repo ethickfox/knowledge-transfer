@@ -59,3 +59,7 @@ The constant pool supports several types:
 - _Utf8_: a stream of bytes
 - _NameAndType_: a colon-separated pair of values, first entry represents the name while the second entry indicates the type
 - _Fieldref_, _Methodref_, _InterfaceMethodref_: a dot-separated pair of values, first value points at _Class_ entry whereas the second value points as _NameAndType_ entry
+
+A _String_ instance in Java is an object with two fields: a _char[] value_ field and an _int hash_ field. The _value_ field is an array of chars representing the string itself, and the _hash_ field contains the _hashCode_ of a string which is initialized with zero, calculated during the first _hashCode()_ call and cached ever since. Important thing is that a _String_ instance is immutable: you can’t get or modify the underlying _char[]_ array. Another feature of strings is that the static constant strings are loaded and cached in a string pool. If you have multiple identical _String_ objects in your source code, they are all represented by a single instance at runtime.
+- A special space in which the strings created by "" are stored, it is in a heap.
+- intern() - this method can return a reference to the corresponding string in the string pool
