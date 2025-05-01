@@ -3,8 +3,8 @@
 # DevOps
 # Java
 ## Build Tools
-### [Gradle](Gradle.md)
-### [Maven](Maven.md)
+### [Gradle](Java/Build%20Tools/Gradle.md)
+### [Maven](Java/Build%20Tools/Maven.md)
 
 # JavaScript
 # Message Queue
