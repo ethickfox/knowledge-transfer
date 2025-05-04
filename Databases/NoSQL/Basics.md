@@ -20,4 +20,4 @@
 |**Joins**|Typically required|
 |**Data to Object Mapping**|Requires ORM (object-relational mapping)|
 
-![Untitled 119.png](_img/Untitled%20119.png)
+![Untitled17.png](_img/Untitled17.png)

@@ -35,7 +35,7 @@ Topic:
 
 **Automated Testing in the Test Pipeline**
 
-![Untitled 123.png](../Software_Architecture/_img/Untitled%20123.png)
+![108.png](../Software_Architecture/_img/108.png)
 
 - **Local development** is the process of enhancement implementation or bug fixing at a local developer’s workstation.
 - **Commit** is a process of pushing changes from a local dev workstation to the shared codebase to make them available for other developers and CI procedures.
@@ -50,7 +50,7 @@ Topic:
 
 **Well-Balanced Automated Test Suite**
 
-![Untitled 1 44.png](Untitled%201%2044.png)
+![1.png](_img/1.png)
 
 **Team Involvement in Creating a Balanced Automated Test Suite**
 

@@ -12,7 +12,7 @@
 **Shift-left security means moving security to the earliest possible point in the development process. In a more traditional development approach, development starts without security, and software quality is only checked during the operations and monitoring phases. In shift-left security, teams embed security processes and tools in the CI/CD pipeline, allowing them to catch and correct vulnerabilities and bugs before they launch a product. Testing, feedback, and revisions happen regularly in the shift-left practice, making it easier and less expensive to fix issues. Review the graphic below and compare approaches by the number of security activities performed at each SDLC phase.  
   
 
-![Untitled 96.png](../../Software_Architecture/_img/Untitled%2096.png)
+![96.png](../../Software_Architecture/_img/96.png)
 
   
 
@@ -181,7 +181,7 @@ A successful cyberattack has technical and business impacts. The measure of **t
 
   
 
-![Untitled 3 18.png](../../Software_Architecture/_img/Untitled%203%2018.png)
+![47.png](../../Software_Architecture/_img/47.png)
 
 **LOW**
 

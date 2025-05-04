@@ -1,10 +1,10 @@
-![Untitled 110.png](Untitled%20110.png)
+![110.png](../_img/110.png)
 
-![Untitled 1 36.png](../../Software_Architecture/_img/Untitled%201%2036.png)
+![156.png](../../Software_Architecture/_img/156.png)
 
-![Untitled 2 26.png](../../Software_Architecture/_img/Untitled%202%2026.png)
+![15.png](../../Software_Architecture/_img/15.png)
 
-![Untitled 3 21.png](../../Software_Architecture/_img/Untitled%203%2021.png)
+![35.png](../../Software_Architecture/_img/35.png)
 
 ![Untitled 4 16.png](Untitled%204%2016.png)
 

@@ -12,7 +12,7 @@ On a Scrum team, there are generally two sides of a project: **business** and�
     - **Scrum Master**
     - **Developers**
 
-![Untitled 113.png](../../Software_Architecture/_img/Untitled%20113.png)
+![54.png](../../Software_Architecture/_img/54.png)
 
 ### **Ceremonies**
 

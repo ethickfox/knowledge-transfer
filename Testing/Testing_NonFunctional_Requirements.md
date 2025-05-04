@@ -45,7 +45,7 @@ A **non-functional requirement** describes operational qualities rather than be
 |**Manual testing**|Can be executed either manually or using automation tools|Is preferably performed using automation tools|
 |**Example Requirements to Test**|1. A login page must show text boxes to enter a username and password.  <br>2.  <br>The search function in the application should not be case sensitive.  <br>3.  <br>A verification email is sent to a user whenever he/she registers for the first time.|1. The dashboard should load in 2 seconds.  <br>2.  <br>Software should be installable on all versions of Windows and Mac.  <br>3.  <br>The GUI should provide help and tooltips to make it easy to use.|
 
-![Untitled 100.png](Untitled%20100.png)
+![5.png](_img/5.png)
 
 - **Planning  
       

@@ -66,7 +66,7 @@ Race condition in Lazy initialization - you check if object is instantiated, if 
 
 When multiple variables participate in an invariant, they are not independent, thus when you update one, you should update other in the same atomic operation
 
-![Untitled 1 8.png](Untitled%201%208.png)
+![3.png](../../_img/3.png)
 
 ![Untitled 2 5.png](Untitled%202%205.png)
 

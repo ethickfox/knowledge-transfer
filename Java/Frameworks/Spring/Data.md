@@ -83,7 +83,7 @@ Lazy - загружаются все зависимые при необходи�
 
 ![Untitled 38.png](Untitled%2038.png)
 
-![Untitled 1 5.png](Untitled%201%205.png)
+![2.png](../../_img/2.png)
 
 [https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords)
 
@@ -278,7 +278,7 @@ Spring Data REST builds on top of Spring Data repositories, analyzes your applic
 
 ![Untitled 16 2.png](Untitled%2016%202.png)
 
-![Untitled 17 2.png](Untitled%2017%202.png)
+![28.png](../../../DevOps/_img/28.png)
 
 ![Untitled 18 2.png](Untitled%2018%202.png)
 

@@ -1,4 +1,4 @@
-![Untitled 109.png](../_img/Untitled%20109.png)
+![5.png](../_img/5.png)
 
 ## Clarify
 
@@ -9,4 +9,4 @@
 - If the task is no longer needed or actionable, delete it.
 - If a task requires more than one step, create a project to house all of the items associated with it and identify the one next action you can take to move the project forward.
 
-![Untitled 1 35.png](../_img/Untitled%201%2035.png)
+![3.png](../_img/3.png)

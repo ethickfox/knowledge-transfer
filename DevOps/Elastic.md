@@ -9,7 +9,7 @@
 - Search structured data and text blocks
 - Document database - not as standardized as SQL
 
-![Untitled 58.png](../Databases/NoSQL/_img/Untitled%2058.png)
+![Untitled14.png](../Databases/NoSQL/_img/Untitled14.png)
 
 How Cluster of Nodes Work?
 
@@ -18,7 +18,7 @@ How Cluster of Nodes Work?
 - Leaders are distributed for redundancy
 - Data nodes are assigned as needed
 
-![Untitled 1 16.png](Untitled%201%2016.png)
+![9.png](_img/9.png)
 
 ## DSL
 
@@ -236,7 +236,7 @@ DELETE bowled_over/_doc/2
 
   
 
-![Untitled 2 12.png](../Software_Architecture/_img/Untitled%202%2012.png)
+![13.png](../Software_Architecture/_img/13.png)
 
 Create the schema
 
@@ -256,44 +256,44 @@ PUT simple_schema
 
 Nested
 
-![Untitled 3 12.png](../Software_Architecture/_img/Untitled%203%2012.png)
+![49.png](../Software_Architecture/_img/49.png)
 
-![Untitled 4 9.png](../Software_Architecture/_img/Untitled%204%209.png)
+![22.png](../Software_Architecture/_img/22.png)
 
-![Untitled 5 9.png](../Software_Architecture/_img/Untitled%205%209.png)
+![25.png](../Software_Architecture/_img/25.png)
 
 Compute multiple fields for search\
 
 Creates field monikers from first and last name
 
-![Untitled 6 9.png](Untitled%206%209.png)
+![77.png](_img/77.png)
 
 Fuzziness
 
-![Untitled 7 7.png](Untitled%207%207.png)
+![82.png](_img/82.png)
 
-![Untitled 8 7.png](Untitled%208%207.png)
+![91.png](_img/91.png)
 
-![Untitled 9 7.png](Untitled%209%207.png)
+![86.png](_img/86.png)
 
 Conditional pipelines
 
-![Untitled 10 7.png](Untitled%2010%207.png)
+![84.png](_img/84.png)
 
-![Untitled 11 7.png](Untitled%2011%207.png)
+![73.png](_img/73.png)
 
-![Untitled 12 7.png](../Software_Architecture/_img/Untitled%2012%207.png)
+![79.png](../Software_Architecture/_img/79.png)
 
   
 
-![Untitled 13 7.png](../Software_Architecture/_img/Untitled%2013%207.png)
+![78.png](../Software_Architecture/_img/78.png)
 
-![Untitled 14 7.png](Untitled%2014%207.png)
+![55.png](_img/55.png)
 
 search by several indexes
 
-![Untitled 15 6.png](Untitled%2015%206.png)
+![51.png](_img/51.png)
 
 Scripts
 
-![Untitled 16 6.png](Untitled%2016%206.png)
+![104.png](_img/104.png)

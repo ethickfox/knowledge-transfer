@@ -42,7 +42,7 @@ A failure means that the application is not functioning or is unable to function
 
 **The Defect Life Cycle**
 
-![Untitled 46.png](../../Software_Architecture/_img/Untitled%2046.png)
+![58.png](../../Software_Architecture/_img/58.png)
 
 **Defect Discovery**
 

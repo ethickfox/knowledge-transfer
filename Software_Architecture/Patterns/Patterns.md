@@ -6,7 +6,7 @@
 
 Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
-![Untitled 63.png](../_img/Untitled%2063.png)
+![85.png](../_img/85.png)
 
 ### Implementation
 
@@ -154,7 +154,7 @@ Now, how about the product variants? For each variant of a product family, we cr
 
 The client code has to work with both factories and products via their respective abstract interfaces. This lets you change the type of a factory that you pass to the client code, as well as the product variant that the client code receives, without breaking the actual client code.
 
-![Untitled 1 20.png](../_img/Untitled%201%2020.png)
+![10.png](../_img/10.png)
 
 ### Implementation
 
@@ -276,7 +276,7 @@ Lets you construct complex objects step by step. The pattern allows you to produ
 
 You can go further and extract a series of calls to the builder steps you use to construct a product into a separate class called _director_. The director class defines the order in which to execute the building steps, while the builder provides the implementation for those steps.
 
-![Untitled 2 15.png](../_img/Untitled%202%2015.png)
+![50.png](../_img/50.png)
 
 ### Implementation
 
@@ -399,11 +399,11 @@ Lets you copy existing objects without making your code dependent on their class
 
 The Prototype pattern delegates the cloning process to the actual objects that are being cloned. The pattern declares a common interface for all objects that support cloning. This interface lets you clone an object without coupling your code to the class of that object. Usually, such an interface contains just a single `clone` method.
 
-![Untitled 3 15.png](../_img/Untitled%203%2015.png)
+![48.png](../_img/48.png)
 
 The **Prototype Registry** provides an easy way to access frequently-used prototypes. It stores a set of pre-built objects that are ready to be copied. The simplest prototype registry is a `name → prototype` hash map
 
-![Untitled 4 11.png](../_img/Untitled%204%2011.png)
+![28.png](../_img/28.png)
 
 ### Implementation
 
@@ -680,7 +680,7 @@ You can create an _adapter_. This is a special object that converts the interfa
 
 An adapter wraps one of the objects to hide the complexity of conversion happening behind the scenes. The wrapped object isn’t even aware of the adapter. For example, you can wrap an object that operates in meters and kilometers with an adapter that converts all of the data to imperial units such as feet and miles.
 
-![Untitled 5 11.png](../_img/Untitled%205%2011.png)
+![31.png](../_img/31.png)
 
 ### Implementation
 
@@ -756,7 +756,7 @@ public class SquarePegAdapter extends RoundPeg {
 
 Lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other
 
-![Untitled 6 11.png](../_img/Untitled%206%2011.png)
+![151.png](../_img/151.png)
 
 ### Implementation
 
@@ -968,7 +968,7 @@ public class AdvancedRemote extends BasicRemote {
 
 Lets you compose objects into tree structures and then work with these structures as if they were individual objects.
 
-![Untitled 7 9.png](../_img/Untitled%207%209.png)
+![39.png](../_img/39.png)
 
 ### Implementation
 
@@ -1357,7 +1357,7 @@ Lets you attach new behaviours to objects by placing these objects inside specia
 
 “Wrapper” is the alternative nickname for the Decorator pattern that clearly expresses the main idea of the pattern. A _wrapper_ is an object that can be linked with some _target_ object. The wrapper contains the same set of methods as the target and delegates to it all requests it receives. However, the wrapper may alter the result by doing something either before or after it passes the request to the target.
 
-![Untitled 8 9.png](../_img/Untitled%208%209.png)
+![42.png](../_img/42.png)
 
 ### Implementation
 
@@ -1474,7 +1474,7 @@ Provides a simplified interface to a library, a framework, or any other complex 
 
 A facade is a class that provides a simple interface to a complex subsystem which contains lots of moving parts. A facade might provide limited functionality in comparison to working with the subsystem directly. However, it includes only those features that clients really care about.
 
-![Untitled 9 9.png](../_img/Untitled%209%209.png)
+![150.png](../_img/150.png)
 
 ### Implementaton
 
@@ -1545,9 +1545,9 @@ public class VideoConversionFacade {
 [Flyweight](Flyweight.md)
 Lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
 
-![Untitled 10 9.png](../_img/Untitled%2010%209.png)
+![148.png](../_img/148.png)
 
-![Untitled 11 9.png](../_img/Untitled%2011%209.png)
+![51.png](../_img/51.png)
 
 ```Java
 	public class Tree {
@@ -1620,7 +1620,7 @@ public class Forest extends JFrame {
 
 Lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
 
-![Untitled 12 9.png](../_img/Untitled%2012%209.png)
+![2.png](../_img/2.png)
 
 ### Implementation
 
@@ -1762,11 +1762,11 @@ Each linked handler has a field for storing a reference to the next handler in t
 
 Here’s the best part: a handler can decide not to pass the request further down the chain and effectively stop any further processing.
 
-![Untitled 13 9.png](../_img/Untitled%2013%209.png)
+![77.png](../_img/77.png)
 
 However, there’s a slightly different approach (and it’s a bit more canonical) in which, upon receiving a request, a handler decides whether it can process it. If it can, it doesn’t pass the request any further. So it’s either only one handler that processes the request or none at all. This approach is very common when dealing with events in stacks of elements within a graphical user interface.
 
-![Untitled 14 9.png](../_img/Untitled%2014%209.png)
+![143.png](../_img/143.png)
 
 ### Implementation
 
@@ -1836,9 +1836,9 @@ public class RoleCheckMiddleware extends Middleware {
 
 **Command** is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations
 
-![Untitled 15 8.png](../_img/Untitled%2015%208.png)
+![70.png](../_img/70.png)
 
-![Untitled 16 8.png](../_img/Untitled%2016%208.png)
+![66.png](../_img/66.png)
 
 ### Implementation
 
@@ -1909,7 +1909,7 @@ ctrlC.addActionListener( e -> executeCommand(new CutCommand(editor)));
 
 **Iterator** is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
 
-![Untitled 17 5.png](../_img/Untitled%2017%205.png)
+![62.png](../_img/62.png)
 
 ### Implementation
 
@@ -2106,7 +2106,7 @@ public class Editor implements Mediator {
 
 The pattern suggests storing the copy of the object’s state in a special object called _memento_. The contents of the memento aren’t accessible to any other object except the one that produced it. Other objects must communicate with mementos using a limited interface which may allow fetching the snapshot’s metadata (creation time, the name of the performed operation, etc.), but not the original object’s state contained in the snapshot.
 
-![Untitled 19 5.png](../_img/Untitled%2019%205.png)
+![63.png](../_img/63.png)
 
 Such a restrictive policy lets you store mementos inside other objects, usually called _caretakers_. Since the caretaker works with the memento only via the limited interface, it’s not able to tamper with the state stored inside the memento. At the same time, the originator has access to all fields inside the memento, allowing it to restore its previous state at will.
 
@@ -2210,7 +2210,7 @@ public class Memento {
 
 The Observer pattern suggests that you add a subscription mechanism to the publisher class so individual objects can subscribe to or unsubscribe from a stream of events coming from that publisher. Fear not! Everything isn’t as complicated as it sounds. In reality, this mechanism consists of 1) an array field for storing a list of references to subscriber objects and 2) several public methods which allow adding subscribers to and removing them from that list.
 
-![Untitled 20 4.png](../_img/Untitled%2020%204.png)
+![142.png](../_img/142.png)
 
 ### Implementation
 
@@ -2305,7 +2305,7 @@ public class LogOpenListener implements EventListener {
 
 The main idea is that, at any given moment, there’s a _finite_ number of _states_ which a program can be in. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously. However, depending on a current state, the program may or may not switch to certain other states. These switching rules, called _transitions_, are also finite and predetermined.
 
-![Untitled 21 4.png](../_img/Untitled%2021%204.png)
+![140.png](../_img/140.png)
 
 This structure may look similar to the [**Strategy**](https://refactoring.guru/design-patterns/strategy) pattern, but there’s one key difference. In the State pattern, the particular states may be aware of each other and initiate transitions from one state to another, whereas strategies almost never know about each other.
 
@@ -2447,7 +2447,7 @@ The context isn’t responsible for selecting an appropriate algorithm for the j
 
 This way the context becomes independent of concrete strategies, so you can add new algorithms or modify existing ones without changing the code of the context or other strategies.
 
-![Untitled 22 4.png](../_img/Untitled%2022%204.png)
+![161.png](../_img/161.png)
 
 [**Command**](https://refactoring.guru/design-patterns/command) and [**Strategy**](https://refactoring.guru/design-patterns/strategy) may look similar because you can use both to parameterize an object with some action. However, they have very different intents.
 
@@ -2540,7 +2540,7 @@ public class Order {
 
 The Template Method pattern suggests that you break down an algorithm into a series of steps, turn these steps into methods, and put a series of calls to these methods inside a single _template method._ The steps may either be `abstract`, or have some default implementation. To use the algorithm, the client is supposed to provide its own subclass, implement all abstract steps, and override some of the optional ones if needed (but not the template method itself).
 
-![Untitled 23 4.png](../_img/Untitled%2023%204.png)
+![127.png](../_img/127.png)
 
 ### Implementation
 
@@ -2610,7 +2610,7 @@ network.post(message);
 
 The Visitor pattern suggests that you place the new behavior into a separate class called _visitor_, instead of trying to integrate it into existing classes. The original object that had to perform the behavior is now passed to one of the visitor’s methods as an argument, providing the method access to all necessary data contained within the object.
 
-![Untitled 24 4.png](../_img/Untitled%2024%204.png)
+![135.png](../_img/135.png)
 
 ```Java
 public interface Shape {
@@ -2834,7 +2834,7 @@ private dbConnectionInterface dbConnection;
 
 ![Untitled 29 3.png](Untitled%2029%203.png)
 
-![Untitled 30 3.png](../_img/Untitled%2030%203.png)
+![122.png](../_img/122.png)
 
 ![Untitled 31 3.png](Untitled%2031%203.png)
 
@@ -2852,7 +2852,7 @@ private dbConnectionInterface dbConnection;
 
 ![Untitled 34 3.png](Untitled%2034%203.png)
 
-![Untitled 35 3.png](../_img/Untitled%2035%203.png)
+![103.png](../_img/103.png)
 
 ### **Состояние**
 
@@ -2876,7 +2876,7 @@ private dbConnectionInterface dbConnection;
 
 ![Untitled 38 3.png](Untitled%2038%203.png)
 
-![Untitled 39 3.png](../_img/Untitled%2039%203.png)
+![95.png](../_img/95.png)
 
 ![Untitled 40 3.png](Untitled%2040%203.png)
 

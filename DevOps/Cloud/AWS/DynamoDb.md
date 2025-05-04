@@ -4,7 +4,7 @@ support for ACID transactions
 
 DynamoDB is serverless. You don't have to provision, patch, or manage servers, and you don't have to install, maintain, or operate software. DynamoDB automatically scales tables up and down to adjust for capacity and maintain performance.
 
-![Untitled 98.png](../../../Databases/NoSQL/_img/Untitled%2098.png)
+![Untitled15.png](../../../Databases/NoSQL/_img/Untitled15.png)
 
 The primary key is used to uniquely identify each item in an Amazon DynamoDB table. A primary key is of two types:
 
@@ -26,9 +26,9 @@ DynamoDB is a web service, and interactions with it are stateless. So we can int
 
   
 
-![Untitled 1 27.png](Untitled%201%2027.png)
+![Untitled11.png](../../_img/Untitled11.png)
 
-![Untitled 2 19.png](Untitled%202%2019.png)
+![40.png](../../_img/40.png)
 
 Data types
 

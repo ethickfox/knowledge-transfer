@@ -1,4 +1,4 @@
-![Untitled 41.png](_img/Untitled%2041.png)
+![92.png](../_img/92.png)
 
 # **Microservices**
 
@@ -149,27 +149,27 @@ Minuses
 - Additional calls(more latency)
 - Reduction to reliability
 
-![Untitled 1 6.png](Untitled%201%206.png)
+![Untitled2.png](../../DevOps/_img/Untitled2.png)
 
 ![Untitled 2 4.png](Untitled%202%204.png)
 
-![Untitled 3 4.png](_img/Untitled%203%204.png)
+![19.png](../_img/19.png)
 
   
 
-![Untitled 4 3.png](_img/Untitled%204%203.png)
+![34.png](../_img/34.png)
 
-![Untitled 5 3.png](_img/Untitled%205%203.png)
+![26.png](../_img/26.png)
 
-![Untitled 6 3.png](_img/Untitled%206%203.png)
+![36.png](../_img/36.png)
 
-![Untitled 7 3.png](_img/Untitled%207%203.png)
+![38.png](../_img/38.png)
 
-![Untitled 8 3.png](Untitled%208%203.png)
+![96.png](../../DevOps/_img/96.png)
 
-![Untitled 9 3.png](_img/Untitled%209%203.png)
+![81.png](../_img/81.png)
 
-![Untitled 10 3.png](_img/Untitled%2010%203.png)
+![3.png](../_img/3.png)
 
 Instead of ACID
 
@@ -181,13 +181,13 @@ Data Layer
 
 Circuit breaker
 
-![Untitled 11 3.png](_img/Untitled%2011%203.png)
+![52.png](../_img/52.png)
 
-![Untitled 12 3.png](_img/Untitled%2012%203.png)
+![145.png](../_img/145.png)
 
-![Untitled 13 3.png](Untitled%2013%203.png)
+![71.png](../../DevOps/_img/71.png)
 
-![Untitled 14 3.png](_img/Untitled%2014%203.png)
+![144.png](../_img/144.png)
 
   
 
@@ -195,4 +195,4 @@ Circuit breaker
 
 ![Untitled 15 3.png](Untitled%2015%203.png)
 
-![Untitled 16 3.png](_img/Untitled%2016%203.png)
+![67.png](../_img/67.png)

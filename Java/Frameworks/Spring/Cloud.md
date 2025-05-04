@@ -8,7 +8,7 @@
 
 ## Externalised Configuration
 
-![Untitled 2 22.png](../../../Software_Architecture/_img/Untitled%202%2022.png)
+![14.png](../../../Software_Architecture/_img/14.png)
 
 ![Untitled 3 20.png](Untitled%203%2020.png)
 
@@ -16,7 +16,7 @@
 
 ## Service Discovery
 
-![Untitled 4 15.png](../../../Software_Architecture/_img/Untitled%204%2015.png)
+![24.png](../../../Software_Architecture/_img/24.png)
 
 ![Untitled 5 15.png](Untitled%205%2015.png)
 
@@ -42,7 +42,7 @@ The [spring.application.name](http://spring.application.name/) is what is expose
 
 ## Circuit Breaking
 
-![Untitled 8 13.png](Untitled%208%2013.png)
+![111.png](../../../DevOps/_img/111.png)
 
 ![Untitled 9 13.png](Untitled%209%2013.png)
 
@@ -56,7 +56,7 @@ The [spring.application.name](http://spring.application.name/) is what is expose
 
 ### API Gateway
 
-![Untitled 14 12.png](Untitled%2014%2012.png)
+![53.png](../../../DevOps/_img/53.png)
 
 ![Untitled 15 11.png](Untitled%2015%2011.png)
 

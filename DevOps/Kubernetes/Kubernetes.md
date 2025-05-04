@@ -19,7 +19,7 @@
 - Declaratively manage services, which guarantees the deployed applications are always running the way you intended them to run.
 - Health-check and self-heal your apps with autoplacement, autorestart, autoreplication, and autoscaling.
 
-![Untitled 120.png](../../Software_Architecture/_img/Untitled%20120.png)
+![130.png](../../Software_Architecture/_img/130.png)
 ### Main parts
 ==**Cluster**== - is a grouping of nodes that run containerized apps in an efficient, automated, distributed, and scalable manner. A Kubernetes cluster consists of a set of worker machines, called nodes, that run containerized applications. Every cluster has at least one worker node.
 
@@ -90,7 +90,7 @@ metadata:
   name: development
 ```
 
-![Untitled 1 41.png](Untitled%201%2041.png)
+![15.png](../_img/15.png)
 
 ==**Kubelet**== - this service runs on nodes, reads the container manifests, and ensures the defined containers are started and running.
 

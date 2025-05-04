@@ -2,7 +2,7 @@ The management of essential technical operations—hardware, software, networkin
 
 **System Infrastructure Options**
 
-![Untitled 93.png](../Software_Architecture/_img/Untitled%2093.png)
+![83.png](../Software_Architecture/_img/83.png)
 
 **Physical Infrastructure  
   
@@ -186,7 +186,7 @@ A developing discipline and practice that enables organizations to maximize comm
 
 Managing and configuring computer data centers through machine-readable definition files instead of configuring them manually or using interactive configuration tools.
 
-![Untitled 1 23.png](../Software_Architecture/_img/Untitled%201%2023.png)
+![159.png](../Software_Architecture/_img/159.png)
 
 - **Infrastructure Code  
       

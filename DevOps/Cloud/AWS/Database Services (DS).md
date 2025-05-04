@@ -1,6 +1,6 @@
 AWS fully managed database services provide continuous monitoring, self-healing storage, and automated scaling to help you focus on application development.
 
-![Untitled 121.png](../../../Software_Architecture/_img/Untitled%20121.png)
+![107.png](../../../Software_Architecture/_img/107.png)
 
 ## Pricing considerations and free tier details:
 
@@ -19,7 +19,7 @@ AWS fully managed database services provide continuous monitoring, self-healing 
 |Time series|Internet of Things (IoT) applications, DevOps, industrial telemetry|Amazon Timestream|No|[Amazon Timestream Pricing](https://aws.amazon.com/timestream/pricing/)|
 |Ledger|Systems of record, supply chain, registrations, banking transactions|Amazon Ledger Database Services (QLDB)|No|[Amazon Ledger Database Services (QLDB)Pricing](https://aws.amazon.com/qldb/pricing/)|
 
-![Untitled 1 42.png](Untitled%201%2042.png)
+![16.png](../../_img/16.png)
 
 ### RDS
 
@@ -69,7 +69,7 @@ Redis allows writes and strongly consistent reads on the primary node of each sh
 
 MemoryDB for Redis aims to replace both cache and database in one component – provides microsecond read latency and data durability.
 
-![Untitled 3 25.png](Untitled%203%2025.png)
+![46.png](../../_img/46.png)
 
 **Strong consistency** on the primary node, eventual consistency reads on replica nodes.
 
@@ -107,7 +107,7 @@ Amazon Neptune is a fast, scalable graph database service. Neptune efficiently s
 
 Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available, and managed Apache Cassandra–compatible database service. With Amazon Keyspaces (for Apache Cassandra), you can run your Cassandra workloads on AWS using the same Cassandra application code and developer tools that you use today.
 
-![Untitled 4 20.png](Untitled%204%2020.png)
+![106.png](../../_img/106.png)
 
 ### QLDB
 

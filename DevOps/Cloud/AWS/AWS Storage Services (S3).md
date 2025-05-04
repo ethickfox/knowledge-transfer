@@ -1,4 +1,4 @@
-![Untitled 111.png](Untitled%20111.png)
+![33.png](../../_img/33.png)
 
 # Block
 
@@ -8,7 +8,7 @@ Block storage is technology that controls data storage and storage devices. It t
 
 **EBS** (Elastic Block Store) - it is a block-level storage service offered by AWS that provides highly available, low-latency block-level storage volumes for use with EC2 instances. EBS volumes are designed for use with a single EC2 instance, and they can be attached and detached as needed. 
 
-![Untitled 1 37.png](Untitled%201%2037.png)
+![13.png](../../_img/13.png)
 
 Amazon Elastic Block Store (EBS) is an easy to use, high-performance, block-storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale. A broad range of workloads, such as relational and non-relational databases, enterprise applications, containerized applications, big data analytics engines, file systems, and media workflows are widely deployed on Amazon EBS.
 
@@ -20,7 +20,7 @@ Designed for mission-critical systems, EBS volumes are replicated within an Avai
 
 **EFS** (Elastic File System) - it is a fully-managed, highly scalable file storage service that provides a simple and scalable file system for use with EC2 instances. EFS is designed to support multiple EC2 instances simultaneously, making it ideal for use cases where multiple instances need to access a shared file system. More information
 
-![Untitled 2 27.png](Untitled%202%2027.png)
+![42.png](../../_img/42.png)
 
 ## EC2 Instance
 
@@ -60,13 +60,13 @@ This services could be categorized by [Block](https://aws.amazon.com/what-is/bl
 
 **Amazon Simple Storage Service**, widely known as **Amazon S3**, is a highly scalable, fast, and durable solution for object-level storage of any data type. Unlike the operating systems we are all used to, Amazon S3 does not store files in a file system, instead it stores files as objects. Object Storage allows users to upload files, videos, and documents like you were to upload files, videos, and documents to popular cloud storage products like Dropbox and Google Drive. This makes Amazon S3 very flexible and platform agnostic.
 
-![Untitled 4 17.png](Untitled%204%2017.png)
+![49.png](../../_img/49.png)
 
-![Untitled 5 17.png](Untitled%205%2017.png)
+![97.png](../../_img/97.png)
 
-![Untitled 6 16.png](Untitled%206%2016.png)
+![81.png](../../_img/81.png)
 
-![Untitled 7 14.png](Untitled%207%2014.png)
+![94.png](../../_img/94.png)
 
 ## Comparasion
 
@@ -82,7 +82,7 @@ This services could be categorized by [Block](https://aws.amazon.com/what-is/bl
 |**Availability**|Depends from class 99.5 - 99.99% Multi AZ|99.999% Single AZ|99.99% Multi AZ|Depends from file system Multi AZ|
 |**Accessibility**|Public/Private|Private (from an EC2 instance)|Private: EC2, integration with AWS services using access point|Private|
 
-![Untitled 8 14.png](Untitled%208%2014.png)
+![88.png](../../_img/88.png)
 
 Copy file
 

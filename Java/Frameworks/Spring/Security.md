@@ -373,7 +373,7 @@ An OAuth authorization server is responsible for authenticating the users and is
 
 ![Untitled 10 8.png](../../_img/Untitled%2010%208.png)
 
-![Untitled 11 8.png](Untitled%2011%208.png)
+![72.png](../../../DevOps/_img/72.png)
 
 ### Security Server
 

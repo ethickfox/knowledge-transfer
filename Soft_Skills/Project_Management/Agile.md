@@ -42,7 +42,7 @@ That is, while there is value in the items on the right, we value the items on t
 
 (Beck et al., 2001, [Principles Behind the Agile Manifesto](https://agilemanifesto.org/principles.html))
 
-![Untitled 104.png](../../Software_Architecture/_img/Untitled%20104.png)
+![106.png](../../Software_Architecture/_img/106.png)
 
 With Agile development, a team takes an iterative approach to incorporating feedback on projects. Testing occurs regularly, and a team can identify errors at any stage. Iterations are usually a few weeks long and include the same phases as the Waterfall methodology. Clients see results at the end of each iteration.
 
@@ -70,9 +70,9 @@ The Agile methodology seeks to streamline project work by focusing on three key 
 - Reprioritize a backlog based on the feedback from PO and stakeholders during regular demo/review sessions.
 - Involve the whole team in the decision negotiations.
 
-![Untitled 1 31.png](../_img/Untitled%201%2031.png)
+![2.png](../_img/2.png)
 
-![Untitled 2 23.png](../../Software_Architecture/_img/Untitled%202%2023.png)
+![16.png](../../Software_Architecture/_img/16.png)
 
 Before Agile, extreme programming was created, it consisted of next points:
 

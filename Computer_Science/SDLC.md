@@ -1,6 +1,6 @@
 ## **Basic SDLC**
 
-![Untitled 105.png](../Software_Architecture/_img/Untitled%20105.png)
+![97.png](../Software_Architecture/_img/97.png)
 
 A typical SDLC is comprised of six phases:
 
@@ -58,7 +58,7 @@ CI/CD embodies a practical implementation of key Agile SDLC principles. For exam
 
 In short, employing CI/CD practices helps your project become more Agile.
 
-![Untitled 1 32.png](../Software_Architecture/_img/Untitled%201%2032.png)
+![157.png](../Software_Architecture/_img/157.png)
 
 **The Development Phase**
 

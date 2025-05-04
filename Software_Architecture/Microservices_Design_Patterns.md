@@ -1,4 +1,4 @@
-![Untitled 90.png](_img/Untitled%2090.png)
+![84.png](_img/84.png)
 
 # Decomposition Patterns
 
@@ -6,21 +6,21 @@
 
 (By Business Process Domains)
 
-![Untitled 1 21.png](_img/Untitled%201%2021.png)
+![11.png](_img/11.png)
 
-![Untitled 2 16.png](_img/Untitled%202%2016.png)
+![18.png](_img/18.png)
 
-![Untitled 3 16.png](_img/Untitled%203%2016.png)
+![153.png](_img/153.png)
 
 ## By SubDomain
 
 Divide by data domains starting with model
 
-![Untitled 4 12.png](_img/Untitled%204%2012.png)
+![33.png](_img/33.png)
 
-![Untitled 5 12.png](_img/Untitled%205%2012.png)
+![29.png](_img/29.png)
 
-![Untitled 6 12.png](_img/Untitled%206%2012.png)
+![40.png](_img/40.png)
 
 ## By Transaction
 
@@ -30,21 +30,21 @@ Divide by data domains starting with model
 
 Moving parts of monolith to different services
 
-![Untitled 7 10.png](_img/Untitled%207%2010.png)
+![41.png](_img/41.png)
 
-![Untitled 8 10.png](../Computer_Science/_img/Untitled%208%2010.png)
+![Untitled2.png](../Computer_Science/_img/Untitled2.png)
 
-![Untitled 9 10.png](_img/Untitled%209%2010.png)
+![149.png](_img/149.png)
 
-![Untitled 10 10.png](_img/Untitled%2010%2010.png)
+![53.png](_img/53.png)
 
 ## Sidecar Pattern
 
 Removing repetetive code
 
-![Untitled 11 10.png](_img/Untitled%2011%2010.png)
+![146.png](_img/146.png)
 
-![Untitled 12 10.png](_img/Untitled%2012%2010.png)
+![1.png](_img/1.png)
 
 # Integration Patterns
 
@@ -52,33 +52,33 @@ Removing repetetive code
 
 It is a proxy or facade
 
-![Untitled 13 10.png](_img/Untitled%2013%2010.png)
+![76.png](_img/76.png)
 
-![Untitled 14 10.png](_img/Untitled%2014%2010.png)
+![74.png](_img/74.png)
 
-![Untitled 15 9.png](_img/Untitled%2015%209.png)
+![68.png](_img/68.png)
 
-![Untitled 16 9.png](Untitled%2016%209.png)
+![103.png](../DevOps/_img/103.png)
 
 ## Process Aggregator
 
 For cases when several business processes should be called, aggregates the call and calls each process
 
-![Untitled 17 6.png](_img/Untitled%2017%206.png)
+![61.png](_img/61.png)
 
-![Untitled 18 6.png](_img/Untitled%2018%206.png)
+![59.png](_img/59.png)
 
-![Untitled 19 6.png](_img/Untitled%2019%206.png)
+![65.png](_img/65.png)
 
-![Untitled 20 5.png](_img/Untitled%2020%205.png)
+![71.png](_img/71.png)
 
 ## Edge Pattern
 
-![Untitled 21 5.png](_img/Untitled%2021%205.png)
+![139.png](_img/139.png)
 
-![Untitled 22 5.png](_img/Untitled%2022%205.png)
+![129.png](_img/129.png)
 
-![Untitled 23 5.png](_img/Untitled%2023%205.png)
+![126.png](_img/126.png)
 
   
 
@@ -86,9 +86,9 @@ For cases when several business processes should be called, aggregates the call 
 
 ## Database Per Service (Single Service, Single Database)
 
-![Untitled 24 5.png](_img/Untitled%2024%205.png)
+![134.png](_img/134.png)
 
-![Untitled 25 5.png](_img/Untitled%2025%205.png)
+![137.png](_img/137.png)
 
 ## Shared Database Per Service
 
@@ -96,13 +96,13 @@ For cases when several business processes should be called, aggregates the call 
 
 ## Command Query Responsibility Segregation (CQRS)
 
-![Untitled 27 4.png](_img/Untitled%2027%204.png)
+![125.png](_img/125.png)
 
-![Untitled 28 4.png](_img/Untitled%2028%204.png)
+![123.png](_img/123.png)
 
 ## Asynchronous eventing
 
-![Untitled 29 4.png](_img/Untitled%2029%204.png)
+![133.png](_img/133.png)
 
 # Operational Patterns
 
@@ -110,34 +110,34 @@ For cases when several business processes should be called, aggregates the call 
 
 ## Log Aggregation pattern
 
-![Untitled 30 4.png](_img/Untitled%2030%204.png)
+![121.png](_img/121.png)
 
-![Untitled 31 4.png](_img/Untitled%2031%204.png)
+![119.png](_img/119.png)
 
   
 
 ## Metrics aggregation pattern
 
-![Untitled 32 4.png](_img/Untitled%2032%204.png)
+![117.png](_img/117.png)
 
-![Untitled 33 4.png](_img/Untitled%2033%204.png)
+![115.png](_img/115.png)
 
   
 
 ## Tracing Pattern
 
-![Untitled 34 4.png](_img/Untitled%2034%204.png)
+![105.png](_img/105.png)
 
-![Untitled 35 4.png](_img/Untitled%2035%204.png)
+![101.png](_img/101.png)
 
 # Cross Cutting Concerns Patterns
 
 ## External Configuration Pattern
 
-![Untitled 36 4.png](_img/Untitled%2036%204.png)
+![100.png](_img/100.png)
 
-![Untitled 37 4.png](_img/Untitled%2037%204.png)
+![98.png](_img/98.png)
 
 ## Service Discovery Patterns
 
-![Untitled 38 4.png](_img/Untitled%2038%204.png)
+![132.png](_img/132.png)

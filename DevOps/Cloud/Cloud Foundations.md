@@ -1,3 +1,3 @@
-![Untitled 42.png](Untitled%2042.png)
+![1.png](../_img/1.png)
 
-![Untitled 1 7.png](Untitled%201%207.png)
+![Untitled3.png](../_img/Untitled3.png)

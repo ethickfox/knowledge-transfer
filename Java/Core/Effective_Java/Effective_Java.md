@@ -437,7 +437,7 @@ ExceptionTest[] excTests = m.getAnnotationsByType(ExceptionTest.class);
 	Lambdas share with anonymous classes the property that you can’t reliably serialize and deserialize them across implementations. Therefore, you should rarely, if ever, serialize a lambda (or an anonymous class instance). If you have a function object that you want to make serializable, such as a Comparator, use an instance of a private static nested class
 - Item 43: Prefer method references to lambdas
 - Item 44: Favor the use of standard functional interfaces
-  ![](Pasted%20image%2020250202142014.png)
+  ![](../../_img/1.png)
 	  If one of the standard functional interfaces does the job, you should generally use it in preference to a purpose-built functional interface.
 	Don’t be tempted to use basic functional interfaces with boxed primitives instead of primitive functional interfaces. While it works, it violates the advice of Item 61, “prefer primitive types to boxed primitives.” The performance consequences of using boxed primitives for bulk operations can be deadly.
 	You should seriously consider writing a purpose-built functional interface in preference to using a standard one if you need a functional interface that shares one or more of the following characteristics with Comparator:

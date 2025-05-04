@@ -42,29 +42,29 @@ Redis supports [**asynchronous replication**](https://redis.io/topics/replicati
 
   
 
-![Untitled 99.png](_img/Untitled%2099.png)
+![Untitled16.png](_img/Untitled16.png)
 
-![Untitled 1 28.png](_img/Untitled%201%2028.png)
+![Untitled1.png](_img/Untitled1.png)
 
-![Untitled 2 20.png](_img/Untitled%202%2020.png)
+![Untitled2.png](_img/Untitled2.png)
 
-![Untitled 3 19.png](_img/Untitled%203%2019.png)
+![Untitled4.png](_img/Untitled4.png)
 
-![Untitled 4 14.png](_img/Untitled%204%2014.png)
+![Untitled6.png](_img/Untitled6.png)
 
-![Untitled 5 14.png](Untitled%205%2014.png)
+![107.png](../../DevOps/_img/107.png)
 
-![Untitled 6 14.png](_img/Untitled%206%2014.png)
+![Untitled8.png](_img/Untitled8.png)
 
-![Untitled 7 12.png](_img/Untitled%207%2012.png)
+![Untitled9.png](_img/Untitled9.png)
 
-![Untitled 8 12.png](_img/Untitled%208%2012.png)
+![Untitled10.png](_img/Untitled10.png)
 
-![Untitled 9 12.png](_img/Untitled%209%2012.png)
+![Untitled11.png](_img/Untitled11.png)
 
-![Untitled 10 12.png](_img/Untitled%2010%2012.png)
+![Untitled12.png](_img/Untitled12.png)
 
-![Untitled 11 12.png](_img/Untitled%2011%2012.png)
+![Untitled13.png](_img/Untitled13.png)
 
 ## Data types
 

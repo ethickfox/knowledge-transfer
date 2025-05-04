@@ -1,7 +1,7 @@
 An application has to meet various requirements in order to be useful. There are **functional requirements** (what it should do, such as allowing data to be stored, retrieved, searched, and processed in various ways), and some **nonfunctional requirements** (general properties like security, reliability, compliance, scalability, compatibility, and maintainability).
 
 If you have an application-managed caching layer (using Memcached or similar), or a full-text search server (such as Elasticsearch or Solr) separate from your main database, it is normally the application code’s responsibility to keep those caches and indexes in sync with the main database.
-![](_img/Pasted%20image%2020250304203530.png)  
+![](_img/9.png)  
 
 #### Reliability
 The system should continue to work correctly (performing the correct function at the desired level of performance) even in the face of adversity (hardware or software faults, and even human error). See “Reliability” on page 6.
@@ -316,11 +316,11 @@ SELECT ?personName WHERE {
 The word log is often used to refer to application logs, where an application outputs text that describes what’s happening. log is used in the more general sense: an append-only sequence of records. It doesn’t have to be human-readable; it might
 be binary and intended only for other programs to read.
 A good solution is to break the log into segments of a certain size by closing a segment file when it reaches a certain size, and making subsequent writes to a new segment file. We can then perform compaction on these segments
-![](_img/Pasted%20image%2020250408201737.png)
+![](_img/160.png)
 Moreover, since compaction often makes segments much smaller (assuming that a
 key is overwritten several times on average within one segment), we can also merge
 several segments together at the same time as performing the compaction,
-![](_img/Pasted%20image%2020250408201800.png)
+![](_img/1612.png)
 The hash table must fit in memory, so if you have a very large number of keys,
 
 you’re out of luck. In principle, you could maintain a hash map on disk, but
@@ -422,7 +422,7 @@ B-trees  remain the standard index implementation in almost all relational datab
 - Like SSTables, B-trees keep key-value pairs sorted by key, which allows efficient key-value lookups and range queries.
 -  B-trees break the database down into fixed-size blocks or pages, traditionally 4 KB in size (sometimes bigger), and read or write one page at a time.
 - Each page can be identified using an address or location, which allows one page to refer to another. We can use these page references to construct a tree of pages
-- ![](_img/Pasted%20image%2020250410185502.png)
+- ![](_img/5.png)
 - One page is designated as the root of the B-tree; whenever you want to look up a key in the index, you start here.
 - Each child is responsible for a continuous range of keys, and the keys between the references indicate where the boundaries between those ranges lie.
 - The number of references to child pages in one page of the B-tree is called the branching factor.
@@ -597,7 +597,7 @@ entry from each of the individual column files and put them together to form the
 - Depending on the data in the
 column, different compression techniques can be used. One technique that is particu‐
 larly effective in data warehouses is bitmap encoding,
-![](_img/Pasted%20image%2020250416183725.png)
+![](_img/7.png)
 Often, the number of distinct values in a column is small compared to the number of
 rows (for example, a retailer may have billions of sales transactions, but only 100,000
 distinct products). We can now take a column with n distinct values and turn it into
@@ -642,7 +642,7 @@ sense (whether or not they actually improve read performance depends on the indi
 vidual case).
 A common special case of a materialized view is known as a data cube or OLAP cube
 [64]. It is a grid of aggregates grouped by different dimensions.
-![](_img/Pasted%20image%2020250503212231.png)
+![](_img/8.png)
 Imagine for now that each fact has foreign keys to only two dimension tables—in
 Figure 3-12, these are date and product. You can now draw a two-dimensional table,
 with dates along one axis and products along the other. Each cell contains the aggre‐

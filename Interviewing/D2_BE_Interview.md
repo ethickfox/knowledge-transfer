@@ -323,7 +323,7 @@ https://github.com/enhorse/java-interview
     
     As CPUs can carry many instructions per second, fetching from RAM isn’t ideal for them. To improve this situation, processors use tricks like [Out of Order Execution](https://en.wikipedia.org/wiki/Out-of-order_execution), [Branch Prediction](https://en.wikipedia.org/wiki/Branch_predictor), [Speculative Execution](https://en.wikipedia.org/wiki/Speculative_execution), and Caching.
     
-    ![Untitled 4 19.png](../Databases/NoSQL/_img/Untitled%204%2019.png)
+    ![Untitled7.png](../Databases/NoSQL/_img/Untitled7.png)
     
     As different cores execute more instructions and manipulate more data, they fill their caches with more relevant data and instructions. **This will improve the overall performance at the expense of introducing** [**cache coherence**](https://en.wikipedia.org/wiki/Cache_coherence) **challenges**.
     
@@ -1391,7 +1391,7 @@ Here are some of the most common built-in endpoints Actuator provides:
 >  
 > [https://www.interviewbit.com/spring-security-interview-questions/?utm_source=pocket_saves](https://www.interviewbit.com/spring-security-interview-questions/?utm_source=pocket_saves)  
 
-![Untitled 5 19.png](../Software_Architecture/_img/Untitled%205%2019.png)
+![46.png](../Software_Architecture/_img/46.png)
 
 ## Spring Tests
 
@@ -1498,7 +1498,7 @@ When running integration tests for a Spring application, we must have an _Appli
 
 All major programming languages have a built-in method for sorting. It is usually correct to assume and say sorting costs O(n * logn) is the number of elements being sorted. For completeness, here is a chart that lists many common sorting algorithms and their completeness.
 
-![Untitled 7 15.png](../Computer_Science/_img/Untitled%207%2015.png)
+![Untitled3.png](../Computer_Science/_img/Untitled3.png)
 
 [Sorting](../Computer_Science/Algorithms/Sorting.md)
 
@@ -1508,7 +1508,7 @@ All major programming languages have a built-in method for sorting. It is usuall
 
 ## Data Structures
 
-![Untitled 8 15.png](../Software_Architecture/_img/Untitled%208%2015.png)
+![43.png](../Software_Architecture/_img/43.png)
 
 Here's an example of a task:
 
@@ -1870,7 +1870,7 @@ Something very important to know about is Microservices. There are many framewor
         
         If there’s a failure and the consumer restarts, it will look at the last persisted offset. Since the offsets are persisted prior to actual event processing, we cannot establish whether every event received by the consumer was successfully processed or not. In this case, the consumer might end up missing some events.
         
-        ![Untitled 9 14.png](Untitled%209%2014.png)
+        ![31.png](../MessageQueue/_img/31.png)
         
     - at-least-once
         
@@ -1882,7 +1882,7 @@ Something very important to know about is Microservices. There are many framewor
         
         The consumer would restart and read from the offset. **Here, the consumer reprocesses the events more than once because even though the message was successfully processed before the failure, the position of the last received event was not saved successfully:**
         
-        ![Untitled 10 14.png](Untitled%2010%2014.png)
+        ![11.png](../MessageQueue/_img/11.png)
         
         **In order to avoid processing the same event multiple times, we can use idempotent consumers**.
         
@@ -1924,7 +1924,7 @@ Something very important to know about is Microservices. There are many framewor
         
         Let’s see what happens when a consumer fails after processing the events  but without saving the offsets in the diagram below:
         
-        ![Untitled 11 14.png](Untitled%2011%2014.png)
+        ![33.png](../MessageQueue/_img/33.png)
         
         We can remove duplication in exactly-once semantics by having these:
         
@@ -2257,11 +2257,11 @@ Stashing is a powerful tool to put aside code that you just wrote, without pushi
     
     - [ ] Design and Development Principles
         
-        ![Untitled 13 13.png](../Software_Architecture/_img/Untitled%2013%2013.png)
+        ![75.png](../Software_Architecture/_img/75.png)
         
     - [ ] Architectural Patterns
         
-        ![Untitled 14 13.png](../Software_Architecture/_img/Untitled%2014%2013.png)
+        ![73.png](../Software_Architecture/_img/73.png)
         
 
 ### **Sample 1: URL Shortening Service**

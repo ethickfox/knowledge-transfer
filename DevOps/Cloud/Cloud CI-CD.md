@@ -1,4 +1,4 @@
-![Untitled 54.png](../../Software_Architecture/_img/Untitled%2054.png)
+![56.png](../../Software_Architecture/_img/56.png)
 
 **Continuous integration** is a DevOps software development practice where developers regularly merge their code changes into a central repository, after which automated builds and tests are run. Continuous integration most often refers to the build or integration stage of the software release process and entails both an automation component (e.g. a CI or build service) and a cultural component (e.g. learning to integrate frequently).
 
@@ -8,7 +8,7 @@
 
 With continuous delivery, every code change is built, tested, and then pushed to a non-production testing or staging environment. There can be multiple, parallel test stages before a production deployment. The difference between **continuous delivery** and **continuous deployment** is the presence of a manual approval to update to production. With continuous deployment, a release to production happens automatically without explicit approval.
 
-![Untitled 1 15.png](Untitled%201%2015.png)
+![Untitled7.png](../_img/Untitled7.png)
 
 **CodeCommit** is a secure, highly scalable, managed source control service that hosts private Git repositories. It provides:
 
@@ -49,7 +49,7 @@ CI/CD field has a wide variety of tools to choose from. The most well-known solu
 
   
 
-![Untitled 2 11.png](Untitled%202%2011.png)
+![38.png](../_img/38.png)
 
 1. As input, you must provide CodeBuild with a build project. A build project includes information about how to run a build, including where to get the source code, which build environment to use, which build commands to run, and where to store the build output. A build environment represents a combination of operating system, programming language runtime, and tools that CodeBuild uses to run a build.
 2. CodeBuild uses the build project to create the build environment.

@@ -2,7 +2,7 @@ Document oriented database, using BSON(Binary JSON), well known for data consist
 
 Build up on CAP concept, which is for disturbed database systems
 
-![Untitled 45.png](../../Software_Architecture/_img/Untitled%2045.png)
+![89.png](../../Software_Architecture/_img/89.png)
 
 Advantages
 
@@ -440,7 +440,7 @@ WHERE <output array field> IN (
 
 Special data structures, that store small portion of the data in ordered and easy to search efficiently way
 
-![Untitled 2 7.png](../../Software_Architecture/_img/Untitled%202%207.png)
+![20.png](../../Software_Architecture/_img/20.png)
 
 **Indexes improve query performance:**
 
@@ -536,13 +536,13 @@ Data that is accessed together should be stored together.
 
 A relationship where a data entity in one set is connected to exactly one data entity in another set
 
-![Untitled 3 7.png](_img/Untitled%203%207.png)
+![Untitled3.png](_img/Untitled3.png)
 
 ### One-to-Many
 
 A relationship where a data entity in one set is connected to any number of data entities in another set
 
-![Untitled 4 5.png](_img/Untitled%204%205.png)
+![Untitled5.png](_img/Untitled5.png)
 
 ### Many-to-Many
 
@@ -556,7 +556,7 @@ Simplify queries and improves overall query performance
 Ideal for one-to-many and many-to-many relationships among data  
 Has pitfalls like large documents and unbounded documents  
 
-![Untitled 5 5.png](Untitled%205%205.png)
+![76.png](../../DevOps/_img/76.png)
 
 **Referencing**  
 We refer to documents in another collection in our document  
@@ -569,7 +569,7 @@ No duplication of data
 Smaller documents  
 Querying from multiple documents costs extra resources and impacts read performance  
 
-![Untitled 6 5.png](Untitled%206%205.png)
+![83.png](../../DevOps/_img/83.png)
 
 ## ACID
 

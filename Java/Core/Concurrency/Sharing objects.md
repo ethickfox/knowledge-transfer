@@ -4,7 +4,7 @@ There is no guarantee that reading thread will see variable written by another t
 
 In this case program might output 42, 0 or stuck
 
-![Untitled 3 5.png](_img/Untitled%203%205.png)
+![Untitled 3 5.png](../../_img/Untitled%203%205.png)
 
 This might happen due to **reordering.** In order to have a better performance compiler might cache and reorder operations. When the main thread writes first to number and then to ready without synchronisation, the reader thread could see these operations in different order or not at all.
 

@@ -16,7 +16,7 @@
 
 **The CI/CD Pipeline**
 
-![Untitled 107.png](../../Software_Architecture/_img/Untitled%20107.png)
+![109.png](../../Software_Architecture/_img/109.png)
 
 **CI/CD Pipeline as Code**
 

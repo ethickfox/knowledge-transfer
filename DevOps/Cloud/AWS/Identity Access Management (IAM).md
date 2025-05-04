@@ -106,7 +106,7 @@ Example of a resource based policy:
 }
 ```
 
-![Untitled 114.png](Untitled%20114.png)
+![18.png](../../_img/18.png)
 
 A policy is an entity in AWS that, when attached to an identity or resource, defines their permissions. AWS evaluates these policies when a principal, such as a user, makes a request. If you specify multiple conditions, or multiple keys in a single condition, IAM evaluates them using a logical AND operation. If you specify a single condition with multiple values for one key, IAM evaluates the condition using a logical OR operation. For a permission to be granted, all conditions must be met.
 
@@ -114,7 +114,7 @@ Policy types, statements and syntax could be found [here](https://docs.aws.amaz
 
 Please review core IAM Policy elements
 
-![Untitled 1 38.png](Untitled%201%2038.png)
+![14.png](../../_img/14.png)
 
 ### Assume IAM role
 
@@ -146,13 +146,13 @@ In order for this to work, the principal that assumes the role needs the sts:Ass
 - Security Token
 - Expiration - a timestamp that tells you when the credentials expire
 
-![Untitled 2 28.png](Untitled%202%2028.png)
+![43.png](../../_img/43.png)
 
 ### PassRole
 
 IAM > User > Permissions
 
-![Untitled 3 23.png](Untitled%203%2023.png)
+![45.png](../../_img/45.png)
 
 ```Java
 {
@@ -176,11 +176,11 @@ By giving a role or user the iam:PassRole permission, you are saying "this entit
 You can limit which roles a user or service can pass to others by specifying the role ARN(s) in the Resource field of the policy that grants them iam:PassRole:  
 Without PassRole we could set administrator IAM role for new Instance  
 
-![Untitled 4 18.png](Untitled%204%2018.png)
+![50.png](../../_img/50.png)
 
 With PassRole we can set only allowed IAM role for new Instance
 
-![Untitled 5 18.png](Untitled%205%2018.png)
+![95.png](../../_img/95.png)
 
 ### IAM policy simulator
 

@@ -43,18 +43,28 @@
             "id": "c0bc7be845530622",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
+                "file": "Soft_Skills/_img/3.png"
               },
-              "icon": "lucide-file",
-              "title": "index"
+              "icon": "lucide-image",
+              "title": "3"
+            }
+          },
+          {
+            "id": "66db3a088def0d1e",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Software_Architecture/_img/162.png"
+              },
+              "icon": "lucide-image",
+              "title": "162"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -74,7 +84,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -146,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Software_Architecture/_img/162.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from 162"
             }
           },
           {
@@ -187,19 +197,25 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "c0bc7be845530622",
+  "active": "66db3a088def0d1e",
   "lastOpenFiles": [
+    "Software_Architecture/_img/161.png",
+    "Software_Architecture/_img/1612.png",
+    "Software_Architecture/_img/160.png",
+    "Software_Architecture/_img/159.png",
+    "Software_Architecture/_img/157.png",
+    "Software_Architecture/_img/156.png",
+    "Software_Architecture/_img/155.png",
+    "Software_Architecture/_img/154.png",
+    "Software_Architecture/_img/153.png",
+    "Software_Architecture/_img/152.png",
+    "Software_Architecture/_img/151.png",
+    "index.md",
     "README.md",
     "Software_Architecture/Designing_Data_Intensive_Applications.md",
     "DevOps/Cloud/AWS/Elastic Compute Cloud (EC2).md",
     "Java/Core/Java_Versions/Java_Versions.md",
-    "index.md",
-    "Java/_img/Untitled 2 13.png",
     "Java/Frameworks/Spring/Security.md",
-    "Java/_img/Untitled 15 7.png",
-    "Java/_img/Untitled 13 8.png",
-    "Java/_img/Untitled 9 8.png",
-    "Java/_img/Untitled 3 13.png",
     "Software_Architecture/Deployment_Strategies.md",
     "Startups/Building_startup.md",
     "Soft_Skills/Self_Management/GTD.md",
@@ -219,22 +235,16 @@
     "Software_Architecture/System_Architecture/Microservices_Architecture.md",
     "Software_Architecture/Patterns/Flyweight.md",
     "Soft_Skills/Project_Management/Waterfall.md",
-    "Soft_Skills/Project_Management/Technical_Debt.md",
     "Software_Architecture/System_Architecture",
     "Soft_Skills/Self_Management",
     "Soft_Skills/Project_Management",
     "Databases",
-    "Databases/NoSQL/_img/Untitled 1 28.png",
     "JavaScript/Frameworks",
     "JavaScript/Libraries",
     "Java/Libraries",
     "assets/css/style.scss",
     "assets/css",
     "assets",
-    "Software_Architecture/_img/Pasted image 20250503212231.png",
-    "Software_Architecture/_img/Untitled 123.png",
-    "Testing/_img/Untitled 3 26.png",
-    "JavaScript/_img/Untitled 3 27.png",
     "Untitled.canvas"
   ]
 }

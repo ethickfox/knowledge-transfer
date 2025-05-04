@@ -26,7 +26,7 @@ Identifying and estimating code quality requires you to consider two aspects of 
       
     **Testable code is code that's written so that it can be verified independently. Developers should be able to write automated tests that demonstrate the behaviors they want to verify. Such code should consist of small, functionally independent behaviors that make up a system. Otherwise, a task to cover code with readable tests may become difficult or even impossible.
 
-![Untitled 40.png](../../Software_Architecture/_img/Untitled%2040.png)
+![94.png](../../Software_Architecture/_img/94.png)
 
 **Establishing Coding Standards**
 
