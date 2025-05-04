@@ -8,7 +8,7 @@ Topic:
 ---
 AWS fully managed database services provide continuous monitoring, self-healing storage, and automated scaling to help you focus on application development.
 
-![[Untitled 121.png|Untitled 121.png]]
+![[../../../Software_Architecture/_img/Untitled 121.png|Untitled 121.png]]
 
 ## Pricing considerations and free tier details:
 

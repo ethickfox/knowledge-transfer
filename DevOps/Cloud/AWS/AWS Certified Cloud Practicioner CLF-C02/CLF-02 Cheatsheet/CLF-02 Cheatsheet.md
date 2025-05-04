@@ -1424,7 +1424,7 @@ AWS Service Health Dashboard publishes most up-to-the-minute information on the 
 5. Security
 6. Operations
 
-![[Untitled 2 34.png|Untitled 2 34.png]]
+![[../../../../../Software_Architecture/_img/Untitled 2 34.png|Untitled 2 34.png]]
 
 ### AWS CAF tasks that a company should perform when planning to migrate to the AWS Cloud
 

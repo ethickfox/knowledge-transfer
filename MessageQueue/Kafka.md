@@ -13,6 +13,7 @@ Topic:
 
 — распределённый программный брокер сообщений
 
+
 Брокер сообщений - архитектурный паттерн в распределённых системах; приложение, которое преобразует сообщение по одному протоколу от приложения-источника в сообщение протокола приложения-приёмника, тем самым выступая между ними посредником. Кроме преобразования сообщений из одного формата в другой, в задачи брокера сообщений также входит:
 
 - проверка сообщения на ошибки;
@@ -84,7 +85,7 @@ However, in case if one of the consumers in the group dies, any of the other con
 
 You might be interested in having [_exactly-once processing_](https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/) semantics where a message is processed only once.
 
-![[Untitled 53.png|Untitled 53.png]]
+![[../Software_Architecture/_img/Untitled 53.png|Untitled 53.png]]
 
 [https://www.baeldung.com/java-kafka-streams-vs-kafka-consumer](https://www.baeldung.com/java-kafka-streams-vs-kafka-consumer)
 
@@ -115,3 +116,5 @@ Meanwhile, Kafka uses topics and partitions to queue messages. When a producer s
 A RabbitMQ broker routes the message to the destination queue. Once read, the consumer sends an acknowledgement (ACK) reply to the broker, which then deletes the message from the queue.
 
 Unlike RabbitMQ, Apache Kafka appends the message to a log file, which remains until its retention period expires. That way, consumers can reprocess streamed data at any time within the stipulated period.
+
+# [Zookeeper](Zookeeper.md)

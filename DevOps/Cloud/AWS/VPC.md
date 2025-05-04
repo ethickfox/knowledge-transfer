@@ -67,7 +67,7 @@ An Amazon VPC peering connection is a networking connection between two Amazon V
 
 With large number of VPCs, Transit Gateway provides simpler VPC-to-VPC communication management over VPC Peering. Note that the transit hub can be used to interconnect not only our VPCs but also on-premises networks
 
-![[Untitled 6 4.png|Untitled 6 4.png]]
+![[../../../Software_Architecture/_img/Untitled 6 4.png|Untitled 6 4.png]]
 
 The Transit Gateway provides a hub and spoke design for connecting VPCs and on-premises networks as a fully managed service without VPN overlay.
 
@@ -100,7 +100,7 @@ Amazon Route 53 effectively connects user requests to infrastructure running in 
 
 ![[Untitled 11 4.png|Untitled 11 4.png]]
 
-![[Untitled 12 4.png|Untitled 12 4.png]]
+![[../../../Software_Architecture/_img/Untitled 12 4.png|Untitled 12 4.png]]
 
 ## Use cases / Considerations
 

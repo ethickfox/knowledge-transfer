@@ -54,13 +54,13 @@ Basic Template
 
 ![[Untitled 2 17.png|Untitled 2 17.png]]
 
-![[Untitled 3 17.png|Untitled 3 17.png]]
+![[../../../Software_Architecture/_img/Untitled 3 17.png|Untitled 3 17.png]]
 
 ![[Untitled 4 13.png|Untitled 4 13.png]]
 
-![[Untitled 5 13.png|Untitled 5 13.png]]
+![[../../../Software_Architecture/_img/Untitled 5 13.png|Untitled 5 13.png]]
 
-![[Untitled 6 13.png|Untitled 6 13.png]]
+![[../../../Software_Architecture/_img/Untitled 6 13.png|Untitled 6 13.png]]
 
 ![[Untitled 7 11.png|Untitled 7 11.png]]
 
@@ -88,7 +88,7 @@ Output
 
 ![[Untitled 18 7.png|Untitled 18 7.png]]
 
-![[Untitled 19 7.png|Untitled 19 7.png]]
+![[../../../Software_Architecture/_img/Untitled 19 7.png|Untitled 19 7.png]]
 
 S3
 
@@ -108,7 +108,7 @@ S3
 4. How can you use the same template for multiple environments?
 5. Where can you view the results of template execution?
 
-![[Untitled 20 6.png|Untitled 20 6.png]]
+![[../../../Software_Architecture/_img/Untitled 20 6.png|Untitled 20 6.png]]
 
 ![[Untitled 21 6.png|Untitled 21 6.png]]
 

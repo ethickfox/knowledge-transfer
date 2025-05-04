@@ -8,7 +8,7 @@ Topic:
 ---
 ![[Untitled 47.png|Untitled 47.png]]
 
-![[Untitled 1 11.png|Untitled 1 11.png]]
+![[../Software_Architecture/_img/Untitled 1 11.png|Untitled 1 11.png]]
 
 ![[Untitled 2 8.png|Untitled 2 8.png]]
 

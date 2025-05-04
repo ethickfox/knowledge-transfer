@@ -16,7 +16,7 @@ Status: Not started
 - Search structured data and text blocks
 - Document database - not as standardized as SQL
 
-![[Untitled 58.png|Untitled 58.png]]
+![[../Databases/NoSQL/_img/Untitled 58.png|Untitled 58.png]]
 
 How Cluster of Nodes Work?
 
@@ -243,7 +243,7 @@ DELETE bowled_over/_doc/2
 
   
 
-![[Untitled 2 12.png|Untitled 2 12.png]]
+![[../Software_Architecture/_img/Untitled 2 12.png|Untitled 2 12.png]]
 
 Create the schema
 
@@ -263,11 +263,11 @@ PUT simple_schema
 
 Nested
 
-![[Untitled 3 12.png|Untitled 3 12.png]]
+![[../Software_Architecture/_img/Untitled 3 12.png|Untitled 3 12.png]]
 
-![[Untitled 4 9.png|Untitled 4 9.png]]
+![[../Software_Architecture/_img/Untitled 4 9.png|Untitled 4 9.png]]
 
-![[Untitled 5 9.png|Untitled 5 9.png]]
+![[../Software_Architecture/_img/Untitled 5 9.png|Untitled 5 9.png]]
 
 Compute multiple fields for search\
 
@@ -289,11 +289,11 @@ Conditional pipelines
 
 ![[Untitled 11 7.png|Untitled 11 7.png]]
 
-![[Untitled 12 7.png|Untitled 12 7.png]]
+![[../Software_Architecture/_img/Untitled 12 7.png|Untitled 12 7.png]]
 
   
 
-![[Untitled 13 7.png|Untitled 13 7.png]]
+![[../Software_Architecture/_img/Untitled 13 7.png|Untitled 13 7.png]]
 
 ![[Untitled 14 7.png|Untitled 14 7.png]]
 

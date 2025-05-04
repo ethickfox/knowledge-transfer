@@ -6,4 +6,4 @@ Status: Not started
 Topic:
   - "[[AWS]]"
 ---
-![[Untitled 39.png|Untitled 39.png]]
+![[../../../Software_Architecture/_img/Untitled 39.png|Untitled 39.png]]

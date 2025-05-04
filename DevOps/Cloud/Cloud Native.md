@@ -8,11 +8,11 @@ Topic:
 ---
 ![[Untitled 110.png|Untitled 110.png]]
 
-![[Untitled 1 36.png|Untitled 1 36.png]]
+![[../../Software_Architecture/_img/Untitled 1 36.png|Untitled 1 36.png]]
 
-![[Untitled 2 26.png|Untitled 2 26.png]]
+![[../../Software_Architecture/_img/Untitled 2 26.png|Untitled 2 26.png]]
 
-![[Untitled 3 21.png|Untitled 3 21.png]]
+![[../../Software_Architecture/_img/Untitled 3 21.png|Untitled 3 21.png]]
 
 ![[Untitled 4 16.png|Untitled 4 16.png]]
 

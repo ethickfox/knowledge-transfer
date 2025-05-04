@@ -19,7 +19,7 @@
 - Declaratively manage services, which guarantees the deployed applications are always running the way you intended them to run.
 - Health-check and self-heal your apps with autoplacement, autorestart, autoreplication, and autoscaling.
 
-![[Untitled 120.png|Untitled 120.png]]
+![[../../Software_Architecture/_img/Untitled 120.png|Untitled 120.png]]
 ### Main parts
 ==**Cluster**== - is a grouping of nodes that run containerized apps in an efficient, automated, distributed, and scalable manner. A Kubernetes cluster consists of a set of worker machines, called nodes, that run containerized applications. Every cluster has at least one worker node.
 
@@ -339,4 +339,4 @@ kubectl logs pod-info-development-78bbb77995-l47xp -n development
 minikube start
 kubectl get nodes  # Verify cluster is running
 ```
-- [Spring_Boot_with_Kubernetes](Spring_Boot_with_Kubernetes.md)
+## [Spring_Boot_with_Kubernetes](Spring_Boot_with_Kubernetes.md)

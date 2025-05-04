@@ -8,7 +8,7 @@ Topic:
 ---
 **Amazon Elastic Compute Cloud (Amazon EC2)** provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few **virtual servers** as you need, configure security and networking, and manage storage. Amazon EC2 enables you to scale up or down to handle changes in requirements or spikes in popularity, reducing your need to forecast traffic.
 
-![[Untitled 48.png|Untitled 48.png]]
+![[../../../Software_Architecture/_img/Untitled 48.png|Untitled 48.png]]
 
 AMI - preconfigured server image with OS and other applications
 
@@ -60,7 +60,7 @@ Amazon EC2 provides a wide selection of instance types optimized for different u
 
 ![[Untitled 3 9.png|Untitled 3 9.png]]
 
-![[Untitled 4 7.png|Untitled 4 7.png]]
+![[../../../Software_Architecture/_img/Untitled 4 7.png|Untitled 4 7.png]]
 
 ![[Untitled 5 7.png|Untitled 5 7.png]]
 
@@ -239,7 +239,7 @@ The following tables provide examples of calculations to determine the price per
 
 **Amazon EC2 Auto Scaling** helps you ensure that you have the correct number of Amazon EC2 instances available to handle the load for your application. You create collections of EC2 instances, called Auto Scaling groups. You can specify the minimum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes below this size. You can specify the maximum number of instances in each Auto Scaling group, and Amazon EC2 Auto Scaling ensures that your group never goes above this size. If you specify the desired capacity, either when you create the group or at any time thereafter, Amazon EC2 Auto Scaling ensures that your group has this many instances. If you specify scaling policies, then Amazon EC2 Auto Scaling can launch or terminate instances as demand on your application increases or decreases.
 
-![[Untitled 12 5.png|Untitled 12 5.png]]
+![[../../../Software_Architecture/_img/Untitled 12 5.png|Untitled 12 5.png]]
 
 ## Use cases:
 
