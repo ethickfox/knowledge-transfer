@@ -16,7 +16,7 @@ Status: Not started
 - Search structured data and text blocks
 - Document database - not as standardized as SQL
 
-![[../Databases/NoSQL/_img/Untitled 58.png|Untitled 58.png]]
+![Untitled 58.png](../Databases/NoSQL/_img/Untitled%2058.png)
 
 How Cluster of Nodes Work?
 
@@ -25,7 +25,7 @@ How Cluster of Nodes Work?
 - Leaders are distributed for redundancy
 - Data nodes are assigned as needed
 
-![[Untitled 1 16.png|Untitled 1 16.png]]
+![Untitled 1 16.png](Untitled%201%2016.png)
 
 ## DSL
 
@@ -243,7 +243,7 @@ DELETE bowled_over/_doc/2
 
   
 
-![[../Software_Architecture/_img/Untitled 2 12.png|Untitled 2 12.png]]
+![Untitled 2 12.png](../Software_Architecture/_img/Untitled%202%2012.png)
 
 Create the schema
 
@@ -263,44 +263,44 @@ PUT simple_schema
 
 Nested
 
-![[../Software_Architecture/_img/Untitled 3 12.png|Untitled 3 12.png]]
+![Untitled 3 12.png](../Software_Architecture/_img/Untitled%203%2012.png)
 
-![[../Software_Architecture/_img/Untitled 4 9.png|Untitled 4 9.png]]
+![Untitled 4 9.png](../Software_Architecture/_img/Untitled%204%209.png)
 
-![[../Software_Architecture/_img/Untitled 5 9.png|Untitled 5 9.png]]
+![Untitled 5 9.png](../Software_Architecture/_img/Untitled%205%209.png)
 
 Compute multiple fields for search\
 
 Creates field monikers from first and last name
 
-![[Untitled 6 9.png|Untitled 6 9.png]]
+![Untitled 6 9.png](Untitled%206%209.png)
 
 Fuzziness
 
-![[Untitled 7 7.png|Untitled 7 7.png]]
+![Untitled 7 7.png](Untitled%207%207.png)
 
-![[Untitled 8 7.png|Untitled 8 7.png]]
+![Untitled 8 7.png](Untitled%208%207.png)
 
-![[Untitled 9 7.png|Untitled 9 7.png]]
+![Untitled 9 7.png](Untitled%209%207.png)
 
 Conditional pipelines
 
-![[Untitled 10 7.png|Untitled 10 7.png]]
+![Untitled 10 7.png](Untitled%2010%207.png)
 
-![[Untitled 11 7.png|Untitled 11 7.png]]
+![Untitled 11 7.png](Untitled%2011%207.png)
 
-![[../Software_Architecture/_img/Untitled 12 7.png|Untitled 12 7.png]]
+![Untitled 12 7.png](../Software_Architecture/_img/Untitled%2012%207.png)
 
   
 
-![[../Software_Architecture/_img/Untitled 13 7.png|Untitled 13 7.png]]
+![Untitled 13 7.png](../Software_Architecture/_img/Untitled%2013%207.png)
 
-![[Untitled 14 7.png|Untitled 14 7.png]]
+![Untitled 14 7.png](Untitled%2014%207.png)
 
 search by several indexes
 
-![[Untitled 15 6.png|Untitled 15 6.png]]
+![Untitled 15 6.png](Untitled%2015%206.png)
 
 Scripts
 
-![[Untitled 16 6.png|Untitled 16 6.png]]
+![Untitled 16 6.png](Untitled%2016%206.png)

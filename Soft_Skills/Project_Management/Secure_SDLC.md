@@ -5,7 +5,7 @@ Last recall: 2023-08-23
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Security]]"
+  - "[Security](Security.md)"
 ---
 **The Risks of Poorly Secured Software**
 
@@ -21,7 +21,7 @@ Topic:
 **Shift-left security means moving security to the earliest possible point in the development process. In a more traditional development approach, development starts without security, and software quality is only checked during the operations and monitoring phases. In shift-left security, teams embed security processes and tools in the CI/CD pipeline, allowing them to catch and correct vulnerabilities and bugs before they launch a product. Testing, feedback, and revisions happen regularly in the shift-left practice, making it easier and less expensive to fix issues. Review the graphic below and compare approaches by the number of security activities performed at each SDLC phase.  
   
 
-![[../../Software_Architecture/_img/Untitled 96.png|Untitled 96.png]]
+![Untitled 96.png](../../Software_Architecture/_img/Untitled%2096.png)
 
   
 
@@ -118,7 +118,7 @@ Topic:
 
 **Security in Agile Development**
 
-![[Untitled 1 25.png|Untitled 1 25.png]]
+![Untitled 1 25.png](Untitled%201%2025.png)
 
 - **One-Time Security Activities**
     - Identify security/privacy experts
@@ -135,7 +135,7 @@ Topic:
 
 **Accelerate SSDLC with DevSecOps**
 
-![[Untitled 2 18.png|Untitled 2 18.png]]
+![Untitled 2 18.png](Untitled%202%2018.png)
 
   
 
@@ -190,7 +190,7 @@ A successful cyberattack has technical and business impacts. The measure of **t
 
   
 
-![[../../Software_Architecture/_img/Untitled 3 18.png|Untitled 3 18.png]]
+![Untitled 3 18.png](../../Software_Architecture/_img/Untitled%203%2018.png)
 
 **LOW**
 

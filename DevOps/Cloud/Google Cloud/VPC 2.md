@@ -6,7 +6,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Google Cloud]]"
+  - "[Google Cloud](Google%20Cloud.md)"
 ---
 ## Virtual Private Cloud
 

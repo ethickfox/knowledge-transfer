@@ -5,7 +5,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Programming Methodologies]]"
+  - "[Programming Methodologies](Programming%20Methodologies)"
 ---
 ## **Scrum**
 
@@ -21,7 +21,7 @@ On a Scrum team, there are generally two sides of a project: **business** and�
     - **Scrum Master**
     - **Developers**
 
-![[../../Software_Architecture/_img/Untitled 113.png|Untitled 113.png]]
+![Untitled 113.png](../../Software_Architecture/_img/Untitled%20113.png)
 
 ### **Ceremonies**
 

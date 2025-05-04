@@ -21,7 +21,7 @@ public class UnsafeSequence {
 }
 ```
 
-![[Untitled 43.png|Untitled 43.png]]
+![Untitled 43.png](Untitled%2043.png)
 
 ```JavaScript
 @ThreadSafe
@@ -73,9 +73,9 @@ Race condition in Lazy initialization - you check if object is instantiated, if 
 
 When multiple variables participate in an invariant, they are not independent, thus when you update one, you should update other in the same atomic operation
 
-![[Untitled 1 8.png|Untitled 1 8.png]]
+![Untitled 1 8.png](Untitled%201%208.png)
 
-![[Untitled 2 5.png|Untitled 2 5.png]]
+![Untitled 2 5.png](Untitled%202%205.png)
 
 Intrinsic locks in java act like mutex - at most one thread can own the lock
 
@@ -111,7 +111,7 @@ There is no guarantee that reading thread will see variable written by another t
 
 In this case program might output 42, 0 or stuck
 
-![[_img/Untitled 3 5.png|Untitled 3 5.png]]
+![Untitled 3 5.png](_img/Untitled%203%205.png)
 
 This might happen due to **reordering.** In order to have a better performance compiler might cache and reorder operations. When the main thread writes first to number and then to ready without synchronisation, the reader thread could see these operations in different order or not at all.
 

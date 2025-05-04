@@ -5,7 +5,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Computer Science/Development/Clean Code\\|Clean Code]]"
+  - "[Clean Code](Computer%20Science/Development/Clean%20Code%5C%5C)"
 ---
 # **Code quality**
 
@@ -35,7 +35,7 @@ Identifying and estimating code quality requires you to consider two aspects of 
       
     **Testable code is code that's written so that it can be verified independently. Developers should be able to write automated tests that demonstrate the behaviors they want to verify. Such code should consist of small, functionally independent behaviors that make up a system. Otherwise, a task to cover code with readable tests may become difficult or even impossible.
 
-![[../../Software_Architecture/_img/Untitled 40.png|Untitled 40.png]]
+![Untitled 40.png](../../Software_Architecture/_img/Untitled%2040.png)
 
 **Establishing Coding Standards**
 

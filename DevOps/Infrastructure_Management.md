@@ -4,13 +4,13 @@ Last edited time: 2023-07-16T20:24
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[DevOps/CI-CD/CI-CD\\|CI-CD]]"
+  - "[CI-CD](DevOps/CI-CD/CI-CD%5C%5C)"
 ---
 The management of essential technical operations—hardware, software, networking in physical and virtual environments—aiming to minimize downtime and maintain business productivity.
 
 **System Infrastructure Options**
 
-![[../Software_Architecture/_img/Untitled 93.png|Untitled 93.png]]
+![Untitled 93.png](../Software_Architecture/_img/Untitled%2093.png)
 
 **Physical Infrastructure  
   
@@ -194,7 +194,7 @@ A developing discipline and practice that enables organizations to maximize comm
 
 Managing and configuring computer data centers through machine-readable definition files instead of configuring them manually or using interactive configuration tools.
 
-![[../Software_Architecture/_img/Untitled 1 23.png|Untitled 1 23.png]]
+![Untitled 1 23.png](../Software_Architecture/_img/Untitled%201%2023.png)
 
 - **Infrastructure Code  
       

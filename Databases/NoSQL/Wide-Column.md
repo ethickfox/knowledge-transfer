@@ -5,5 +5,5 @@ Last recall: 2023-07-24
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[NoSql]]"
+  - "[NoSql](NoSql)"
 ---

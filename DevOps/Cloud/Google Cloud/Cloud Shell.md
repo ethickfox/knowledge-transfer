@@ -4,7 +4,7 @@ Last edited time: 2023-07-16T20:25
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Google Cloud]]"
+  - "[Google Cloud](Google%20Cloud.md)"
 ---
 [![](https://lh3.googleusercontent.com/cGHQ8_UsJu281Zb1ULgkD2nsBqUVlxvF2yElVELl9ts3Ph_0t9SVLF4aEegJTW6YuIzgeAOoSqyzXrbIgerzxDNdvLL-LzRCdf7zlYnZ3STPGA47rw6C4UWy9clLQ0mZssrgqhbHY597TZnDDWD_qznm4lCTJ2Z8J7pxdFEupOuJ8cnxUR7vt7Ht785ZgQ)](https://lh3.googleusercontent.com/cGHQ8_UsJu281Zb1ULgkD2nsBqUVlxvF2yElVELl9ts3Ph_0t9SVLF4aEegJTW6YuIzgeAOoSqyzXrbIgerzxDNdvLL-LzRCdf7zlYnZ3STPGA47rw6C4UWy9clLQ0mZssrgqhbHY597TZnDDWD_qznm4lCTJ2Z8J7pxdFEupOuJ8cnxUR7vt7Ht785ZgQ)
 

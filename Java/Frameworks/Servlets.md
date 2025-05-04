@@ -4,7 +4,7 @@ Last edited time: 2023-07-16T20:26
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Java EE]]"
+  - "[Java EE](Java%20EE)"
 ---
 # **Сервлет**
 

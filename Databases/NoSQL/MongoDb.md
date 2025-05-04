@@ -4,13 +4,13 @@ Last edited time: 2023-07-25T15:21
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[NoSql]]"
+  - "[NoSql](NoSql)"
 ---
 Document oriented database, using BSON(Binary JSON), well known for data consistency
 
 Build up on CAP concept, which is for disturbed database systems
 
-![[../../Software_Architecture/_img/Untitled 45.png|Untitled 45.png]]
+![Untitled 45.png](../../Software_Architecture/_img/Untitled%2045.png)
 
 Advantages
 
@@ -22,7 +22,7 @@ Disadvantages
 - Does not automatically catch referential integrity errors
 - Application responsible for managing data integrity
 
-![[Untitled 1 10.png|Untitled 1 10.png]]
+![Untitled 1 10.png](Untitled%201%2010.png)
 
   
 
@@ -448,7 +448,7 @@ WHERE <output array field> IN (
 
 Special data structures, that store small portion of the data in ordered and easy to search efficiently way
 
-![[../../Software_Architecture/_img/Untitled 2 7.png|Untitled 2 7.png]]
+![Untitled 2 7.png](../../Software_Architecture/_img/Untitled%202%207.png)
 
 **Indexes improve query performance:**
 
@@ -544,13 +544,13 @@ Data that is accessed together should be stored together.
 
 A relationship where a data entity in one set is connected to exactly one data entity in another set
 
-![[_img/Untitled 3 7.png|Untitled 3 7.png]]
+![Untitled 3 7.png](_img/Untitled%203%207.png)
 
 ### One-to-Many
 
 A relationship where a data entity in one set is connected to any number of data entities in another set
 
-![[_img/Untitled 4 5.png|Untitled 4 5.png]]
+![Untitled 4 5.png](_img/Untitled%204%205.png)
 
 ### Many-to-Many
 
@@ -564,7 +564,7 @@ Simplify queries and improves overall query performance
 Ideal for one-to-many and many-to-many relationships among data  
 Has pitfalls like large documents and unbounded documents  
 
-![[Untitled 5 5.png|Untitled 5 5.png]]
+![Untitled 5 5.png](Untitled%205%205.png)
 
 **Referencing**  
 We refer to documents in another collection in our document  
@@ -577,7 +577,7 @@ No duplication of data
 Smaller documents  
 Querying from multiple documents costs extra resources and impacts read performance  
 
-![[Untitled 6 5.png|Untitled 6 5.png]]
+![Untitled 6 5.png](Untitled%206%205.png)
 
 ## ACID
 

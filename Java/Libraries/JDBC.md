@@ -4,7 +4,7 @@ Last edited time: 2023-07-16T20:26
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Hibernate/Hibernate 1\\|Hibernate]]"
+  - "[Hibernate](Hibernate/Hibernate%201%5C%5C)"
 ---
 # **JDBC**
 

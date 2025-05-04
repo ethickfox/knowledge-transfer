@@ -2,6 +2,6 @@
 Key Topic:
   - Data
 SubTopic:
-  - "[[Postgresql]]"
-  - "[[RDBMS]]"
+  - "[Postgresql](Postgresql.md)"
+  - "[RDBMS](RDBMS.md)"
 ---

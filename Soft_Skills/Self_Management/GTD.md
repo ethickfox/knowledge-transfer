@@ -4,9 +4,9 @@ Last edited time: 2023-08-20T18:54
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Project Management]]"
+  - "[Project Management](Project%20Management)"
 ---
-![[../_img/Untitled 109.png|Untitled 109.png]]
+![Untitled 109.png](../_img/Untitled%20109.png)
 
 ## Clarify
 
@@ -17,4 +17,4 @@ Topic:
 - If the task is no longer needed or actionable, delete it.
 - If a task requires more than one step, create a project to house all of the items associated with it and identify the one next action you can take to move the project forward.
 
-![[../_img/Untitled 1 35.png|Untitled 1 35.png]]
+![Untitled 1 35.png](../_img/Untitled%201%2035.png)

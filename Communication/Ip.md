@@ -4,7 +4,7 @@ Last edited time: 2023-08-01T10:36
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Network]]"
+  - "[Network](Network)"
 ---
 ## [Understanding IP addresses](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking#understanding-ip-addresses)
 

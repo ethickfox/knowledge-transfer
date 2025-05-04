@@ -4,7 +4,7 @@ Last edited time: 2023-08-18T12:56
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[NoSql]]"
+  - "[NoSql](NoSql)"
 ---
 Redis keys are binary safe; this means that you can use any binary sequence as a key, from a string like "foo" to the content of a JPEG file. **The empty string is also a valid key**. A few other rules about keys: Very long keys are not a good idea.
 
@@ -50,29 +50,29 @@ Redis supports [**asynchronous replication**](https://redis.io/topics/replicati
 
   
 
-![[_img/Untitled 99.png|Untitled 99.png]]
+![Untitled 99.png](_img/Untitled%2099.png)
 
-![[_img/Untitled 1 28.png|Untitled 1 28.png]]
+![Untitled 1 28.png](_img/Untitled%201%2028.png)
 
-![[_img/Untitled 2 20.png|Untitled 2 20.png]]
+![Untitled 2 20.png](_img/Untitled%202%2020.png)
 
-![[_img/Untitled 3 19.png|Untitled 3 19.png]]
+![Untitled 3 19.png](_img/Untitled%203%2019.png)
 
-![[_img/Untitled 4 14.png|Untitled 4 14.png]]
+![Untitled 4 14.png](_img/Untitled%204%2014.png)
 
-![[Untitled 5 14.png|Untitled 5 14.png]]
+![Untitled 5 14.png](Untitled%205%2014.png)
 
-![[_img/Untitled 6 14.png|Untitled 6 14.png]]
+![Untitled 6 14.png](_img/Untitled%206%2014.png)
 
-![[_img/Untitled 7 12.png|Untitled 7 12.png]]
+![Untitled 7 12.png](_img/Untitled%207%2012.png)
 
-![[_img/Untitled 8 12.png|Untitled 8 12.png]]
+![Untitled 8 12.png](_img/Untitled%208%2012.png)
 
-![[_img/Untitled 9 12.png|Untitled 9 12.png]]
+![Untitled 9 12.png](_img/Untitled%209%2012.png)
 
-![[_img/Untitled 10 12.png|Untitled 10 12.png]]
+![Untitled 10 12.png](_img/Untitled%2010%2012.png)
 
-![[_img/Untitled 11 12.png|Untitled 11 12.png]]
+![Untitled 11 12.png](_img/Untitled%2011%2012.png)
 
 ## Data types
 

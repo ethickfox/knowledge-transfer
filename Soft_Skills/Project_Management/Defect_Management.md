@@ -5,11 +5,11 @@ Last recall: 2023-11-25
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Knowledge Transfer/Testing/Testing Basics\\|Testing Basics]]"
+  - "[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics%5C%5C)"
 ---
 **Basics of Defect Management**
 
-[[D3 Interview]]
+[D3 Interview](D3%20Interview)
 
 **Error**
 
@@ -54,7 +54,7 @@ A failure means that the application is not functioning or is unable to function
 
 **The Defect Life Cycle**
 
-![[../../Software_Architecture/_img/Untitled 46.png|Untitled 46.png]]
+![Untitled 46.png](../../Software_Architecture/_img/Untitled%2046.png)
 
 **Defect Discovery**
 

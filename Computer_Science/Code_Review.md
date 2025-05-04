@@ -5,7 +5,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Computer Science/Development/Clean Code\\|Clean Code]]"
+  - "[Clean Code](Computer%20Science/Development/Clean%20Code%5C%5C)"
 ---
 Code review results in several benefits
 
@@ -60,7 +60,7 @@ Code review results in several benefits
 
 No matter what type of code review your team chooses, there is a universal workflow that applies.
 
-![[../Software_Architecture/_img/Untitled 51.png|Untitled 51.png]]
+![Untitled 51.png](../Software_Architecture/_img/Untitled%2051.png)
 
 **Key Areas of Code Review**
 

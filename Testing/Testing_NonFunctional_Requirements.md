@@ -5,7 +5,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Knowledge Transfer/Testing/Testing Basics\\|Testing Basics]]"
+  - "[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics%5C%5C)"
 ---
 A **non-functional requirement** describes operational qualities rather than behavioral qualities—not _what_ the system will do but _how_ the system will do it. **Non-functional testing** verifies how well the system meets these requirements by examining its performance, usability, reliability, etc. For example, a non-functional test of an e-shop would check how many people could simultaneously place an order. While functional testing checks whether requirements are met, non-functional testing tends to check measurable specifications of an application.
 
@@ -45,7 +45,7 @@ A **non-functional requirement** describes operational qualities rather than be
 |**Manual testing**|Can be executed either manually or using automation tools|Is preferably performed using automation tools|
 |**Example Requirements to Test**|1. A login page must show text boxes to enter a username and password.  <br>2.  <br>The search function in the application should not be case sensitive.  <br>3.  <br>A verification email is sent to a user whenever he/she registers for the first time.|1. The dashboard should load in 2 seconds.  <br>2.  <br>Software should be installable on all versions of Windows and Mac.  <br>3.  <br>The GUI should provide help and tooltips to make it easy to use.|
 
-![[Untitled 100.png|Untitled 100.png]]
+![Untitled 100.png](Untitled%20100.png)
 
 - **Planning  
       

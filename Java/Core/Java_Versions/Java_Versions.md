@@ -1,6 +1,6 @@
 Newer Java versions now follow every 6 months. Hence, Java 21 is scheduled for September 2023, Java 22 for March 2024 and so on. In the past, Java release cycles were _much longer_, up to 3-5 years. This graphic demonstrates that:
 
-![[Untitled 52.png|Untitled 52.png]]
+![Untitled 52.png](Untitled%2052.png)
 - [Java8](Java8.md)
 - [Java8(LTS)](Java8(LTS).md)
 - [Java11(LTS)](Java11(LTS).md)

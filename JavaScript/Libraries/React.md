@@ -98,7 +98,7 @@ A higher-order component acts as a container for other components. This helps to
 - [Props](https://www.simplilearn.com/tutorials/reactjs-tutorial/react-props) are short for Properties. It is a React built-in object that stores the value of attributes of a tag and works similarly to HTML attributes.
 - Props provide a way to pass data from one component to another component. Props are passed to the component in the same way as arguments are passed in a function.
 
-![[Untitled 59.png|Untitled 59.png]]
+![Untitled 59.png](Untitled%2059.png)
 
 |   |   |   |
 |---|---|---|
@@ -235,4 +235,4 @@ export default ( {onChoice}) => {
 - **Action:** The source information for the store.
 - **Reducer:** Specifies how the application's state changes in response to actions sent to the store.
 
-![[Untitled 1 17.png|Untitled 1 17.png]]
+![Untitled 1 17.png](Untitled%201%2017.png)

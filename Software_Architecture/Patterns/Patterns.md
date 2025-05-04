@@ -5,7 +5,7 @@ Last recall: 2023-07-11
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Program Structure Architecture]]"
+  - "[Program Structure Architecture](Program%20Structure%20Architecture)"
 ---
 # Creational patterns
 
@@ -15,7 +15,7 @@ Topic:
 
 Provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
-![[../_img/Untitled 63.png|Untitled 63.png]]
+![Untitled 63.png](../_img/Untitled%2063.png)
 
 ### Implementation
 
@@ -163,7 +163,7 @@ Now, how about the product variants? For each variant of a product family, we cr
 
 The client code has to work with both factories and products via their respective abstract interfaces. This lets you change the type of a factory that you pass to the client code, as well as the product variant that the client code receives, without breaking the actual client code.
 
-![[../_img/Untitled 1 20.png|Untitled 1 20.png]]
+![Untitled 1 20.png](../_img/Untitled%201%2020.png)
 
 ### Implementation
 
@@ -285,7 +285,7 @@ Lets you construct complex objects step by step. The pattern allows you to produ
 
 You can go further and extract a series of calls to the builder steps you use to construct a product into a separate class called _director_. The director class defines the order in which to execute the building steps, while the builder provides the implementation for those steps.
 
-![[../_img/Untitled 2 15.png|Untitled 2 15.png]]
+![Untitled 2 15.png](../_img/Untitled%202%2015.png)
 
 ### Implementation
 
@@ -408,11 +408,11 @@ Lets you copy existing objects without making your code dependent on their class
 
 The Prototype pattern delegates the cloning process to the actual objects that are being cloned. The pattern declares a common interface for all objects that support cloning. This interface lets you clone an object without coupling your code to the class of that object. Usually, such an interface contains just a single `clone` method.
 
-![[../_img/Untitled 3 15.png|Untitled 3 15.png]]
+![Untitled 3 15.png](../_img/Untitled%203%2015.png)
 
 The **Prototype Registry** provides an easy way to access frequently-used prototypes. It stores a set of pre-built objects that are ready to be copied. The simplest prototype registry is a `name → prototype` hash map
 
-![[../_img/Untitled 4 11.png|Untitled 4 11.png]]
+![Untitled 4 11.png](../_img/Untitled%204%2011.png)
 
 ### Implementation
 
@@ -689,7 +689,7 @@ You can create an _adapter_. This is a special object that converts the interfa
 
 An adapter wraps one of the objects to hide the complexity of conversion happening behind the scenes. The wrapped object isn’t even aware of the adapter. For example, you can wrap an object that operates in meters and kilometers with an adapter that converts all of the data to imperial units such as feet and miles.
 
-![[../_img/Untitled 5 11.png|Untitled 5 11.png]]
+![Untitled 5 11.png](../_img/Untitled%205%2011.png)
 
 ### Implementation
 
@@ -765,7 +765,7 @@ public class SquarePegAdapter extends RoundPeg {
 
 Lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other
 
-![[../_img/Untitled 6 11.png|Untitled 6 11.png]]
+![Untitled 6 11.png](../_img/Untitled%206%2011.png)
 
 ### Implementation
 
@@ -977,7 +977,7 @@ public class AdvancedRemote extends BasicRemote {
 
 Lets you compose objects into tree structures and then work with these structures as if they were individual objects.
 
-![[../_img/Untitled 7 9.png|Untitled 7 9.png]]
+![Untitled 7 9.png](../_img/Untitled%207%209.png)
 
 ### Implementation
 
@@ -1366,7 +1366,7 @@ Lets you attach new behaviours to objects by placing these objects inside specia
 
 “Wrapper” is the alternative nickname for the Decorator pattern that clearly expresses the main idea of the pattern. A _wrapper_ is an object that can be linked with some _target_ object. The wrapper contains the same set of methods as the target and delegates to it all requests it receives. However, the wrapper may alter the result by doing something either before or after it passes the request to the target.
 
-![[../_img/Untitled 8 9.png|Untitled 8 9.png]]
+![Untitled 8 9.png](../_img/Untitled%208%209.png)
 
 ### Implementation
 
@@ -1483,7 +1483,7 @@ Provides a simplified interface to a library, a framework, or any other complex 
 
 A facade is a class that provides a simple interface to a complex subsystem which contains lots of moving parts. A facade might provide limited functionality in comparison to working with the subsystem directly. However, it includes only those features that clients really care about.
 
-![[../_img/Untitled 9 9.png|Untitled 9 9.png]]
+![Untitled 9 9.png](../_img/Untitled%209%209.png)
 
 ### Implementaton
 
@@ -1554,9 +1554,9 @@ public class VideoConversionFacade {
 [Flyweight](Flyweight.md)
 Lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object.
 
-![[../_img/Untitled 10 9.png|Untitled 10 9.png]]
+![Untitled 10 9.png](../_img/Untitled%2010%209.png)
 
-![[../_img/Untitled 11 9.png|Untitled 11 9.png]]
+![Untitled 11 9.png](../_img/Untitled%2011%209.png)
 
 ```Java
 	public class Tree {
@@ -1629,7 +1629,7 @@ public class Forest extends JFrame {
 
 Lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
 
-![[../_img/Untitled 12 9.png|Untitled 12 9.png]]
+![Untitled 12 9.png](../_img/Untitled%2012%209.png)
 
 ### Implementation
 
@@ -1771,11 +1771,11 @@ Each linked handler has a field for storing a reference to the next handler in t
 
 Here’s the best part: a handler can decide not to pass the request further down the chain and effectively stop any further processing.
 
-![[../_img/Untitled 13 9.png|Untitled 13 9.png]]
+![Untitled 13 9.png](../_img/Untitled%2013%209.png)
 
 However, there’s a slightly different approach (and it’s a bit more canonical) in which, upon receiving a request, a handler decides whether it can process it. If it can, it doesn’t pass the request any further. So it’s either only one handler that processes the request or none at all. This approach is very common when dealing with events in stacks of elements within a graphical user interface.
 
-![[../_img/Untitled 14 9.png|Untitled 14 9.png]]
+![Untitled 14 9.png](../_img/Untitled%2014%209.png)
 
 ### Implementation
 
@@ -1845,9 +1845,9 @@ public class RoleCheckMiddleware extends Middleware {
 
 **Command** is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations
 
-![[../_img/Untitled 15 8.png|Untitled 15 8.png]]
+![Untitled 15 8.png](../_img/Untitled%2015%208.png)
 
-![[../_img/Untitled 16 8.png|Untitled 16 8.png]]
+![Untitled 16 8.png](../_img/Untitled%2016%208.png)
 
 ### Implementation
 
@@ -1918,7 +1918,7 @@ ctrlC.addActionListener( e -> executeCommand(new CutCommand(editor)));
 
 **Iterator** is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
 
-![[../_img/Untitled 17 5.png|Untitled 17 5.png]]
+![Untitled 17 5.png](../_img/Untitled%2017%205.png)
 
 ### Implementation
 
@@ -2022,7 +2022,7 @@ public void sendSpamToCoworkers(String profileEmail, String message) {
 
 The Mediator pattern suggests that you should cease all direct communication between the components which you want to make independent of each other. Instead, these components must collaborate indirectly, by calling a special mediator object that redirects the calls to appropriate components. As a result, the components depend only on a single mediator class instead of being coupled to dozens of their colleagues.
 
-![[Untitled 18 5.png|Untitled 18 5.png]]
+![Untitled 18 5.png](Untitled%2018%205.png)
 
 ### Implementation
 
@@ -2115,7 +2115,7 @@ public class Editor implements Mediator {
 
 The pattern suggests storing the copy of the object’s state in a special object called _memento_. The contents of the memento aren’t accessible to any other object except the one that produced it. Other objects must communicate with mementos using a limited interface which may allow fetching the snapshot’s metadata (creation time, the name of the performed operation, etc.), but not the original object’s state contained in the snapshot.
 
-![[../_img/Untitled 19 5.png|Untitled 19 5.png]]
+![Untitled 19 5.png](../_img/Untitled%2019%205.png)
 
 Such a restrictive policy lets you store mementos inside other objects, usually called _caretakers_. Since the caretaker works with the memento only via the limited interface, it’s not able to tamper with the state stored inside the memento. At the same time, the originator has access to all fields inside the memento, allowing it to restore its previous state at will.
 
@@ -2219,7 +2219,7 @@ public class Memento {
 
 The Observer pattern suggests that you add a subscription mechanism to the publisher class so individual objects can subscribe to or unsubscribe from a stream of events coming from that publisher. Fear not! Everything isn’t as complicated as it sounds. In reality, this mechanism consists of 1) an array field for storing a list of references to subscriber objects and 2) several public methods which allow adding subscribers to and removing them from that list.
 
-![[../_img/Untitled 20 4.png|Untitled 20 4.png]]
+![Untitled 20 4.png](../_img/Untitled%2020%204.png)
 
 ### Implementation
 
@@ -2314,7 +2314,7 @@ public class LogOpenListener implements EventListener {
 
 The main idea is that, at any given moment, there’s a _finite_ number of _states_ which a program can be in. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously. However, depending on a current state, the program may or may not switch to certain other states. These switching rules, called _transitions_, are also finite and predetermined.
 
-![[../_img/Untitled 21 4.png|Untitled 21 4.png]]
+![Untitled 21 4.png](../_img/Untitled%2021%204.png)
 
 This structure may look similar to the [**Strategy**](https://refactoring.guru/design-patterns/strategy) pattern, but there’s one key difference. In the State pattern, the particular states may be aware of each other and initiate transitions from one state to another, whereas strategies almost never know about each other.
 
@@ -2456,7 +2456,7 @@ The context isn’t responsible for selecting an appropriate algorithm for the j
 
 This way the context becomes independent of concrete strategies, so you can add new algorithms or modify existing ones without changing the code of the context or other strategies.
 
-![[../_img/Untitled 22 4.png|Untitled 22 4.png]]
+![Untitled 22 4.png](../_img/Untitled%2022%204.png)
 
 [**Command**](https://refactoring.guru/design-patterns/command) and [**Strategy**](https://refactoring.guru/design-patterns/strategy) may look similar because you can use both to parameterize an object with some action. However, they have very different intents.
 
@@ -2549,7 +2549,7 @@ public class Order {
 
 The Template Method pattern suggests that you break down an algorithm into a series of steps, turn these steps into methods, and put a series of calls to these methods inside a single _template method._ The steps may either be `abstract`, or have some default implementation. To use the algorithm, the client is supposed to provide its own subclass, implement all abstract steps, and override some of the optional ones if needed (but not the template method itself).
 
-![[../_img/Untitled 23 4.png|Untitled 23 4.png]]
+![Untitled 23 4.png](../_img/Untitled%2023%204.png)
 
 ### Implementation
 
@@ -2619,7 +2619,7 @@ network.post(message);
 
 The Visitor pattern suggests that you place the new behavior into a separate class called _visitor_, instead of trying to integrate it into existing classes. The original object that had to perform the behavior is now passed to one of the visitor’s methods as an argument, providing the method access to all necessary data contained within the object.
 
-![[../_img/Untitled 24 4.png|Untitled 24 4.png]]
+![Untitled 24 4.png](../_img/Untitled%2024%204.png)
 
 ```Java
 public interface Shape {
@@ -2741,7 +2741,7 @@ The template method pattern is a technique that defines the steps required for s
 
   
 
-![[Untitled 25 4.png|Untitled 25 4.png]]
+![Untitled 25 4.png](Untitled%2025%204.png)
 
 # **SOLID**
 
@@ -2831,23 +2831,23 @@ private dbConnectionInterface dbConnection;
 
 [![](https://lh3.googleusercontent.com/32pra7orL16BNNBO0r7BGtO8dZZ4W549RSR8EDr-BIR6mHjfQ18-cXImWSzQv9y_Kql6OH9D9p6VOu23GiRNgeMD-p_fxFpRUaKibtEkYFGoA869BINRTjLZQMndhB-c6f4I9rpHr5vjLG-fYPeic0v1GyoaO6ZqWRQ5fXr3g1o-Z7z16aBD7fz0wyX5)](https://lh3.googleusercontent.com/32pra7orL16BNNBO0r7BGtO8dZZ4W549RSR8EDr-BIR6mHjfQ18-cXImWSzQv9y_Kql6OH9D9p6VOu23GiRNgeMD-p_fxFpRUaKibtEkYFGoA869BINRTjLZQMndhB-c6f4I9rpHr5vjLG-fYPeic0v1GyoaO6ZqWRQ5fXr3g1o-Z7z16aBD7fz0wyX5)
 
-![[Untitled 26 3.png|Untitled 26 3.png]]
+![Untitled 26 3.png](Untitled%2026%203.png)
 
-![[Untitled 27 3.png|Untitled 27 3.png]]
+![Untitled 27 3.png](Untitled%2027%203.png)
 
-![[Untitled 28 3.png|Untitled 28 3.png]]
+![Untitled 28 3.png](Untitled%2028%203.png)
 
 ### **Команда**
 
 Преобразует запросы в объекты и передает их в методы.(лямбды)
 
-![[Untitled 29 3.png|Untitled 29 3.png]]
+![Untitled 29 3.png](Untitled%2029%203.png)
 
-![[../_img/Untitled 30 3.png|Untitled 30 3.png]]
+![Untitled 30 3.png](../_img/Untitled%2030%203.png)
 
-![[Untitled 31 3.png|Untitled 31 3.png]]
+![Untitled 31 3.png](Untitled%2031%203.png)
 
-![[Untitled 32 3.png|Untitled 32 3.png]]
+![Untitled 32 3.png](Untitled%2032%203.png)
 
   
 
@@ -2857,11 +2857,11 @@ private dbConnectionInterface dbConnection;
 
 ## Mediator
 
-![[Untitled 33 3.png|Untitled 33 3.png]]
+![Untitled 33 3.png](Untitled%2033%203.png)
 
-![[Untitled 34 3.png|Untitled 34 3.png]]
+![Untitled 34 3.png](Untitled%2034%203.png)
 
-![[../_img/Untitled 35 3.png|Untitled 35 3.png]]
+![Untitled 35 3.png](../_img/Untitled%2035%203.png)
 
 ### **Состояние**
 
@@ -2875,21 +2875,21 @@ private dbConnectionInterface dbConnection;
 
 Определяет скелет алгоритма, перекладывая особенности его реализации на подклассы. Позволяет подклассам менять шаги, не меняя его общей структуры(Реализованные методы InputStream, OutputStream)
 
-![[Untitled 36 3.png|Untitled 36 3.png]]
+![Untitled 36 3.png](Untitled%2036%203.png)
 
   
 
-![[Untitled 37 3.png|Untitled 37 3.png]]
+![Untitled 37 3.png](Untitled%2037%203.png)
 
   
 
-![[Untitled 38 3.png|Untitled 38 3.png]]
+![Untitled 38 3.png](Untitled%2038%203.png)
 
-![[../_img/Untitled 39 3.png|Untitled 39 3.png]]
+![Untitled 39 3.png](../_img/Untitled%2039%203.png)
 
-![[Untitled 40 3.png|Untitled 40 3.png]]
+![Untitled 40 3.png](Untitled%2040%203.png)
 
-![[Untitled 41 3.png|Untitled 41 3.png]]
+![Untitled 41 3.png](Untitled%2041%203.png)
 
 ### **Посетитель**
 
@@ -2901,15 +2901,15 @@ private dbConnectionInterface dbConnection;
 
 Позволяет объектам с несовместимыми интерфейсами взаимодействовать.(InputStreamReader)
 
-![[Untitled 42 3.png|Untitled 42 3.png]]
+![Untitled 42 3.png](Untitled%2042%203.png)
 
-![[Untitled 43 3.png|Untitled 43 3.png]]
+![Untitled 43 3.png](Untitled%2043%203.png)
 
-![[Untitled 44 3.png|Untitled 44 3.png]]
+![Untitled 44 3.png](Untitled%2044%203.png)
 
-![[Untitled 45 2.png|Untitled 45 2.png]]
+![Untitled 45 2.png](Untitled%2045%202.png)
 
-![[Untitled 46 2.png|Untitled 46 2.png]]
+![Untitled 46 2.png](Untitled%2046%202.png)
 
 ### **Фасад**
 
@@ -2923,9 +2923,9 @@ private dbConnectionInterface dbConnection;
 
 Позволяет добавлять объектам новую функциональность в рантайме. Класс оборачивает целевой и добавляет ему новый функционал(Collections.unmodifieble)
 
-![[Untitled 47 2.png|Untitled 47 2.png]]
+![Untitled 47 2.png](Untitled%2047%202.png)
 
-![[Untitled 48 2.png|Untitled 48 2.png]]
+![Untitled 48 2.png](Untitled%2048%202.png)
 
 **Reasons to Favour Composition over Inheritance in Java and OOP:**
 
@@ -2977,13 +2977,13 @@ class Employee {
 }
 ```
 
-![[Untitled 49 2.png|Untitled 49 2.png]]
+![Untitled 49 2.png](Untitled%2049%202.png)
 
-![[Untitled 50 2.png|Untitled 50 2.png]]
+![Untitled 50 2.png](Untitled%2050%202.png)
 
-![[Untitled 51 2.png|Untitled 51 2.png]]
+![Untitled 51 2.png](Untitled%2051%202.png)
 
-![[Untitled 52 2.png|Untitled 52 2.png]]
+![Untitled 52 2.png](Untitled%2052%202.png)
 
 ### **Легковес**
 
@@ -2999,23 +2999,23 @@ class Employee {
 
 Подставляет вместо реальных объектов объекты-заместители, которые перехватывают вызов к оригинальному объекту.
 
-![[Untitled 53 2.png|Untitled 53 2.png]]
+![Untitled 53 2.png](Untitled%2053%202.png)
 
-![[Untitled 54 2.png|Untitled 54 2.png]]
+![Untitled 54 2.png](Untitled%2054%202.png)
 
-![[Untitled 55 2.png|Untitled 55 2.png]]
+![Untitled 55 2.png](Untitled%2055%202.png)
 
-![[Untitled 56 2.png|Untitled 56 2.png]]
+![Untitled 56 2.png](Untitled%2056%202.png)
 
-![[Untitled 57 2.png|Untitled 57 2.png]]
+![Untitled 57 2.png](Untitled%2057%202.png)
 
 ## Interpreter
 
-![[Untitled 58 2.png|Untitled 58 2.png]]
+![Untitled 58 2.png](Untitled%2058%202.png)
 
-![[Untitled 59 2.png|Untitled 59 2.png]]
+![Untitled 59 2.png](Untitled%2059%202.png)
 
-![[Untitled 60 2.png|Untitled 60 2.png]]
+![Untitled 60 2.png](Untitled%2060%202.png)
 
 ## **Порождающие**
 
@@ -3023,17 +3023,17 @@ class Employee {
 
 Метод, который в зависимости от требования создает объект подкласса интерфейса(интерфейс Game, подклассы Chess и тд)
 
-![[Untitled 61 2.png|Untitled 61 2.png]]
+![Untitled 61 2.png](Untitled%2061%202.png)
 
-![[Untitled 62 2.png|Untitled 62 2.png]]
+![Untitled 62 2.png](Untitled%2062%202.png)
 
-![[Untitled 63 2.png|Untitled 63 2.png]]
+![Untitled 63 2.png](Untitled%2063%202.png)
 
-![[Untitled 64.png]]
+![Untitled 64](Untitled%2064.png)
 
-![[Untitled 65.png]]
+![Untitled 65](Untitled%2065.png)
 
-![[Untitled 66.png]]
+![Untitled 66](Untitled%2066.png)
 
 ### **Абстрактная фабрика**
 
@@ -3043,21 +3043,21 @@ class Employee {
 
 Копирование объектов не вдаваясь в подробности их реализации. Копирование поручается самим копируемым объектам(Clonable)
 
-![[Untitled 67.png]]
+![Untitled 67](Untitled%2067.png)
 
-![[Untitled 68.png]]
+![Untitled 68](Untitled%2068.png)
 
-![[Untitled 69.png]]
+![Untitled 69](Untitled%2069.png)
 
 ### Builder
 
 Разделяет создание сложного объекта на несколько этапов. Создается соответствующий класс билдер, с помощью которого создается объект.(Lombok builder)
 
-![[Untitled 70.png]]
+![Untitled 70](Untitled%2070.png)
 
-![[Untitled 71.png]]
+![Untitled 71](Untitled%2071.png)
 
-![[Untitled 72.png]]
+![Untitled 72](Untitled%2072.png)
 
 ### Singleton
 
@@ -3067,13 +3067,13 @@ class Employee {
 
 Наличие синглтона понижает тестируемость приложения в целом и классов, которые используют синглтон,
 
-![[Untitled 73.png]]
+![Untitled 73](Untitled%2073.png)
 
-![[Untitled 74.png]]
+![Untitled 74](Untitled%2074.png)
 
-![[Untitled 75.png]]
+![Untitled 75](Untitled%2075.png)
 
-![[Untitled 76.png]]
+![Untitled 76](Untitled%2076.png)
 
   
 
@@ -3123,32 +3123,32 @@ class Employee {
 
 ## Repository pattern
 
-![[Untitled 77.png]]
+![Untitled 77](Untitled%2077.png)
 
-![[Untitled 78.png]]
+![Untitled 78](Untitled%2078.png)
 
-![[Untitled 79.png]]
+![Untitled 79](Untitled%2079.png)
 
-![[Untitled 80.png]]
+![Untitled 80](Untitled%2080.png)
 
-![[Untitled 81.png]]
+![Untitled 81](Untitled%2081.png)
 
 ## Modell-View-Controller
 
-![[Untitled 82.png]]
+![Untitled 82](Untitled%2082.png)
 
-![[Untitled 83.png]]
+![Untitled 83](Untitled%2083.png)
 
-![[Untitled 84.png]]
+![Untitled 84](Untitled%2084.png)
 
 ## Inversion of control
 
-![[Untitled 85.png]]
+![Untitled 85](Untitled%2085.png)
 
-![[Untitled 86.png]]
+![Untitled 86](Untitled%2086.png)
 
-![[Untitled 87.png]]
+![Untitled 87](Untitled%2087.png)
 
-![[Untitled 88.png]]
+![Untitled 88](Untitled%2088.png)
 
-![[Untitled 89.png]]
+![Untitled 89](Untitled%2089.png)

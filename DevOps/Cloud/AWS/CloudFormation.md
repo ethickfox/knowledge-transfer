@@ -4,7 +4,7 @@ Last edited time: 2023-08-23T13:34
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[AWS]]"
+  - "[AWS](AWS.md)"
 ---
 Basic Template
 
@@ -48,47 +48,47 @@ Basic Template
 }
 ```
 
-![[Untitled 94.png|Untitled 94.png]]
+![Untitled 94.png](Untitled%2094.png)
 
-![[Untitled 1 24.png|Untitled 1 24.png]]
+![Untitled 1 24.png](Untitled%201%2024.png)
 
-![[Untitled 2 17.png|Untitled 2 17.png]]
+![Untitled 2 17.png](Untitled%202%2017.png)
 
-![[../../../Software_Architecture/_img/Untitled 3 17.png|Untitled 3 17.png]]
+![Untitled 3 17.png](../../../Software_Architecture/_img/Untitled%203%2017.png)
 
-![[Untitled 4 13.png|Untitled 4 13.png]]
+![Untitled 4 13.png](Untitled%204%2013.png)
 
-![[../../../Software_Architecture/_img/Untitled 5 13.png|Untitled 5 13.png]]
+![Untitled 5 13.png](../../../Software_Architecture/_img/Untitled%205%2013.png)
 
-![[../../../Software_Architecture/_img/Untitled 6 13.png|Untitled 6 13.png]]
+![Untitled 6 13.png](../../../Software_Architecture/_img/Untitled%206%2013.png)
 
-![[Untitled 7 11.png|Untitled 7 11.png]]
+![Untitled 7 11.png](Untitled%207%2011.png)
 
-![[Untitled 8 11.png|Untitled 8 11.png]]
+![Untitled 8 11.png](Untitled%208%2011.png)
 
-![[Untitled 9 11.png|Untitled 9 11.png]]
+![Untitled 9 11.png](Untitled%209%2011.png)
 
-![[Untitled 10 11.png|Untitled 10 11.png]]
+![Untitled 10 11.png](Untitled%2010%2011.png)
 
-![[Untitled 11 11.png|Untitled 11 11.png]]
+![Untitled 11 11.png](Untitled%2011%2011.png)
 
-![[Untitled 12 11.png|Untitled 12 11.png]]
+![Untitled 12 11.png](Untitled%2012%2011.png)
 
-![[Untitled 13 11.png|Untitled 13 11.png]]
+![Untitled 13 11.png](Untitled%2013%2011.png)
 
-![[Untitled 14 11.png|Untitled 14 11.png]]
+![Untitled 14 11.png](Untitled%2014%2011.png)
 
-![[Untitled 15 10.png|Untitled 15 10.png]]
+![Untitled 15 10.png](Untitled%2015%2010.png)
 
-![[Untitled 16 10.png|Untitled 16 10.png]]
+![Untitled 16 10.png](Untitled%2016%2010.png)
 
-![[Untitled 17 7.png|Untitled 17 7.png]]
+![Untitled 17 7.png](Untitled%2017%207.png)
 
 Output
 
-![[Untitled 18 7.png|Untitled 18 7.png]]
+![Untitled 18 7.png](Untitled%2018%207.png)
 
-![[../../../Software_Architecture/_img/Untitled 19 7.png|Untitled 19 7.png]]
+![Untitled 19 7.png](../../../Software_Architecture/_img/Untitled%2019%207.png)
 
 S3
 
@@ -108,11 +108,11 @@ S3
 4. How can you use the same template for multiple environments?
 5. Where can you view the results of template execution?
 
-![[../../../Software_Architecture/_img/Untitled 20 6.png|Untitled 20 6.png]]
+![Untitled 20 6.png](../../../Software_Architecture/_img/Untitled%2020%206.png)
 
-![[Untitled 21 6.png|Untitled 21 6.png]]
+![Untitled 21 6.png](Untitled%2021%206.png)
 
-![[Untitled 22 6.png|Untitled 22 6.png]]
+![Untitled 22 6.png](Untitled%2022%206.png)
 
 With the `DeletionPolicy` attribute you can preserve, and in some cases, backup a resource when its stack is deleted.
 
@@ -127,21 +127,21 @@ A load balancer cannot be attached to multiple subnets in the same Availability 
 
 ## Parameters
 
-![[Untitled 23 6.png|Untitled 23 6.png]]
+![Untitled 23 6.png](Untitled%2023%206.png)
 
-![[Untitled 24 6.png|Untitled 24 6.png]]
+![Untitled 24 6.png](Untitled%2024%206.png)
 
-![[Untitled 25 6.png|Untitled 25 6.png]]
+![Untitled 25 6.png](Untitled%2025%206.png)
 
 ## Mappings
 
-![[Untitled 26 5.png|Untitled 26 5.png]]
+![Untitled 26 5.png](Untitled%2026%205.png)
 
 ### AWS Systems Manager (SSM)
 
 AWS Systems Manager (formerly known as SSM) is an AWS service that you can use to view and control your infrastructure on AWS. Using the Systems Manager console, you can view operational data from multiple AWS services and automate operational tasks across your AWS resources. Systems Manager helps you maintain security and compliance by scanning your managed instances and reporting on (or taking corrective action on) any policy violations it detects.
 
-![[Untitled 27 5.png|Untitled 27 5.png]]
+![Untitled 27 5.png](Untitled%2027%205.png)
 
 Run Command and Maintenance Windows are each capabilities of Systems Manager.
 

@@ -5,7 +5,7 @@ Last recall: 2024-04-03
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[../Core\\|Java Core]]"
+  - "[Java Core](../Core%5C%5C)"
 ---
 ## **JAR and WAR**
 **Java Archive** : Contains class files, resources, dependent libraries, and other files needed for the application. Can contain the entry point, and be used as a target for executing the java command
@@ -34,7 +34,7 @@ JIT stands for Just-In-Time and it is used for improving the performance during 
 	2. compiles them to get more efficient and native code. 
 	3. ensures that the prioritized method calls are optimized.
 4. Once the above step is done, the JVM executes the optimized code directly instead of interpreting the code again. This increases the performance and speed of the execution.
-![[Untitled 62.png|Untitled 62.png]]
+![Untitled 62.png](Untitled%2062.png)
 Typically, only some paricular pieces of code are executed frequently enough in an application and the performance of the application depends mainly on the speed of execution of these parts. These code parts are called hot spots (hot spots), they are and compiles the JIT compiler. There are 2 compilers:
 - C1(client) - compiles faster, but the code is less optimal
 - C2 (server) - compiles more slowly, but the code is more optimal

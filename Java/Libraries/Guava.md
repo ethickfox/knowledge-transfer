@@ -6,7 +6,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Ready To Discuss
 Topic:
-  - "[[Data Structures]]"
+  - "[Data Structures](Data%20Structures)"
 ---
 ==**Guava**== - open-source set of libraries for Java, developed by Google Engineers. It provides utility methods for collections (old and new), caching, primitive support, concurrency, common annotations, string processing, I/O and validations.
 
@@ -55,7 +55,7 @@ v3
 
 Consists of backingMap and rowMap
 
-![[Untitled 55.png|Untitled 55.png]]
+![Untitled 55.png](Untitled%2055.png)
 
 ### ==**BiMap**==
 

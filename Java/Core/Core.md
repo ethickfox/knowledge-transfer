@@ -485,7 +485,7 @@ Collections.unmodifiable* - wraps collection into unmodifiable, returns Unsuppor
     
     The Java Garbage Collector (GC) typically removes unused objects when they are no longer required, but when they are still referenced, the unused objects cannot be removed. So this causes the memory leak problem. **Example** - Consider a linked list like the structure below -
     
-    ![[Untitled 56.png|Untitled 56.png]]
+    ![Untitled 56.png](Untitled%2056.png)
     
     In the above image, there are unused objects that are not referenced. But then also Garbage collection will not free it. Because it is referencing some existing referenced object. So this can be the situation of memory leak.
     

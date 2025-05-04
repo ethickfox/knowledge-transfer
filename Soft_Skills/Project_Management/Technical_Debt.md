@@ -5,7 +5,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Computer Science/Development/Clean Code\\|Clean Code]]"
+  - "[Clean Code](Computer%20Science/Development/Clean%20Code%5C%5C)"
 ---
   
 

@@ -7,7 +7,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[JavaScript/JSON\\|JSON]]"
+  - "[JSON](JavaScript/JSON%5C%5C)"
 ---
 **Познакомимся с библиотекой GSON**
 

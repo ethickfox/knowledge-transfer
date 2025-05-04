@@ -13,7 +13,7 @@ public class UnsafeSequence {
 }
 ```
 
-![[Untitled 43.png|Untitled 43.png]]
+![Untitled 43.png](Untitled%2043.png)
 
 ```JavaScript
 @ThreadSafe
@@ -66,9 +66,9 @@ Race condition in Lazy initialization - you check if object is instantiated, if 
 
 When multiple variables participate in an invariant, they are not independent, thus when you update one, you should update other in the same atomic operation
 
-![[Untitled 1 8.png|Untitled 1 8.png]]
+![Untitled 1 8.png](Untitled%201%208.png)
 
-![[Untitled 2 5.png|Untitled 2 5.png]]
+![Untitled 2 5.png](Untitled%202%205.png)
 
 Intrinsic locks in java act like mutex - at most one thread can own the lock
 
@@ -95,7 +95,7 @@ It’s common mistake to assume that synchronization is needed only when writing
 Every shared mutable variable should be guarded by exactly one lock.
 
 
-### [[Sharing objects]]
+### [Sharing objects](Sharing%20objects.md)
 
 ### Composing Objects
 

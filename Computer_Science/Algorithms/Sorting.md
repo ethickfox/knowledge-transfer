@@ -4,7 +4,7 @@ Last edited time: 2023-11-26T17:09
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Algorithms]]"
+  - "[Algorithms](Algorithms)"
 ---
 # **Алгоритмы**
 

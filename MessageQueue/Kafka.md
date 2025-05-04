@@ -7,7 +7,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: In progress
 Topic:
-  - "[[Message Brockers]]"
+  - "[Message Brockers](Message%20Brockers)"
 ---
 # **Kafka**
 
@@ -85,7 +85,7 @@ However, in case if one of the consumers in the group dies, any of the other con
 
 You might be interested in having [_exactly-once processing_](https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/) semantics where a message is processed only once.
 
-![[../Software_Architecture/_img/Untitled 53.png|Untitled 53.png]]
+![Untitled 53.png](../Software_Architecture/_img/Untitled%2053.png)
 
 [https://www.baeldung.com/java-kafka-streams-vs-kafka-consumer](https://www.baeldung.com/java-kafka-streams-vs-kafka-consumer)
 

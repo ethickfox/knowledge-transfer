@@ -6,9 +6,9 @@ Visual mythaphor for understanding that more isolated tests are faster and "chea
 
 Оригинальная пирамида тестов состоит из трёх уровней:
 
-- [[Unit_Testing/Unit_Testing]]
-- [[Integrational Testing]]
-- [[Functional Testing]]
+- [Unit_Testing](Unit_Testing/Unit_Testing.md)
+- [Integrational Testing](Integrational%20Testing)
+- [Functional Testing](Functional%20Testing)
 
 Из этой пирамиды главное запомнить два принципа:
 

@@ -7,11 +7,11 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Done
 Topic:
-  - "[[DevOps/CI-CD/Docker\\|Docker]]"
+  - "[Docker](DevOps/CI-CD/Docker%5C%5C)"
 ---
 ==**Docker**== is a technology that allows you to build, run, test, and deploy distributed applications. It uses operating-system-level virtualization to deliver software in packages called **containers**.
 
-![[../Software_Architecture/_img/Untitled 95.png|Untitled 95.png]]
+![Untitled 95.png](../Software_Architecture/_img/Untitled%2095.png)
 
 ---
 

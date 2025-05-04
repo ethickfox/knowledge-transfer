@@ -4,11 +4,11 @@ Last edited time: 2023-09-02T19:15
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[AWS]]"
+  - "[AWS](AWS.md)"
 ---
 **Amazon Simple Queue Service (Amazon SQS)** is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS eliminates the complexity and overhead associated with managing and operating message oriented middleware, and empowers developers to focus on differentiating work. Using SQS, you can send, store, and receive messages between software components at any volume, without losing messages or requiring other services to be available.
 
-![[Untitled 102.png|Untitled 102.png]]
+![Untitled 102.png](Untitled%20102.png)
 
 Amazon Simple Queue Service (Amazon SQS) offers a secure, durable, and available hosted queue that lets you integrate and decouple distributed software systems and components. Amazon SQS offers common constructs such as dead-letter queues and cost allocation tags. It provides a generic web services API that you can access using any programming language that the AWS SDK supports.
 
@@ -20,7 +20,7 @@ Amazon SQS supports both standard and FIFO queues:
 - FIFO (First-In-First-Out) queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated.
 - Maximum message size is 256kb
 
-![[Untitled 1 29.png|Untitled 1 29.png]]
+![Untitled 1 29.png](Untitled%201%2029.png)
 
 ### More about FIFO queues.
 
@@ -49,7 +49,7 @@ Determine whether you have given your consumer sufficient time to process messag
 
 ### **Simple Notification Service**
 
-![[Untitled 2 21.png|Untitled 2 21.png]]
+![Untitled 2 21.png](Untitled%202%2021.png)
 
 SNS provides message delivery from publishers to subscribers (also known as producers and consumers). Publishers communicate asynchronously with subscribers by sending messages to a topic, which is a logical access point and communication channel. Clients can subscribe to the SNS topic and receive published messages using a supported endpoint type, such as Amazon Kinesis Data Firehose, Amazon SQS, AWS Lambda, HTTP, email, mobile push notifications, and mobile text messages (SMS).
 

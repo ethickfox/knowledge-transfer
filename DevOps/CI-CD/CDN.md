@@ -4,7 +4,7 @@ Last edited time: 2023-07-16T20:26
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Web Services Architecture]]"
+  - "[Web Services Architecture](Web%20Services%20Architecture)"
 ---
 A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content.
 

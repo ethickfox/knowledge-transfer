@@ -4,7 +4,7 @@ Last edited time: 2023-08-21T16:34
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Web Services Architecture]]"
+  - "[Web Services Architecture](Web%20Services%20Architecture)"
 ---
 # **HTTP**
 

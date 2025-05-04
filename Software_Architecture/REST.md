@@ -21,7 +21,7 @@ Safe requests
 
 A safe method does not change the value that is returned, it reads – but it never writes.
 
-![[Untitled.jpeg]]
+![Untitled](Untitled.jpeg)
 
 ## **Rest api versioning**
 
@@ -86,7 +86,7 @@ Level three of maturity makes use of all three, i.e. URIs and HTTP, and HATEOAS.
 
 ### REST vs SOAP
 
-The main _difference between SOAP and REST_ is that the former provides a standard of communication between client, server, and other parties and has restricted a set of rules and format, while REST leverages the ubiquity of HTTP protocol, in both client and servers, to allow them to communicate with each other regardless of their implementation. In short, getting data from a [[top5restfulwebserviceswithspringcour]]requires less headache than getting data from a SOAP web service.
+The main _difference between SOAP and REST_ is that the former provides a standard of communication between client, server, and other parties and has restricted a set of rules and format, while REST leverages the ubiquity of HTTP protocol, in both client and servers, to allow them to communicate with each other regardless of their implementation. In short, getting data from a [top5restfulwebserviceswithspringcour](top5restfulwebserviceswithspringcour)requires less headache than getting data from a SOAP web service.
 
 In SOAP, you need to understand lengthy WSDL documents to find out the right methods and the right way to call them.
 
@@ -126,7 +126,7 @@ Processing a RESTful web service request is much faster than processing a SOAP m
 
 **6. Bandwidth**
 
-SOAP messages consume more bandwidth than RESTFul messages for the same type of an operation because [[howto]] is more verbose than [[p]], the standard way to send RESTFul messages, and SOAP has an additional header for every message while RESTFul services utilize HTTP header.
+SOAP messages consume more bandwidth than RESTFul messages for the same type of an operation because [howto](howto) is more verbose than [p](p), the standard way to send RESTFul messages, and SOAP has an additional header for every message while RESTFul services utilize HTTP header.
 
 **7. Transport Independence**
 

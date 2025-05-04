@@ -4,11 +4,11 @@ Last edited time: 2023-08-23T12:24
 Needs Rework: true
 Status: Not started
 Topic:
-  - "[[AWS]]"
+  - "[AWS](AWS.md)"
 ---
 AWS fully managed database services provide continuous monitoring, self-healing storage, and automated scaling to help you focus on application development.
 
-![[../../../Software_Architecture/_img/Untitled 121.png|Untitled 121.png]]
+![Untitled 121.png](../../../Software_Architecture/_img/Untitled%20121.png)
 
 ## Pricing considerations and free tier details:
 
@@ -27,7 +27,7 @@ AWS fully managed database services provide continuous monitoring, self-healing 
 |Time series|Internet of Things (IoT) applications, DevOps, industrial telemetry|Amazon Timestream|No|[Amazon Timestream Pricing](https://aws.amazon.com/timestream/pricing/)|
 |Ledger|Systems of record, supply chain, registrations, banking transactions|Amazon Ledger Database Services (QLDB)|No|[Amazon Ledger Database Services (QLDB)Pricing](https://aws.amazon.com/qldb/pricing/)|
 
-![[Untitled 1 42.png|Untitled 1 42.png]]
+![Untitled 1 42.png](Untitled%201%2042.png)
 
 ### RDS
 
@@ -45,13 +45,13 @@ Amazon RDS takes over many of the difficult and tedious management tasks of a re
 
 ### RedShift
 
-It is a [data warehouse](https://en.wikipedia.org/wiki/Data_warehouse) product which forms part of the larger [cloud-computing](https://en.wikipedia.org/wiki/Cloud-computing) platform [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services).[[1]](https://en.wikipedia.org/wiki/Amazon_Redshift\#cite_note-1) It is built on top of technology from the [massive parallel processing](https://en.wikipedia.org/wiki/Massive_parallel_processing) (MPP) data warehouse company [ParAccel](https://en.wikipedia.org/wiki/ParAccel) (later acquired by [Actian](https://en.wikipedia.org/wiki/Actian)),[[2]](https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-2) to handle large scale [data sets](https://en.wikipedia.org/wiki/Data_set) and [database migrations](https://en.wikipedia.org/wiki/Database#Migration).[[3]](https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-3) Redshift differs from Amazon's other hosted database offering, [Amazon RDS](https://en.wikipedia.org/wiki/Amazon_RDS), in its ability to handle analytic workloads on [big data](https://en.wikipedia.org/wiki/Big_data) data sets stored by a [column-oriented DBMS](https://en.wikipedia.org/wiki/Column-oriented_DBMS) principle. Redshift allows up to 16 [petabytes](https://en.wikipedia.org/wiki/Petabyte) of data on a cluster[[4]](https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-4) compared to Amazon RDS [Aurora's](https://en.wikipedia.org/wiki/Amazon_Aurora) maximum size of 128 terabytes.[[5]](https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-5)
+It is a [data warehouse](https://en.wikipedia.org/wiki/Data_warehouse) product which forms part of the larger [cloud-computing](https://en.wikipedia.org/wiki/Cloud-computing) platform [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services).[1](1)(https://en.wikipedia.org/wiki/Amazon_Redshift\#cite_note-1) It is built on top of technology from the [massive parallel processing](https://en.wikipedia.org/wiki/Massive_parallel_processing) (MPP) data warehouse company [ParAccel](https://en.wikipedia.org/wiki/ParAccel) (later acquired by [Actian](https://en.wikipedia.org/wiki/Actian)),[2](2)(https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-2) to handle large scale [data sets](https://en.wikipedia.org/wiki/Data_set) and [database migrations](https://en.wikipedia.org/wiki/Database#Migration).[3](3)(https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-3) Redshift differs from Amazon's other hosted database offering, [Amazon RDS](https://en.wikipedia.org/wiki/Amazon_RDS), in its ability to handle analytic workloads on [big data](https://en.wikipedia.org/wiki/Big_data) data sets stored by a [column-oriented DBMS](https://en.wikipedia.org/wiki/Column-oriented_DBMS) principle. Redshift allows up to 16 [petabytes](https://en.wikipedia.org/wiki/Petabyte) of data on a cluster[4](4)(https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-4) compared to Amazon RDS [Aurora's](https://en.wikipedia.org/wiki/Amazon_Aurora) maximum size of 128 terabytes.[5](5)(https://en.wikipedia.org/wiki/Amazon_Redshift#cite_note-5)
 
 ### **ElastiCache**
 
 In memory Database. Supports Redis or Memcached as engine. Amazon ElastiCache for Redis is a manged version of Redis – in-memory data store used mainly for caching. It can be placed in front of a database, like DynamoDB or RDS, to speed reads operations. Two common caching strategies are [lazy loading and write-through](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html).
 
-![[Untitled 2 30.png|Untitled 2 30.png]]
+![Untitled 2 30.png](Untitled%202%2030.png)
 
 **Weakly consistent**
 
@@ -77,7 +77,7 @@ Redis allows writes and strongly consistent reads on the primary node of each sh
 
 MemoryDB for Redis aims to replace both cache and database in one component – provides microsecond read latency and data durability.
 
-![[Untitled 3 25.png|Untitled 3 25.png]]
+![Untitled 3 25.png](Untitled%203%2025.png)
 
 **Strong consistency** on the primary node, eventual consistency reads on replica nodes.
 
@@ -115,7 +115,7 @@ Amazon Neptune is a fast, scalable graph database service. Neptune efficiently s
 
 Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available, and managed Apache Cassandra–compatible database service. With Amazon Keyspaces (for Apache Cassandra), you can run your Cassandra workloads on AWS using the same Cassandra application code and developer tools that you use today.
 
-![[Untitled 4 20.png|Untitled 4 20.png]]
+![Untitled 4 20.png](Untitled%204%2020.png)
 
 ### QLDB
 

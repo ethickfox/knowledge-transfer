@@ -6,7 +6,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Google Cloud]]"
+  - "[Google Cloud](Google%20Cloud.md)"
 ---
 Memorystore for Redis provides a fully-managed service that is powered by the Redis in-memory data store to build application caches that provide sub-millisecond data access.
 

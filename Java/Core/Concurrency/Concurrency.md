@@ -6,7 +6,7 @@ Last recall: 2023-11-26
 Needs Rework: false
 Status: In progress
 Topic:
-  - "[[../Core\\|Java Core]]"
+  - "[Java Core](../Core%5C%5C)"
 ---
 ## Basic terms
 
@@ -72,7 +72,7 @@ Intrinsic locks в Java выступают в качестве mutex (mutual exc
 
 **Producer Consumer Problem with Wait and Notify**
 
-[[producerconsume]]
+[producerconsume](producerconsume)
 
 ## Concurrency package
 

@@ -5,8 +5,8 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Data Structures]]"
-  - "[[Core\\|Java Core]]"
+  - "[Data Structures](Data%20Structures)"
+  - "[Java Core](Core%5C%5C)"
 ---
 ## EnumMap
 

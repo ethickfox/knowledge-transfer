@@ -6,7 +6,7 @@ Last recall: 2024-03-30
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Knowledge Transfer/Backend/Java/Java Core/Java Core\\|Java Core]]"
+  - "[Java Core](Knowledge%20Transfer/Backend/Java/Java%20Core/Java%20Core%5C%5C)"
 ---
 ## **Дженерики**
 

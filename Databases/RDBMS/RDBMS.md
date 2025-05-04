@@ -4,7 +4,7 @@ Last edited time: 2023-11-29T19:53
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[SQL]]"
+  - "[SQL](SQL.md)"
 ---
 ## **DB**
 

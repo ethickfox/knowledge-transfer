@@ -4,8 +4,8 @@ Last edited time: 2023-10-15T18:13
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Project Management]]"
+  - "[Project Management](Project%20Management)"
 ---
-![[../_img/Untitled 97.png|Untitled 97.png]]
+![Untitled 97.png](../_img/Untitled%2097.png)
 
-![[../_img/Untitled 1 26.png|Untitled 1 26.png]]
+![Untitled 1 26.png](../_img/Untitled%201%2026.png)

@@ -4,9 +4,9 @@ Last edited time: 2023-12-04T15:28
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Web Services Architecture]]"
+  - "[Web Services Architecture](Web%20Services%20Architecture)"
 ---
-![[_img/Untitled 41.png|Untitled 41.png]]
+![Untitled 41.png](_img/Untitled%2041.png)
 
 # **Microservices**
 
@@ -146,7 +146,7 @@ There are many patterns related to the microservices pattern. The Monolithic arc
     - [Health check API](https://microservices.io/patterns/observability/health-check-api.html)
     - [Log deployments and changes](https://microservices.io/patterns/observability/log-deployments-and-changes.html)
 - UI patterns:
-    - [[s]]
+    - [s](s)
     - [Client-side UI composition](https://microservices.io/patterns/ui/client-side-ui-composition.html)
 
   
@@ -157,27 +157,27 @@ Minuses
 - Additional calls(more latency)
 - Reduction to reliability
 
-![[Untitled 1 6.png|Untitled 1 6.png]]
+![Untitled 1 6.png](Untitled%201%206.png)
 
-![[Untitled 2 4.png|Untitled 2 4.png]]
+![Untitled 2 4.png](Untitled%202%204.png)
 
-![[_img/Untitled 3 4.png|Untitled 3 4.png]]
+![Untitled 3 4.png](_img/Untitled%203%204.png)
 
   
 
-![[_img/Untitled 4 3.png|Untitled 4 3.png]]
+![Untitled 4 3.png](_img/Untitled%204%203.png)
 
-![[_img/Untitled 5 3.png|Untitled 5 3.png]]
+![Untitled 5 3.png](_img/Untitled%205%203.png)
 
-![[_img/Untitled 6 3.png|Untitled 6 3.png]]
+![Untitled 6 3.png](_img/Untitled%206%203.png)
 
-![[_img/Untitled 7 3.png|Untitled 7 3.png]]
+![Untitled 7 3.png](_img/Untitled%207%203.png)
 
-![[Untitled 8 3.png|Untitled 8 3.png]]
+![Untitled 8 3.png](Untitled%208%203.png)
 
-![[_img/Untitled 9 3.png|Untitled 9 3.png]]
+![Untitled 9 3.png](_img/Untitled%209%203.png)
 
-![[_img/Untitled 10 3.png|Untitled 10 3.png]]
+![Untitled 10 3.png](_img/Untitled%2010%203.png)
 
 Instead of ACID
 
@@ -189,18 +189,18 @@ Data Layer
 
 Circuit breaker
 
-![[_img/Untitled 11 3.png|Untitled 11 3.png]]
+![Untitled 11 3.png](_img/Untitled%2011%203.png)
 
-![[_img/Untitled 12 3.png|Untitled 12 3.png]]
+![Untitled 12 3.png](_img/Untitled%2012%203.png)
 
-![[Untitled 13 3.png|Untitled 13 3.png]]
+![Untitled 13 3.png](Untitled%2013%203.png)
 
-![[_img/Untitled 14 3.png|Untitled 14 3.png]]
+![Untitled 14 3.png](_img/Untitled%2014%203.png)
 
   
 
 ### Atomic Transaction Microservices
 
-![[Untitled 15 3.png|Untitled 15 3.png]]
+![Untitled 15 3.png](Untitled%2015%203.png)
 
-![[_img/Untitled 16 3.png|Untitled 16 3.png]]
+![Untitled 16 3.png](_img/Untitled%2016%203.png)

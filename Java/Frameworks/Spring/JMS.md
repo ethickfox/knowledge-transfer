@@ -4,8 +4,8 @@ Last edited time: 2023-08-03T10:06
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Message Brockers]]"
-  - "[[Spring]]"
+  - "[Message Brockers](Message%20Brockers)"
+  - "[Spring](Spring)"
 ---
 ## Configuration with java code
 
@@ -88,7 +88,7 @@ public classAppConfig {
 
 ## Durable with non durable Listeners
 
-![[Untitled 108.png|Untitled 108.png]]
+![Untitled 108.png](Untitled%20108.png)
 
 - A **_durable subscriber_** establishes a durable subscription with a unique identity on the JMS provider. A _durable subscription_ allows subscribers to receive all the messages published on a topic, including those published while the subscriber is inactive (for example, if the JMS trigger is disabled). When the associated JMS trigger is disabled, the JMS provider holds the messages in guaranteed storage. If a durable subscription already exists for the specified durable subscriber on the JMS provider, this service resumes the subscription.
 - A **_non-durable subscription_** allows subscribers to receive messages on their chosen topic only if the messages are published while the subscriber is active. A non-durable subscription lasts the lifetime of its message consumer. Note that non-durable subscribers cannot receive messages in a load-balanced fashion.
@@ -114,7 +114,7 @@ DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFact
 
 ## Synchronous usage
 
-![[Untitled 1 34.png|Untitled 1 34.png]]
+![Untitled 1 34.png](Untitled%201%2034.png)
 
 ```Java
 @Component
@@ -143,7 +143,7 @@ You should do things the other way around. You should have a method that returns
 
 ## **Virtual Topics**
 
-![[Untitled 2 25.png|Untitled 2 25.png]]
+![Untitled 2 25.png](Untitled%202%2025.png)
 
 Virtual topics are a combination of topics and queues. Producers will write messages to a topic while listeners will consume from their own queue. ActiveMQ will cop each message from the topic to the actual consumer queues.
 

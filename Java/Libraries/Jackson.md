@@ -7,7 +7,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Knowledge Transfer/Frontend/JSON\\|JSON]]"
+  - "[JSON](Knowledge%20Transfer/Frontend/JSON%5C%5C)"
 ---
 Jackson is a library for interaction with json. It allows to work with it, by representing JSON data as:
 

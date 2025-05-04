@@ -5,7 +5,7 @@ Last recall: 2023-08-04
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Spring]]"
+  - "[Spring](Spring)"
 ---
 # **Spring MVC**
 
@@ -304,7 +304,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler
 
 ## Http Request processing
 
-Web container like Tomcat is responsible for creating Servlet and Filter instances and invoking their various life-cycle methods like [[]], service(), destroy(). In the case of an HTTP request, HttpServlet handles that, and depending upon the HTTP request method various doXXX() method is invoked by container like doGet() to process GET request and doPost() to process POST request.
+Web container like Tomcat is responsible for creating Servlet and Filter instances and invoking their various life-cycle methods like [MVC](.md), service(), destroy(). In the case of an HTTP request, HttpServlet handles that, and depending upon the HTTP request method various doXXX() method is invoked by container like doGet() to process GET request and doPost() to process POST request.
 
 ### **DispatcherServlet**
 
@@ -312,7 +312,7 @@ The DispatcherServlet is the main controller of the Spring MVC Application. All 
 
 Он реализует паттерн Front controller. https://en.m.wikipedia.org/wiki/Front_controller
 
-![[Untitled 57.png|Untitled 57.png]]
+![Untitled 57.png](Untitled%2057.png)
 
 1. После получения HTTP-запроса DispatcherServlet обращается к интерфейсу HandlerMapping, который определяет, какой Контроллер должен быть вызван, после чего, отправляет запрос в нужный Контроллер
 2. After receiving HTTP request, Application Server (Standalone or Embedded) searches for Servlet that can handle request, `DispatcherServlet` is selected based on Servlet Registration and url-pattern.
@@ -343,7 +343,7 @@ The DispatcherServlet is the main controller of the Spring MVC Application. All 
 
 ### ViewResolver
 
-The **InternalResourceViewResolver** is an implementation of the ViewResolver interface in the [[top10springm]] which resolves logical view names like "hello" to internal physical resources like Servlet and JSP files like jsp files placed under the WEB-INF folder.
+The **InternalResourceViewResolver** is an implementation of the ViewResolver interface in the [top10springm](top10springm) which resolves logical view names like "hello" to internal physical resources like Servlet and JSP files like jsp files placed under the WEB-INF folder.
 
 It's also a  best practice to put all JSP files inside the WEB-INF directory, to hide them from direct access (e.g. via a manually entered URL). If we put them inside the WEB-INF directory then only controllers will be able to access them.
 

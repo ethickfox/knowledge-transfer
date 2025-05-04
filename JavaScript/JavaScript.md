@@ -4,13 +4,13 @@ Last edited time: 2023-08-21T09:49
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Vanilla JavaScript]]"
+  - "[Vanilla JavaScript](Vanilla%20JavaScript)"
 ---
 Javascript is a **single-threaded language**, meaning that just one line of code may be run at once.
 
 **BOM** stands for _Browser Object Model_. It provides interaction with the browser. The default object of a browser is a window. So, you can call all the functions of the window by specifying the window or directly. The window object provides various properties like document, history, screen, navigator, location, innerHeight, innerWidth,
 
-![[Untitled 92.png|Untitled 92.png]]
+![Untitled 92.png](Untitled%2092.png)
 
 **DOM** stands for _Document Object Model_. A document object represents the HTML document. It can be used to access and change the content of HTML.
 

@@ -5,21 +5,21 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Message Brockers]]"
+  - "[Message Brockers](Message%20Brockers)"
 ---
 ### **Messaging Queue.**
 
-![[../Software_Architecture/_img/Untitled 50.png|Untitled 50.png]]
+![Untitled 50.png](../Software_Architecture/_img/Untitled%2050.png)
 
-![[../Software_Architecture/_img/Untitled 1 14.png|Untitled 1 14.png]]
+![Untitled 1 14.png](../Software_Architecture/_img/Untitled%201%2014.png)
 
   
 
-![[Untitled 2 10.png|Untitled 2 10.png]]
+![Untitled 2 10.png](Untitled%202%2010.png)
 
-![[Untitled 3 10.png|Untitled 3 10.png]]
+![Untitled 3 10.png](Untitled%203%2010.png)
 
-![[Untitled 4 8.png|Untitled 4 8.png]]
+![Untitled 4 8.png](Untitled%204%208.png)
 
 A message queue is a form of asynchronous inter-service communication. Messages are stored on the queue until they are processed and deleted. Each message is processed only once, by a single consumer. Message queues can be used to decouple heavyweight processing, to buffer or batch work, and to smooth spiky workloads. Common messaging tools are Kafka, RabbitMQ, AWS SQS. A message queue is a queue of messages sent between services/applications.
 
@@ -27,15 +27,15 @@ A message queue is a form of asynchronous inter-service communication. Messages 
 
 **Message** is some information that is produced by a producer application in byte form, stored in a queue and is consumed by a consumer application.
 
-![[Untitled 5 8.png|Untitled 5 8.png]]
+![Untitled 5 8.png](Untitled%205%208.png)
 
   
 
 **Dead-letter-queue -** Where all invalid messages go
 
-![[Untitled 6 8.png|Untitled 6 8.png]]
+![Untitled 6 8.png](Untitled%206%208.png)
 
-![[Untitled 7 6.png|Untitled 7 6.png]]
+![Untitled 7 6.png](Untitled%207%206.png)
 
   
 
@@ -61,19 +61,19 @@ An API gateway acts as a reverse proxy to accept all application programming int
     - log aggregation
     - metrics correlation
 
-![[Untitled 8 6.png|Untitled 8 6.png]]
+![Untitled 8 6.png](Untitled%208%206.png)
 
-![[Untitled 9 6.png|Untitled 9 6.png]]
+![Untitled 9 6.png](Untitled%209%206.png)
 
-![[Untitled 10 6.png|Untitled 10 6.png]]
+![Untitled 10 6.png](Untitled%2010%206.png)
 
-![[Untitled 11 6.png|Untitled 11 6.png]]
+![Untitled 11 6.png](Untitled%2011%206.png)
 
-![[Untitled 12 6.png|Untitled 12 6.png]]
+![Untitled 12 6.png](Untitled%2012%206.png)
 
 Message brockers better not to use in kubernetes, because both can recover themself from fail
 
-![[Untitled 13 6.png|Untitled 13 6.png]]
+![Untitled 13 6.png](Untitled%2013%206.png)
 
   
 
@@ -81,90 +81,90 @@ Message brockers better not to use in kubernetes, because both can recover thems
 
 ### Point To Point
 
-![[Untitled 14 6.png|Untitled 14 6.png]]
+![Untitled 14 6.png](Untitled%2014%206.png)
 
   
 
-![[../Software_Architecture/_img/Untitled 15 5.png|Untitled 15 5.png]]
+![Untitled 15 5.png](../Software_Architecture/_img/Untitled%2015%205.png)
 
-![[Untitled 16 5.png|Untitled 16 5.png]]
+![Untitled 16 5.png](Untitled%2016%205.png)
 
-![[Untitled 17 4.png|Untitled 17 4.png]]
+![Untitled 17 4.png](Untitled%2017%204.png)
 
 ### Publish Subscribe
 
-![[Untitled 18 4.png|Untitled 18 4.png]]
+![Untitled 18 4.png](Untitled%2018%204.png)
 
-![[../Software_Architecture/_img/Untitled 19 4.png|Untitled 19 4.png]]
+![Untitled 19 4.png](../Software_Architecture/_img/Untitled%2019%204.png)
 
-![[Untitled 20 3.png|Untitled 20 3.png]]
+![Untitled 20 3.png](Untitled%2020%203.png)
 
-![[Untitled 21 3.png|Untitled 21 3.png]]
+![Untitled 21 3.png](Untitled%2021%203.png)
 
   
 
 ## Event-Driven Microservices Pattern
 
-![[Untitled 22 3.png|Untitled 22 3.png]]
+![Untitled 22 3.png](Untitled%2022%203.png)
 
 ### Choreographed Events
 
-![[../Software_Architecture/_img/Untitled 23 3.png|Untitled 23 3.png]]
+![Untitled 23 3.png](../Software_Architecture/_img/Untitled%2023%203.png)
 
-![[../Software_Architecture/_img/Untitled 24 3.png|Untitled 24 3.png]]
+![Untitled 24 3.png](../Software_Architecture/_img/Untitled%2024%203.png)
 
-![[Untitled 25 3.png|Untitled 25 3.png]]
+![Untitled 25 3.png](Untitled%2025%203.png)
 
-![[Untitled 26 2.png|Untitled 26 2.png]]
+![Untitled 26 2.png](Untitled%2026%202.png)
 
-![[../Software_Architecture/_img/Untitled 27 2.png|Untitled 27 2.png]]
+![Untitled 27 2.png](../Software_Architecture/_img/Untitled%2027%202.png)
 
 ### Orchestrated Events
 
-![[../Software_Architecture/_img/Untitled 28 2.png|Untitled 28 2.png]]
+![Untitled 28 2.png](../Software_Architecture/_img/Untitled%2028%202.png)
 
-![[../Software_Architecture/_img/Untitled 29 2.png|Untitled 29 2.png]]
+![Untitled 29 2.png](../Software_Architecture/_img/Untitled%2029%202.png)
 
-![[Untitled 30 2.png|Untitled 30 2.png]]
+![Untitled 30 2.png](Untitled%2030%202.png)
 
-![[../Software_Architecture/_img/Untitled 31 2.png|Untitled 31 2.png]]
+![Untitled 31 2.png](../Software_Architecture/_img/Untitled%2031%202.png)
 
 ### Hybrid Events
 
-![[../Software_Architecture/_img/Untitled 32 2.png|Untitled 32 2.png]]
+![Untitled 32 2.png](../Software_Architecture/_img/Untitled%2032%202.png)
 
-![[../Software_Architecture/_img/Untitled 33 2.png|Untitled 33 2.png]]
+![Untitled 33 2.png](../Software_Architecture/_img/Untitled%2033%202.png)
 
 ## Stream Data Platform
 
-![[../Software_Architecture/_img/Untitled 34 2.png|Untitled 34 2.png]]
+![Untitled 34 2.png](../Software_Architecture/_img/Untitled%2034%202.png)
 
-![[../Software_Architecture/_img/Untitled 35 2.png|Untitled 35 2.png]]
+![Untitled 35 2.png](../Software_Architecture/_img/Untitled%2035%202.png)
 
-![[Untitled 36 2.png|Untitled 36 2.png]]
+![Untitled 36 2.png](Untitled%2036%202.png)
 
   
 
 ## Data Flows
 
-![[../Software_Architecture/_img/Untitled 37 2.png|Untitled 37 2.png]]
+![Untitled 37 2.png](../Software_Architecture/_img/Untitled%2037%202.png)
 
-![[../Software_Architecture/_img/Untitled 38 2.png|Untitled 38 2.png]]
+![Untitled 38 2.png](../Software_Architecture/_img/Untitled%2038%202.png)
 
 ### Eventual Consistency
 
-![[../Software_Architecture/_img/Untitled 39 2.png|Untitled 39 2.png]]
+![Untitled 39 2.png](../Software_Architecture/_img/Untitled%2039%202.png)
 
-![[../Software_Architecture/_img/Untitled 40 2.png|Untitled 40 2.png]]
+![Untitled 40 2.png](../Software_Architecture/_img/Untitled%2040%202.png)
 
-![[../Software_Architecture/_img/Untitled 41 2.png|Untitled 41 2.png]]
+![Untitled 41 2.png](../Software_Architecture/_img/Untitled%2041%202.png)
 
 ### CQRS
 
-![[../Software_Architecture/_img/Untitled 42 2.png|Untitled 42 2.png]]
+![Untitled 42 2.png](../Software_Architecture/_img/Untitled%2042%202.png)
 
-![[Untitled 43 2.png|Untitled 43 2.png]]
+![Untitled 43 2.png](Untitled%2043%202.png)
 
 ### Data Synchronization
 
-![[Untitled 44 2.png|Untitled 44 2.png]]
+![Untitled 44 2.png](Untitled%2044%202.png)

@@ -4,7 +4,7 @@ Last edited time: 2023-07-16T20:26
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Google Cloud]]"
+  - "[Google Cloud](Google%20Cloud.md)"
 ---
 # Cloud Bigtable - bigdata
 

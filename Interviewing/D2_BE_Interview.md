@@ -4,7 +4,7 @@ Last edited time: 2024-04-21T17:13
 Needs Rework: true
 Status: Not started
 Topic:
-  - "[[Interviewing]]"
+  - "[Interviewing](Interviewing)"
 ---
 https://github.com/enhorse/java-interview
 
@@ -16,15 +16,15 @@ https://github.com/enhorse/java-interview
 
 ## Core
 
-[[../Java/Core/Core]]
+[Core](../Java/Core/Core.md)
 
-[[../Java/Core/Generics]]
+[Generics](../Java/Core/Generics.md)
 
-[[../Java/Core/Java_Versions/Java8]]
+[Java8](../Java/Core/Java_Versions/Java8.md)
 
-[[../Java/Core/JVM/JVM]]
+[JVM](../Java/Core/JVM/JVM.md)
 
-[[../Java/Core/Java_Versions/Java_Versions]]
+[Java_Versions](../Java/Core/Java_Versions/Java_Versions.md)
 
 ## Concurrency
 
@@ -108,7 +108,7 @@ https://github.com/enhorse/java-interview
     }
     ```
     
-    ![[Untitled 118.png|Untitled 118.png]]
+    ![Untitled 118.png](Untitled%20118.png)
     
     If a thread Thread1 views the count as 10, it will be increased by 1 to 11. Simultaneously, if another thread Thread2 views the count as 10, it will be increased by 1 to 11. Thus, inconsistency in count values takes place because the expected final value is 12 but the actual final value we get will be 11.
     
@@ -127,7 +127,7 @@ https://github.com/enhorse/java-interview
     }
     ```
     
-    ![[Untitled 1 40.png|Untitled 1 40.png]]
+    ![Untitled 1 40.png](Untitled%201%2040.png)
     
     If a thread Thread1 views the count as 10, it will be increased by 1 to 11, then the thread Thread2 will view the count as 11, it will be increased by 1 to 12. Thus, consistency in count values takes place.
     
@@ -142,7 +142,7 @@ https://github.com/enhorse/java-interview
     **Tread** or class **ExecutorService**.  
     If an exception occurs in the thread that no one catches then it will terminate.  
     
-    ![[Untitled 2 29.png|Untitled 2 29.png]]
+    ![Untitled 2 29.png](Untitled%202%2029.png)
     
     From the operating system’s point of view, a process is an independent piece of software that runs in its own virtual memory space.
     
@@ -166,7 +166,7 @@ https://github.com/enhorse/java-interview
         - **Waiting state** if it is waiting for the signal to execute from another thread, i.e it waits for work until the signal is received.
     - **Terminated** – Once the run() method execution is completed, the thread is said to enter the TERMINATED step and is considered to not be alive.
     
-    ![[Untitled 3 24.png|Untitled 3 24.png]]
+    ![Untitled 3 24.png](Untitled%203%2024.png)
     
 - **Compare the** `sleep()` **and** `wait()` **methods in Java, including when and why you would use one vs. the other.**
     
@@ -331,7 +331,7 @@ https://github.com/enhorse/java-interview
     
     As CPUs can carry many instructions per second, fetching from RAM isn’t ideal for them. To improve this situation, processors use tricks like [Out of Order Execution](https://en.wikipedia.org/wiki/Out-of-order_execution), [Branch Prediction](https://en.wikipedia.org/wiki/Branch_predictor), [Speculative Execution](https://en.wikipedia.org/wiki/Speculative_execution), and Caching.
     
-    ![[../Databases/NoSQL/_img/Untitled 4 19.png|Untitled 4 19.png]]
+    ![Untitled 4 19.png](../Databases/NoSQL/_img/Untitled%204%2019.png)
     
     As different cores execute more instructions and manipulate more data, they fill their caches with more relevant data and instructions. **This will improve the overall performance at the expense of introducing** [**cache coherence**](https://en.wikipedia.org/wiki/Cache_coherence) **challenges**.
     
@@ -933,11 +933,11 @@ https://github.com/enhorse/java-interview
     ```
     
 
-[[producerconsume]]
+[producerconsume](producerconsume)
 
 ## Collections
 
-[[Knowledge Transfer/Interviewing/D2 BE Interview/Untitled|Untitled]]
+[Untitled](Knowledge%20Transfer/Interviewing/D2%20BE%20Interview/Untitled)
 
 [`**Collection**`](http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html): An interface representing an unordered "bag" of items, called "elements". The "next" element is undefined (random).
 
@@ -1189,7 +1189,7 @@ https://github.com/enhorse/java-interview
 
 ## Spring Boot
 
-[[../Java/Frameworks/Spring/Boot]]
+[Boot](../Java/Frameworks/Spring/Boot.md)
 
 Spring Boot is essentially a framework for rapid application development built on top of the Spring Framework. With its auto-configuration and embedded application server support
 
@@ -1270,7 +1270,7 @@ Here are some of the most common built-in endpoints Actuator provides:
 
 - [ ] Spring JPA
     
-    [[Grow Plan/Development(Hard Skills)/Spring Data]]
+    [Grow Plan/Development(Hard Skills)/Spring Data](Grow%20Plan/Development(Hard%20Skills)/Spring%20Data)
     
 - [ ] Spring JDBC
     
@@ -1298,41 +1298,41 @@ Here are some of the most common built-in endpoints Actuator provides:
     - [ ] Bean Initialization
     - [ ] @Transactional
     
-    [[../Java/Frameworks/Spring/Core]]
+    [Core](../Java/Frameworks/Spring/Core.md)
     
 
 - Development
     - [ ] Review
         
-        [[../Computer_Science/Code_Review]]
+        [Code_Review](../Computer_Science/Code_Review.md)
         
     - [ ] Refactoring
         
-        [[../Computer_Science/Clean_Code/Refactoring]]
+        [Refactoring](../Computer_Science/Clean_Code/Refactoring.md)
         
     - [ ] Patterns
         
-        [[../Software_Architecture/Patterns/Patterns]]
+        [Patterns](../Software_Architecture/Patterns/Patterns.md)
         
         [Patterns in Spring](https://www.notion.so/Patterns-in-Spring-91b687b403ca4f5e8b28223c330d6436?pvs=21)
         
-        [[Spring Design Patterns]]
+        [Spring Design Patterns](Spring%20Design%20Patterns)
         
     - [ ] Build Tools
         
-        [[../Java/Build_Tools/Gradle]]
+        [Gradle](../Java/Build_Tools/Gradle.md)
         
-        [[../Java/Build_Tools/Maven]]
+        [Maven](../Java/Build_Tools/Maven.md)
         
     - [ ] Git
         
-        [[../Computer_Science/Git]]
+        [Git](../Computer_Science/Git.md)
         
     - [ ] CI/CD
 - Architecture
     - [ ] Patterns
         
-        [[../Software_Architecture/Patterns/Patterns]]
+        [Patterns](../Software_Architecture/Patterns/Patterns.md)
         
     - [ ] SOLID
     - [ ] Microservices
@@ -1344,52 +1344,52 @@ Here are some of the most common built-in endpoints Actuator provides:
     - [ ]
 - Testing
     
-    [[../Testing/Unit_Testing/Unit_Testing]]
+    [Unit_Testing](../Testing/Unit_Testing/Unit_Testing.md)
     
     - [ ] Mockito
         
-        [[../Testing/Unit_Testing/Mockito]]
+        [Mockito](../Testing/Unit_Testing/Mockito.md)
         
     - [ ] JUnit
         
-        [[../Testing/Unit_Testing/JUnit]]
+        [JUnit](../Testing/Unit_Testing/JUnit.md)
         
     - [ ] TDD
 - Management
     - [ ] Extreme Programming
         
-        [[Extreme programming]]
+        [Extreme programming](Extreme%20programming)
         
     - [ ] Kanban
         
-        [[../Soft_Skills/Project_Management/Kanban]]
+        [Kanban](../Soft_Skills/Project_Management/Kanban.md)
         
         [Kanban Foundations](https://www.notion.so/Kanban-Foundations-bfec215498604ad49aec70f1864266b7?pvs=21)
         
     - [ ] Waterfall
         
-        [[../Soft_Skills/Project_Management/Waterfall]]
+        [Waterfall](../Soft_Skills/Project_Management/Waterfall.md)
         
           
         
     - [ ] Agile
         
-        [[../Soft_Skills/Project_Management/Agile]]
+        [Agile](../Soft_Skills/Project_Management/Agile.md)
         
     - [ ] Scrum
         
-        [[../Soft_Skills/Project_Management/SCRUM]]
+        [SCRUM](../Soft_Skills/Project_Management/SCRUM.md)
         
 
   
 
 ## Spring MVC
 
-[[../Java/Frameworks/Spring/MVC]]
+[MVC](../Java/Frameworks/Spring/MVC.md)
 
 ## Spring Security
 
-[[Spring- Spring Security]]
+[Spring- Spring Security](Spring-%20Spring%20Security)
 
 > [!info] Spring Security Custom Logout Handler | Baeldung  
 > Learn how to implement a Custom Logout Handler using Spring Security.  
@@ -1399,7 +1399,7 @@ Here are some of the most common built-in endpoints Actuator provides:
 >  
 > [https://www.interviewbit.com/spring-security-interview-questions/?utm_source=pocket_saves](https://www.interviewbit.com/spring-security-interview-questions/?utm_source=pocket_saves)  
 
-![[../Software_Architecture/_img/Untitled 5 19.png|Untitled 5 19.png]]
+![Untitled 5 19.png](../Software_Architecture/_img/Untitled%205%2019.png)
 
 ## Spring Tests
 
@@ -1432,7 +1432,7 @@ When running integration tests for a Spring application, we must have an _Appli
 - What is Dependency Injection?
 - Explain the concepts of coupling and cohesion and how they relate to maintainability. As a follow-up, please explain afferent coupling and efferent coupling, and how those concepts fit above.
 
-[[../Java/Frameworks/Spring/Spring]]
+[../Java/Frameworks/Spring/Spring](../Java/Frameworks/Spring/Spring)
 
 [https://www.baeldung.com/spring-interview-questions#:~:text=• Java Concurrency Interview Questions (%2B Answers)](https://www.baeldung.com/spring-interview-questions#:~:text=%E2%80%A2%20Java%20Concurrency%20Interview%20Questions%20(%2B%20Answers))
 
@@ -1491,7 +1491,7 @@ When running integration tests for a Spring application, we must have an _Appli
     
     Discussing your experience with Big O notation can give the hiring manager more insights into your capabilities, so feel free to follow up the definition with an applicable example. Here’s one in our collection of [backend developer interview questions](https://anywhere.epam.com/en/blog/top-18-backend-developer-interview-questions-answered) comparing LinkedList and ArrayList in Java using Big O notation.
     
-    ![[Untitled 6 17.png|Untitled 6 17.png]]
+    ![Untitled 6 17.png](Untitled%206%2017.png)
     
 - **What could be the tradeoff between the usage of an unordered array versus the usage of an ordered array?**
     - The main advantage of having an ordered array is the reduced search time complexity of `O(log n)` whereas the time complexity in an unordered array is `O(n)`.
@@ -1506,17 +1506,17 @@ When running integration tests for a Spring application, we must have an _Appli
 
 All major programming languages have a built-in method for sorting. It is usually correct to assume and say sorting costs O(n * logn) is the number of elements being sorted. For completeness, here is a chart that lists many common sorting algorithms and their completeness.
 
-![[../Computer_Science/_img/Untitled 7 15.png|Untitled 7 15.png]]
+![Untitled 7 15.png](../Computer_Science/_img/Untitled%207%2015.png)
 
-[[../Computer_Science/Algorithms/Sorting]]
+[Sorting](../Computer_Science/Algorithms/Sorting.md)
 
 ## Search algorithms
 
-[[../Computer_Science/Algorithms/Search]]
+[Search](../Computer_Science/Algorithms/Search.md)
 
 ## Data Structures
 
-![[../Software_Architecture/_img/Untitled 8 15.png|Untitled 8 15.png]]
+![Untitled 8 15.png](../Software_Architecture/_img/Untitled%208%2015.png)
 
 Here's an example of a task:
 
@@ -1658,7 +1658,7 @@ Interviewers say that a readiness to get to the code is one of the key skills to
 - Implement a linked list during an interview
 - Implement a graph during an interview
 
-[[Algorithms]]
+[Algorithms](Algorithms)
 
 # Architecture
 
@@ -1878,7 +1878,7 @@ Something very important to know about is Microservices. There are many framewor
         
         If there’s a failure and the consumer restarts, it will look at the last persisted offset. Since the offsets are persisted prior to actual event processing, we cannot establish whether every event received by the consumer was successfully processed or not. In this case, the consumer might end up missing some events.
         
-        ![[Untitled 9 14.png|Untitled 9 14.png]]
+        ![Untitled 9 14.png](Untitled%209%2014.png)
         
     - at-least-once
         
@@ -1890,7 +1890,7 @@ Something very important to know about is Microservices. There are many framewor
         
         The consumer would restart and read from the offset. **Here, the consumer reprocesses the events more than once because even though the message was successfully processed before the failure, the position of the last received event was not saved successfully:**
         
-        ![[Untitled 10 14.png|Untitled 10 14.png]]
+        ![Untitled 10 14.png](Untitled%2010%2014.png)
         
         **In order to avoid processing the same event multiple times, we can use idempotent consumers**.
         
@@ -1932,7 +1932,7 @@ Something very important to know about is Microservices. There are many framewor
         
         Let’s see what happens when a consumer fails after processing the events  but without saving the offsets in the diagram below:
         
-        ![[Untitled 11 14.png|Untitled 11 14.png]]
+        ![Untitled 11 14.png](Untitled%2011%2014.png)
         
         We can remove duplication in exactly-once semantics by having these:
         
@@ -2142,7 +2142,7 @@ Stashing is a powerful tool to put aside code that you just wrote, without pushi
 
 - [ ] Clean Code
     
-    [[Computer Science/Development/Clean Code]]
+    [Computer Science/Development/Clean Code](Computer%20Science/Development/Clean%20Code)
     
 
 ## Patterns
@@ -2261,15 +2261,15 @@ Stashing is a powerful tool to put aside code that you just wrote, without pushi
     - [ ]
     - [ ] Code quality
     
-    ![[Untitled 12 13.png|Untitled 12 13.png]]
+    ![Untitled 12 13.png](Untitled%2012%2013.png)
     
     - [ ] Design and Development Principles
         
-        ![[../Software_Architecture/_img/Untitled 13 13.png|Untitled 13 13.png]]
+        ![Untitled 13 13.png](../Software_Architecture/_img/Untitled%2013%2013.png)
         
     - [ ] Architectural Patterns
         
-        ![[../Software_Architecture/_img/Untitled 14 13.png|Untitled 14 13.png]]
+        ![Untitled 14 13.png](../Software_Architecture/_img/Untitled%2014%2013.png)
         
 
 ### **Sample 1: URL Shortening Service**
@@ -2309,19 +2309,19 @@ These sample problems and solutions cover a range of difficulty levels and demon
 
 - LINQ, lazy execution, EF limitations.
 
-[[../Software_Architecture/REST]]
+[REST](../Software_Architecture/REST.md)
 
-[[../Software_Architecture/Patterns/Patterns]]
+[Patterns](../Software_Architecture/Patterns/Patterns.md)
 
-[[../Java/Java_Frameworks/Hibernate/Hibernate 1|Hibernate 1]]
+[Hibernate 1](../Java/Java_Frameworks/Hibernate/Hibernate%201)
 
-[[../MessageQueue/Kafka]]
+[Kafka](../MessageQueue/Kafka.md)
 
 - scalable application development
 
-[[../Software_Architecture/Microservices_Design_Patterns]]
+[Microservices_Design_Patterns](../Software_Architecture/Microservices_Design_Patterns.md)
 
-[[../Software_Architecture/System_Architecture/Microservices_Architecture]]
+[Microservices_Architecture](../Software_Architecture/System_Architecture/Microservices_Architecture.md)
 
 - What are WebSockets? Where can you use them?
 - What is the difference between polling and long polling in sockets?
@@ -2376,7 +2376,7 @@ These sample problems and solutions cover a range of difficulty levels and demon
 - [ ] [bmc.com/blogs/cap-theorem/](http://bmc.com/blogs/cap-theorem/)
 - [ ] [https://www.youtube.com/watch?v=N-4prIh7t38](https://www.youtube.com/watch?v=N-4prIh7t38)
     
-    [[../Databases/RDBMS/RDBMS]]
+    [RDBMS](../Databases/RDBMS/RDBMS.md)
     
     Let's talk about data. You’ll need to know both traditional SQL databases (we love Postgres) and different types of NoSQL datastores (Redis, Cassandra, DynamoDB etc.). Work to understand Message Queues (Kafka, Kinesis) and Big Data engines (Spark, Storm, Flink).
     
@@ -2387,7 +2387,7 @@ These sample problems and solutions cover a range of difficulty levels and demon
 
 - [ ] JDBC
     
-    [[../Java/Libraries/JDBC]]
+    [JDBC](../Java/Libraries/JDBC.md)
     
 
 Data storage / Data model design
@@ -2402,14 +2402,14 @@ Data storage / Data model design
         > Check out the most important Hibernate interview questions with detailed answers for freshers, intermediate and experienced candidates.  
         > [https://www.adaface.com/blog/hibernate-interview-questions/](https://www.adaface.com/blog/hibernate-interview-questions/)  
         
-        [[../Java/Java_Frameworks/Hibernate/Hibernate 1]]
+        [../Java/Java_Frameworks/Hibernate/Hibernate 1](../Java/Java_Frameworks/Hibernate/Hibernate%201)
         
     - [ ] Entity Manager
     - [ ] Persistance Context
 
 - What is an ORM? Why is it useful and why not?
 
-[[../Databases/RDBMS/SQL]]
+[SQL](../Databases/RDBMS/SQL.md)
 
 # Testing
 
@@ -2461,9 +2461,9 @@ Data storage / Data model design
 - How to test a distributed system? Which types of test will you write? Which instruments would you use?
 - What is a [test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html)?
 
-[[Knowledge Transfer/Testing/Testing Basics|Testing Basics]]
+[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics)
 
-[[../Testing/Unit_Testing/Mockito]]
+[Mockito](../Testing/Unit_Testing/Mockito.md)
 
 # Infrastructure
 
@@ -2518,11 +2518,11 @@ We use k8s with helm and argocd. We change configuration file and when changes a
 
 ### Kafka
 
-[[Kubernetes]]
+[Kubernetes](Kubernetes.md)
 
-[[DevOps/CI-CD/Docker|Docker]]
+[Docker](DevOps/CI-CD/Docker)
 
-[[DevOps/CI-CD/CI-CD|CI-CD]]
+[CI-CD](DevOps/CI-CD/CI-CD.md)
 
 # General
 
@@ -2555,9 +2555,9 @@ We use k8s with helm and argocd. We change configuration file and when changes a
 - What is tail recursion?
 - What is cyclomatic complexity?
 - Public API versioning, how to do that right.
-- What is [feature toggling/flagging](https://martinfowler.com/articles/feature-toggles.html)? [[1]](https://www.youtube.com/watch?v=7qTOdbUAqno) [[2]](https://www.pluralsight.com/courses/dotnet-featuretoggle-implementing) [[]]
+- What is [feature toggling/flagging](https://martinfowler.com/articles/feature-toggles.html)? [1](1)(https://www.youtube.com/watch?v=7qTOdbUAqno) [2](2)(https://www.pluralsight.com/courses/dotnet-featuretoggle-implementing) [D2_BE_Interview](.md)
 - [What happens when you type 'google.com' into the browser address bar and press Enter](https://dev.to/antonfrattaroli/what-happens-when-you-type-googlecom-into-a-browser-and-press-enter-39g8)?
-- What is public IP, private IP? NAT? IPv4? IPv6? [[0]](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) [[1]](https://www.digitalocean.com/community/tutorials/an-introduction-to-networking-terminology-interfaces-and-protocols)
+- What is public IP, private IP? NAT? IPv4? IPv6? [0](0)(https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) [1](1)(https://www.digitalocean.com/community/tutorials/an-introduction-to-networking-terminology-interfaces-and-protocols)
 - Explain event hub over service bus, consumer groups and other concepts related.
 - What is partitioned consumer pattern? [Competing Consumer](https://docs.microsoft.com/en-us/azure/architecture/patterns/competing-consumers)?
 - What is tracing, spans, [opentracing](https://github.com/opentracing/specification/blob/master/specification.md)?
@@ -2572,7 +2572,7 @@ We use k8s with helm and argocd. We change configuration file and when changes a
 - When to use cache? When it can be not useful or even dangerous?
 - I want to refactor a legacy system. You want to rewrite it from scratch. Argument. Then, switch our roles.
 - What is GOTO statement? [What's wrong with it](https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf)? Do we still have GOTO statements or something similar to them in modern programming languages?
-- What is monorepo and what is multirepo? When it's better to chose one over another? [[0]](https://medium.com/@adamhjk/monorepo-please-do-3657e08a4b70) [[1]](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b)
+- What is monorepo and what is multirepo? When it's better to chose one over another? [0](0)(https://medium.com/@adamhjk/monorepo-please-do-3657e08a4b70) [1](1)(https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b)
 - Tell me about your favorite language/framework. Is it really that good? Does it have any weaknesses?
 
 # Practical

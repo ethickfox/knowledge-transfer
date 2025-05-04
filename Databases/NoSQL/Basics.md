@@ -4,7 +4,7 @@ Last edited time: 2023-07-18T16:42
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[NoSql]]"
+  - "[NoSql](NoSql)"
 ---
 ## **NoSQL**
 
@@ -28,4 +28,4 @@ Topic:
 |**Joins**|Typically required|
 |**Data to Object Mapping**|Requires ORM (object-relational mapping)|
 
-![[_img/Untitled 119.png|Untitled 119.png]]
+![Untitled 119.png](_img/Untitled%20119.png)

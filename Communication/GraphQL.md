@@ -4,7 +4,7 @@ Last edited time: 2023-07-16T20:26
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Web Services Architecture]]"
+  - "[Web Services Architecture](Web%20Services%20Architecture)"
 ---
 GraphQL offers a solution to situations when the client needs data from multiple resources simultaneously, such as requesting a blog post and comments. Typically, this is solved by having the client make multiple requests or having the server supply extra data that might not always be required, leading to larger response sizes. It allows the client to specify exactly what data it desires, including navigating child resources in a single request and allows for multiple queries in a single request.
 

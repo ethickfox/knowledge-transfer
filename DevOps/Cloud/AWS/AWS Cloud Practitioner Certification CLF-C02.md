@@ -4,7 +4,7 @@ Last edited time: 2023-10-10T16:27
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[AWS]]"
+  - "[AWS](AWS.md)"
 ---
   
 

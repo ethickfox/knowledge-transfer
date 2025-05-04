@@ -4,7 +4,7 @@ Last edited time: 2023-11-29T20:21
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[DevOps/CI-CD/CI-CD\\|CI-CD]]"
+  - "[CI-CD](DevOps/CI-CD/CI-CD%5C%5C)"
 ---
 - **Continuous integration** means that “members of a team integrate their work frequently” (Fowler) by “collaborating on a shared codebase, merging disparate code changes into a version control system (VCS), and automatically creating and testing builds” (Nemeth).
 - **Continuous delivery** means that “the software can be released to production at any time” (Fowler) by “automatically deploying builds to nonproduction environments after the continuous integration process completes” (Nemeth).
@@ -24,7 +24,7 @@ Topic:
 
 **The CI/CD Pipeline**
 
-![[../../Software_Architecture/_img/Untitled 107.png|Untitled 107.png]]
+![Untitled 107.png](../../Software_Architecture/_img/Untitled%20107.png)
 
 **CI/CD Pipeline as Code**
 

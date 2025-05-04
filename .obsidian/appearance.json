@@ -1,5 +1,9 @@
 {
   "accentColor": "#d9993f",
   "baseFontSize": 18,
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "cssTheme": "Minimal",
+  "theme": "obsidian",
+  "showViewHeader": false,
+  "showRibbon": false
 }

@@ -4,7 +4,7 @@ Last edited time: 2024-05-28T15:51
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[../Core\\|Java Core]]"
+  - "[Java Core](../Core%5C%5C)"
 ---
 ### Intro
 
@@ -12,7 +12,7 @@ Topic:
 resources. It is preferable to let them share the computer via finer-grained  
 time slicing than to let one program run to completion and then start another  
 
-## [[Fundamentals]]
+## [Fundamentals](Fundamentals.md)
 
 
 ## Structuring Concurrent Applications

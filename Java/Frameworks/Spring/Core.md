@@ -5,7 +5,7 @@ Last recall: 2023-08-03
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Spring]]"
+  - "[Spring](Spring)"
 ---
 **Spring** is an [application framework](https://en.wikipedia.org/wiki/Application_framework) and [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control) [container](https://en.wikipedia.org/wiki/Servlet_container) for the [Java platform](https://en.wikipedia.org/wiki/Java_platform).
 
@@ -40,7 +40,7 @@ Topic:
 
 ## **Inversion Of Control**
 
-Abstract principle that passes responsibility of creation and managing of objects for some external entity - IOC Container. Spring framework provides two implementations of IOC container in the form of [[differencebetweenbeanfactoryvsa]]
+Abstract principle that passes responsibility of creation and managing of objects for some external entity - IOC Container. Spring framework provides two implementations of IOC container in the form of [differencebetweenbeanfactoryvsa](differencebetweenbeanfactoryvsa)
 
 [![](https://lh6.googleusercontent.com/H8KA3rx6kzfF8Sh9DDpHZq4dDjamGY4Cz9_1w0sQMNwQg4LdZIaw7NMZ7_hRDJwOSX9JuIv3Pd85CDMzw5_eG-d-xi9GGeeWe4wyiUW50UxjRcDBZzmMS0IVu_UwmsGrSR0FuJniLz2lGaMZfTyaDLfTwNpYsf41D_tMw01E5k8_i-bZZwzlLPyR7Uo2)](https://lh6.googleusercontent.com/H8KA3rx6kzfF8Sh9DDpHZq4dDjamGY4Cz9_1w0sQMNwQg4LdZIaw7NMZ7_hRDJwOSX9JuIv3Pd85CDMzw5_eG-d-xi9GGeeWe4wyiUW50UxjRcDBZzmMS0IVu_UwmsGrSR0FuJniLz2lGaMZfTyaDLfTwNpYsf41D_tMw01E5k8_i-bZZwzlLPyR7Uo2)
 
@@ -137,7 +137,7 @@ Object knows whom it should ask for the dependencies
 
 ## ApplicationContext
 
-Spring framework provides two implementations of IOC container in the form of [[differencebetweenbeanfactoryvsa]]
+Spring framework provides two implementations of IOC container in the form of [differencebetweenbeanfactoryvsa](differencebetweenbeanfactoryvsa)
 
 - **BeanFactory** - The root interface for accessing a Spring bean container.
 - **ApplicationContext** - main interface, extends BeanFactory. Provides more advanced features, such as Event Publishing,

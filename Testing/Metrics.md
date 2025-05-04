@@ -5,7 +5,7 @@ Last recall: 2023-07-22
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Knowledge Transfer/Testing/Testing Basics\\|Testing Basics]]"
+  - "[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics%5C%5C)"
 ---
 **Types of QA Metrics**
 

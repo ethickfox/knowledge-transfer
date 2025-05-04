@@ -4,7 +4,7 @@ Last edited time: 2023-11-29T17:30
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[Spring]]"
+  - "[Spring](Spring)"
 ---
 Put [`@Transactional`](https://docs.spring.io/spring/docs/5.2.4.RELEASE/javadoc-api/org/springframework/transaction/annotation/Transactional.html) on your test class or methods and _test-managed transactions_ will automatically be rollbacked.
 
@@ -20,10 +20,10 @@ Sure, but not to test transaction boundaries. Remember that you can use also `@
 
   
 
-![[Untitled 122.png|Untitled 122.png]]
+![Untitled 122.png](Untitled%20122.png)
 
-![[Untitled 1 43.png|Untitled 1 43.png]]
+![Untitled 1 43.png](Untitled%201%2043.png)
 
-![[Untitled 2 31.png|Untitled 2 31.png]]
+![Untitled 2 31.png](Untitled%202%2031.png)
 
-![[Untitled 3 26.png|Untitled 3 26.png]]
+![Untitled 3 26.png](Untitled%203%2026.png)

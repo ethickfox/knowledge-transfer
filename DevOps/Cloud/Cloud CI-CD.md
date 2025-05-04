@@ -4,9 +4,9 @@ Last edited time: 2023-09-12T17:37
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[AWS]]"
+  - "[AWS](AWS.md)"
 ---
-![[../../Software_Architecture/_img/Untitled 54.png|Untitled 54.png]]
+![Untitled 54.png](../../Software_Architecture/_img/Untitled%2054.png)
 
 **Continuous integration** is a DevOps software development practice where developers regularly merge their code changes into a central repository, after which automated builds and tests are run. Continuous integration most often refers to the build or integration stage of the software release process and entails both an automation component (e.g. a CI or build service) and a cultural component (e.g. learning to integrate frequently).
 
@@ -16,7 +16,7 @@ Topic:
 
 With continuous delivery, every code change is built, tested, and then pushed to a non-production testing or staging environment. There can be multiple, parallel test stages before a production deployment. The difference between **continuous delivery** and **continuous deployment** is the presence of a manual approval to update to production. With continuous deployment, a release to production happens automatically without explicit approval.
 
-![[Untitled 1 15.png|Untitled 1 15.png]]
+![Untitled 1 15.png](Untitled%201%2015.png)
 
 **CodeCommit** is a secure, highly scalable, managed source control service that hosts private Git repositories. It provides:
 
@@ -57,7 +57,7 @@ CI/CD field has a wide variety of tools to choose from. The most well-known solu
 
   
 
-![[Untitled 2 11.png|Untitled 2 11.png]]
+![Untitled 2 11.png](Untitled%202%2011.png)
 
 1. As input, you must provide CodeBuild with a build project. A build project includes information about how to run a build, including where to get the source code, which build environment to use, which build commands to run, and where to store the build output. A build environment represents a combination of operating system, programming language runtime, and tools that CodeBuild uses to run a build.
 2. CodeBuild uses the build project to create the build environment.
@@ -73,7 +73,7 @@ CodeDeploy primary components include:
 - [Deployment configuration](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html) is set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.
 - [Deployment group](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups.html) is a set of individual instances. A deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both.
 - [Deployment type](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html#welcome-deployment-overview) is a method used to make the latest application revision available on instances in a deployment group. There are two deployment types: In-place and Blue/Green.
-- [[gettin]] is an IAM role that you attach to your Amazon EC2 instances. This profile includes the permissions required to access the Amazon S3 buckets or GitHub repositories where the applications are stored.
+- [gettin](gettin) is an IAM role that you attach to your Amazon EC2 instances. This profile includes the permissions required to access the Amazon S3 buckets or GitHub repositories where the applications are stored.
 - [Revision](https://docs.aws.amazon.com/codedeploy/latest/userguide/application-revisions.html) is a version of your application.
     - An AWS Lambda deployment revision is a YAML- or JSON-formatted file that specifies information about the Lambda function to deploy. AWS Lambda revisions can be stored in Amazon S3 buckets.
     - An EC2/On-Premises deployment revision is an archive file that contains source content (source code, webpages, executable files, and deployment scripts) and an application specification file (AppSpec file). EC2/On-Premises revisions are stored in Amazon S3 buckets or GitHub repositories.
@@ -86,7 +86,7 @@ CodeDeploy primary components include:
     - To retrieve information about CloudWatch alarms to set up alarm monitoring for deployments.
 - [AppSpec file](https://docs.aws.amazon.com/codedeploy/latest/userguide/application-specification-files.html) is a YAML-formatted or JSON-formatted file. The AppSpec file is used to manage each deployment as a series of lifecycle event hooks, which are defined in the file.
 
-![[Untitled 3 11.png|Untitled 3 11.png]]
+![Untitled 3 11.png](Untitled%203%2011.png)
 
 ## Your goals
 

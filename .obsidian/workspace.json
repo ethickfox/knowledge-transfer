@@ -52,9 +52,23 @@
               "icon": "lucide-file",
               "title": "Designing_Data_Intensive_Applications"
             }
+          },
+          {
+            "id": "13f51afc57142546",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Testing/Testcase_Management.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Testcase_Management"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -155,19 +169,6 @@
             }
           },
           {
-            "id": "c396cc062dbb41ef",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
             "id": "b13a3b414705ca68",
             "type": "leaf",
             "state": {
@@ -196,13 +197,21 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "random-note:Open random note": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "publish:Publish changes...": false
     }
   },
-  "active": "47fffd2f0b01abdf",
+  "active": "13f51afc57142546",
   "lastOpenFiles": [
-    "Soft_Skills/Leadership/Self_Presentation.md",
+    "Computer_Science/Algorithms/Search.md",
+    "DevOps/Kubernetes/Spring_Boot_with_Kubernetes.md",
+    "DevOps/CI-CD/CI-CD.md",
+    "MessageQueue/Kafka.md",
+    "Soft_Skills/Project_Management/Technical_Debt.md",
+    "Software_Architecture/Versioning.md",
+    "Startups/Building_startup.md",
     "index.md",
+    "Soft_Skills/Leadership/Self_Presentation.md",
     "JavaScript/Chrome_DevTools.md",
     "Software_Architecture/Designing_Data_Intensive_Applications.md",
     "Software_Architecture/Monitoring_Observability.md",
@@ -214,7 +223,6 @@
     "Software_Architecture/Separation_of_Concerns.md",
     "Software_Architecture/Service provider framework.md",
     "Software_Architecture/Soap.md",
-    "Software_Architecture/Versioning.md",
     "Software_Architecture/Patterns/Patterns.md",
     "Software_Architecture/REST.md",
     "Software Architecture/Program Structure Architecture.md",
@@ -222,12 +230,6 @@
     "Software_Architecture/MVC.md",
     "Software Architecture/MVVM.md",
     "Software Architecture/MVP.md",
-    "Software_Architecture/System_Architecture/Monolithic_Architecture.md",
-    "Software_Architecture/Microservices_Design_Patterns.md",
-    "Software_Architecture/System_Architecture/Microservices_Architecture.md",
-    "Software Architecture/Message Brockers.md",
-    "Software_Architecture/Domain_Driven_Design.md",
-    "Software_Architecture/Development_methodologies.md",
     "Soft_Skills/Self_Management",
     "Soft_Skills/Project_Management",
     "Security/_img/Untitled 2 13.png",

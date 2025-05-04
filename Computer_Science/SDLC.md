@@ -5,11 +5,11 @@ Last recall: 2023-08-02
 Needs Rework: false
 Status: Planned
 Topic:
-  - "[[Project Management]]"
+  - "[Project Management](Project%20Management)"
 ---
 ## **Basic SDLC**
 
-![[../Software_Architecture/_img/Untitled 105.png|Untitled 105.png]]
+![Untitled 105.png](../Software_Architecture/_img/Untitled%20105.png)
 
 A typical SDLC is comprised of six phases:
 
@@ -67,7 +67,7 @@ CI/CD embodies a practical implementation of key Agile SDLC principles. For exam
 
 In short, employing CI/CD practices helps your project become more Agile.
 
-![[../Software_Architecture/_img/Untitled 1 32.png|Untitled 1 32.png]]
+![Untitled 1 32.png](../Software_Architecture/_img/Untitled%201%2032.png)
 
 **The Development Phase**
 
@@ -114,4 +114,4 @@ Agile projects combine business and development teams that work together to enab
 
 **Example of a Project Ecosystem**
 
-![[Untitled 2 24.png|Untitled 2 24.png]]
+![Untitled 2 24.png](Untitled%202%2024.png)

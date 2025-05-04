@@ -1,15 +1,6 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[[Knowledge Transfer/Testing/Testing Basics\\|Testing Basics]]"
----
 **Test case management** is the process of planning out tests for a project, writing individual test cases, managing the testing schedule, and tracking test progress and results.
 
-![[Untitled 49.png|Untitled 49.png]]
+![Untitled 49.png](Untitled%2049.png)
 
 **Test Plan**
 
@@ -185,7 +176,7 @@ The **test case life cycle** is a testing process that refers to specific steps,
     If you find any duplicated test cases, combine them. If you determine that a test case is no longer useful, retire it.  
     
 
-![[../Software_Architecture/_img/Untitled 1 13.png|Untitled 1 13.png]]
+![Untitled 1 13.png](../Software_Architecture/_img/Untitled%201%2013.png)
 
 **Reviewing Test Cases to Ensure Quality**
 

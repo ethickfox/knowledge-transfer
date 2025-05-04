@@ -4,6 +4,6 @@ Last edited time: 2023-08-07T15:45
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[AWS]]"
+  - "[AWS](AWS.md)"
 ---
-![[../../../Software_Architecture/_img/Untitled 39.png|Untitled 39.png]]
+![Untitled 39.png](../../../Software_Architecture/_img/Untitled%2039.png)

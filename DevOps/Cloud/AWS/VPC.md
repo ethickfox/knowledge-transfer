@@ -4,7 +4,7 @@ Last edited time: 2023-10-17T08:36
 Needs Rework: false
 Status: Not started
 Topic:
-  - "[[AWS]]"
+  - "[AWS](AWS.md)"
 ---
 Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the Amazon Web Services (AWS) Cloud where you can launch AWS resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways
 
@@ -12,12 +12,12 @@ Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolate
 
   
 
-![[Untitled 44.png|Untitled 44.png]]
+![Untitled 44.png](Untitled%2044.png)
 
 An Elastic Network Interface (ENI) is a virtual network interface that you can attach to an instance in an Amazon VPC. ENIs are only available within an Amazon VPC, and they are associated with a subnet upon creation. They can have one public IP address and multiple private IP addresses. If there are multiple private IP addresses, one of them is primary. Assigning a second network interface to an instance via an ENI allows it to be dual-homed (have network presence in different subnets). An ENI created independently of a particular instance persists regardless of the lifetime of any instance to which it is attached; if an underlying instance fails, the IP address may be preserved by attaching the ENI to a replacement instance.  
 ENIs allow you to create a management network, use network and security appliances in your Amazon VPC, create dual-homed instances with workloads/roles on distinct subnets, or create a low-budget, high-availability solution.  
 
-![[Untitled 1 9.png|Untitled 1 9.png]]
+![Untitled 1 9.png](Untitled%201%209.png)
 
 ## IPv6
 
@@ -30,7 +30,7 @@ You can optionally associate an IPv6 CIDR block with your VPC and subnets, and a
 
 **Elastic IP Addresses (EIPs)**
 
-![[Untitled 2 6.png|Untitled 2 6.png]]
+![Untitled 2 6.png](Untitled%202%206.png)
 
   
 
@@ -57,23 +57,23 @@ A VPC endpoint enables you to privately connect your VPC to supported AWS servic
 
 An Amazon VPC peering connection is a networking connection between two Amazon VPCs that enables instances in either Amazon VPC to communicate with each other as if they are within the same network. You can create an Amazon VPC peering connection between your own Amazon VPCs or with an Amazon VPC in another AWS account within a single region. A peering connection is neither a gateway nor an Amazon VPN connection and does not introduce a single point of failure for communication.
 
-![[Untitled 3 6.png|Untitled 3 6.png]]
+![Untitled 3 6.png](Untitled%203%206.png)
 
-![[Untitled 4 4.png|Untitled 4 4.png]]
+![Untitled 4 4.png](Untitled%204%204.png)
 
-![[Untitled 5 4.png|Untitled 5 4.png]]
+![Untitled 5 4.png](Untitled%205%204.png)
 
 ## Transit Gateway (TGW)
 
 With large number of VPCs, Transit Gateway provides simpler VPC-to-VPC communication management over VPC Peering. Note that the transit hub can be used to interconnect not only our VPCs but also on-premises networks
 
-![[../../../Software_Architecture/_img/Untitled 6 4.png|Untitled 6 4.png]]
+![Untitled 6 4.png](../../../Software_Architecture/_img/Untitled%206%204.png)
 
 The Transit Gateway provides a hub and spoke design for connecting VPCs and on-premises networks as a fully managed service without VPN overlay.
 
   
 
-![[Untitled 7 4.png|Untitled 7 4.png]]
+![Untitled 7 4.png](Untitled%207%204.png)
 
 ## Use cases / Considerations
 
@@ -92,15 +92,15 @@ Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS
 
 Amazon Route 53 effectively connects user requests to infrastructure running in AWS – such as Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets – and can also be used to route users to infrastructure outside of AWS. You can use Amazon Route 53 to configure DNS health checks, then continuously monitor your applications’ ability to recover from failures and control application recovery with Route 53 Application Recovery Controller.
 
-![[Untitled 8 4.png|Untitled 8 4.png]]
+![Untitled 8 4.png](Untitled%208%204.png)
 
-![[Untitled 9 4.png|Untitled 9 4.png]]
+![Untitled 9 4.png](Untitled%209%204.png)
 
-![[Untitled 10 4.png|Untitled 10 4.png]]
+![Untitled 10 4.png](Untitled%2010%204.png)
 
-![[Untitled 11 4.png|Untitled 11 4.png]]
+![Untitled 11 4.png](Untitled%2011%204.png)
 
-![[../../../Software_Architecture/_img/Untitled 12 4.png|Untitled 12 4.png]]
+![Untitled 12 4.png](../../../Software_Architecture/_img/Untitled%2012%204.png)
 
 ## Use cases / Considerations
 
@@ -120,23 +120,23 @@ Amazon Route 53 effectively connects user requests to infrastructure running in 
 - Understand Route53: Public/Private Zones, Types of Records (including CNAME and Aliases)
 - Learn about AWS CloudFront(Content Delivery Network)
 
-![[Untitled 13 4.png|Untitled 13 4.png]]
+![Untitled 13 4.png](Untitled%2013%204.png)
 
-![[Untitled 14 4.png|Untitled 14 4.png]]
+![Untitled 14 4.png](Untitled%2014%204.png)
 
-![[Untitled 15 4.png|Untitled 15 4.png]]
+![Untitled 15 4.png](Untitled%2015%204.png)
 
-![[Untitled 16 4.png|Untitled 16 4.png]]
+![Untitled 16 4.png](Untitled%2016%204.png)
 
-![[Untitled 17 3.png|Untitled 17 3.png]]
+![Untitled 17 3.png](Untitled%2017%203.png)
 
-![[Untitled 18 3.png|Untitled 18 3.png]]
+![Untitled 18 3.png](Untitled%2018%203.png)
 
-![[Untitled 19 3.png|Untitled 19 3.png]]
+![Untitled 19 3.png](Untitled%2019%203.png)
 
-![[Untitled 20 2.png|Untitled 20 2.png]]
+![Untitled 20 2.png](Untitled%2020%202.png)
 
-![[Untitled 21 2.png|Untitled 21 2.png]]
+![Untitled 21 2.png](Untitled%2021%202.png)
 
   
 
@@ -145,17 +145,17 @@ Amazon Route 53 effectively connects user requests to infrastructure running in 
 ## Bastion  
   
 
-![[Untitled 22 2.png|Untitled 22 2.png]]
+![Untitled 22 2.png](Untitled%2022%202.png)
 
 Host that is in public subnet and connection to another private instances made through it
 
   
 
-![[Untitled 23 2.png|Untitled 23 2.png]]
+![Untitled 23 2.png](Untitled%2023%202.png)
 
-![[Untitled 24 2.png|Untitled 24 2.png]]
+![Untitled 24 2.png](Untitled%2024%202.png)
 
-![[Untitled 25 2.png|Untitled 25 2.png]]
+![Untitled 25 2.png](Untitled%2025%202.png)
 
   
 

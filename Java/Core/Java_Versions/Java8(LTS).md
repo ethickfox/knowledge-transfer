@@ -216,7 +216,7 @@ public class UserNotAllowedForThisActionException
 - [JIT (Just In Time) compiler](https://en.wikipedia.org/wiki/Just-in-time_compilation) on [Microsoft Windows](https://en.wikipedia.org/wiki/Microsoft_Windows) platforms, produced for JavaSoft by Symantec
 - [Internationalization](https://en.wikipedia.org/wiki/Internationalization_and_localization) and [Unicode](https://en.wikipedia.org/wiki/Unicode) support originating from [Taligent](https://en.wikipedia.org/wiki/Taligent)
     
-    [[19]](https://en.wikipedia.org/wiki/Java_version_history\#cite_note-taligentau-19)
+    [19](19)(https://en.wikipedia.org/wiki/Java_version_history\#cite_note-taligentau-19)
     
 
 ### Java 2
