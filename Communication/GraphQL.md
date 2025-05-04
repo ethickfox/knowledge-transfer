@@ -10,7 +10,7 @@ The graph is derived from the way these fields are nested with each other. Note 
 
 We need to **annotate the handler methods with** _**@QueryMapping**_ **annotation and place these inside standard** _**@Controller**_ **components**
 
-```Java
+```java
 @Controller
 public class PostController {
 
@@ -25,7 +25,7 @@ public class PostController {
 
 **The** _**@SchemaMapping**_ **annotation maps the handler method to a field with the same name in the schema** and uses it as the DataFetcher for that field.
 
-```Java
+```java
 @SchemaMapping
 public Author author(Post post) {
     return authorDao.getAuthor(post.getAuthorId());
