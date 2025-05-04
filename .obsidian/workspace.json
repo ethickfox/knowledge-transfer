@@ -22,25 +22,8 @@
               "icon": "lucide-file",
               "title": "Designing Data Intensive Applications"
             }
-          },
-          {
-            "id": "61ac7993dc0eec38",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Glossary.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Glossary"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,10 +168,11 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "61ac7993dc0eec38",
+  "active": "416d8425fa788ec9",
   "lastOpenFiles": [
-    "JavaScript/Angular.md",
     "Glossary.md",
+    "index.md",
+    "JavaScript/Angular.md",
     "Java/Java_Frameworks/Java Servlets.md",
     "JavaScript/JavaScript.md",
     "JavaScript/React.md",
@@ -212,7 +196,6 @@
     "DevOps/CI-CD/CI-CD.md",
     "DevOps/CI-CD/CDN.md",
     "DevOps/Kubernetes/Kubernetes.md",
-    "DevOps/Kubernetes/Spring_Boot_with_Kubernetes.md",
     "Software Architecture/_img/Pasted image 20250503212231.png",
     "_config.yml",
     "Software Architecture/_img/Untitled 123.png",
