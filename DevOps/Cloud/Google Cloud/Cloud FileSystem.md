@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:25
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Google Cloud](Google%20Cloud.md)"
----
 # Structure
 
 [![](https://lh6.googleusercontent.com/0vw_UJUcufCu6MjIWdm5LpKZ_mG04vjCl0JyO8BAsEmMPxDBmlPzJugmhl0bndtoQANe7PEwKtR7Yvw-7O5hdOTHAZJ8-PaiRDWTauCBPQbC8rYzovmS3PgaXRt6qMFNig8eNShFwK6XjETWrH0zgN91vjmRnn7K8Dqr2ghON1ceSP4585M96P2vwpIo3w)](https://lh6.googleusercontent.com/0vw_UJUcufCu6MjIWdm5LpKZ_mG04vjCl0JyO8BAsEmMPxDBmlPzJugmhl0bndtoQANe7PEwKtR7Yvw-7O5hdOTHAZJ8-PaiRDWTauCBPQbC8rYzovmS3PgaXRt6qMFNig8eNShFwK6XjETWrH0zgN91vjmRnn7K8Dqr2ghON1ceSP4585M96P2vwpIo3w)

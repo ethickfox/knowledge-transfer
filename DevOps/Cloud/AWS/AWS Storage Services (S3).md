@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-07T15:13
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[AWS](AWS.md)"
----
 ![Untitled 111.png](Untitled%20111.png)
 
 # Block

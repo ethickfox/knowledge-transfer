@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-10T10:34
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Spring](Spring)"
----
 # **Spring Security**
 
 It provides several essential security features like [l](l), authorization, [rolebasedaccesscontrolusingsprings](rolebasedaccesscontrolusingsprings),  remembers the password, URL protection, concurrent active sessions management, etc. To enable Spring security in Java Web application, you need to configure three things -  declare a **delegating proxy filter** in web.xml, add the ContextLoaderListener in web.xml and provide actual security constraints on applicationContext-Security.xml file. Since Spring security uses a chain of filters to implement various security constraints, also known as Spring's **"security chain filter"**, it relies on web container for the initialization of delegating filter proxy.
@@ -62,7 +53,7 @@ if (principal instanceof UserDetails) {
 }
 ```
 
-![Untitled 2 13.png](../../../Security/_img/Untitled%202%2013.png)
+![Untitled 2 13.png](../../_img/Untitled%202%2013.png)
 
 If you ever need to know current logged-in user details like, in Spring MVC controller, I suggest you declare a dependency and let Spring provide you the Principal object, rather you querying for them and create a tightly coupled system.
 
@@ -109,7 +100,7 @@ You will need to include the following xml snippet in your _Spring Security Con
 
 Проверка разрешений на доступ к тому или иному ресурсу
 
-![Untitled 3 13.png](../../../Security/_img/Untitled%203%2013.png)
+![Untitled 3 13.png](../../_img/Untitled%203%2013.png)
 
 ![Untitled 4 10.png](Untitled%204%2010.png)
 
@@ -337,11 +328,11 @@ password encoder, default - bcrypt
   }
 ```
 
-![Untitled 5 10.png](../../../Security/_img/Untitled%205%2010.png)
+![Untitled 5 10.png](../../_img/Untitled%205%2010.png)
 
 ## Form based auth
 
-![Untitled 6 10.png](../../../Security/_img/Untitled%206%2010.png)
+![Untitled 6 10.png](../../_img/Untitled%206%2010.png)
 
 ![Untitled 7 8.png](Untitled%207%208.png)
 
@@ -376,11 +367,11 @@ An OAuth authorization server is responsible for authenticating the users and is
 </dependency>
 ```
 
-![Untitled 8 8.png](Untitled%208%208.png)
+![Untitled 8 8.png](../../_img/Untitled%208%208.png)
 
-![Untitled 9 8.png](Untitled%209%208.png)
+![Untitled 9 8.png](../../_img/Untitled%209%208.png)
 
-![Untitled 10 8.png](Untitled%2010%208.png)
+![Untitled 10 8.png](../../_img/Untitled%2010%208.png)
 
 ![Untitled 11 8.png](Untitled%2011%208.png)
 
@@ -481,7 +472,7 @@ public ProviderSettings providerSettings() {
 
   
 
-![Untitled 13 8.png](Untitled%2013%208.png)
+![Untitled 13 8.png](../../_img/Untitled%2013%208.png)
 
 **@EnableWebSecurity**
 
@@ -519,12 +510,12 @@ public ProviderSettings providerSettings() {
 
 Authentication is a process to verify that the user is the one who he claims to be. It is generally implemented using a username and password. If a user enters the correct username and password then authentication is successful, otherwise, authentication failed.
 
-![Untitled 14 8.png](Untitled%2014%208.png)
+![Untitled 14 8.png](../../_img/Untitled%2014%208.png)
 
 # Authorisation
 
 Authorisation provides access control. For example, only the admin can see some pages in a web application. To implement that, the admin must have some admin-related permissions or roles.
 
-![Untitled 15 7.png](Untitled%2015%207.png)
+![Untitled 15 7.png](../../_img/Untitled%2015%207.png)
 
-![Untitled 16 7.png](Untitled%2016%207.png)
+![Untitled 16 7.png](../../_img/Untitled%2016%207.png)

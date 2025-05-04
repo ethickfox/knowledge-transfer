@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:26
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Google Cloud](Google%20Cloud.md)"
----
 # Cloud Bigtable - bigdata
 
 [![](https://lh4.googleusercontent.com/3Inpdpe05xrAwwkIbcUUnFdhKcMFfzxqhUAkMknSZrQ7Mvh88j6oq1t2DNi5s1tL94xS0rUcvKfRGsucaF3IMIVyN3-oqzd-gasPrqeoFJOsTFQCQ22LiF3_Ckz8tg3IPjnb9jX8DLieGR2p-pF7XzG0GFvoMd0qbMJIyoaASpf45G1_dxWR8Bvub9-_xA)](https://lh4.googleusercontent.com/3Inpdpe05xrAwwkIbcUUnFdhKcMFfzxqhUAkMknSZrQ7Mvh88j6oq1t2DNi5s1tL94xS0rUcvKfRGsucaF3IMIVyN3-oqzd-gasPrqeoFJOsTFQCQ22LiF3_Ckz8tg3IPjnb9jX8DLieGR2p-pF7XzG0GFvoMd0qbMJIyoaASpf45G1_dxWR8Bvub9-_xA)

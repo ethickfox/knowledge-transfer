@@ -1,14 +1,3 @@
----
-Assignee: Nikita KatyshevMikhail Krasikov
-Duration: Invalid date
-Interview graded: true
-Last edited time: 2023-11-29T18:04
-Last recall: 2023-07-22
-Needs Rework: false
-Status: In progress
-Topic:
-  - "[Message Brockers](Message%20Brockers)"
----
 # **Kafka**
 
 — распределённый программный брокер сообщений

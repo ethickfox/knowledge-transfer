@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:24
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Google Cloud](Google%20Cloud.md)"
----
 # Cloud storage
 
 [![](https://lh4.googleusercontent.com/MBy4PrObUgw-U0x_tEyUce6vXH1RUgX25DQwggSqtWA3TaZoz8M80p8Cv60BQEcqo4dGGK8JdG2pw4t0NpRiiCHaYHVYFXCLhxO2bP7wT-KGQX-n5ro_OLj9Y27W7nljfhZva9vof5A2Gv24cBSIYN6M50SL35uQNaQ1pR2Zs9czNkDzXZlxgkBEnghAGg)](https://lh4.googleusercontent.com/MBy4PrObUgw-U0x_tEyUce6vXH1RUgX25DQwggSqtWA3TaZoz8M80p8Cv60BQEcqo4dGGK8JdG2pw4t0NpRiiCHaYHVYFXCLhxO2bP7wT-KGQX-n5ro_OLj9Y27W7nljfhZva9vof5A2Gv24cBSIYN6M50SL35uQNaQ1pR2Zs9czNkDzXZlxgkBEnghAGg)

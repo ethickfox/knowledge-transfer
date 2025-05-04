@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2024-04-21T17:10
-Last recall: 2023-08-03
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Spring](Spring)"
----
 **Spring** is an [application framework](https://en.wikipedia.org/wiki/Application_framework) and [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control) [container](https://en.wikipedia.org/wiki/Servlet_container) for the [Java platform](https://en.wikipedia.org/wiki/Java_platform).
 
 **Framework** - Platform that defines application structure

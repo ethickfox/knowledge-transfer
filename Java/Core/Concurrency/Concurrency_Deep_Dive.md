@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2024-05-28T15:51
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Java Core](../Core%5C%5C)"
----
 ### Intro
 
 **Fairness.** Multiple users and programs may have equal claims on the machine’s  

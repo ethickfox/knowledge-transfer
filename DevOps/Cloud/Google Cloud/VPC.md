@@ -1,13 +1,3 @@
----
-Assignee: Nikita Katyshev
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Google Cloud](Google%20Cloud.md)"
----
 ## Virtual Private Cloud
 
 Global virtual network that spans all regions. Single VPC for an entire organization, isolated within projects.

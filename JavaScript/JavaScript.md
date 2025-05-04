@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-08-21T09:49
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Vanilla JavaScript](Vanilla%20JavaScript)"
----
 Javascript is a **single-threaded language**, meaning that just one line of code may be run at once.
 
 **BOM** stands for _Browser Object Model_. It provides interaction with the browser. The default object of a browser is a window. So, you can call all the functions of the window by specifying the window or directly. The window object provides various properties like document, history, screen, navigator, location, innerHeight, innerWidth,

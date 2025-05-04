@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-11-29T17:43
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[../Spring](../Spring)"
----
 ![Untitled 103.png](Untitled%20103.png)
 
 ![Untitled 1 30.png](Untitled%201%2030.png)

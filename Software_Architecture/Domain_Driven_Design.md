@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-23T11:27
-Last recall: 2023-07-22
-Needs Rework: true
-Status: Not started
-Topic:
-  - "[Web Services Architecture](Web%20Services%20Architecture)"
----
 DDD позволяет упростить взаимодействие между всеми аспектами разработки продукта **от** _этапа появления идеи_ **до** _тестирования уже полностью готового продукта_.
 
 У нас есть домен (**domain**), который является бизнес задачей (например “счет на оплату билетов в кино”).

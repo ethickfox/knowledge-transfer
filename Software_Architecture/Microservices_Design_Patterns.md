@@ -1,12 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-08-23T11:26
-Last recall: 2023-07-22
-Needs Rework: true
-Status: Not started
-Topic:
-  - "[Web Services Architecture](Web%20Services%20Architecture)"
----
 ![Untitled 90.png](_img/Untitled%2090.png)
 
 # Decomposition Patterns

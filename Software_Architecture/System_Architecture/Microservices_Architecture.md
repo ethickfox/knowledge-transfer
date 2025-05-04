@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-12-04T15:28
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Web Services Architecture](Web%20Services%20Architecture)"
----
 ![Untitled 41.png](_img/Untitled%2041.png)
 
 # **Microservices**

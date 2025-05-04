@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-08-23T12:24
-Needs Rework: true
-Status: Not started
-Topic:
-  - "[AWS](AWS.md)"
----
 AWS fully managed database services provide continuous monitoring, self-healing storage, and automated scaling to help you focus on application development.
 
 ![Untitled 121.png](../../../Software_Architecture/_img/Untitled%20121.png)

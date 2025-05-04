@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:24
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[CI-CD](DevOps/CI-CD/CI-CD%5C%5C)"
----
 The management of essential technical operations—hardware, software, networking in physical and virtual environments—aiming to minimize downtime and maintain business productivity.
 
 **System Infrastructure Options**

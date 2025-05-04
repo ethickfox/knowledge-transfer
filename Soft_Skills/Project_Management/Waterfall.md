@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Programming Methodologies](Programming%20Methodologies)"
----
 ## **Waterfall**
 
 The waterfall development approach is to work sequentially from start to finish. Clients typically see results at the end of the project life cycle. If there are errors or defects, the team has to work backward to address and correct them. The development process is divided into five phases:

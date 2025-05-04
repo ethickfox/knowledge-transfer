@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-23T11:37
-Last recall: 2023-08-23
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Security](Security.md)"
----
 **The Risks of Poorly Secured Software**
 
 - **GDPR  

@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-21T16:34
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Web Services Architecture](Web%20Services%20Architecture)"
----
 # **HTTP**
 
 Так как HTTP — протокол прикладного уровня передачи данных, изначально — в виде гипертекстовых документов в формате HTML, в настоящее время используется для передачи произвольных данных. Это клиент-серверный протокол,

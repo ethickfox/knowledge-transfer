@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-03T11:37
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Hibernate](Hibernate%201%5C%5C)"
----
 # **Hibernate**
 
 Фреймворк (реализация jpa), упрощающий взаимодействие с бд посредствам ORM.

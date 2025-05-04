@@ -1,14 +1,3 @@
----
-Assignee: Nikita Katyshev
-Duration: 2022-12-02
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[JSON](Knowledge%20Transfer/Frontend/JSON%5C%5C)"
----
 Jackson is a library for interaction with json. It allows to work with it, by representing JSON data as:
 
 - tokens

@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-08-20T18:54
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Project Management](Project%20Management)"
----
 ![Untitled 109.png](../_img/Untitled%20109.png)
 
 ## Clarify

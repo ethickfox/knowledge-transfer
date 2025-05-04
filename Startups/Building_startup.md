@@ -1,2 +1,0 @@
-### Market fit
-### SEO

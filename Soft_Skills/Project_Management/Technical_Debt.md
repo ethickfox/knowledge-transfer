@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Clean Code](Computer%20Science/Development/Clean%20Code%5C%5C)"
----
   
 
 Technical debt is a concept that illustrates the implicit cost of further rework caused by implementation of an immediate simple solution over a better approach that could take longer.

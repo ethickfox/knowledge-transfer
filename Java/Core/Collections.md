@@ -1,13 +1,3 @@
----
-Interview graded: true
-Last edited time: 2024-04-21T17:13
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Data Structures](Data%20Structures)"
-  - "[Java Core](Core%5C%5C)"
----
 ## EnumMap
 
   

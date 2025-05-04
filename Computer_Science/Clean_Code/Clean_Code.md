@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Clean Code](Computer%20Science/Development/Clean%20Code%5C%5C)"
----
 # **Code quality**
 
 Identifying and estimating code quality requires you to consider two aspects of code: what it **does** and how it **looks**.

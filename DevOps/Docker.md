@@ -1,14 +1,3 @@
----
-Assignee: Mikhail KrasikovNikita Katyshev
-Duration: 2022-11-11
-Interview graded: true
-Last edited time: 2023-08-10T11:18
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Done
-Topic:
-  - "[Docker](DevOps/CI-CD/Docker%5C%5C)"
----
 ==**Docker**== is a technology that allows you to build, run, test, and deploy distributed applications. It uses operating-system-level virtualization to deliver software in packages called **containers**.
 
 ![Untitled 95.png](../Software_Architecture/_img/Untitled%2095.png)

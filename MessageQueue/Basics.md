@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Message Brockers](Message%20Brockers)"
----
 ### **Messaging Queue.**
 
 ![Untitled 50.png](../Software_Architecture/_img/Untitled%2050.png)

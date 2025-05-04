@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Programming Methodologies](Programming%20Methodologies)"
----
 ## **Scrum**
 
 To support the transition to Agile, different frameworks have been developed that align with the Agile mindset, values, and principles. Scrum is one example of a framework that can empower your team to put Agile ways of thinking and working into practice.

@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-09-12T17:37
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[AWS](AWS.md)"
----
 ![Untitled 54.png](../../Software_Architecture/_img/Untitled%2054.png)
 
 **Continuous integration** is a DevOps software development practice where developers regularly merge their code changes into a central repository, after which automated builds and tests are run. Continuous integration most often refers to the build or integration stage of the software release process and entails both an automation component (e.g. a CI or build service) and a cultural component (e.g. learning to integrate frequently).

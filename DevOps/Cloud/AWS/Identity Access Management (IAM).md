@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-07T15:01
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[AWS](AWS.md)"
----
 To assume a role, we use the Security Token Service (STS) that gives us temporary credentials to use the role. Why would we need separate credentials? When you assume a role, you get credentials, which you can use to make API-calls with. These credentials let you act as the role until they expire. They’re separate from your original credentials, so you can easily use both at the same time for different API calls. Temporary Credentials also look different from the long-term credentials.
 
 The API call we need to make in order to assume the role is the sts:AssumeRole action. We need to specify the ARN of the role we want to assume as well as a session name. The session name will be visible in CloudTrail and is part of what makes it transparent who assumed a role. Optionally we can also specify how long the credentials should be valid. The upper limit in IAM is 72 hours, but you can specify a lower boundary for each role.

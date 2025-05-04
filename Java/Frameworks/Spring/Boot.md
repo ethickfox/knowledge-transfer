@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-21T16:39
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[../Spring](../Spring)"
----
 # **Spring Boot**
 
 Framework that simplifies creation of Spring application. While Spring Framework focuses on providing flexibility, Spring Boot seeks to reduce code length and simplify web application development. By leveraging annotation and boilerplate configuration, Spring Boot reduces the time it takes to develop applications. This capability helps you create standalone applications with less or almost no configuration overhead.

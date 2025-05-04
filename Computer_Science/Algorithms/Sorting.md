@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-11-26T17:09
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Algorithms](Algorithms)"
----
 # **Алгоритмы**
 
 **Сложность алгоритмов -** Big O. С помощью этого значения мы определяем эффективность того или иного решения проблемы.

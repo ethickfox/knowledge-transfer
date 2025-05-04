@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-08-21T09:23
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[AWS](AWS.md)"
----
 ## **Tables, Items and Attributes**
 
 support for ACID transactions

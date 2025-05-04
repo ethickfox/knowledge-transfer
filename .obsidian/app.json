@@ -5,5 +5,8 @@
   "newFileLocation": "current",
   "attachmentFolderPath": "./_img",
   "newLinkFormat": "relative",
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "userIgnoreFilters": [
+    "/assets/*"
+  ]
 }

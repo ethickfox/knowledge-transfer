@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2024-04-03T19:11
-Last recall: 2024-04-03
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Java Core](../Core%5C%5C)"
----
 ## **JAR and WAR**
 **Java Archive** : Contains class files, resources, dependent libraries, and other files needed for the application. Can contain the entry point, and be used as a target for executing the java command
 

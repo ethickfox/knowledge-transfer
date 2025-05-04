@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Clean Code](Computer%20Science/Development/Clean%20Code%5C%5C)"
----
 - In a **centralized version control system (CVCS)**, everything is stored in one consolidated repository. Each developer still has their own working copies to edit, but they must upload their edited code to a single repository before other team members can access and use it.
 - **Distributed version control system (DVCS)** provides developers on your team with a copy of the entire code, as well as an additional level of repositories, which act as personal repositories for each individual developer.  
     With a DVCS, developers on your team can make edits to their working copies and commit those changes to their own repository before the code is pushed to the primary repository, which the whole team is able to access. Each developer’s workstation also has access to a copy of the entire code and change history.  

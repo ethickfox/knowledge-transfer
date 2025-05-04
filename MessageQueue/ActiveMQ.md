@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:25
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Message Brockers](Message%20Brockers)"
----
 ![Untitled 47.png](Untitled%2047.png)
 
 ![Untitled 1 11.png](../Software_Architecture/_img/Untitled%201%2011.png)

@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-09T14:37
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Spring](Spring)"
----
 # **Spring Data**
 
 Provides a set of common interfaces for interaction with datasources, aspected behaviour and naming convention.

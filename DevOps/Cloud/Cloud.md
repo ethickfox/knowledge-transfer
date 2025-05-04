@@ -1,11 +1,3 @@
----
-SubTopic:
-  - "[Cloud Foundations](Cloud%20Foundations.md)"
-  - "[Api Gateway](Api%20Gateway)"
-  - "[Service Registry](Service%20Registry)"
-  - "[Cloud Native](Cloud%20Native.md)"
-  - "[Distributed tracing](Distributed%20tracing)"
----
 **Deployment Models**
 
 - **Private Cloud  

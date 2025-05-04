@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:25
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Message Brockers](Message%20Brockers)"
----
 RabbitMQ, and messaging in general, uses some jargon.
 
 - **_Producing_** means nothing more than sending. A program that sends messages is a _producer_ :

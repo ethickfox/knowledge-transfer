@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-11-25T18:03
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Programming Methodologies](Programming%20Methodologies)"
----
 ## **TDD**
 
 Test driven development - Техника разработки программного обеспечения, которая основывается на повторении очень коротких циклов разработки

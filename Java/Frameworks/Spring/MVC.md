@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-04T15:19
-Last recall: 2023-08-04
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Spring](Spring)"
----
 # **Spring MVC**
 
   

@@ -1,12 +1,3 @@
----
-Duration: Invalid date
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Ready To Discuss
-Topic: []
----
 ## JavaScript Object Notation
 
 It is a popular format used for sharing data online. It’s syntax is based on the JavaScript language, but might be used with any language. Mostly it used for data exchange including REST Api requests and responses or application configurations. One of the main advantage of JSON between it’s nearest competitor - XML, is an ease of reading and amount of characters.

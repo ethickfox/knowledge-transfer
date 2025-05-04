@@ -1,14 +1,3 @@
----
-Assignee: Nikita Katyshev
-Duration: 2022-12-02
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[JSON](JavaScript/JSON%5C%5C)"
----
 **Познакомимся с библиотекой GSON**
 
 - С помощью **GsonBuilder** можно настроить и создать обработчик  

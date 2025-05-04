@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-11-26T17:08
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Algorithms](Algorithms)"
----
 ### **Поиска**
 
 **Линейный поиск**

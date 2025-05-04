@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-25T15:21
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[NoSql](NoSql)"
----
 Document oriented database, using BSON(Binary JSON), well known for data consistency
 
 Build up on CAP concept, which is for disturbed database systems

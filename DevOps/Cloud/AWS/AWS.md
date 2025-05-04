@@ -1,21 +1,3 @@
----
-Key Topic:
-  - Cloud
-SubTopic:
-  - "[Elastic Compute Cloud (EC2)](Elastic%20Compute%20Cloud%20(EC2).md)"
-  - "[Identity Access Management (IAM)](DevOps/Cloud/AWS/Identity%20Access%20Management%20(IAM)%5C%5C)"
-  - "[AWS Storage Services (S3)](AWS%20Storage%20Services%20(S3).md)"
-  - "[VPC](VPC.md)"
-  - "[CloudFormation](CloudFormation.md)"
-  - "[DynamoDb](DynamoDb.md)"
-  - "[EKS-ECS](EKS-ECS.md)"
-  - "[Lambda](Lambda.md)"
-  - "[Database Services (DS)](Database%20Services%20(DS).md)"
-  - "[SQS-SNS](SQS-SNS.md)"
-  - "[Serverless](Serverless.md)"
-  - "[Cloud CI-CD](Cloud%20CI-CD.md)"
-  - "[AWS Cloud Practitioner Certification CLF-C02](AWS%20Cloud%20Practitioner%20Certification%20CLF-C02.md)"
----
 One of Amazon’s first AWS services, Amazon Elastic Compute Cloud (EC2) provides cloud-based computing power for users. AWS delivers as much compute resources as you need, and your enterprise can scale up or down on compute power whenever it wants. Amazon EC2 instances are designed to be flexible as you can configure the memory, CPU, instance storage, and boot partition size to meet your enterprise’s demands.
 
   

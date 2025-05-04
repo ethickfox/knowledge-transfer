@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Clean Code](Computer%20Science/Development/Clean%20Code%5C%5C)"
----
 Code review results in several benefits
 
 - **Fewer Defects  

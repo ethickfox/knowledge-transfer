@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2024-02-27T13:14
-Last recall: 2023-07-11
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Program Structure Architecture](Program%20Structure%20Architecture)"
----
 # Creational patterns
 
 ## Factory Method

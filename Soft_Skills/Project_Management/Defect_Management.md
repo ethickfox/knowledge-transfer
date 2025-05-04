@@ -1,18 +1,6 @@
----
-Interview graded: true
-Last edited time: 2023-11-25T18:47
-Last recall: 2023-11-25
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics%5C%5C)"
----
 **Basics of Defect Management**
 
-[D3 Interview](D3%20Interview)
-
 **Error**
-
 When a _developer_ causes a problem or makes a mistake, it’s an error.
 
 Errors are mistakes made by a developer while writing code, including any possible misunderstandings of the intended functionality or requirements of the request.

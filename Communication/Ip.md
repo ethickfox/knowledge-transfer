@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-08-01T10:36
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Network](Network)"
----
 ## [Understanding IP addresses](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking#understanding-ip-addresses)
 
 Every location or device on a network must be _addressable_. This means that it can be reached by referencing its designation under a predefined system of addresses. In the normal TCP/IP model of network layering, this is handled on a few different layers, but usually when we refer to an address on a network we are talking about an IP address.

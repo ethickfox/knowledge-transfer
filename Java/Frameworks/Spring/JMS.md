@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-03T10:06
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Message Brockers](Message%20Brockers)"
-  - "[Spring](Spring)"
----
 ## Configuration with java code
 
 **The** _**JmsTemplate**_ **class handles the creation and release of resources when sending or synchronously receiving messages.**

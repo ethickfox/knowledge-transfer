@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:26
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Google Cloud](Google%20Cloud.md)"
----
 # Firestore
 
 [![](https://lh5.googleusercontent.com/Yk_PQ60Rr82F--9tjwnxFNoO4ZFcMu1wsrwYkf2_14yvcy0lt_syXedMJ6OuUUx4EYFbe_Uz9yvzj2YBXQCpXnv4bBKhu0nNuGi-WcOYnrjBJzrz_AkfVcQZfDDAE03k-LluyiEg2INZoLZya4SqD_sE9pC7EbYs6oLZxmfjQrlUdB57K1nOovaJcX7KKw)](https://lh5.googleusercontent.com/Yk_PQ60Rr82F--9tjwnxFNoO4ZFcMu1wsrwYkf2_14yvcy0lt_syXedMJ6OuUUx4EYFbe_Uz9yvzj2YBXQCpXnv4bBKhu0nNuGi-WcOYnrjBJzrz_AkfVcQZfDDAE03k-LluyiEg2INZoLZya4SqD_sE9pC7EbYs6oLZxmfjQrlUdB57K1nOovaJcX7KKw)

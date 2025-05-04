@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-16T15:20
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Google Cloud](Google%20Cloud.md)"
----
 [![](https://lh6.googleusercontent.com/0YvzNsHkxh-jt3ED7pDN0kklgcnnrlFntasUtrj9RMu1SsSX0bL2i7rwt6ge1hU1txEJw-e3GNAoTzwJUnL2E5Oe6lY2i_ZfMhsmq-paJHcyYGC-gGXZX6HVn0-eW9053rCh32vtTnmp2elhzd7pCPtBx0QcN8DhjFDDOljnQ0YzXTb4G5FyCNFTlIW1Yw)](https://lh6.googleusercontent.com/0YvzNsHkxh-jt3ED7pDN0kklgcnnrlFntasUtrj9RMu1SsSX0bL2i7rwt6ge1hU1txEJw-e3GNAoTzwJUnL2E5Oe6lY2i_ZfMhsmq-paJHcyYGC-gGXZX6HVn0-eW9053rCh32vtTnmp2elhzd7pCPtBx0QcN8DhjFDDOljnQ0YzXTb4G5FyCNFTlIW1Yw)
 
 [![](https://lh6.googleusercontent.com/PIyNFOOb3PWD73JrlzLqa7y5WEKYw6eFSNy3ZeyxumdlDdaQYlO_z9vePzWJw3rHgbKNZupOsiQ09P7twMItdTlSqWVNZZx_pZDz1POflgdsFcglqa6mwKUuQg5voq67OaI1WNMkiGQbvYXID8B4hw0CjKZCaYSbYpQhQtO8Ay2FO5G4qTu6UXan2GySsA)](https://lh6.googleusercontent.com/PIyNFOOb3PWD73JrlzLqa7y5WEKYw6eFSNy3ZeyxumdlDdaQYlO_z9vePzWJw3rHgbKNZupOsiQ09P7twMItdTlSqWVNZZx_pZDz1POflgdsFcglqa6mwKUuQg5voq67OaI1WNMkiGQbvYXID8B4hw0CjKZCaYSbYpQhQtO8Ay2FO5G4qTu6UXan2GySsA)

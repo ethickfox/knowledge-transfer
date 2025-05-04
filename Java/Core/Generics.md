@@ -1,13 +1,3 @@
----
-Duration: Invalid date
-Interview graded: true
-Last edited time: 2024-04-03T18:07
-Last recall: 2024-03-30
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Java Core](Knowledge%20Transfer/Backend/Java/Java%20Core/Java%20Core%5C%5C)"
----
 ## **Дженерики**
 
 Особые средства языка Java для реализации обобщенного программирования: особого подхода к описанию данных и алгоритмов, позволяющего работать с различными типами данных без изменения их описания.

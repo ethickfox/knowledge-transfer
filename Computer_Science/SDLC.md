@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-19T19:38
-Last recall: 2023-08-02
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Project Management](Project%20Management)"
----
 ## **Basic SDLC**
 
 ![Untitled 105.png](../Software_Architecture/_img/Untitled%20105.png)

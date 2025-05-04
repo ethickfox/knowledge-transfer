@@ -1,13 +1,3 @@
----
-Assignee: Mikhail Krasikov
-Interview graded: true
-Last edited time: 2024-02-17T11:34
-Last recall: 2023-11-26
-Needs Rework: false
-Status: In progress
-Topic:
-  - "[Java Core](../Core%5C%5C)"
----
 ## Basic terms
 
 ==**Process**== - object, which created by operating system, when user starts the application.

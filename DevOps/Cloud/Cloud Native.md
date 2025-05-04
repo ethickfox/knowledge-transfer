@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-03T09:54
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Cloud](Cloud.md)"
----
 ![Untitled 110.png](Untitled%20110.png)
 
 ![Untitled 1 36.png](../../Software_Architecture/_img/Untitled%201%2036.png)

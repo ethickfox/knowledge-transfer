@@ -1,11 +1,3 @@
----
-Interview graded: false
-Last edited time: 2023-08-23T13:34
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[AWS](AWS.md)"
----
 Basic Template
 
 ```JSON

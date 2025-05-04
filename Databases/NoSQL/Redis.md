@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-08-18T12:56
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[NoSql](NoSql)"
----
 Redis keys are binary safe; this means that you can use any binary sequence as a key, from a string like "foo" to the content of a JPEG file. **The empty string is also a valid key**. A few other rules about keys: Very long keys are not a good idea.
 
 1. Redis is the Key-Value in-memory data store

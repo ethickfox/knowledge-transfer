@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:25
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Google Cloud](Google%20Cloud.md)"
----
 # Cloud Spanner
 
 [![](https://lh6.googleusercontent.com/aBJFH7aoazW52VTVHrsJWpvQyHaxN_hNbA-d4tS2gPY4s_Jheg5bBdWwAf0p9sACXKtS1K8dsANmzyN8QMU-SdWLO9bKJNCOU95O1zSmTQZB29MCJYPax39zMkA2p4k3VPjyWCTeppNRG_Jl4sxWNAFZlF0zHUp0BKGxemskIp_HYrX3rqz6eMolSlwYwQ)](https://lh6.googleusercontent.com/aBJFH7aoazW52VTVHrsJWpvQyHaxN_hNbA-d4tS2gPY4s_Jheg5bBdWwAf0p9sACXKtS1K8dsANmzyN8QMU-SdWLO9bKJNCOU95O1zSmTQZB29MCJYPax39zMkA2p4k3VPjyWCTeppNRG_Jl4sxWNAFZlF0zHUp0BKGxemskIp_HYrX3rqz6eMolSlwYwQ)

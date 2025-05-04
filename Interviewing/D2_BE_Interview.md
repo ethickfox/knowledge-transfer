@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2024-04-21T17:13
-Needs Rework: true
-Status: Not started
-Topic:
-  - "[Interviewing](Interviewing)"
----
 https://github.com/enhorse/java-interview
 
 > [!info] Top 133 Java Interview Questions Answers for 2 to 5 Years Experienced Programmers  
@@ -2261,7 +2253,7 @@ Stashing is a powerful tool to put aside code that you just wrote, without pushi
     - [ ]
     - [ ] Code quality
     
-    ![Untitled 12 13.png](Untitled%2012%2013.png)
+    ![Untitled 12 13.png](../Java/_img/Untitled%2012%2013.png)
     
     - [ ] Design and Development Principles
         
