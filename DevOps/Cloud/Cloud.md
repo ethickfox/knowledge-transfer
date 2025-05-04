@@ -20,3 +20,9 @@
     Multi-cloud is a strategy in which multiple computing and storage services are used in a single heterogeneous architecture. It aims to distribute cloud assets, software, and applications across several cloud-hosting environments, eliminating the need to rely on a single provider.
     
     This approach differs from a hybrid cloud in that the cloud services can function either independently or together, as opposed to multiple types of infrastructure functioning collectively (e.g., a data center, private cloud, and a public cloud).
+    
+    
+
+[Cloud_Native](Cloud_Native.md)
+[Cloud_CI-CD](Cloud_CI-CD.md)
+[Cloud_Foundations](Cloud_Foundations.md)

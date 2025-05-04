@@ -9,15 +9,12 @@ The management of essential technical operations—hardware, software, networkin
 **Traditional physical on-premises data centers represent the most basic IT infrastructure.  
   
 **Benefit**
-
 - Sufficient security — Companies own and control them privately, so sensitive data won’t be exposed to a threat.
 
 **Drawback**
-
 - Under-utilization — In typical physical data centers, server utilization is less than 20%.
 
 **When to Use Physical Infrastructure**
-
 When a team needs to develop software that uses custom hardware (e.g., automotive or medical equipment), and virtualization is not available because of the characteristics of custom hardware.
 
   
