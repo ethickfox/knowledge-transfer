@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Communication/JAX-RS.md",
+                "file": "MessageQueue/Messaging Queue Basics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JAX-RS"
+              "title": "Messaging Queue Basics"
             }
           }
         ]
@@ -36,7 +36,8 @@
         "state": {
           "type": "file-explorer",
           "state": {
-            "sortOrder": "alphabetical"
+            "sortOrder": "alphabetical",
+            "autoReveal": false
           },
           "icon": "lucide-folder-closed",
           "title": "Files"
@@ -95,7 +96,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Communication/JAX-RS.md",
+            "file": "MessageQueue/Messaging Queue Basics.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -151,6 +152,15 @@
   },
   "active": "1f162cc6410da359",
   "lastOpenFiles": [
+    "Java/Java Frameworks/Spring/Spring Data.md",
+    "Java/Java Frameworks/Spring/Spring Security.md",
+    "Java/Java Frameworks/Spring/Spring MVC.md",
+    "Java/Java Frameworks/Spring/Spring JMS.md",
+    "Java/Java Frameworks/Spring/Spring Test.md",
+    "Java/Java Core/JVM/String pool.md",
+    "Java/Build_Tools/Gradle.md",
+    "Java/Build_Tools/Maven.md",
+    "Java/Build_Tools",
     "Communication/CORS.md",
     "Communication/GraphQL.md",
     "Software Architecture/Development methodologies.md",
@@ -165,7 +175,6 @@
     "DevOps",
     "SDLC",
     "Security",
-    "Startups",
     "Flyweight.md"
   ]
 }

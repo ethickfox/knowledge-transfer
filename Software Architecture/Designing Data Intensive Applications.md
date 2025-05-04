@@ -618,4 +618,67 @@ umn compression allows more rows from a column to fit in the same amount of L1
 cache. Operators, such as the bitwise AND and OR described previously, can be
 designed to operate on such chunks of compressed column data directly. This techni‐
 que is known as vectorized processing
-- 
+
+If you have trillions of rows and petabytes of data in your fact tables, storing and
+querying them efficiently becomes a challenging problem. Dimension tables are usu‐
+ally much smaller (millions of rows), so in this section we will concentrate primarily
+on storage of facts.
+
+Another aspect of data warehouses that is worth mentioning briefly is materialized
+aggregates. As discussed earlier, data warehouse queries often involve an aggregate
+function, such as COUNT, SUM, AVG, MIN, or MAX in SQL. If the same aggregates are used
+by many different queries, it can be wasteful to crunch through the raw data every
+time. Why not cache some of the counts or sums that queries use most often?
+One way of creating such a cache is a materialized view. In a relational data model, it
+is often defined like a standard (virtual) view: a table-like object whose contents are
+the results of some query. The difference is that a materialized view is an actual copy
+of the query results, written to disk, whereas a virtual view is just a shortcut for writ‐
+ing queries. When you read from a virtual view, the SQL engine expands it into the
+view’s underlying query on the fly and then processes the expanded query.
+When the underlying data changes, a materialized view needs to be updated, because
+it is a denormalized copy of the data.The database can do that automatically, but such updates make writes more expensive, which is why materialized views are not
+often used in OLTP databases. In read-heavy data warehouses they can make more
+sense (whether or not they actually improve read performance depends on the indi‐
+vidual case).
+A common special case of a materialized view is known as a data cube or OLAP cube
+[64]. It is a grid of aggregates grouped by different dimensions.
+![](_img/Pasted%20image%2020250503212231.png)
+Imagine for now that each fact has foreign keys to only two dimension tables—in
+Figure 3-12, these are date and product. You can now draw a two-dimensional table,
+with dates along one axis and products along the other. Each cell contains the aggre‐
+gate (e.g., SUM) of an attribute (e.g., net_price) of all facts with that date-product
+combination. Then you can apply the same aggregate along each row or column and
+get a summary that has been reduced by one dimension (the sales by product regard‐
+less of date, or the sales by date regardless of product).
+Disadvantage is that a data cube doesn’t have the same flexibility as querying the
+raw data. For example, there is no way of calculating which proportion of sales comes
+from items that cost more than $100, because the price isn’t one of the dimensions.
+Most data warehouses therefore try to keep as much raw data as possible, and use
+aggregates such as data cubes only as a performance
+**Summary** 
+On a high level, we saw that storage engines fall into two broad categories: those opti‐
+mized for transaction processing (OLTP), and those optimized for analytics (OLAP).
+There are big differences between the access patterns in those use cases:
+• OLTP systems are typically user-facing, which means that they may see a huge
+volume of requests. In order to handle the load, applications usually only touch a
+small number of records in each query. The application requests records using
+some kind of key, and the storage engine uses an index to find the data for the
+requested key. Disk seek time is often the bottleneck here.
+• Data warehouses and similar analytic systems are less well known, because they
+are primarily used by business analysts, not by end users. They handle a much
+lower volume of queries than OLTP systems, but each query is typically very
+demanding, requiring many millions of records to be scanned in a short time.
+Disk bandwidth (not seek time) is often the bottleneck here, and column-
+oriented storage is an increasingly popular solution for this kind of workload.
+On the OLTP side, we saw storage engines from two main schools of thought:
+• The log-structured school, which only permits appending to files and deleting
+obsolete files, but never updates a file that has been written. Bitcask, SSTables,
+LSM-trees, LevelDB, Cassandra, HBase, Lucene, and others belong to this group.
+• The update-in-place school, which treats the disk as a set of fixed-size pages that
+can be overwritten. B-trees are the biggest example of this philosophy, being used
+in all major relational databases and also many nonrelational ones.
+
+Log-structured storage engines are a comparatively recent development. Their key
+idea is that they systematically turn random-access writes into sequential writes on
+disk, which enables higher write throughput due to the performance characteristics
+of hard drives and SSDs.

@@ -8,38 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ddb22c710e055a45",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DevOps/Kubernetes/Kubernetes.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Kubernetes"
-            }
-          },
-          {
-            "id": "99cffaa20b612436",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Software Architecture/Clean Code.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Clean Code"
-            }
-          },
-          {
             "id": "416d8425fa788ec9",
             "type": "leaf",
             "pinned": true,
@@ -56,21 +24,23 @@
             }
           },
           {
-            "id": "6d5cd6e2985d9866",
+            "id": "61ac7993dc0eec38",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Readme.md",
+                "file": "Glossary.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "Readme"
+              "title": "Glossary"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -215,37 +185,39 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "6d5cd6e2985d9866",
+  "active": "61ac7993dc0eec38",
   "lastOpenFiles": [
-    "Software Architecture/Designing Data Intensive Applications.md",
-    "Java/Build Tools/Gradle.md",
-    "Readme.md",
-    "Java/Build Tools/Maven.md",
-    "Software Architecture/Clean Code.md",
-    "DevOps/Kubernetes/Kubernetes.md",
-    "Software Architecture/_img/Untitled 123.png",
+    "JavaScript/Angular.md",
     "Glossary.md",
-    "Software Architecture/Patterns/Patterns.md",
-    "Software Architecture/Patterns/Flyweight.md",
-    "Testing/Unit Testing/Unit Testing.md",
-    "Testing/Unit Testing/Mockito.md",
-    "Testing/Unit Testing/JUnit.md",
-    "Testing/Unit Testing/Jest.md",
+    "Java/Java_Frameworks/Java Servlets.md",
+    "JavaScript/JavaScript.md",
+    "JavaScript/React.md",
+    "JavaScript/JSON.md",
+    "JavaScript/Next.js.md",
+    "JavaScript/NPM.md",
+    "MessageQueue/Kafka.md",
+    "JavaScript/Redux.md",
+    "MessageQueue/ActiveMQ.md",
+    "MessageQueue/RabbitMQ.md",
+    "MessageQueue/Messaging Queue Basics.md",
+    "MessageQueue/Zookeeper.md",
+    "Java/Java_Frameworks/Jackson.md",
+    "Java/Java_Frameworks/Jackson/Jackson 2.md",
+    "Java/Java_Frameworks/Hibernate.md",
+    "Java/Java_Frameworks/Hibernate/Hibernate Search.md",
+    "Java/Java_Frameworks/Hibernate/Hibernate 1.md",
+    "DevOps/Elastic.md",
+    "DevOps/Infrastructure_Management.md",
+    "Software Architecture/Designing Data Intensive Applications.md",
+    "DevOps/CI-CD/CI-CD.md",
+    "DevOps/CI-CD/CDN.md",
+    "DevOps/Kubernetes/Kubernetes.md",
+    "DevOps/Kubernetes/Spring_Boot_with_Kubernetes.md",
+    "Software Architecture/_img/Pasted image 20250503212231.png",
+    "_config.yml",
+    "Software Architecture/_img/Untitled 123.png",
     "Testing/_img/Untitled 3 26.png",
-    "Testing/Quality Assurance.md",
-    "Testing/Automated Testing.md",
-    "Startups/Building a startup.md",
-    "Software Architecture/Same-origin policy.md",
-    "Software Architecture/REST.md",
-    "Software Architecture/MVVM.md",
-    "Software Architecture/MVP.md",
-    "Software Architecture/MVC.md",
-    "Software Architecture/Microservices Design Patterns.md",
-    "Software Architecture/Microservices Architecture.md",
     "JavaScript/_img/Untitled 3 27.png",
-    "Java/Java Core/Concurrency/Concurrency.md",
-    "Java/Java Core/Concurrency/Concurrency Deep Dive/Concurrency Deep Dive.md",
-    "Interviewing/Interviews.md",
     "DevOps/_img/Untitled 2 9.png",
     "Software Architecture/_img/Pasted image 20250416183725.png",
     "Software Architecture/_img/Pasted image 20250304203530.png",
@@ -255,14 +227,12 @@
     "DevOps/Kubernetes/Untitled",
     "DevOps/Google Cloud",
     "DevOps/AWS",
-    "Java/_img/Untitled 3 3.png",
     "Untitled.canvas",
     "NoSQL/MongoDb/_img",
-    "Computer Science/_img",
+    "Computer_Science/_img",
     "Soft Skills/_img",
     "Security/_img",
     "Communication/_img",
-    "MessageQueue/_img",
-    "DevOps/_img"
+    "MessageQueue/_img"
   ]
 }

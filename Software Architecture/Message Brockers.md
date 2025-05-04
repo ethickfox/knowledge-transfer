@@ -2,10 +2,10 @@
 Key Topic:
   - Architecture
 SubTopic:
-  - "[[Kafka]]"
+  - "[[../MessageQueue/Kafka]]"
   - "[[Messaging Queue Basics]]"
   - "[[Zookeeper]]"
-  - "[[ActiveMQ]]"
-  - "[[Spring JMS]]"
-  - "[[RabbitMQ]]"
+  - "[[../MessageQueue/ActiveMQ]]"
+  - "[[../Java/Java_Frameworks/Spring/Spring JMS]]"
+  - "[[../MessageQueue/RabbitMQ]]"
 ---

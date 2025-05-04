@@ -5,7 +5,7 @@ Last recall: 2023-11-26
 Needs Rework: true
 Status: Not started
 Topic:
-  - "[[Java Core\\|Java Core]]"
+  - "[[../Java/Java_Core/Java Core\\|Java Core]]"
 ---
 When to use composition, when inheritance
 

@@ -16,15 +16,15 @@ https://github.com/enhorse/java-interview
 
 ## Core
 
-[[Java Core]]
+[[../Java/Java_Core/Java Core]]
 
-[[Generics]]
+[[../Java/Java_Core/Generics]]
 
-[[Java 8]]
+[[../Java/Java_Core/Java Versions/Java 8]]
 
-[[JVM]]
+[[../Java/Java_Core/JVM/JVM]]
 
-[[Java Versions]]
+[[../Java/Java_Core/Java Versions/Java Versions]]
 
 ## Concurrency
 
@@ -1189,7 +1189,7 @@ https://github.com/enhorse/java-interview
 
 ## Spring Boot
 
-[[Spring Boot]]
+[[../Java/Java_Frameworks/Spring/Spring Boot/Spring Boot]]
 
 Spring Boot is essentially a framework for rapid application development built on top of the Spring Framework. With its auto-configuration and embedded application server support
 
@@ -1298,17 +1298,17 @@ Here are some of the most common built-in endpoints Actuator provides:
     - [ ] Bean Initialization
     - [ ] @Transactional
     
-    [[Spring Core]]
+    [[../Java/Java_Frameworks/Spring/Spring Core]]
     
 
 - Development
     - [ ] Review
         
-        [[Code Review]]
+        [[../Computer_Science/Code_Review]]
         
     - [ ] Refactoring
         
-        [[Refactoring]]
+        [[../Computer_Science/Clean_Code/Refactoring]]
         
     - [ ] Patterns
         
@@ -1320,13 +1320,13 @@ Here are some of the most common built-in endpoints Actuator provides:
         
     - [ ] Build Tools
         
-        [[Gradle]]
+        [[../Java/Build_Tools/Gradle]]
         
-        [[Maven]]
+        [[../Java/Build_Tools/Maven]]
         
     - [ ] Git
         
-        [[Git]]
+        [[../Computer_Science/Git]]
         
     - [ ] CI/CD
 - Architecture
@@ -1385,7 +1385,7 @@ Here are some of the most common built-in endpoints Actuator provides:
 
 ## Spring MVC
 
-[[Spring MVC]]
+[[../Java/Java_Frameworks/Spring/Spring MVC]]
 
 ## Spring Security
 
@@ -1432,7 +1432,7 @@ When running integration tests for a Spring application, we must have an _Appli
 - What is Dependency Injection?
 - Explain the concepts of coupling and cohesion and how they relate to maintainability. As a follow-up, please explain afferent coupling and efferent coupling, and how those concepts fit above.
 
-[[Spring]]
+[[../Java/Java_Frameworks/Spring/Spring]]
 
 [https://www.baeldung.com/spring-interview-questions#:~:text=• Java Concurrency Interview Questions (%2B Answers)](https://www.baeldung.com/spring-interview-questions#:~:text=%E2%80%A2%20Java%20Concurrency%20Interview%20Questions%20(%2B%20Answers))
 
@@ -1506,13 +1506,13 @@ When running integration tests for a Spring application, we must have an _Appli
 
 All major programming languages have a built-in method for sorting. It is usually correct to assume and say sorting costs O(n * logn) is the number of elements being sorted. For completeness, here is a chart that lists many common sorting algorithms and their completeness.
 
-![[Untitled 7 15.png|Untitled 7 15.png]]
+![[../Computer_Science/_img/Untitled 7 15.png|Untitled 7 15.png]]
 
-[[Sorting Algorithms]]
+[[../Computer_Science/Algorithms/Sorting]]
 
 ## Search algorithms
 
-[[Search Algorithms]]
+[[../Computer_Science/Algorithms/Search]]
 
 ## Data Structures
 
@@ -2313,9 +2313,9 @@ These sample problems and solutions cover a range of difficulty levels and demon
 
 [[Patterns]]
 
-[[Hibernate 1|Hibernate 1]]
+[[../Java/Java_Frameworks/Hibernate/Hibernate 1|Hibernate 1]]
 
-[[Kafka]]
+[[../MessageQueue/Kafka]]
 
 - scalable application development
 
@@ -2387,7 +2387,7 @@ These sample problems and solutions cover a range of difficulty levels and demon
 
 - [ ] JDBC
     
-    [[JDBC]]
+    [[../Java/Java_Frameworks/JDBC]]
     
 
 Data storage / Data model design
@@ -2402,7 +2402,7 @@ Data storage / Data model design
         > Check out the most important Hibernate interview questions with detailed answers for freshers, intermediate and experienced candidates.  
         > [https://www.adaface.com/blog/hibernate-interview-questions/](https://www.adaface.com/blog/hibernate-interview-questions/)  
         
-        [[Hibernate 1]]
+        [[../Java/Java_Frameworks/Hibernate/Hibernate 1]]
         
     - [ ] Entity Manager
     - [ ] Persistance Context

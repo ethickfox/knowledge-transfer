@@ -6,5 +6,5 @@ SubTopic:
   - "[[Proof of concept]]"
   - "[[Anemic Domain Model]]"
   - "[[Patterns]]"
-  - "[[Refactoring]]"
+  - "[[../Computer_Science/Clean_Code/Refactoring]]"
 ---

@@ -33,7 +33,7 @@ DDD позволяет упростить взаимодействие межд�
 
 ![[Untitled 61.png|Untitled 61.png]]
 
-![[Untitled 1 19.png|Untitled 1 19.png]]
+![[../Computer_Science/_img/Untitled 1 19.png|Untitled 1 19.png]]
 
 ![[Untitled 2 14.png|Untitled 2 14.png]]
 

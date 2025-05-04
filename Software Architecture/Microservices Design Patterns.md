@@ -41,7 +41,7 @@ Moving parts of monolith to different services
 
 ![[Untitled 7 10.png|Untitled 7 10.png]]
 
-![[Untitled 8 10.png|Untitled 8 10.png]]
+![[../Computer_Science/_img/Untitled 8 10.png|Untitled 8 10.png]]
 
 ![[Untitled 9 10.png|Untitled 9 10.png]]
 

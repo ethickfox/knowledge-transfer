@@ -339,4 +339,4 @@ kubectl logs pod-info-development-78bbb77995-l47xp -n development
 minikube start
 kubectl get nodes  # Verify cluster is running
 ```
-- [Spring Boot with Kubernetes](Spring%20Boot%20with%20Kubernetes.md)
+- [Spring_Boot_with_Kubernetes](Spring_Boot_with_Kubernetes.md)
