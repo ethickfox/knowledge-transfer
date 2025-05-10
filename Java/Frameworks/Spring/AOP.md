@@ -27,7 +27,7 @@ Spring AOP aims to provide a simple AOP implementation across Spring IoC to solv
 
 **Advice** - метод, который находится в Аспекте и содержит сквозную логику
 
-```Java
+```java
 @Component
 @Aspect
 public class LoggingAspect { //Aspect
@@ -50,7 +50,7 @@ public class Library {
 
 Syntax:
 
-```Java
+```java
 execution(modifier return-type declaring-type method-name(parameters) throws)
 
 execution(public String com.ethickeep.Library.getBook(String))
@@ -59,35 +59,31 @@ execution( * get*(..) || * set*(..)) - wildcard и комбинирование
 ```
 
 - Before — перед вызовом метода
-    
-    ```Java
+    ```java
     @Before("execution(public String getBook())")
     ```
     
 - After returning — после выполнения метода, но до возврата результата
-    
-    ```Java
+    ```java
     @AfterReturnung(pointcut = "execution(public String getBooks())", returning = “books”)
     public void advice(List<Book> books)
     ```
-    
 - After throwing — после выполнения метода,в случае exception
-    
-    ```Java
+    ```java
     @AfterThrowing(pointcut = "execution(public String getBook())", throwing = “ex”)
     public void advice(Throwable ex)
     ```
     
 - After/After finally — после завершения метода, не получить доступ к результату и исключению
     
-    ```Java
+    ```java
     @After(pointcut = "execution(public String getBook())")
     public void advice()
     ```
     
 - Around — оборачивает метод(можно перед, после, вместо). Нужно вызывать метод вручную
     
-    ```Java
+    ```java
     @Around(pointcut = "execution(public String getBook())")
     public Object advice(ProceedingJoinPoint jp){  //jp - getBook method
     	Object res = jp.proceed();

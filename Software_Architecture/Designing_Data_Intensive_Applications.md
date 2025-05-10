@@ -682,3 +682,27 @@ Log-structured storage engines are a comparatively recent development. Their key
 idea is that they systematically turn random-access writes into sequential writes on
 disk, which enables higher write throughput due to the performance characteristics
 of hard drives and SSDs.
+
+
+- Backward compatibility - Newer code can read data that was written by older code.
+- Forward compatibility - Older code can read data that was written by newer code.
+
+These encoding libraries are very convenient, because they allow in-memory objects
+to be saved and restored with minimal additional code. However, they also have a
+number of deep problems:
+• The encoding is often tied to a particular programming language, and reading
+the data in another language is very difficult. If you store or transmit data in such
+an encoding, you are committing yourself to your current programming lan‐
+guage for potentially a very long time, and precluding integrating your systems
+with those of other organizations (which may use different languages).
+• In order to restore data in the same object types, the decoding process needs to
+be able to instantiate arbitrary classes. This is frequently a source of security
+problems [5]: if an attacker can get your application to decode an arbitrary byte
+sequence, they can instantiate arbitrary classes, which in turn often allows them
+to do terrible things such as remotely executing arbitrary code [6, 7].
+Versioning data is often an afterthought in these libraries: as they are intended
+for quick and easy encoding of data, they often neglect the inconvenient prob‐
+lems of forward and backward compatibility.
+• Efficiency (CPU time taken to encode or decode, and the size of the encoded
+structure) is also often an afterthought. For example, Java’s built-in serialization
+is notorious for its bad performance and bloated encoding
