@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-11-25T18:36
-Last recall: 2023-11-25
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics%5C%5C)"
----
 Activities focused on providing confidence that quality requirements will be fulfilled
 
 **Metrics**

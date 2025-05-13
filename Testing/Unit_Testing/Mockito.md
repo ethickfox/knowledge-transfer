@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:26
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Test Automation](Test%20Automation)"
----
 ## **Mockito**
 
 Фреймворк для работы с заглушками. Для создания mock объекта можно использовать аннотацию @Mock либо Mockito.mock(DataService.class)

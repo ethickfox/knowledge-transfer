@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics%5C%5C)"
----
 A **non-functional requirement** describes operational qualities rather than behavioral qualities—not _what_ the system will do but _how_ the system will do it. **Non-functional testing** verifies how well the system meets these requirements by examining its performance, usability, reliability, etc. For example, a non-functional test of an e-shop would check how many people could simultaneously place an order. While functional testing checks whether requirements are met, non-functional testing tends to check measurable specifications of an application.
 
 **The Value of Non-Functional Testing**

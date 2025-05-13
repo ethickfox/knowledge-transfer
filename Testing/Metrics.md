@@ -1,12 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-23T12:38
-Last recall: 2023-07-22
-Needs Rework: false
-Status: Planned
-Topic:
-  - "[Testing Basics](Knowledge%20Transfer/Testing/Testing%20Basics%5C%5C)"
----
 **Types of QA Metrics**
 
 - **Result Metrics  
@@ -16,9 +7,9 @@ Topic:
       
     **Common Result Metrics**
     
-    |   |   |   |
-    |---|---|---|
-    |◦ Total number of test cases  <br>◦  <br>Number of test cases passed  <br>◦  <br>Number of test cases failed  <br>◦  <br>Number of test cases blocked|◦ Number of defects found  <br>◦  <br>Number of defects accepted  <br>◦  <br>Number of defects rejected  <br>◦  <br>Number of defects deferred|◦ Number of critical defects  <br>◦  <br>Number of planned test hours  <br>◦  <br>Number of actual test hours  <br>◦  <br>Number of bugs found after shipping|
+|   |   |   |
+|---|---|---|
+|◦ Total number of test cases  <br>◦  <br>Number of test cases passed  <br>◦  <br>Number of test cases failed  <br>◦  <br>Number of test cases blocked|◦ Number of defects found  <br>◦  <br>Number of defects accepted  <br>◦  <br>Number of defects rejected  <br>◦  <br>Number of defects deferred|◦ Number of critical defects  <br>◦  <br>Number of planned test hours  <br>◦  <br>Number of actual test hours  <br>◦  <br>Number of bugs found after shipping|
     
 - **Predictive Metrics**
     

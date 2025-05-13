@@ -1,10 +1,12 @@
-#### Use Intention-Revealing Names
+# Clean Code
+## Variables Naming
+### Use Intention-Revealing Names
 The problem isn’t the simplicity of the code but the implicity of the code (to coin a phrase): the degree to which the context is not explicit in the code itself.
-#### Avoid Disinformation
+### Avoid Disinformation
 - Programmers must avoid leaving false clues that obscure the meaning of code. We should avoid words whose entrenched meanings vary from our intended meaning.
 - Beware of using names which vary in small ways.
 - Spelling similar concepts similarly is information. Using inconsistent spellings is disinformation.
-#### Make Meaningful Distinctions
+### Make Meaningful Distinctions
 - If names must be different, then they should also mean something different.
 - Noise words are another meaningless distinction. Imagine that you have a Product class. If you have another called ProductInfo or ProductData, you have made the names different without making them mean anything different.
 - Noise words are redundant. The word variable should never appear in a variable name. The word table should never appear in a table name.
@@ -14,30 +16,35 @@ The problem isn’t the simplicity of the code but the implicity of the code (to
 - Avoid Encodings - Encoding type or scope information into names simply adds an extra burden of deciphering
 - Pick one word for one abstract concept and stick with it. For instance, it’s confusing to have fetch, retrieve, and get as equivalent methods of different classes.
 - Avoid using the same word for two purposes. you need to place names in context for your reader by enclosing them in well-named classes, functions, or namespaces.
-### Functions
+## Functions
 Functions should not be 100 lines long. Functions should hardly ever be 20 lines long.
 - blocks within if statements, else statements, while statements, and so on should be one line long. Probably that line should be a function call.
 - functions should not be large enough to hold nested structures. Therefore, the indent level of a function should not be greater than one or two.
-- FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.
-	- another way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation
-	- statements within our function are all at the same level of abstraction
-	- The Stepdown Rule: We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions
-	- general rule for switch statements is that they can be tolerated if they appear only once, are used to create polymorphic objects, and are hidden behind an inheritance
-	- The ideal number of arguments for a function 
-		- is zero (niladic).
-		- Next comes one (monadic), 
-		- followed closely by two (dyadic). 
-		- Three arguments (triadic) should be avoided where possible. 
-		- More than three (polyadic) requires very special justification—and then shouldn’t be used anyway
-	- Flag arguments are ugly. Passing a boolean into a function is a truly terrible practice. It immediately complicates the signature of the method, loudly proclaiming that this function does more than one thing. It does one thing if the flag is true and another if the flag is false!
-	- Reducing the number of arguments by creating objects out of them may seem like cheating, but it’s not. When groups of variables are passed together,  they are likely part of a concept that deserves a name of its own.
-	- function and argument should form a very nice verb/noun pair. For example, write(name) is very evocative. Whatever this “name” thing is, it is being “written.” An even better name might be writeField(name), which tells us that the “name” thing is a “field.” This last is an example of the keyword form of a function name.
+### One Responsibility
+FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.
+- another way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation
+- statements within function should all be at the same level of abstraction
+- The Stepdown Rule: We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions
+- general rule for switch statements is that they can be tolerated if they appear only once, are used to create polymorphic objects, and are hidden behind an inheritance
+- The ideal number of arguments for a function 
+	- is zero (niladic).
+	- Next comes one (monadic), 
+	- followed closely by two (dyadic). 
+	- Three arguments (triadic) should be avoided where possible. 
+	- More than three (polyadic) requires very special justification—and then shouldn’t be used anyway
+- Flag arguments are ugly. Passing a boolean into a function is a truly terrible practice. It immediately complicates the signature of the method, loudly proclaiming that this function does more than one thing. It does one thing if the flag is true and another if the flag is false!
+- Reducing the number of arguments by creating objects out of them may seem like cheating, but it’s not. When groups of variables are passed together,  they are likely part of a concept that deserves a name of its own.
+- function and argument should form a very nice verb/noun pair. For example, write(name) is very evocative. Whatever this “name” thing is, it is being “written.” An even better name might be writeField(name), which tells us that the “name” thing is a “field.” This last is an example of the keyword form of a function name.
 - In the days before object oriented programming it was sometimes necessary to have output arguments. However, much of the need for output arguments disappears in OO languages because this is intended to act as an output argument. In general output arguments should be avoided. If your function must change the state of something, have it change the state of its owning object.
 
-* Functions should either do something or answer something, but not both. Either your function should change the state of an object, or it should return some information about that object. 
+* Functions should either do something or answer something, but not both. Either your function should 
+	* change the state of an object
+	* or it should return some information about that object. 
 
 * Try/catch blocks are ugly in their own right. They confuse the structure of the code and mix error processing with normal processing. So it is better to extract the bodies of the try and catch blocks out into functions of their own.
-### Comments
+### Formatting
+- if one function calls another, they should be vertically close, and the caller should be above the callee, if at all possible.
+## Comments
 - Sometimes a comment goes beyond just useful information about the implementation and provides the intent behind a decision. In the following case we see an interesting decision documented by a comment. 
 
 * Sometimes it is useful to warn other programmers about certain consequences
@@ -45,9 +52,7 @@ Functions should not be 100 lines long. Functions should hardly ever be 20 lines
 * A comment may be used to amplify the importance of something that may otherwise seem inconsequential.
 
 * As useful as javadocs are for public APIs, they are anathema to code that is not intended for public consumption.
-### Formatting
-- if one function calls another, they should be vertically close, and the caller should be above the callee, if at all possible.
-### Objects and Data Structures
+## Objects and Data Structures
 - We do not want to expose the details of our data. Rather we want to express our data in abstract terms. This is not merely accomplished by using interfaces and/or getters and setters. Serious thought needs to be put into the best way to represent the data that an object contains. The worst option is to blithely add getters and setters
 	- **Objects** hide their data behind abstractions and expose functions that operate on that data
 	- **Data structure** expose their data and have no meaningful functions.
@@ -113,7 +118,7 @@ final String outputDir = scratchDir.getAbsolutePath();
 
 **Active Records** are special forms of DTOs. They are data structures with public (or bean-accessed) variables; but they typically have navigational methods like save and find. Typically these Active Records are direct translations from database tables, or other data sources.
 
-### Exceptions
+## Exceptions
 - In a way, try blocks are like transactions. Your catch has to leave your program in a consistent state, no matter what happens in the try. For this reason it is good practice to start with a try-catch-finally statement when you are writing code that could throw exceptions. This helps you define what the user of that code should expect, no matter what goes wrong with the code that is executed in the try.
 - Try to write tests that force exceptions, and then add behavior to your handler to satisfy your tests. This will cause you to build the transaction scope of the try block first and will help you maintain the transaction nature of that scope.
 - The price of **checked exceptions** is an Open/Closed Principle1 violation. If you throw a checked exception from a method in your code and the catch is three levels above, you must declare that exception in the signature of each method between you and the _catch_. This means that a change at a low level of the software can force signature changes on many higher levels. Encapsulation is broken because all functions in the path of a throw must know about details of that low-level exception.
@@ -142,7 +147,7 @@ public class PerDiemMealExpenses implements MealExpenses {
 - Never return null. When we return null, we are essentially creating work for ourselves and foisting problems upon our callers. All it takes is one missing null check to send an application spinning out of control.
 - Unless you are working with an API which expects you to pass null, you should avoid passing null in your code whenever possible.
 ### Boundaries
-- we could create an adapters/separators to have an additional layer between using third party api. This will help in cases if api is changed - we will have a single place to fix everything. We manage third-party boundaries by having very few places in the code that refer to them. We may wrap them, or we may use an ADAPTER to convert from our perfect interface to the provided interface.
+We could create an adapters/separators to have an additional layer between using third party api. This will help in cases if api is changed - we will have a single place to fix everything. We manage third-party boundaries by having very few places in the code that refer to them. We may wrap them, or we may use an ADAPTER to convert from our perfect interface to the provided interface.
 ### Unit Tests
 The Three Laws of TDD:
 1. You may not write production code until you have written a failing unit test.
@@ -163,161 +168,42 @@ The Three Laws of TDD:
 
 Classes
 
-- We like to keep our variables and utility functions private, but we’re not fanatic about it.
-
-Sometimes we need to make a variable or utility function protected so that it can be
-
-accessed by a test. For us, tests rule. If a test in the same package needs to call a function
-
-or access a variable, we’ll make it protected or package scope. However, we’ll first look for
-
-a way to maintain privacy.
-
+- We like to keep our variables and utility functions private, but we’re not fanatic about it. Sometimes we need to make a variable or utility function protected so that it can be accessed by a test. For us, tests rule. If a test in the same package needs to call a function or access a variable, we’ll make it protected or package scope. However, we’ll first look for a way to maintain privacy.
 - The first rule of classes is that they should be small. With classes we count responsibilities.
-
-* The Single Responsibility Principle (SRP)2 states that a class or module should have one,
-
-and only one, reason to change. Trying to identify responsibilities (reasons to change) often helps us recognize and create better abstractions in our code. We want our systems to be composed of many small classes, not a few large ones. Each small class encapsulates a single responsibility, has a single reason to change, and collaborates with a few others to achieve the
-
-desired system behaviors.
-
-- Classes should have a small number of instance variables. Each of the methods of a class
-
-should manipulate one or more of those variables. In general the more variables a method
-
-manipulates the more cohesive that method is to its class. A class in which each variable is
-
-used by each method is maximally cohesive.
-
-- you want to extract one small part of that function into a separate function. However, the code
-
-you want to extract uses four of the variables declared in the function. Must you pass all
-
-four of those variables into the new function as arguments?
-
-Not at all! If we promoted those four variables to instance variables of the class, then
-
-we could extract the code without passing any variables at all. It would be easy to break
-
-the function up into small pieces.
-
-- breaking a large function into many smaller functions often gives us the opportu-
-
-nity to split several smaller classes out as well. This gives our program a much better orga-
-
-nization and a more transparent structure.
-
-- By minimizing coupling in this way, our classes adhere to another class design princi-
-
-ple known as the Dependency Inversion Principle (DIP).5 In essence, the DIP says that our
-
-classes should depend upon abstractions, not on concrete details.
-
-  
-
-Systems
-
-- Software systems should separate the startup process, when the application objects are
-
-constructed and the dependencies are “wired” together, from the runtime logic that takes
-
-over after startup. The startup process is a concern that any application must address. The separation of concerns is one of the oldest and most important design techniques
-
+* The Single Responsibility Principle (SRP) states that a class or module should have one, and only one, reason to change. Trying to identify responsibilities (reasons to change) often helps us recognize and create better abstractions in our code. We want our systems to be composed of many small classes, not a few large ones. Each small class encapsulates a single responsibility, has a single reason to change, and collaborates with a few others to achieve the desired system behaviors.
+- Classes should have a small number of instance variables. Each of the methods of a class should manipulate one or more of those variables. In general the more variables a method manipulates the more cohesive that method is to its class. A class in which each variable is used by each method is maximally cohesive.
+- you want to extract one small part of that function into a separate function. However, the code you want to extract uses four of the variables declared in the function. Must you pass all four of those variables into the new function as arguments? Not at all! If we promoted those four variables to instance variables of the class, then we could extract the code without passing any variables at all. It would be easy to break the function up into small pieces.
+- breaking a large function into many smaller functions often gives us the opportunity to split several smaller classes out as well. This gives our program a much better organization and a more transparent structure.
+- By minimizing coupling in this way, our classes adhere to another class design principle known as the Dependency Inversion Principle (DIP). In essence, the DIP says that our classes should depend upon abstractions, not on concrete details.
+## Systems
+- Software systems should separate the startup process, when the application objects are constructed and the dependencies are “wired” together, from the runtime logic that takes over after startup. The startup process is a concern that any application must address. The separation of concerns is one of the oldest and most important design techniqu
 - The code for the startup process is ad hoc and it is mixed in with the runtime logic. Here is a typical example:
 
-```
+``` java
 
 public Service getService() {
-
-if (service == null)
-
-service = new MyServiceImpl(...); // Good enough default for most cases?
-
-return service;
-
+    if (service == null){
+	    service = new MyServiceImpl(...); // Good enough default for most cases?
+	}
+	return service;
 }
 
 ```
 
-This is the LAZY INITIALIZATION/EVALUATION idiom, and it has several merits. We
+- This is the LAZY INITIALIZATION/EVALUATION idiom, and it has several merits. We don’t incur the overhead of construction unless we actually use the object, and our startup times can be faster as a result. We also ensure that null is never returned.
 
-don’t incur the overhead of construction unless we actually use the object, and our startup
+- we now have a hard-coded dependency on MyServiceImpl and everything its constructor requires
+- If MyServiceImpl is a heavyweight object, we will need to make sure that an appropriate TEST DOUBLE1 or MOCK OBJECT gets assigned to the service field before this method is called during unit testing. Because we have construction logic mixed in with normal runtime processing, we should test all execution paths (for example, the null test and its block). Having both of these responsibilities means that the method is doing more than one thing, so we are breaking the Single Responsibility Principle in a small way.
+- Perhaps worst of all, we do not know whether MyServiceImpl is the right object in all cases.
+- convenient idioms lead to modularity breakdown. The startup process of object construction and wiring is no exception. We should modularize this process separately from the normal runtime logic and we should make sure that we have a global, consistent strategy for resolving our major dependencies.
+- Inversion of Control moves secondary responsibilities from an object to other objects that are dedicated to the purpose, thereby supporting the Single Responsibility Principle. In the context of dependency management, an object should not take responsibility for instantiating dependencies itself. Instead, it should pass this responsibility to another “authoritative” mechanism
 
-times can be faster as a result. We also ensure that null is never returned.
+- An optimal system architecture consists of modularized domains of concern, each of which is implemented with Plain Old Java (or other) Objects. The different domains are integrated together with minimally invasive Aspects or Aspect-like tools. This architecture can be test-driven, just like the code.
+- The agility provided by a POJO system with modularized concerns allows us to make optimal, just-in-time decisions, based on the most recent knowledge. The complexity of these decisions is also reduced.
 
-- we now have a hard-coded dependency on MyServiceImpl and everything its
-
-constructor requires
-
-- If MyServiceImpl is a heavyweight object, we will need to
-
-make sure that an appropriate TEST DOUBLE1 or MOCK OBJECT gets assigned to the ser-
-
-vice field before this method is called during unit testing. Because we have construction
-
-logic mixed in with normal runtime processing, we should test all execution paths (for
-
-example, the null test and its block). Having both of these responsibilities means that the
-
-method is doing more than one thing, so we are breaking the Single Responsibility Principle
-
-in a small way.
-
-- Perhaps worst of all, we do not know whether MyServiceImpl is the right object in all
-
-cases.
-
-- convenient idioms lead to modularity breakdown. The startup process of object con-
-
-struction and wiring is no exception. We should modularize this process separately from
-
-the normal runtime logic and we should make sure that we have a global, consistent strat-
-
-egy for resolving our major dependencies.
-
-- Inversion of Control moves secondary responsibilities from an object to other objects that are dedicated to the purpose, thereby supporting the Single Responsibility Principle. In the context of
-
-dependency management, an object should not take responsibility for instantiating depen-
-
-dencies itself. Instead, it should pass this responsibility to another “authoritative” mecha-
-
-nism
-
-Systems
-
-- An optimal system architecture consists of modularized domains of concern, each of which
-
-is implemented with Plain Old Java (or other) Objects. The different domains are inte-
-
-grated together with minimally invasive Aspects or Aspect-like tools. This architecture can
-
-be test-driven, just like the code.
-
-- The agility provided by a POJO system with modularized concerns allows us to make opti-
-
-mal, just-in-time decisions, based on the most recent knowledge. The complexity of these
-
-decisions is also reduced.
-
-- Standards make it easier to reuse ideas and components, recruit people with relevant expe-
-
-rience, encapsulate good ideas, and wire components together. However, the process of
-
-creating standards can sometimes take too long for industry to wait, and some standards
-
-lose touch with the real needs of the adopters they are intended to serve.
-
-- DSLs, when used effectively, raise the abstraction level above code idioms and design
-
-patterns. They allow the developer to reveal the intent of the code at the appropriate level
-
-of abstraction.
-
-Domain-Specific Languages allow all levels of abstraction and all domains in the applica-
-
-tion to be expressed as POJOs, from high-level policy to low-level details.
-
-  
+- Standards make it easier to reuse ideas and components, recruit people with relevant experience, encapsulate good ideas, and wire components together. However, the process of creating standards can sometimes take too long for industry to wait, and some standards lose touch with the real needs of the adopters they are intended to serve.
+- DSLs, when used effectively, raise the abstraction level above code idioms and design patterns. They allow the developer to reveal the intent of the code at the appropriate level of abstraction.
+- Domain-Specific Languages allow all levels of abstraction and all domains in the application to be expressed as POJOs, from high-level policy to low-level details.
 
 Emergence
 

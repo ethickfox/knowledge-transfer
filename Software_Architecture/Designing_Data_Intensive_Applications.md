@@ -1,3 +1,4 @@
+# Designing Data Intensive Applications
 An application has to meet various requirements in order to be useful. There are **functional requirements** (what it should do, such as allowing data to be stored, retrieved, searched, and processed in various ways), and some **nonfunctional requirements** (general properties like security, reliability, compliance, scalability, compatibility, and maintainability).
 
 If you have an application-managed caching layer (using Memcached or similar), or a full-text search server (such as Elasticsearch or Solr) separate from your main database, it is normally the application code’s responsibility to keep those caches and indexes in sync with the main database.
@@ -706,3 +707,53 @@ lems of forward and backward compatibility.
 • Efficiency (CPU time taken to encode or decode, and the size of the encoded
 structure) is also often an afterthought. For example, Java’s built-in serialization
 is notorious for its bad performance and bloated encoding
+
+Thrift and Protocol Buffers
+Apache Thrift [15] and Protocol Buffers (protobuf) [16] are binary encoding libraries
+that are based on the same principle. Protocol Buffers was originally developed at
+Google, Thrift was originally developed at Facebook, and both were made open
+source in 2007–08 [17].
+Both Thrift and Protocol Buffers require a schema for any data that is encoded. To
+encode the data in Example 4-1 in Thrift, you would describe the schema in the
+Thrift interface definition language (IDL) like this:
+struct Person {
+  1: required string       userName,
+  2: optional i64          favoriteNumber,
+  3: optional list<string> interests
+}
+Formats for Encoding Data  |  117iii. Actually, it has three—BinaryProtocol, CompactProtocol, and DenseProtocol—although DenseProtocol
+is only supported by the C++ implementation, so it doesn’t count as cross-language [18]. Besides those, it also
+has two different JSON-based encoding formats [19]. What fun!
+The equivalent schema definition for Protocol Buffers looks very similar:
+message Person {
+    required string user_name       = 1;
+    optional int64  favorite_number = 2;
+    repeated string interests       = 3;
+}
+Thrift and Protocol Buffers each come with a code generation tool that takes a
+schema definition like the ones shown here, and produces classes that implement the
+schema in various programming languages [18]. Your application code can call this
+generated code to encode or decode records of
+Modes of Dataflow
+
+forward and backward compatibility, which are important for evolv‐
+ability (making change easy by allowing you to upgrade different parts of your system
+independently, and not having to change everything at once). Compatibility is a rela‐
+tionship between one process that encodes the data, and another process that decodes
+it.
+
+value in the database may be written by a newer version of the
+code, and subsequently read by an older version of the code that is still running.
+Thus, forward compatibility is also often required for databases.
+Say you add a field to a record schema, and the
+newer code writes a value for that new field to the database. Subsequently, an older
+version of the code (which doesn’t yet know about the new field) reads the record,
+updates it, and writes it back. In this situation, the desirable behavior is usually for
+the old code to keep the new field intact, even though it couldn’t be interpreted.
+
+A database generally allows any value to be updated at any time. This means that
+within a single database you may have some values that were written five milli‐
+seconds ago, and some values that were written five years ago. This
+observation is sometimes summed up as data outlives code.
+LinkedIn’s document database Espresso uses Avro for storage, allowing it to use
+Avro’s schema evolution rules. Schema evolution thus allows the entire database to appear as if it was encoded with a single schema, even though the underlying storage may contain records encoded with various historical versions of the schema.

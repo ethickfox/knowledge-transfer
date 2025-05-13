@@ -1,11 +1,3 @@
----
-Interview graded: true
-Last edited time: 2023-07-16T20:26
-Needs Rework: false
-Status: Not started
-Topic:
-  - "[Test Automation](Test%20Automation)"
----
 ## **JUnit**
 
 JUnit Assert - предоставляет набор методов утверждения. Если все assert утверждения приняты, результаты теста будут успешными. Если какое-либо утверждение не сработает, результаты теста будут неудачными.

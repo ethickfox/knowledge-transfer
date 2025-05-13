@@ -1,3 +1,3 @@
 # Knowledge Transfer
-View: https://ethickfox.github.io/knowledge-transfer/
+View: https://www.ethickfox.ru
 Starting page: [index](index.md)
