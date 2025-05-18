@@ -167,7 +167,6 @@ The Three Laws of TDD:
 - **Timely** The tests need to be written in a timely fashion. Unit tests should be written just before the production code that makes them pass. If you write tests after the production code, then you may find the production code to be hard to test
 
 Classes
-
 - We like to keep our variables and utility functions private, but we’re not fanatic about it. Sometimes we need to make a variable or utility function protected so that it can be accessed by a test. For us, tests rule. If a test in the same package needs to call a function or access a variable, we’ll make it protected or package scope. However, we’ll first look for a way to maintain privacy.
 - The first rule of classes is that they should be small. With classes we count responsibilities.
 * The Single Responsibility Principle (SRP) states that a class or module should have one, and only one, reason to change. Trying to identify responsibilities (reasons to change) often helps us recognize and create better abstractions in our code. We want our systems to be composed of many small classes, not a few large ones. Each small class encapsulates a single responsibility, has a single reason to change, and collaborates with a few others to achieve the desired system behaviors.
@@ -210,376 +209,109 @@ Emergence
 Emergent Design
 
 - Runs all the tests
-
-A system that is comprehensively tested and passes all of its tests all of the time is a verifiiable system. making our systems testable pushes us toward a design where our classes are small and single purpose. Tight coupling makes it difficult to write tests.
-
+  A system that is comprehensively tested and passes all of its tests all of the time is a verifiiable system. making our systems testable pushes us toward a design where our classes are small and single purpose. Tight coupling makes it difficult to write tests.
 * Contains no duplication
-
-For each few lines of code we add, we pause and reflect
-
-on the new design. Did we just degrade it? If so, we clean it up and run our tests to demon-
-
-strate that we haven’t broken anything. The fact that we have these tests eliminates the fear
-
-that cleaning up the code will break it! This is also where we apply the final three rules of simple design: Eliminate duplication, ensure expressiveness, and minimize the number of classes and methods.
-
-  
-
+  For each few lines of code we add, we pause and reflect on the new design. Did we just degrade it? If so, we clean it up and run our tests to demonstrate that we haven’t broken anything. The fact that we have these tests eliminates the fear that cleaning up the code will break it! This is also where we apply the final three rules of simple design: Eliminate duplication, ensure expressiveness, and minimize the number of classes and methods
 * Expresses the intent of the programmer
-
- The clearer the author can make the code, the less time others will have to spend understanding it. Thiswill reduce defects and shrink the cost of maintenance.
-
-You can express yourself by choosing good names. We want to be able to hear a class
-
-or function name and not be surprised when we discover its responsibilities.
-
-You can also express yourself by keeping your functions and classes small. Small
-
-classes and functions are usually easy to name, easy to write, and easy to understand.
-
-You can also express yourself by using standard nomenclature. Design patterns, for
-
-example, are largely about communication and expressiveness. Well-written unit tests are also expressive. A primary goal of tests is to act as documentation by example. Someone reading our tests should be able to get a quick understanding of what a class is all about.
-
+  The clearer the author can make the code, the less time others will have to spend understanding it. Thiswill reduce defects and shrink the cost of maintenance.You can express yourself by choosing good names. We want to be able to hear a class or function name and not be surprised when we discover its responsibilities You can also express yourself by keeping your functions and classes small. Small classes and functions are usually easy to name, easy to write, and easy to understand. You can also express yourself by using standard nomenclature. Design patterns, for example, are largely about communication and expressiveness. Well-written unit tests are also expressive. A primary goal of tests is to act as documentation by example. Someone reading our tests should be able to get a quick understanding of what a class is all about.
 * Minimizes the number of classes and methods
+  In an effort to make our classes and methods small, we might create too many tiny classes and methods. So this rule suggests that we also keep our function and class counts low.
 
-In an effort to make our classes and methods small, we might
-
-create too many tiny classes and methods. So this rule suggests that we also keep our func-
-
-tion and class counts low.
-
-  
-
-### **Concurrency**
-
-- Concurrency can sometimes improve performance, but only when there is a lot of wait
-
-time that can be shared between multiple threads or multiple processors. Neither situ-
-
-ation is trivial.
-
-- In fact, the design of a concurrent algorithm can be remarkably different from the
-
-design of a single-threaded system. The decoupling of what from when usually has a
-
-huge effect on the structure of the system.
-
-Defense principles 
-
+### Concurrency
+- Concurrency can sometimes improve performance, but only when there is a lot of wait time that can be shared between multiple threads or multiple processors. Neither situation is trivial.
+- Design of a concurrent algorithm can be remarkably different from the design of a single-threaded system. The decoupling of what from when usually has a huge effect on the structure of the system
+Defense principles
 - SRP for concurrency
-
 * Concurrency-related code has its own life cycle of development, change, and tuning.
-
-* Concurrency-related code has its own challenges, which are different from and often more difficult than nonconcurrency-related code.
-
-* The number of ways in which miswritten concurrency-based code can fail makes it challenging enough without the added burden of surrounding application code.
-
-* ****Keep your concurrency-related code separate from other code.****
-
+* Concurrency-related code has its own challenges, which are different from and often more difficult than non concurrency-related code.
+* The number of ways in which miswritten c^oncurrency-based code can fail makes it challenging enough without the added burden of surrounding application code.
+* **Keep your concurrency-related code separate from other code.**
 * Limit the Scope of Data
-
 * One solution is to use the synchronized keyword to protect a critical section in the code that uses the shared object
-
 * Take data encapsulation to heart; severely limit the access of any data that may be shared.
-
 * Use Copies
-
 * In some situations it is possible to copy objects and treat them as read-only. In other cases it might be possible to copy objects, collect results from multiple threads in these copies and then merge the results in a single thread.
-
 * Threads Should Be as Independent as Possible
-
 * Consider writing your threaded code such that each thread exists in its own world, sharing no data with any other thread.
-
-* For example: classes that subclass from HttpServlet receive all of their information
-
-as parameters passed in to the doGet and doPost methods. This makes each Servlet act
-
-as if it has its own machine. So long as the code in the Servlet uses only local variables, there is no chance that the Servlet will cause synchronization problems
-
+	* For example: classes that subclass from HttpServlet receive all of their information as parameters passed in to the doGet and doPost methods. This makes each Servlet act as if it has its own machine. So long as the code in the Servlet uses only local variables, there is no chance that the Servlet will cause synchronization problems
 - There are several things to consider when writing threaded code in Java 5:
-
-*  Use the provided thread-safe collections.
-
-*  Use the executor framework for executing unrelated tasks.
-
-*  Use nonblocking solutions when possible.
-
-* Several library classes are not thread safe.
-
+	*  Use the provided thread-safe collections.
+	*  Use the executor framework for executing unrelated tasks.
+	*  Use nonblocking solutions when possible.
+	* Several library classes are not thread safe.
 * There are several different ways to partition behavior in a concurrent application.
+	* Bound Resources  - Resources of a fixed size or number used in a concurrent environ-ment. Example: database connections and fixed-size read/write buffers.
+	* Mutual Exclusion - Only one thread can access shared data or a shared resource at a time.
+	* Starvation - One thread or a group of threads is prohibited from proceeding for an excessively long time or forever. For example, always letting fast-running threads through first could starve out longer running threads if there is no end to the fast-running threads.
+	* Deadlock - Two or more threads waiting for each other to finish. Each thread has a resource that the other thread requires and neither can finish until it gets the other resource.
+	* Livelock - Threads in lockstep, each trying to do work but finding another “in the way.” Due to resonance, threads continue trying to make progress but are unable to for an excessively long time—or forever.
 
-* Bound Resources  - Resources of a fixed size or number used in a concurrent environ-ment. Example: database connections and fixed-size read/write buffers.
-
-* Mutual Exclusion - Only one thread can access shared data or a shared resource at a time.
-
-* Starvation - One thread or a group of threads is prohibited from proceeding for an excessively long time or forever. For example, always letting fast-running threads through first could starve out longer running threads if there is no end to the fast-running threads.
-
-* Deadlock - Two or more threads waiting for each other to finish. Each thread has a resource that the other thread requires and neither can finish until it gets the other resource.
-
-* Livelock - Threads in lockstep, each trying to do work but finding another “in the way.” Due to resonance, threads continue trying to make progress but are unable to for an excessively long time—or forever.
-
-* Producer-Consumer
-
+Producer-Consumer
 * One or more producer threads create some work and place it in a buffer or queue
-
 * One or more consumer threads acquire that work from the queue and complete it.
-
-* The queue between the producers and consumers is a bound resource. This means producers must wait for free space in the queue before writing and consumers must wait until there is something in the queue to consume. 
-
+The queue between the producers and consumers is a bound resource. This means producers must wait for free space in the queue before writing and consumers must wait until there is something in the queue to consume. 
 * Coordination between the producers and consumers via the queue involves producers and consumers signaling each other. The producers write to the queue and signal that the queue is no longer empty. Consumers read from the queue and signal that the queue is no longer full. Both potentially wait to be notified when they can continue.
-
-* Readers-writers
-
+Readers-writers
 * Writers tend to block many readers for a long period of time, thus causing throughput issues.
-
 * The challenge is to balance the needs of both readers and writers to satisfy correct operation, provide reasonable throughput and avoiding starvation. A simple strategy makes writers wait until there are no readers before allowing the writer to perform an update.
-
 * On the other hand, if there are frequent writers and they are given priority, throughput will suffer. Finding that balance and avoiding concurrent update issues is what the problem addresses.
-
-* Unless carefully designed, systems that compete in this way can experience deadlock, livelock, throughput, and efficiency degradation. Most concurrent problems you will likely encounter will be some variation of these
-
-three problems. 
-
+* Unless carefully designed, systems that compete in this way can experience deadlock, livelock, throughput, and efficiency degradation. Most concurrent problems you will likely encounter will be some variation of these three problems. 
 - Beware Dependencies Between Synchronized Methods
-
 * Avoid using more than one method on a shared object.
-
 * Otherwise use
-
-* Client-Based Locking—Have the client lock the server before calling the first method and make sure the lock’s extent includes code calling the last method.
-
-* Server-Based Locking—Within the server create a method that locks the server, calls all the methods, and then unlocks. Have the client call the new method.
-
-* Adapted Server—create an intermediary that performs the locking. This is an example of server-based locking, where the original server cannot be changed.
-
+	* Client-Based Locking—Have the client lock the server before calling the first method and make sure the lock’s extent includes code calling the last method.
+	* Server-Based Locking—Within the server create a method that locks the server, calls all the methods, and then unlocks. Have the client call the new method.
+	* Adapted Server—create an intermediary that performs the locking. This is an example of server-based locking, where the original server cannot be changed.
 - Keep Synchronized Sections Small
-
-*  Locks are expensive because they create delays and add overhead. So we don’t want to litter our code with synchronized statements. On the other hand, critical sections must be guarded. So we want to design our code with as few critical sections as possible.
-
+- Locks are expensive because they create delays and add overhead. So we don’t want to litter our code with synchronized statements. On the other hand, critical sections must be guarded. So we want to design our code with as few critical sections as possible.
 * extending synchronization beyond the minimal critical section increases contention and degrades performance. Keep your synchronized sections as small as possible.
-
 * Writing Correct Shut-Down Code Is Hard
-
-* Graceful shutdown can be hard to get correct. Common problems involve deadlock, with threads waiting for a signal to continue that never comes.
-
-* So if you must write concurrent code that involves shutting down gracefully, expect to spend much of your time getting the shutdown to happen correctly. Think about shut-down early and get it working early. It’s going to take longer than you expect. Review existing algorithms because this is probably harder than you think.
-
-  
-
-Testing Threaded Code
-
+	* Graceful shutdown can be hard to get correct. Common problems involve deadlock, with threads waiting for a signal to continue that never comes.
+	* So if you must write concurrent code that involves shutting down gracefully, expect to spend much of your time getting the shutdown to happen correctly. Think about shut-down early and get it working early. It’s going to take longer than you expect. Review existing algorithms because this is probably harder than you think.
+## Testing Threaded Code
 - Write tests that have the potential to expose problems and then run them frequently, with different programatic configurations and system configurations and load. If tests ever fail, track down the failure. Don’t ignore a failure just because the tests pass on a subsequent run.
-
 * Treat spurious failures as candidate threading issues.
-
 * Bugs in threaded code might exhibit their symptoms once in a thousand, or a million, executions. Attempts to repeat the systems can be frustratingly.
-
 * The longer these “one-offs” are ignored, the more code is built on top of a potentially faulty approach. Do not ignore system failures as one-offs.
-
 * Get your nonthreaded code working first.
-
-*  Make sure code works outside of its use in threads. Generally, this means creating POJOs that are called by your threads. The POJOs are not thread aware, and can therefore be tested outside of the threaded environment. Do not try to chase down nonthreading bugs and threading bugs at the same time. Make sure your code works outside of threads.
-
+* Make sure code works outside of its use in threads. Generally, this means creating POJOs that are called by your threads. The POJOs are not thread aware, and can therefore be tested outside of the threaded environment. Do not try to chase down nonthreading bugs and threading bugs at the same time. Make sure your code works outside of threads.
 * Make your threaded code pluggable. Write the concurrency-supporting code such that it can be run in several configurations:
-
-*  One thread, several threads, varied as it executes
-
-* Threaded code interacts with something that can be both real or a test double.
-
-* Execute with test doubles that run quickly, slowly, variable.
-
-* Configure tests so they can run for a number of iterations.
-
-* Make your thread-based code especially pluggable so that you can run it in various configurations.
-
+	*  One thread, several threads, varied as it executes
+	* Threaded code interacts with something that can be both real or a test double.
+	* Execute with test doubles that run quickly, slowly, variable.
+	* Configure tests so they can run for a number of iterations.
+	* Make your thread-based code especially pluggable so that you can run it in various configurations.
 * Make your threaded code tunable.
-
-* Getting the right balance of threads typically requires trial an error. Early on, find ways to time the performance of your system under different configurations. Allow the number of threads to be easily tuned. Consider allowing it to change while the system is running. Consider allowing self-tuning based on throughput and system utilization.
-
-* Run with more threads than processors.
-
-* Things happen when the system switches between tasks. To encourage task swapping, run with more threads than processors or cores. The more frequently your tasks swap, the more likely you’ll encounter code that is missing a critical section or causes deadlock.
-
+	* Getting the right balance of threads typically requires trial an error. Early on, find ways to time the performance of your system under different configurations. Allow the number of threads to be easily tuned. Consider allowing it to change while the system is running. Consider allowing self-tuning based on throughput and system utilization.
+	* Run with more threads than processors - Things happen when the system switches between tasks. To encourage task swapping, run with more threads than processors or cores. The more frequently your tasks swap, the more likely you’ll encounter code that is missing a critical section or causes deadlock.
 * Run on different platforms.
-
-* Instrument your code to try and force failures.
-
-  
-
-### **Instrument Your Code to Try and Force Failures**
-
-To increase your chances of catching such rare occurrences you can
-
-instrument your code and force it to run in different orderings by adding calls to methods
-
-like Object.wait(), Object.sleep(), Object.yield() and Object.priority().
-
+## **Instrument Your Code to Try and Force Failures**
+To increase your chances of catching such rare occurrences you can instrument your code and force it to run in different orderings by adding calls to methods like Object.wait(), Object.sleep(), Object.yield() and Object.priority().
 Each of these methods can affect the order of execution, thereby increasing the odds
-
 of detecting a flaw. It’s better when broken code fails as early and as often as possible.
+### Hand-coded
+You can insert calls to wait(), sleep(), yield(), and priority() in your code by hand. It might be just the thing to do when you’re testing a particularly thorny piece of code.
 
-- Hand-coded
-
-You can insert calls to wait(), sleep(), yield(), and priority() in your code by hand. It
-
-might be just the thing to do when you’re testing a particularly thorny piece of code.
-
-```Java
+```java
 public synchronized String nextUrlOrNull() {
-
-if(hasNext()) {
-
-String url = urlGenerator.next();
-
-Thread.yield(); // inserted for testing.
-
-updateHasNext();
-
-return url;
-
-}
-
-return null;
-
+	if(hasNext()) {
+		String url = urlGenerator.next();
+		Thread.yield(); // inserted for testing.
+		updateHasNext();
+		return url;
+	}
+	return null;
 }
 ```
 The inserted call to yield() will change the execution pathways taken by the code and
 possibly cause the code to fail where it did not fail before. If the code does break, it was
 not because you added a call to yield(). Rather, your code was broken and this simply made the failure evident.
-* Automated
+### Automated
 You could use tools like an Aspect-Oriented Framework, CGLIB, or ASM to programmatically instrument your code. 
 - Use a class with a single method add calls to this in various places within your code:
 * use a simple aspect that randomly selects among doing nothing, sleeping, or yielding.
-* Make sure when you are testing your thread-aware code, you are only testing it and nothing else. This suggests
+* Make sure when you are testing your thread-aware code, you are only testing it and nothing else. This suggests that your thread-aware code should be small and focused.
 
-that your thread-aware code should be small and focused.
-
-## Smells and Heuristics
-### Functions
-- Functions should have a small number of arguments. No argument is best, followed by one, two, and three.
-- Output arguments are counterintuitive. Readers expect arguments to be inputs, not outputs. If your function must change the state of something, have it change the state of the object it is called on.
-- Boolean(Flag) arguments loudly declare that the function does more than one thing. They are confusing and should be eliminated.
-- Following “The Principle of Least Surprise,”2 any function or class should implement the behaviors that another programmer could reasonably expect
-### General
-- Every boundary condition, every corner case, every quirk and exception represents something that can confound an elegant and intuitive algorithm. Don’t rely on your intuition. Look for every boundary condition and write a test for it.
-- Every time you see duplication in the code, it represents a missed opportunity for abstraction. That duplication could probably become a subroutine or perhaps another class outright.
-	- A more subtle form is the switch/case or if/else chain that appears again and again in various modules, always testing for the same set of conditions. These should be replaced with polymorphism.
-	- the modules that have similar algorithms, but that don’t share similar lines of code. This is still duplication and should be addressed by using the    TEMPLATE METHOD, or STRATEGY pattern.
-- It is important to create abstractions that separate higher level general concepts from lower level detailed concepts. Sometimes we do this by creating abstract classes to hold the higher level concepts
-	- We want all the lower level concepts to be in the derivatives and all the higher level concepts to be in the base class.
-- The most common reason for partitioning concepts into base and derivative classes is so that the higher level base class concepts can be independent of the lower level derivative class concepts. Therefore, when we see base classes mentioning the names of their derivatives, we suspect a problem. In general, base classes should know nothing about their derivatives.
-- Well-defined modules have very small interfaces that allow you to do a lot with a little. 
-	- Poorly defined modules have wide and deep interfaces that force you to use many different gestures to get simple things done.
-	- A poorly defined interface provides lots of functions that you must call, so coupling is high.
-	- learn to limit what they expose at the interfaces of their classes and modules. The fewer methods a class has, the better. The fewer variables a function knows about, the better. The fewer instance variables a class has, the better.
-	- Hide your data. Hide your utility functions. Hide your constants and your temporaries. Don’t create classes with lots of methods or lots of instance variables. Don’t create lots of protected variables and functions for your subclasses. Concentrate on keeping interfaces very tight and very small. Help keep coupling low by limiting information.
-- Variables and function should be defined close to where they are used.
-	- Local variables should be declared just above their first usage and should have a small vertical scope.
-	- Private functions should be defined just below their first usage. Private functions belong to the scope of the whole class, but we’d still like to limit the vertical distance between the invocations and definitions. Finding a private function should just be a matter of scanning downward from the first usage.
-- If you do something a certain way, do all similar things in the same way. This goes back to the principle of least surprise. Be careful with the conventions you choose, and once chosen, be careful to continue to follow them.
-- Variables that aren’t used, functions that are never called, comments that add no information, and so forth. All these things are clutter and should be removed. Keep your source files clean, well organized, and free of clutter.
-- Things that don’t depend upon each other should not be artificially coupled.In general an artificial coupling is a coupling between two modules that serves no direct purpose. It is a result of putting a variable, constant, or function in a temporarily convenient, though inappropriate, location.
-- The methods of a class should be interested in the variables and functions of the class they belong to, and not the variables and functions of other classes. When a method uses accessors and mutators of some other object to manipulate the data within that object, then it envies the scope of the class of that other object.
-```java
-public class HourlyPayCalculator {
-
-public Money calculateWeeklyPay(HourlyEmployee e) {
-
-int tenthRate = e.getTenthRate().getPennies();
-
-int tenthsWorked = e.getTenthsWorked();
-
-int straightTime = Math.min(400, tenthsWorked);
-
-int overTime = Math.max(0, tenthsWorked - straightTime);
-
-int straightPay = straightTime * tenthRate;
-
-int overtimePay = (int)Math.round(overTime*tenthRate*1.5);
-
-return new Money(straightPay + overtimePay);
-
-}
-
-}
-```
-The calculateWeeklyPay method reaches into the HourlyEmployee object to get the data on which it operates. The calculateWeeklyPay method envies the scope of HourlyEmployee. It “wishes” that it could be inside HourlyEmployee.
-
- Sometimes, however, Feature Envy is a necessary evil
- ```java
- public class HourlyEmployeeReport {
-
-private HourlyEmployee employee ;
-
-public HourlyEmployeeReport(HourlyEmployee e) {
-
-this.employee = e;
-
-}
-
-String reportHours() {
-
-return String.format(
-
-"Name: %s\tHours:%d.%1d\n",
-
-employee.getName(),
-
-employee.getTenthsWorked()/10,
-
-employee.getTenthsWorked()%10);
-
-}
-
-}
-```
-Clearly, the reportHours method envies the HourlyEmployee class. On the other hand, we don’t want HourlyEmployee to have to know about the format of the report.
-- There is hardly anything more abominable than a dangling false argument at the end of a function call. Not only is the purpose of a selector argument difficult to remember, each selector argument combines many functions into one. Selector arguments are just a lazy way to avoid splitting a large function into several smaller functions.Of course, selectors need not be boolean. They can be enums, integers, or any other type of argument that is used to select the behavior of the function. In general it is better to have many functions than to pass some code into a function to select the behavior.
-- Code should be placed where a reader would naturally expect it to be. The PI constant should go where the trig functions are declared. The OVERTIME_RATE constant should be declared in the HourlyPayCalculator class.
-- Sometimes, however, we write static functions that should not be static. For example,consider:
-`HourlyPayCalculator.calculatePay(employee, overtimeRate).`
-Again, this seems like a reasonable static function. It doesn’t operate on any particular object and gets all it’s data from it’s arguments. However, there is a reasonable chance that we’ll want this function to be polymorphic. We may wish to implement several different algorithms for calculating hourly pay. So in this case the function should not be static. It should be a nonstatic member function of Employee. In general you should prefer nonstatic methods to static methods. When in doubt, make the function nonstatic. If you really want a function to be static, make sure that there is no chance that you’ll want it to behave polymorphically.
-- It is hard to overdo this. More explanatory variables are generally better than fewer. It is remarkable how an opaque module can suddenly become transparent simply by breaking the calculations up into well-named intermediate values.
-- If one module depends upon another, that dependency should be physical, not just logical. The dependent module should not make assumptions (in other words, logical dependencies) about the module it depends upon. Rather it should explicitly ask that module for all the information it depends upon.
-- Prefer Polymorphism to If/Else or Switch/Case. switch statements are probably appropriate in the parts of the system where adding new functions is more likely than adding new types.cases where functions are more volatile than types are relatively rare. So every switch statement should be suspect. There may be no more than one switch statement for a given type of selection. The cases in that switch statement must create polymorphic objects that take the place of other such switch statements in the rest of the system.
-- Replace Magic Numbers with Named Constants 
-- Enforce design decisions with structure over convention. Naming conventions are good, but they are inferior to structures that force compliance. No one is forced to implement the switch/case statement the same way each time; but the base classes do enforce that concrete classes have all abstract methods implemented.
-- Encapsulate Conditionals Boolean logic is hard enough to understand without having to see it in the context of an if or while statement. Extract functions that explain the intent of the conditional. For example: `if (shouldBeDeleted(timer))` is preferable to `if (timer.hasExpired() && !timer.isRecurrent())`
-	- Negatives are just a bit harder to understand than positives. So, when possible, conditionals should be expressed as positives.
-- It is often tempting to create functions that have multiple sections that perform a series of operations. Functions of this kind do more than one thing, and should be converted into many smaller functions, each of which does one thing.
-- Temporal couplings are often necessary, but you should not hide the coupling. Structure the arguments of your functions such that the order in which they should be called is obvious. You could expose the temporal coupling by creating a bucket brigade. Each function produces a result that the next function needs, so there is no reasonable way to call them out of order.
-- The statements within a function should all be written at the same level of abstraction, which should be one level below the operation described by the name of the function.
-- Keep Configurable Data at High Levels. If you have a constant such as a default or configuration value that is known and expected at a high level of abstraction, do not bury it in a low-level function.
-- Avoid Transitive Navigation In general we don’t want a single module to know much about its collaborators. More specifically, if A collaborates with B, and B collaborates with C, we don’t want modules that use A to know about C. (For example, we don’t want a.getB().getC().doSomething();.)
-
-### Names
-- Choose Names at the Appropriate Level of Abstraction Don’t pick names that communicate implementation; choose names the reflect the level of abstraction of the class or function you are working in. 
-
-- Use Standard Nomenclature Where PossibleNames are easier to understand if they are based on existing convention or usage. For example, if you are using the DECORATOR pattern, you should use the word Decorator in the names of the decorating classes.
-
-* the longer the scope of the name, the longer and more precise the name should be.
-
-* Names should not be encoded with type or scope information.
-
-* Names should describe everything that a function, variable, or class is or does. Don’t hide side effects with a name
-
-### Tests
-
-- A test suite should test everything that could possibly break.
-
-The tests are insufficient so long as there are conditions that have not been explored by the
-
-tests 
-
-- Coverage tools reports gaps in your testing strategy. They make it easy to find modules, classes, and functions that are insufficiently tested.
-
-* Take special care to test boundary conditions. 
-
-* Bugs tend to congregate. When you find a bug in a function, it is wise to do an exhaustive test of that function. You’ll probably find that the bug was not alone.
-
-* A slow test is a test that won’t get run. When things get tight, it’s the slow tests that will be dropped from the suite. So do what you must to keep your tests fast.
-### Concurrency
 To keep concurrent systems clean, thread management should be kept to a few,
 well-controlled places. What’s more, any code that manages threads should do nothing
 other than thread management. Why? If for no other reason than that tracking down concurrency issues is hard enough without having to unwind other nonconcurrency issues at the same time.
@@ -589,55 +321,41 @@ other than thread management. Why? If for no other reason than that tracking dow
 - Frame—Every method invocation requires a frame. The frame includes the return address, any parameters passed into the method and the local variables defined in the method. This is a standard technique used to define a call stack, which is used by modern languages to allow for basic function/method invocation and to allow for recursive invocation.
 - Local variable—Any variables defined in the scope of the method. All nonstatic methods have at least one variable, **this**, which represents the current object, the object that received the most recent message (in the current thread), which caused the method invocation.
 - Operand stack—Many of the instructions in the Java Virtual Machine take parameters. The operand stack is where those parameters are put. The stack is a standard last-in, first-out (LIFO) data structure.
-Compare
-and Swap (CAS). This operation is analogous to optimistic locking in databases, whereas
+**Compare and Swap (CAS).** 
+This operation is analogous to optimistic locking in databases, whereas
 the synchronized version is analogous to pessimistic locking.The synchronized keyword always acquires a lock, even when a second thread is not
 trying to update the same value. Even though the performance of intrinsic locks has
 improved from version to version, they are still costly. The nonblocking version starts with the assumption that multiple threads generally do
 not modify the same value often enough that a problem will arise. Instead, it efficiently
 detects whether such a situation has occurred and retries until the update happens success-fully. This detection is almost always less costly than acquiring a lock, even in moderate to high contention situations
 When a method attempts to update a shared variable, the CAS operation verifies that
-the variable getting set still has the last known value. If so, then the variable is changed. If
-not, then the variable is not set because another thread managed to get in the way. The
-method making the attempt (using the CAS operation) sees that the change was not made and retries
-
+the variable getting set still has the last known value. If so, then the variable is changed. If not, then the variable is not set because another thread managed to get in the way. The method making the attempt (using the CAS operation) sees that the change was not made and retries
 There are some classes that are inherently not thread safe. Here are a few examples:
 - SimpleDateForma
 - Database connections
 - Containers in java.util
 - Servlets
-##### Dependencies Between Methods Can Break Concurrent Code
+## Dependencies Between Methods Can Break Concurrent Code
 You have three options:
-• Tolerate the failure.
- Sometimes you can set things up such that the failure causes no harm. For example, the
-above client could catch the exception and clean up. Frankly, this is a bit sloppy. It’s rather
-like cleaning up memory leaks by rebooting at midnight.
-• Solve the problem by changing the client: client-based locking
-third-party tools.
-This strategy is risky because all programmers who use the server must remember to
-lock it before using it and unlock it when done. 
-// Client-based locking really blows.
-• Solve the problem by changing the server, which additionally changes the client: 
-server-based locking
-In general you should prefer server-based locking for these reasons:
-- It reduces repeated code
-- It allows for better performance—You can swap out a thread-safe server for a non-thread safe one in the case of single-threaded deployment, thereby avoiding all 
-overhead.
-- It reduces the possibility of error—All it takes is for one programmer to forget to lock properly.
-- It enforces a single policy
-- It reduces the scope of the shared variables
+* Tolerate the failure - Sometimes you can set things up such that the failure causes no harm. For example, the above client could catch the exception and clean up. Frankly, this is a bit sloppy. It’s rather like cleaning up memory leaks by rebooting at midnight.
+* Solve the problem by changing the client: client-based locking third-party tools. This strategy is risky because all programmers who use the server must remember to lock it before using it and unlock it when done. 
+	// Client-based locking really blows.
+* Solve the problem by changing the server, which additionally changes the client: server-based locking
+* In general you should prefer server-based locking for these reasons:
+	- It reduces repeated code
+	- It allows for better performance—You can swap out a thread-safe server for a non-thread safe one in the case of single-threaded deployment, thereby avoiding all overhead.
+	- It reduces the possibility of error—All it takes is for one programmer to forget to lock properly.
+	- It enforces a single policy
+	- It reduces the scope of the shared variables
 What if you do not own the server code?
 - Use an ADAPTER to change the API and add locking
 - OR better yet, use the thread-safe collections with extended interfaces
 
 It is always better to synchronize as little as possible as opposed to synchronizing as much as possible.
 
-##### Deadlock
-All four of these conditions must hold for deadlock to be possible. Break any one of these
-conditions and deadlock is not possible.
-To really solve the problem of deadlock, we need to understand what causes it. There
-a
-re four conditions required for deadlock to occur:
+### Deadlock
+All four of these conditions must hold for deadlock to be possible. Break any one of these conditions and deadlock is not possible.
+To really solve the problem of deadlock, we need to understand what causes it. There are four conditions required for deadlock to occur:
 - Mutual exclusion
 Mutual exclusion occurs when multiple threads need to use the same resources and those resource. 
 Cannot be used by multiple threads at the same time.
@@ -645,27 +363,15 @@ Are limited in number.
 **Breaking**
 sidestep the mutual exclusion condition. You might be able to do this by
 - Using resources that allow simultaneous use, for example, AtomicInteger.
-- Increasing the number of resources such that it equals or exceeds the number of com-peting threads
+- Increasing the number of resources such that it equals or exceeds the number of competing threads
 - Checking that all your resources are free before seizing any.
 
-- Lock & wait - O
-nce a thread acquires a resource, it will not release the resource until it has acquired allof the other resources it requires and has completed its work.
-**Breaking** 
-if you refuse to wait. Check each resource before you
-seize it, and release all resources and start over if you run into one that’s busy. 
-This approach introduces several potential problems:
-• Starvation—One thread keeps being unable to acquire the resources it needs (maybe it 
-has a unique combination of resources that seldom all become available).
-• Livelock—Several threads might get into lockstep and all acquire one resource and 
-then release one resource, over and over again. This is especially likely with simplistic 
-CPU scheduling algorithms (think embedded devices or simplistic hand-written 
-t
-hread balancing algorithms).Both of these can cause poor throughput. The first results in low CPU utilization,
-whereas the second results in high and useless CPU utilization. 
-As inefficient as this strategy sounds, it’s better than nothing. It has the benefit that it
-can almost always be implemented if all else fails.
-
-• No preemption - One thread cannot take resources away from another thread. Once a thread holds a resource, the only way for another thread to get it is for the holding thread to release it.
+- Lock & wait - Once a thread acquires a resource, it will not release the resource until it has acquired allof the other resources it requires and has completed its work.
+- **Breaking** if you refuse to wait. Check each resource before youseize it, and release all resources and start over if you run into one that’s busy. 
+  This approach introduces several potential problems:
+	• Starvation—One thread keeps being unable to acquire the resources it needs (maybe it has a unique combination of resources that seldom all become available).
+	• Livelock—Several threads might get into lockstep and all acquire one resource and then release one resource, over and over again. This is especially likely with simplistic CPU scheduling algorithms (think embedded devices or simplistic hand-written thread balancing algorithms).Both of these can cause poor throughput. The first results in low CPU utilization, whereas the second results in high and useless CPU utilization. As inefficient as this strategy sounds, it’s better than nothing. It has the benefit that it can almost always be implemented if all else fails.
+* No preemption - One thread cannot take resources away from another thread. Once a thread holds a resource, the only way for another thread to get it is for the holding thread to release it.
 Breaking
 allow threads to take resources away from
 other threads. This is usually done through a simple request mechanism. When a thread
@@ -696,5 +402,94 @@ the conditions under which the test failed.
 – The tests aren’t adequate to expose problems.
 • Run the tests on a machine with varying loads. If you can simulate loads close to a 
 production environment, do so.
+# Smells and Heuristics
+### Functions
+- Functions should have a small number of arguments. No argument is best, followed by one, two, and three.
+- Output arguments are counterintuitive. Readers expect arguments to be inputs, not outputs. If your function must change the state of something, have it change the state of the object it is called on.
+- Boolean(Flag) arguments loudly declare that the function does more than one thing. They are confusing and should be eliminated.
+- Following “The Principle of Least Surprise,”2 any function or class should implement the behaviors that another programmer could reasonably expect
+### General
+- Every boundary condition, every corner case, every quirk and exception represents something that can confound an elegant and intuitive algorithm. Don’t rely on your intuition. Look for every boundary condition and write a test for it.
+- Every time you see duplication in the code, it represents a missed opportunity for abstraction. That duplication could probably become a subroutine or perhaps another class outright.
+	- A more subtle form is the switch/case or if/else chain that appears again and again in various modules, always testing for the same set of conditions. These should be replaced with polymorphism.
+	- the modules that have similar algorithms, but that don’t share similar lines of code. This is still duplication and should be addressed by using the    TEMPLATE METHOD, or STRATEGY pattern.
+- It is important to create abstractions that separate higher level general concepts from lower level detailed concepts. Sometimes we do this by creating abstract classes to hold the higher level concepts
+	- We want all the lower level concepts to be in the derivatives and all the higher level concepts to be in the base class.
+- The most common reason for partitioning concepts into base and derivative classes is so that the higher level base class concepts can be independent of the lower level derivative class concepts. Therefore, when we see base classes mentioning the names of their derivatives, we suspect a problem. In general, base classes should know nothing about their derivatives.
+- Well-defined modules have very small interfaces that allow you to do a lot with a little. 
+	- Poorly defined modules have wide and deep interfaces that force you to use many different gestures to get simple things done.
+	- A poorly defined interface provides lots of functions that you must call, so coupling is high.
+	- learn to limit what they expose at the interfaces of their classes and modules. The fewer methods a class has, the better. The fewer variables a function knows about, the better. The fewer instance variables a class has, the better.
+	- Hide your data. Hide your utility functions. Hide your constants and your temporaries. Don’t create classes with lots of methods or lots of instance variables. Don’t create lots of protected variables and functions for your subclasses. Concentrate on keeping interfaces very tight and very small. Help keep coupling low by limiting information.
+- Variables and function should be defined close to where they are used.
+	- Local variables should be declared just above their first usage and should have a small vertical scope.
+	- Private functions should be defined just below their first usage. Private functions belong to the scope of the whole class, but we’d still like to limit the vertical distance between the invocations and definitions. Finding a private function should just be a matter of scanning downward from the first usage.
+- If you do something a certain way, do all similar things in the same way. This goes back to the principle of least surprise. Be careful with the conventions you choose, and once chosen, be careful to continue to follow them.
+- Variables that aren’t used, functions that are never called, comments that add no information, and so forth. All these things are clutter and should be removed. Keep your source files clean, well organized, and free of clutter.
+- Things that don’t depend upon each other should not be artificially coupled.In general an artificial coupling is a coupling between two modules that serves no direct purpose. It is a result of putting a variable, constant, or function in a temporarily convenient, though inappropriate, location.
+- The methods of a class should be interested in the variables and functions of the class they belong to, and not the variables and functions of other classes. When a method uses accessors and mutators of some other object to manipulate the data within that object, then it envies the scope of the class of that other object.
+```java
+public class HourlyPayCalculator {
+	public Money calculateWeeklyPay(HourlyEmployee e) {
+		int tenthRate = e.getTenthRate().getPennies();
+		int tenthsWorked = e.getTenthsWorked();
+		int straightTime = Math.min(400, tenthsWorked);
+		int overTime = Math.max(0, tenthsWorked - straightTime);
+		int straightPay = straightTime * tenthRate;
+		int overtimePay = (int)Math.round(overTime*tenthRate*1.5);
+		return new Money(straightPay + overtimePay);
+	}
+}
+```
+The calculateWeeklyPay method reaches into the HourlyEmployee object to get the data on which it operates. The calculateWeeklyPay method envies the scope of HourlyEmployee. It “wishes” that it could be inside HourlyEmployee.
+
+ Sometimes, however, Feature Envy is a necessary evil
+ ```java
+public class HourlyEmployeeReport {
+	private HourlyEmployee employee ;
+
+	public HourlyEmployeeReport(HourlyEmployee e) {	
+		this.employee = e;
+	}
+	
+	String reportHours() {
+		return String.format(
+			"Name: %s\tHours:%d.%1d\n",
+			employee.getName(),
+			employee.getTenthsWorked()/10,
+			employee.getTenthsWorked()%10);
+	}
+}
+```
+Clearly, the reportHours method envies the HourlyEmployee class. On the other hand, we don’t want HourlyEmployee to have to know about the format of the report.
+- There is hardly anything more abominable than a dangling false argument at the end of a function call. Not only is the purpose of a selector argument difficult to remember, each selector argument combines many functions into one. Selector arguments are just a lazy way to avoid splitting a large function into several smaller functions.Of course, selectors need not be boolean. They can be enums, integers, or any other type of argument that is used to select the behavior of the function. In general it is better to have many functions than to pass some code into a function to select the behavior.
+- Code should be placed where a reader would naturally expect it to be. The PI constant should go where the trig functions are declared. The OVERTIME_RATE constant should be declared in the HourlyPayCalculator class.
+- Sometimes, however, we write static functions that should not be static. For example, consider:
+`HourlyPayCalculator.calculatePay(employee, overtimeRate).`
+Again, this seems like a reasonable static function. It doesn’t operate on any particular object and gets all it’s data from it’s arguments. However, there is a reasonable chance that we’ll want this function to be polymorphic. We may wish to implement several different algorithms for calculating hourly pay. So in this case the function should not be static. It should be a nonstatic member function of Employee. In general you should prefer nonstatic methods to static methods. When in doubt, make the function nonstatic. If you really want a function to be static, make sure that there is no chance that you’ll want it to behave polymorphically.
+- It is hard to overdo this. More explanatory variables are generally better than fewer. It is remarkable how an opaque module can suddenly become transparent simply by breaking the calculations up into well-named intermediate values.
+- If one module depends upon another, that dependency should be physical, not just logical. The dependent module should not make assumptions (in other words, logical dependencies) about the module it depends upon. Rather it should explicitly ask that module for all the information it depends upon.
+- Prefer Polymorphism to If/Else or Switch/Case. switch statements are probably appropriate in the parts of the system where adding new functions is more likely than adding new types.cases where functions are more volatile than types are relatively rare. So every switch statement should be suspect. There may be no more than one switch statement for a given type of selection. The cases in that switch statement must create polymorphic objects that take the place of other such switch statements in the rest of the system.
+- Replace Magic Numbers with Named Constants 
+- Enforce design decisions with structure over convention. Naming conventions are good, but they are inferior to structures that force compliance. No one is forced to implement the switch/case statement the same way each time; but the base classes do enforce that concrete classes have all abstract methods implemented.
+- Encapsulate Conditionals Boolean logic is hard enough to understand without having to see it in the context of an if or while statement. Extract functions that explain the intent of the conditional. For example: `if (shouldBeDeleted(timer))` is preferable to `if (timer.hasExpired() && !timer.isRecurrent())`
+	- Negatives are just a bit harder to understand than positives. So, when possible, conditionals should be expressed as positives.
+- It is often tempting to create functions that have multiple sections that perform a series of operations. Functions of this kind do more than one thing, and should be converted into many smaller functions, each of which does one thing.
+- Temporal couplings are often necessary, but you should not hide the coupling. Structure the arguments of your functions such that the order in which they should be called is obvious. You could expose the temporal coupling by creating a bucket brigade. Each function produces a result that the next function needs, so there is no reasonable way to call them out of order.
+- The statements within a function should all be written at the same level of abstraction, which should be one level below the operation described by the name of the function.
+- Keep Configurable Data at High Levels. If you have a constant such as a default or configuration value that is known and expected at a high level of abstraction, do not bury it in a low-level function.
+- Avoid Transitive Navigation In general we don’t want a single module to know much about its collaborators. More specifically, if A collaborates with B, and B collaborates with C, we don’t want modules that use A to know about C. (For example, we don’t want a.getB().getC().doSomething();.)
+### Names
+- Choose Names at the Appropriate Level of Abstraction Don’t pick names that communicate implementation; choose names the reflect the level of abstraction of the class or function you are working in. 
+- Use Standard Nomenclature Where PossibleNames are easier to understand if they are based on existing convention or usage. For example, if you are using the DECORATOR pattern, you should use the word Decorator in the names of the decorating classes.
+* the longer the scope of the name, the longer and more precise the name should be.
+* Names should not be encoded with type or scope information.
+* Names should describe everything that a function, variable, or class is or does. Don’t hide side effects with a name
+### Tests
+- A test suite should test everything that could possibly break. The tests are insufficient so long as there are conditions that have not been explored by the tests 
+- Coverage tools reports gaps in your testing strategy. They make it easy to find modules, classes, and functions that are insufficiently tested.
+* Take special care to test boundary conditions. 
+* Bugs tend to congregate. When you find a bug in a function, it is wise to do an exhaustive test of that function. You’ll probably find that the bug was not alone.
+* A slow test is a test that won’t get run. When things get tight, it’s the slow tests that will be dropped from the suite. So do what you must to keep your tests fast.
 
 
