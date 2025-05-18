@@ -1,3 +1,14 @@
+# JavaScript
+1. [JSON](JavaScript/JSON.md)
+2. [Chrome DevTools](JavaScript/Chrome_DevTools.md)
+# Frameworks
+1. [Angular](JavaScript/Frameworks/Angular.md)
+2. [Next.js](JavaScript/Frameworks/Next.js.md)
+3. [NPM](JavaScript/Frameworks/NPM.md)
+4. [TypeScript](JavaScript/Frameworks/TypeScript.md)
+# Libraries
+1. [React](JavaScript/Libraries/React.md)
+
 Javascript is a **single-threaded language**, meaning that just one line of code may be run at once.
 
 **BOM** stands for _Browser Object Model_. It provides interaction with the browser. The default object of a browser is a window. So, you can call all the functions of the window by specifying the window or directly. The window object provides various properties like document, history, screen, navigator, location, innerHeight, innerWidth,

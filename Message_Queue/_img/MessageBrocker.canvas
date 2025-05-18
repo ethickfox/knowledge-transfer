@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"771d6e767009c1e2","type":"text","text":"Producer","x":-125,"y":-30,"width":250,"height":60,"color":"4"},
+		{"id":"866e9a62650756cb","type":"text","text":"Broker","x":-125,"y":191,"width":250,"height":60,"color":"3"},
+		{"id":"f3bcec91ad0ee4c0","type":"text","text":"Consumer","x":-297,"y":367,"width":250,"height":60,"color":"6"},
+		{"id":"23c56126524ba480","type":"text","text":"Consumer","x":40,"y":367,"width":250,"height":60,"color":"6"}
+	],
+	"edges":[
+		{"id":"382759f74e666da0","fromNode":"771d6e767009c1e2","fromSide":"bottom","toNode":"866e9a62650756cb","toSide":"top"},
+		{"id":"1ea449cce181cb4b","fromNode":"866e9a62650756cb","fromSide":"bottom","toNode":"f3bcec91ad0ee4c0","toSide":"top"},
+		{"id":"e5751c19905c6341","fromNode":"866e9a62650756cb","fromSide":"bottom","toNode":"23c56126524ba480","toSide":"top"}
+	]
+}

@@ -1318,7 +1318,7 @@ Here are some of the most common built-in endpoints Actuator provides:
         
     - [ ] Git
         
-        [Git](../Computer_Science/Git.md)
+        [Git](../Software_Architecture/Git.md)
         
     - [ ] CI/CD
 - Architecture
@@ -1870,7 +1870,7 @@ Something very important to know about is Microservices. There are many framewor
         
         If there’s a failure and the consumer restarts, it will look at the last persisted offset. Since the offsets are persisted prior to actual event processing, we cannot establish whether every event received by the consumer was successfully processed or not. In this case, the consumer might end up missing some events.
         
-        ![31.png](../MessageQueue/_img/31.png)
+        ![31.png](../Message_Queue/_img/31.png)
         
     - at-least-once
         
@@ -1882,7 +1882,7 @@ Something very important to know about is Microservices. There are many framewor
         
         The consumer would restart and read from the offset. **Here, the consumer reprocesses the events more than once because even though the message was successfully processed before the failure, the position of the last received event was not saved successfully:**
         
-        ![11.png](../MessageQueue/_img/11.png)
+        ![11.png](../Message_Queue/_img/11.png)
         
         **In order to avoid processing the same event multiple times, we can use idempotent consumers**.
         
@@ -1924,7 +1924,7 @@ Something very important to know about is Microservices. There are many framewor
         
         Let’s see what happens when a consumer fails after processing the events  but without saving the offsets in the diagram below:
         
-        ![33.png](../MessageQueue/_img/33.png)
+        ![33.png](../Message_Queue/_img/33.png)
         
         We can remove duplication in exactly-once semantics by having these:
         
@@ -2307,7 +2307,7 @@ These sample problems and solutions cover a range of difficulty levels and demon
 
 [Hibernate 1](../Java/Java_Frameworks/Hibernate/Hibernate%201)
 
-[Kafka](../MessageQueue/Kafka.md)
+[Kafka](../Message_Queue/Kafka.md)
 
 - scalable application development
 

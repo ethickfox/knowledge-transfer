@@ -4,9 +4,7 @@
   "promptDelete": true,
   "newFileLocation": "current",
   "attachmentFolderPath": "./_img",
-  "newLinkFormat": "relative",
+  "newLinkFormat": "absolute",
   "showInlineTitle": false,
-  "userIgnoreFilters": [
-    "/assets/*"
-  ]
+  "userIgnoreFilters": null
 }

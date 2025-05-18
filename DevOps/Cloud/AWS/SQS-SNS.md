@@ -12,7 +12,7 @@ Amazon SQS supports both standard and FIFO queues:
 - FIFO (First-In-First-Out) queues are designed to enhance messaging between applications when the order of operations and events is critical, or where duplicates can't be tolerated.
 - Maximum message size is 256kb
 
-![1.png](../../../MessageQueue/_img/1.png)
+![1.png](../../../Message_Queue/_img/1.png)
 
 ### More about FIFO queues.
 

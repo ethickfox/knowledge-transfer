@@ -1,5 +1,5 @@
 # **Системы контроля версий**
-
+ [Branching Strategy](Software_Architecture/Branching_Strategy.md)
 ## **Подходы**
 
 **Git Flow**
