@@ -1,5 +1,5 @@
 # Clean Code
-## Variables Naming
+# Variables
 ### Use Intention-Revealing Names
 The problem isn’t the simplicity of the code but the implicity of the code (to coin a phrase): the degree to which the context is not explicit in the code itself.
 ### Avoid Disinformation
@@ -16,7 +16,7 @@ The problem isn’t the simplicity of the code but the implicity of the code (to
 - Avoid Encodings - Encoding type or scope information into names simply adds an extra burden of deciphering
 - Pick one word for one abstract concept and stick with it. For instance, it’s confusing to have fetch, retrieve, and get as equivalent methods of different classes.
 - Avoid using the same word for two purposes. you need to place names in context for your reader by enclosing them in well-named classes, functions, or namespaces.
-## Functions
+# Functions
 Functions should not be 100 lines long. Functions should hardly ever be 20 lines long.
 - blocks within if statements, else statements, while statements, and so on should be one line long. Probably that line should be a function call.
 - functions should not be large enough to hold nested structures. Therefore, the indent level of a function should not be greater than one or two.
@@ -52,7 +52,7 @@ FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.
 * A comment may be used to amplify the importance of something that may otherwise seem inconsequential.
 
 * As useful as javadocs are for public APIs, they are anathema to code that is not intended for public consumption.
-## Objects and Data Structures
+# Objects and Data Structures
 - We do not want to expose the details of our data. Rather we want to express our data in abstract terms. This is not merely accomplished by using interfaces and/or getters and setters. Serious thought needs to be put into the best way to represent the data that an object contains. The worst option is to blithely add getters and setters
 	- **Objects** hide their data behind abstractions and expose functions that operate on that data
 	- **Data structure** expose their data and have no meaningful functions.
@@ -118,7 +118,7 @@ final String outputDir = scratchDir.getAbsolutePath();
 
 **Active Records** are special forms of DTOs. They are data structures with public (or bean-accessed) variables; but they typically have navigational methods like save and find. Typically these Active Records are direct translations from database tables, or other data sources.
 
-## Exceptions
+# Exceptions
 - In a way, try blocks are like transactions. Your catch has to leave your program in a consistent state, no matter what happens in the try. For this reason it is good practice to start with a try-catch-finally statement when you are writing code that could throw exceptions. This helps you define what the user of that code should expect, no matter what goes wrong with the code that is executed in the try.
 - Try to write tests that force exceptions, and then add behavior to your handler to satisfy your tests. This will cause you to build the transaction scope of the try block first and will help you maintain the transaction nature of that scope.
 - The price of **checked exceptions** is an Open/Closed Principle1 violation. If you throw a checked exception from a method in your code and the catch is three levels above, you must declare that exception in the signature of each method between you and the _catch_. This means that a change at a low level of the software can force signature changes on many higher levels. Encapsulation is broken because all functions in the path of a throw must know about details of that low-level exception.
@@ -148,7 +148,7 @@ public class PerDiemMealExpenses implements MealExpenses {
 - Unless you are working with an API which expects you to pass null, you should avoid passing null in your code whenever possible.
 ### Boundaries
 We could create an adapters/separators to have an additional layer between using third party api. This will help in cases if api is changed - we will have a single place to fix everything. We manage third-party boundaries by having very few places in the code that refer to them. We may wrap them, or we may use an ADAPTER to convert from our perfect interface to the provided interface.
-### Unit Tests
+# Unit Tests
 The Three Laws of TDD:
 1. You may not write production code until you have written a failing unit test.
 2. You may not write more of a unit test than is sufficient to fail, and not compiling is failing.
@@ -174,7 +174,7 @@ Classes
 - you want to extract one small part of that function into a separate function. However, the code you want to extract uses four of the variables declared in the function. Must you pass all four of those variables into the new function as arguments? Not at all! If we promoted those four variables to instance variables of the class, then we could extract the code without passing any variables at all. It would be easy to break the function up into small pieces.
 - breaking a large function into many smaller functions often gives us the opportunity to split several smaller classes out as well. This gives our program a much better organization and a more transparent structure.
 - By minimizing coupling in this way, our classes adhere to another class design principle known as the Dependency Inversion Principle (DIP). In essence, the DIP says that our classes should depend upon abstractions, not on concrete details.
-## Systems
+# Systems
 - Software systems should separate the startup process, when the application objects are constructed and the dependencies are “wired” together, from the runtime logic that takes over after startup. The startup process is a concern that any application must address. The separation of concerns is one of the oldest and most important design techniqu
 - The code for the startup process is ad hoc and it is mixed in with the runtime logic. Here is a typical example:
 
@@ -205,7 +205,6 @@ public Service getService() {
 - Domain-Specific Languages allow all levels of abstraction and all domains in the application to be expressed as POJOs, from high-level policy to low-level details.
 
 Emergence
-
 Emergent Design
 
 - Runs all the tests
