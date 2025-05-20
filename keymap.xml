@@ -1,0 +1,107 @@
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="ActivateBigDataToolWindowToolWindow">
+    <keyboard-shortcut first-keystroke="shift ctrl meta b" />
+  </action>
+  <action id="AddBreakpoint">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="Annotate">
+    <keyboard-shortcut first-keystroke="meta alt slash" />
+  </action>
+  <action id="Arrangement.Alias.Rule.Match.Condition.Move.Down" />
+  <action id="Arrangement.Rule.Group.Condition.Move.Down" />
+  <action id="Arrangement.Rule.Group.Condition.Move.Up" />
+  <action id="Arrangement.Rule.Match.Condition.Move.Down" />
+  <action id="Arrangement.Rule.Match.Condition.Move.Up" />
+  <action id="CloseAllToTheLeft">
+    <keyboard-shortcut first-keystroke="shift meta w" second-keystroke="meta l" />
+  </action>
+  <action id="CloseAllToTheRight">
+    <keyboard-shortcut first-keystroke="shift meta w" second-keystroke="meta r" />
+  </action>
+  <action id="CodeCompletion">
+    <keyboard-shortcut first-keystroke="shift space" />
+  </action>
+  <action id="CommentByBlockComment">
+    <keyboard-shortcut first-keystroke="meta alt divide" />
+    <keyboard-shortcut first-keystroke="shift ctrl slash" />
+    <keyboard-shortcut first-keystroke="shift ctrl divide" />
+    <keyboard-shortcut first-keystroke="shift meta slash" />
+    <keyboard-shortcut first-keystroke="shift meta divide" />
+    <keyboard-shortcut first-keystroke="shift meta divide" />
+  </action>
+  <action id="Console.TableResult.SelectRow" />
+  <action id="Diff.ShowStandaloneDiff">
+    <keyboard-shortcut first-keystroke="shift alt d" />
+  </action>
+  <action id="GotoTest" />
+  <action id="GuiDesigner.ShrinkSelection" />
+  <action id="Images.Editor.ToggleGrid" />
+  <action id="InsertInlineCompletionAction">
+    <keyboard-shortcut first-keystroke="right" />
+  </action>
+  <action id="JumpToLastChange" />
+  <action id="List-selectFirstRow" />
+  <action id="List-selectLastRow" />
+  <action id="LocalHistory.ShowSelectionHistory">
+    <keyboard-shortcut first-keystroke="shift meta alt back_slash" />
+  </action>
+  <action id="MaintenanceAction" />
+  <action id="MaximizeEditorInSplit">
+    <keyboard-shortcut first-keystroke="meta #10000a7" />
+  </action>
+  <action id="MethodDown">
+    <keyboard-shortcut first-keystroke="meta alt down" />
+  </action>
+  <action id="MethodOverloadSwitchDown">
+    <keyboard-shortcut first-keystroke="shift ctrl down" />
+  </action>
+  <action id="MethodOverloadSwitchUp">
+    <keyboard-shortcut first-keystroke="shift ctrl up" />
+  </action>
+  <action id="MethodUp">
+    <keyboard-shortcut first-keystroke="meta alt up" />
+  </action>
+  <action id="MoveEditorToOppositeTabGroup">
+    <keyboard-shortcut first-keystroke="meta quote" />
+  </action>
+  <action id="MoveTabRight">
+    <keyboard-shortcut first-keystroke="meta back_slash" />
+  </action>
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="shift meta close_bracket" />
+  </action>
+  <action id="PinActiveTab">
+    <keyboard-shortcut first-keystroke="ctrl alt p" />
+  </action>
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="shift meta open_bracket" />
+  </action>
+  <action id="ReopenClosedTab">
+    <keyboard-shortcut first-keystroke="shift meta t" />
+  </action>
+  <action id="RunAnything">
+    <keyboard-shortcut first-keystroke="alt g" />
+  </action>
+  <action id="ServiceView.ShowServices" />
+  <action id="ShowContent" />
+  <action id="ShowSearchHistory" />
+  <action id="SmartSelect" />
+  <action id="TableResult.GrowSelection" />
+  <action id="TableResult.SelectColumn" />
+  <action id="TableResult.ShrinkSelection" />
+  <action id="Terminal.OpenInTerminal">
+    <keyboard-shortcut first-keystroke="ctrl f12" />
+  </action>
+  <action id="UsageView.ShowRecentFindUsages" />
+  <action id="Vcs.Diff.IncludeWholeChangedLinesIntoCommit">
+    <keyboard-shortcut first-keystroke="f8" />
+  </action>
+  <action id="Vcs.ShowHistoryForBlock">
+    <keyboard-shortcut first-keystroke="shift meta alt slash" />
+  </action>
+  <action id="WebDeployment.BrowseServers">
+    <keyboard-shortcut first-keystroke="shift meta back_space" />
+  </action>
+  <action id="hg4idea.QFold" />
+</keymap>⏎
