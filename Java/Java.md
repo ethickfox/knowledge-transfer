@@ -13,6 +13,7 @@
 # Build Tools
 1. [Gradle](Java/Build_Tools/Gradle.md)
 2. [Maven](Java/Build_Tools/Maven.md)
+3. [Idea](Java/Idea/Idea.md)
 # Frameworks
 1. [Spring](Java/Frameworks/Spring/Core.md)
 2. [Hibernate](Java/Frameworks/Hibernate.md)

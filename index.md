@@ -14,8 +14,3 @@
 ## Interviewing
 1. [D2 BE Interview](Interviewing/D2_BE_Interview.md)
 2. [HR Interview](Interviewing/HR_Interview.md)
-
-Intellij Idea
-**Settings**
-[keymap](keymap.xml)
-gist:https://gist.github.com/ethickfox/88ccb037a031a88b6fdb3dc682e16dd9
