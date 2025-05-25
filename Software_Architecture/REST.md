@@ -21,7 +21,7 @@ Safe requests
 
 A safe method does not change the value that is returned, it reads – but it never writes.
 
-![Untitled](Untitled.jpeg)
+![Untitled](Software_Architecture/Communication/_img/Untitled.jpeg)
 
 ## **Rest api versioning**
 

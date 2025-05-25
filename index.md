@@ -1,7 +1,3 @@
-# Communication
-1. [GraphQL](Communication/GraphQL.md)
-2. [HTTP](Communication/HTTP.md)
-3. [Ip](Communication/Ip.md)
 # [Computer Science](Computer_Science/Computer_Science.md)
 # [Databases](Databases/Databases.md)
 # [DevOps](DevOps/DevOps.md)

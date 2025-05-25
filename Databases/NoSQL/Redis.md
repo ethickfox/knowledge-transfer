@@ -48,7 +48,7 @@ Redis supports [**asynchronous replication**](https://redis.io/topics/replicati
 
 ![Untitled2.png](_img/Untitled2.png)
 
-![Untitled4.png](_img/Untitled4.png)
+![Untitled4.png](Databases/NoSQL/_img/Untitled4.png)
 
 ![Untitled6.png](_img/Untitled6.png)
 

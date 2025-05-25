@@ -111,11 +111,11 @@ Amazon Route 53 effectively connects user requests to infrastructure running in 
 
 ![57.png](../../_img/57.png)
 
-![Untitled4.png](../../../Communication/_img/Untitled4.png)
+![Untitled4.png](Software_Architecture/Communication/_img/Untitled4.png)
 
 ![52.png](../../_img/52.png)
 
-![Untitled5.png](../../../Communication/_img/Untitled5.png)
+![Untitled5.png](Software_Architecture/Communication/_img/Untitled5.png)
 
 ![25.png](../../_img/25.png)
 

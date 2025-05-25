@@ -66,7 +66,7 @@ Basic Template
 
 ![60.png](../../_img/60.png)
 
-![Untitled3.png](../../../Communication/_img/Untitled3.png)
+![Untitled3.png](Software_Architecture/Communication/_img/Untitled3.png)
 
 ![54.png](../../_img/54.png)
 

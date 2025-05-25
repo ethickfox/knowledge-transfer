@@ -536,13 +536,13 @@ Data that is accessed together should be stored together.
 
 A relationship where a data entity in one set is connected to exactly one data entity in another set
 
-![Untitled3.png](_img/Untitled3.png)
+![Untitled3.png](Databases/NoSQL/_img/Untitled3.png)
 
 ### One-to-Many
 
 A relationship where a data entity in one set is connected to any number of data entities in another set
 
-![Untitled5.png](_img/Untitled5.png)
+![Untitled5.png](Databases/NoSQL/_img/Untitled5.png)
 
 ### Many-to-Many
 
