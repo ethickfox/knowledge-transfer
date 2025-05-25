@@ -10,7 +10,7 @@
  [Development methodologies](Software_Architecture/Development_methodologies.md)
  [Designing Data Intensive Applications](Software_Architecture/Designing_Data_Intensive_Applications.md)
  [Deployment Strategies](Software_Architecture/Deployment_Strategies.md)
- [Clean Code](Software_Architecture/Clean_Code.md)
+ [Clean Code](Software_Architecture/Clean_Code/Clean_Code.md)
  [Monolithic Architecture](Software_Architecture/System_Architecture/Monolithic_Architecture.md)
  [Microservices Architecture](Software_Architecture/System_Architecture/Microservices_Architecture.md)
  [Git](Git.md)
