@@ -14,6 +14,7 @@
 - [Monolithic Architecture](Software_Architecture/System_Architecture/Monolithic_Architecture.md)
 - [Microservices Architecture](Software_Architecture/System_Architecture/Microservices_Architecture.md)
 - [Git](Git.md)
+- [Hexagonal Architecture](Software_Architecture/Hexagonal%20Architecture.md)
 # Communication
 1. [GraphQL](Software_Architecture/Communication/GraphQL.md)
 2. [HTTP](Software_Architecture/Communication/HTTP.md)

@@ -13,16 +13,18 @@
 - Names should describe everything that a function, variable, or class is or does. Don’t hide side effects with a name
 ---
 # Functions
- -  Functions should not be 100 lines long. Functions should hardly ever be 20 lines long.
- - FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.
-	 - way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation
-	 - statements within function should all be at the same level of abstraction
-		 - We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions
-	 - Flag arguments are ugly. this function does more than one thing. It does one thing if the flag is true and another if the flag is false
-	 -  In general output arguments should be avoided. If your function must change the state of something, have it change the state of its owning object.
-	 - Functions should either do something or answer something, but not both. Either your function should 
-		* change the state of an object
-		* or it should return some information about that object. 
+Functions should do only ONE thing.
+- way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation
+- statements within function should all be at the same level of abstraction
+	- We want every function to be followed by those at the next level of abstraction so that we can read the program, descending one level of abstraction at a time as we read down the list of functions
+- Flag arguments are ugly. this function does more than one thing. It does one thing if the flag is true and another if the flag is false
+-  In general output arguments should be avoided. If your function must change the state of something, have it change the state of its owning object.
+- Functions should either do something or answer something, but not both. Either your function should 
+	* change the state of an object
+	* or it should return some information about that object.
+---
+# Functions
+-  Functions should not be 100 lines long. Functions should hardly ever be 20 lines long.
 *  Never return null. When we return null, we are essentially creating work for ourselves and foisting problems upon our callers. All it takes is one missing null check to send an application spinning out of control.
 - Unless you are working with an API which expects you to pass null, you should avoid passing null in your code whenever possible.
 - Functions should have a small number of arguments. No argument is best, followed by one, two, and three.
@@ -39,6 +41,8 @@
 - The methods of a class should be interested in the variables and functions of the class they belong to, and not the variables and functions of other classes.
 - In general you should prefer nonstatic methods to static methods. When in doubt, make the function nonstatic. If you really want a function to be static, make sure that there is no chance that you’ll want it to behave polymorphically.
 - Avoid Transitive Navigation In general we don’t want a single module to know much about its collaborators. More specifically, if A collaborates with B, and B collaborates with C, we don’t want modules that use A to know about C. (For example, we don’t want a.getB().getC().doSomething();.)
+---
+# Objects and Data Structures
 **Law of Demeter** says a module should not know about the innards of the objects it manipulates. Method f of a class C should only call the methods of these:
 - C
 - An object created by f
@@ -59,7 +63,8 @@ final String outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();
 ---
 # Unit Tests
 It is unit tests that keep our code flexible, maintainable, and reusable. If you have tests, you do not fear making changes to the code! Without tests every change is a possible bug.
-Tests should be clean
+Tests should be 
+- clean
 - Readable
 - The BUILD-OPERATE-CHECK pattern applied.
 	- The first part builds up the test data
@@ -72,6 +77,8 @@ Tests should be clean
 	- Repeatable
 	- Self-Validating
 	- Timely
+---
+# Unit Tests
 - A test suite should test everything that could possibly break. The tests are insufficient so long as there are conditions that have not been explored by the tests 
 - Coverage tools reports gaps in your testing strategy. They make it easy to find modules, classes, and functions that are insufficiently tested.
 - Bugs tend to congregate. When you find a bug in a function, it is wise to do an exhaustive test of that function. You’ll probably find that the bug was not alone.
@@ -89,7 +96,6 @@ Tests should be clean
 - Software systems should separate the startup process, when the application objects are constructed and the dependencies are “wired” together, from the runtime logic that takes over after startup. 
 - DSLs, when used effectively, raise the abstraction level above code idioms and design patterns. They allow the developer to reveal the intent of the code at the appropriate level of abstraction.
 - We could create an adapters/separators to have an additional layer between using third party api. This will help in cases if api is changed - we will have a single place to fix everything. We manage third-party boundaries by having very few places in the code that refer to them. We may wrap them, or we may use an ADAPTER to convert from our perfect interface to the provided interface.
-
 ---
 # Systems - Emergent Design
 1. Runs all the tests
@@ -118,6 +124,7 @@ Tests should be clean
 - Consider writing your threaded code such that each thread exists in its own world, sharing no data with any other thread.
 - There are several different ways to partition behavior in a concurrent application.
 	- Mutual Exclusion - Only one thread can access shared data or a shared resource at a time
+
 __ Review__
 - Possible issues
 	* Starvation - One thread or a group of threads is prohibited from proceeding for an excessively long time or forever. For example, always letting fast-running threads through first could starve out longer running threads if there is no end to the fast-running threads.
