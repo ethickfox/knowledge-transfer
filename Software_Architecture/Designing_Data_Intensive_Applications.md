@@ -892,3 +892,219 @@ request and encodes a response, and the client finally decodes the response
 • Asynchronous message passing (using message brokers or actors), where nodes
 communicate by sending each other messages that are encoded by the sender
 and decoded by the recipient
+
+# Distributed Data
+There are various reasons why you might want to distribute a database across multi‐
+ple machines:
+- Scalability
+If your data volume, read load, or write load grows bigger than a single machine
+can handle, you can potentially spread the load across multiple machines.
+- Fault tolerance/high availability
+If your application needs to continue working even if one machine (or several
+machines, or the network, or an entire datacenter) goes down, you can use multi‐
+ple machines to give you redundancy. When one fails, another one can take over.
+- Latency
+If you have users around the world, you might want to have servers at various
+locations worldwide so that each user can be served from a datacenter that is geo‐
+graphically close to them. That avoids the users having to wait for network pack‐
+ets to travel halfway around the world.
+
+Scaling to Higher Load
+If all you need is to scale to higher load, the simplest approach is to buy a more powerful machine (sometimes called vertical scaling or scaling up). The problem with a shared-memory approach is that the cost grows faster than linearly: a machine with twice as many CPUs, twice as much RAM, and twice as much
+disk capacity as another typically costs significantly more than twice as much. And
+due to bottlenecks, a machine twice the size cannot necessarily handle twice the load.
+
+Shared-Nothing Architectures: 
+1. By contrast, shared-nothing architectures [3] (sometimes called horizontal scaling or
+scaling out) have gained a lot of popularity. In this approach, each machine or virtual
+machine running the database software is called a node. Each node uses its CPUs,
+RAM, and disks independently. Any coordination between nodes is done at the soft‐
+ware level, using a conventional network.
+No special hardware is required by a shared-nothing system, so you can use whatever
+machines have the best price/performance ratio. You can potentially distribute data
+across multiple geographic regions, and thus reduce latency for users and potentially
+be able to survive the loss of an entire datacenter.
+While a distributed shared-nothing architecture has many advantages, it usually also
+incurs additional complexity for applications and sometimes limits the expressive‐
+ness of the data models you can use. In some cases, a simple single-threaded program
+can perform significantly better than a cluster with over 100 CPU cores [4]. On the
+other hand, shared-nothing systems can be very powerful.
+
+There are two common ways data is distributed across multiple nodes:
+
+# Replication
+Keeping a copy of the same data on several different nodes, potentially in differ‐
+ent locations. Replication provides redundancy: if some nodes are unavailable,
+the data can still be served from the remaining nodes. Replication can also help
+improve performance.
+ - To keep data geographically close to your users (and thus reduce latency)
+• To allow the system to continue working even if some of its parts have failed
+(and thus increase availability)
+• To scale out the number of machines that can serve read queries (and thus
+increase read throughput)
+
+Every write to the database needs to be processed by every replica; otherwise, the rep‐
+licas would no longer contain the same data. The most common solution for this is
+called leader-based replication (also known as active/passive or master–slave replica‐
+tion)
+1. One of the replicas is designated the leader (also known as master or primary).
+When clients want to write to the database, they must send their requests to the
+leader, which first writes the new data to its local storage.
+2. The other replicas are known as followers (read replicas, slaves, secondaries, or hot
+standbys).i Whenever the leader writes new data to its local storage, it also sends
+the data change to all of its followers as part of a replication log or change stream.
+Each follower takes the log from the leader and updates its local copy of the data‐
+base accordingly, by applying all writes in the same order as they were processed
+on the leader.
+3. When a client wants to read from the database, it can query either the leader or
+any of the followers. However, writes are only accepted on the leader (the follow‐
+ers are read-only from the client’s point of view).
+
+## Synchronous Versus Asynchronous Replication
+the replication to follower 1 is synchronous: the leader
+waits until follower 1 has confirmed that it received the write before reporting success
+to the user, and before making the write visible to other clients. The replication to
+follower 2 is asynchronous: the leader sends the message, but doesn’t wait for a
+response from the follower.
+The advantage of synchronous replication is that the follower is guaranteed to have
+an up-to-date copy of the data that is consistent with the leader. If the leader sud‐
+denly fails, we can be sure that the data is still available on the follower. The disad‐
+vantage is that if the synchronous follower doesn’t respond (because it has crashed,
+or there is a network fault, or for any other reason), the write cannot be processed.
+The leader must block all writes and wait until the synchronous replica is available
+again.
+In practice, if you enable syn‐
+chronous replication on a database, it usually means that one of the followers is syn‐
+chronous, and the others are asynchronous. If the synchronous follower becomes
+unavailable or slow, one of the asynchronous followers is made synchronous. This
+guarantees that you have an up-to-date copy of the data on at least two nodes:
+This configuration is sometimes also called
+semi-synchronous
+Often, leader-based replication is configured to be completely asynchronous. In this
+case, if the leader fails and is not recoverable, any writes that have not yet been repli‐
+cated to followers are lost. This means that a write is not guaranteed to be durable,
+even if it has been confirmed to the client. However, a fully asynchronous configura‐
+tion has the advantage that the leader can continue processing writes, even if all of its
+followers have fallen behind.
+- How do you ensure that the new follower has an accurate copy of the leader’s data?
+Simply copying data files from one node to another is typically not sufficient: clients
+are constantly writing to the database, and the data is always in flux, so a standard file
+copy would see different parts of the database at different points in time. The result
+might not make any sense.
+setting up a follower can usually be done without downtime. Conceptually,
+the process looks like this:
+1. Take a consistent snapshot of the leader’s database at some point in time—if pos‐
+sible, without taking a lock on the entire database. Most databases have this fea‐
+ture, as it is also required for backups. In some cases, third-party tools are
+needed, such as innobackupex for MySQL [12].
+2. Copy the snapshot to the new follower node.
+3. The follower connects to the leader and requests all the data changes that have
+happened since the snapshot was taken. This requires that the snapshot is associ‐
+ated with an exact position in the leader’s replication log. That position has vari‐
+ous names: for example, PostgreSQL calls it the log sequence number, and
+MySQL calls it the binlog coordinates.
+4. When the follower has processed the backlog of data changes since the snapshot,
+we say it has caught up. It can now continue to process data changes from the
+leader as they happen.
+## Handling Node Outages
+1. Follower failure: Catch-up recovery
+On its local disk, each follower keeps a log of the data changes it has received from
+the leader. If a follower crashes and is restarted, or if the network between the leader
+and the follower is temporarily interrupted, the follower can recover quite easily:
+from its log, it knows the last transaction that was processed before the fault occur‐
+red. Thus, the follower can connect to the leader and request all the data changes that
+occurred during the time when the follower was disconnected. When it has applied
+these changes, it has caught up to the leader and can continue receiving a stream of
+data changes as before.
+2. Leader failure: Failover
+Handling a failure of the leader is trickier: one of the followers needs to be promoted
+to be the new leader, clients need to be reconfigured to send their writes to the new
+leader, and the other followers need to start consuming data changes from the new
+leader. This process is called failover.
+Failover can happen manually (an administrator is notified that the leader has failed
+and takes the necessary steps to make a new leader) or automatically. An automatic
+failover process usually consists of the following steps:
+- Determining that the leader has failed. There are many things that could poten‐
+tially go wrong: crashes, power outages, network issues, and more. There is no
+foolproof way of detecting what has gone wrong, so most systems simply use a
+timeout: nodes frequently bounce messages back and forth between each other,
+and if a node doesn’t respond for some period of time—say, 30 seconds—it is
+assumed to be dead.
+- Choosing a new leader. The best candidate for
+leadership is usually the replica with the most up-to-date data changes from the
+old leader (to minimize any data loss). Getting all the nodes to agree on a new
+leader is a consensus problem,
+- Reconfiguring the system to use the new leader. Clients now need to send
+their write requests to the new leader. If the old leader comes back, it might still believe that it is the leader,
+not realizing that the other replicas have forced it to step down. The system
+needs to ensure that the old leader becomes a follower and recognizes the new
+leader.
+
+Statement-based replication
+In the simplest case, the leader logs every write request (statement) that it executes
+and sends that statement log to its followers. For a relational database, this means
+that every INSERT, UPDATE, or DELETE statement is forwarded to followers, and each
+follower parses and executes that SQL statement as if it had been received from a
+client.
+Any statement that calls a nondeterministic function, such as NOW() to get the
+current date and time or RAND() to get a random number, is likely to generate a
+different value on each replica.
+• If statements use an autoincrementing column, or if they depend on the existing
+data in the database (e.g., `UPDATE … WHERE <some condition>`), they must be
+executed in exactly the same order on each replica, or else they may have a differ‐
+ent effect. This can be limiting when there are multiple concurrently executing
+transactions.
+• Statements that have side effects (e.g., triggers, stored procedures, user-defined
+functions) may result in different side effects occurring on each replica, unless
+the side effects are absolutely deterministic.
+It is possible to work around those issues—for example, the leader can replace any
+nondeterministic function calls with a fixed return value when the statement is log‐
+ged so that the followers all get the same value. However, because there are so many
+edge cases, other replication methods are now generally preferred.
+Statement-based replication was used in MySQL before version 5.1. It is still some‐
+times used today, as it is quite compact, but by default MySQL now switches to row-
+based replication (discussed shortly) if there is any nondeterminism in a statement.
+
+Write-ahead log (WAL) shipping
+the log is an append-only sequence of bytes containing all writes to the
+database. We can use the exact same log to build a replica on another node: besides
+writing the log to disk, the leader also sends it across the network to its followers.
+This method of replication is used in PostgreSQL and Oracle, among others [16]. The
+main disadvantage is that the log describes the data on a very low level: a WAL con‐
+tains details of which bytes were changed in which disk blocks. This makes replica‐
+tion closely coupled to the storage engine. If the database changes its storage format
+from one version to another, it is typically not possible to run different versions of
+the database software on the leader and the followers.
+That may seem like a minor implementation detail, but it can have a big operational
+impact. If the replication protocol allows the follower to use a newer software version
+than the leader, you can perform a zero-downtime upgrade of the database software
+by first upgrading the followers and then performing a failover to make one of the
+upgraded nodes the new leader. If the replication protocol does not allow this version
+mismatch, as is often the case with WAL shipping, such upgrades require downtime.
+
+Logical (row-based) log replication
+An alternative is to use different log formats for replication and for the storage
+engine, which allows the replication log to be decoupled from the storage engine
+internals. This kind of replication log is called a logical log, to distinguish it from the
+storage engine’s (physical) data representation.
+
+A logical log for a relational database is usually a sequence of records describing
+writes to database tables at the granularity of a row:
+• For an inserted row, the log contains the new values of all columns.
+• For a deleted row, the log contains enough information to uniquely identify the
+row that was deleted. Typically this would be the primary key, but if there is no
+primary key on the table, the old values of all columns need to be logged.
+• For an updated row, the log contains enough information to uniquely identify
+the updated row, and the new values of all columns (or at least the new values of
+all columns that changed).
+
+Trigger-based replication
+if you want to only replicate a subset of the data, or want to replicate from one kind of
+database to another, or if you need conflict resolution logic, then you may need to move replication up to the application layer.
+Some tools, such as Oracle GoldenGate [19], can make data changes available to an
+application by reading the database log. An alternative is to use features that are
+available in many relational databases: triggers and stored procedures.
+
+# Partitioning
+Splitting a big database into smaller subsets called partitions so that different par‐
+titions can be assigned to different nodes (also known as sharding)
