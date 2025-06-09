@@ -1,32 +1,23 @@
-# **Hibernate**
-
+# Hibernate
 Фреймворк (реализация jpa), упрощающий взаимодействие с бд посредствам ORM.
 
-**ORM**
+**ORM** - Технология для преобразования объекта в строку в таблице и наоборот.
 
-Технология для преобразования объекта в строку в таблице и наоборот.
-
-**JPA**
-
-спецификация, которая описывает систему управления и взаимодействия Java объектов с объектами из бд.
+**JPA** - спецификация, которая описывает систему управления и взаимодействия Java объектов с объектами из бд.
 
 **EntityManager** - управляет сессией(связывает entity и бд)
 
 **Java Standard Bean Validation Api** - спецификация правил валидации
-
 **Hibernate Validator** - ее реализация
-
 - @Size(min=, max=) - проверка длины строки
 - @NotNull, @NotEmpty @NotBlank
 - @Min, @Max - ограничение числовых значений
 - @Pattern(regex=””) - проверка на регекс
 
-**JPA Criteria API**
-
+### JPA Criteria API
 A simple query language for a REST API
 
 **Specification**
-
 Lets us pass in our own constraint to construct the actual query
 
 **JpaSpecificationExecutor<T>**
@@ -34,8 +25,7 @@ Lets us pass in our own constraint to construct the actual query
 Interface for enabling JPA Criteria for jpa repository
 
 **Наследование**
-
-[**https://www.baeldung.com/hibernate-inheritance**](https://www.baeldung.com/hibernate-inheritance)
+[https://www.baeldung.com/hibernate-inheritance](https://www.baeldung.com/hibernate-inheritance)
 
 - _MappedSuperclass_ – the parent classes, can't be entities
 - Single Table – The entities from different classes with a common ancestor are placed in a single table.

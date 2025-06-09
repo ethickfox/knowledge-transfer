@@ -1,3 +1,5 @@
+# Spring Core
+
 **Spring** is an application framework and [inversion of control] container for the Java platform
 
 **Framework** - Platform that defines application structure
@@ -255,3 +257,33 @@ public class ConfigProperties {
 - contextRefreshedEvent — когда контекст заканчивает свое построение, он всегда делает refresh.
 - contextStoppedEvent
 - contextClosedEvent
+
+# Patterns
+**Singleton pattern**
+**Singleton Beans** - Spring’s approach differs from the strict definition of a singleton since an application can have more than one Spring container. Therefore, **multiple objects of the same class can exist in a single application if we have multiple containers.**
+**Factory Method Pattern**
+The factory method pattern entails a factory class with an abstract method for creating the desired object.
+
+**Application Context** - Spring treats a bean container as a factory that produces beans.
+1. Spring defines the _BeanFactory_ interface as an abstraction of a bean container
+2. Each of the _getBean_ methods is considered a factory method, which returns a bean matching the criteria supplied to the method
+
+**External Configuration**
+If we wish to change the implementation of the autowired objects in the application, we can adjust the _ApplicationContext_ implementation we use. For example, we can change the _AnnotationConfigApplicationContext_ to an XML-based configuration class, such as ClassPathXmlApplicationContext
+
+**Proxy**
+The proxy pattern is a technique that allows one object — the proxy — to control access to another object — the subject or service.
+**Transactions** - In Spring, beans are proxied to control access to the underlying bean. We see this approach when using transactions. This annotation instructs Spring to atomically execute our _create_ method. Without a proxy, Spring wouldn’t be able to control access to our bean and ensure its transactional consistency.
+
+**Template Method Pattern**
+In many frameworks, a significant portion of the code is boilerplate code.
+**Templates & Callbacks**
+When executing a query on a database, the same series of steps must be completed:
+1. Establish a connection
+2. Execute query
+3. Perform cleanup
+4. Close the connection
+These steps are an ideal scenario for the template method pattern.
+We can provide the missing step by supplying a callback method.
+
+A callback method is a method that allows the subject to signal to the client that some desired action has completed.
