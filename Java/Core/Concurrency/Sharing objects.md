@@ -6,7 +6,7 @@ In this case program might output 42, 0 or stuck
 
 ![Untitled 3 5.png](../../_img/Untitled%203%205.png)
 
-This might happen due to **reordering.** In order to have a better performance compiler might cache and reorder operations. When the main thread writes first to number and then to ready without synchronisation, the reader thread could see these operations in different order or not at all.
+This might happen due to **reordering.** In order to have a better performance compiler might cache and reorder operations. When the main thread writes first to number and then to ready without synchronization, the reader thread could see these operations in different order or not at all.
 
 Always use propper synchronisation, when data accessed from different threads
 

@@ -1,11 +1,10 @@
 # Algorythms
-1. [Search](Computer_Science/Algorithms/Search.md)
-2. [Sorting](Computer_Science/Algorithms/Sorting.md)
+1. [Search](/Algorithms/Search.md)
+2. [Sorting](/Algorithms/Sorting.md)
 # Clean Code
-1. [Clean Code](Computer_Science/Clean_Code/Clean_Code.md)
-2. [Refactoring](Computer_Science/Clean_Code/Refactoring.md) 
+1. [Clean Code](Clean_Code/Clean_Code.md)
+2. [Refactoring](/Clean_Code/Refactoring.md)
 # Other
-1. [Code Review](Computer_Science/Code_Review.md)
-2. [Git](../Software_Architecture/Git.md)
-3. [SDLC](Computer_Science/SDLC.md)
-4. [SDLC](SDLC.md)
+1. [Code Review](Code_Review.md)
+2. [Git](Git.md)
+3. [SDLC](SDLC.md)

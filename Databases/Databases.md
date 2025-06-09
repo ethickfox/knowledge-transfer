@@ -1,9 +1,9 @@
 # NoSql
-1. [Basics](Databases/NoSQL/Basics.md)
-2. [MongoDb](Databases/NoSQL/MongoDb.md)
-3. [Redis](Databases/NoSQL/Redis.md)
-4. [Wide-Column](Databases/NoSQL/Wide-Column.md)
+1. [Basics](NoSQL/Basics.md)
+2. [MongoDb](NoSQL/MongoDb.md)
+3. [Redis](NoSQL/Redis.md)
+4. [Wide-Column](NoSQL/Wide-Column.md)
 # RDBMS
-1. [RDBMS](Databases/RDBMS/RDBMS.md)
-2. [SQL](Databases/RDBMS/SQL.md)
-3. [Postgresql](Databases/RDBMS/Postgresql.md)
+1. [RDBMS](RDBMS/RDBMS.md)
+2. [SQL](RDBMS/SQL.md)
+3. [Postgresql](RDBMS/Postgresql.md)

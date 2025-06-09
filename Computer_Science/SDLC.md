@@ -4,9 +4,8 @@
 
 A typical SDLC is comprised of six phases:
 
-- **Requirements  
-      
-    **The objective of the first phase is to gather the customer’s initial requirements and expectations for the solution that the team will be creating. The Requirements phase also includes defining the resources required to build the software.
+- **Requirements**  
+    The objective of the first phase is to gather the customer’s initial requirements and expectations for the solution that the team will be creating. The Requirements phase also includes defining the resources required to build the software.
 - **Planning**
 - **Design  
       

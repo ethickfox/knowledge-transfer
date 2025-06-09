@@ -1,22 +1,15 @@
-## Basic terms
-
-==**Process**== - object, which created by operating system, when user starts the application.
-
-**==Concurrency==** - the way of solving multiple tasks together.
-
-**==Parallelism==** - the method of execution different parts of same program.
-
-==**Thread**== - for a single process, the operating system created one main thread, which completes commands from the central processor one by one.  
+# **Concurrency**
+**Process** - object, which created by operating system, when user starts the application.
+**Concurrency** - the way of solving multiple tasks together.
+**Parallelism** - the method of execution different parts of same program.
+**Thread** - for a single process, the operating system created one main thread, which completes commands from the central processor one by one.  
 To create new thread we can use class  
+
 **Tread** or class **ExecutorService**.  
 If an exception occurs in the thread that no one catches then it will terminate.  
-
 ### **Приоритет**
-
 Потоку можно проставить приоритет - некоторое число, которое чем больше, тем больше приоритет. Такие потоки будут выполняться в первую очередь и иметь большее процессорное время.
-
 **Mutex**
-
 Флаг объекта, который может принимать состояние - свободен, занят
 
 Intrinsic locks в Java выступают в качестве mutex (mutual exclusion locks), что означает, что максимум один поток может войти в лок. Mutex - это не класс и не интерфейс в Java, а просто общее понятие.возможны только два состояния — «свободен» и «занят».
@@ -318,304 +311,26 @@ Intrinsic locks в Java выступают в качестве mutex (mutual exc
     **Mutex –** то же, что lock, но может быть system-wide, то есть может шариться с другими процессами. Реализован в операционной системе. Используется для resource sharing.
     
     **Semaphore –** используется для signaling от одной задачи к другой (а НЕ ДЛЯ защиты нескольких эквивалентных ресурсов, как некоторые ошибочно полагают).
-    
-
-**Основные характеристики класса:**
 
 ### Collections
-
-- **BlockingQueue**
-    
-    Java BlockingQueue implementations are thread-safe. All queuing methods are atomic in nature and use internal locks or other forms of concurrency control.
-    
-    Java BlockingQueue interface is part of java collections framework and it’s primarily used for implementing producer consumer problem. We don’t need to worry about waiting for the space to be available for producer or object to be available for consumer in BlockingQueue because it’s handled by implementation classes of BlockingQueue.
-    
-- **Collections.synchronizedCollection()**
-    
-    Возвращает потокобезопасную коллекцию, на основе переданной. Достигает потокобезопасности через блокировку монитора.
-    
-- **Concurrent collections**
-    
-    Отдельные коллекции, например ConcurrentHashMap. Достигают синхронизации с помощью деления коллекции на сегменты. То есть несколько потоков могут обратиться к map одновременно, но только к разным ее блокам. CopyOnWrite коллекции удобно использовать, когда write операции довольно редки, например при реализации механизма подписки listeners и прохода по ним.
-    
-- **CopyOnWrite**
-    
-    Все операции по изменению коллекции (add, set, remove) приводят к созданию новой копии внутреннего массива. Тем самым гарантируется, что при проходе итератором по коллекции не кинется ConcurrentModificationException. Следует помнить, что при копировании массива копируются только референсы (ссылки) на объекты (shallow copy), т.ч. доступ к полям элементов не thread-safe.
-    
-
-### Locks
-
-Lock is a more flexible and sophisticated thread synchronization mechanism than the standard synchronized block.
-
-Представляет собой альтернативные и более гибкие механизмы синхронизации потоков по сравнению с базовыми synchronized, wait, notify, notifyAll. Using synchronized:
-
-- It is not possible to interrupt a thread waiting to acquire a lock (lock Interruptibly).
-- It is not possible to attempt to acquire a lock without being willing to wait for it forever (try lock).
-- Cannot implement non-block-structured locking disciplines, as intrinsic locks must be released in the same block in which they are acquired.
-- Faireless locking
-
-- **Lock interface**
-    
-    Один из базовых механизмов синхронизации в Java - интерфейс Lock и реализующие его классы. Любой объект в Java может выступать в качестве lock для целей синхронизации. Такие встроенные локи называются intrinsic locks или monitor locks. Исполняющий поток автоматически занимает лок перед тем, как войти в код внутри синхронизированного блока, и автоматически освобождает его, когда выходит из этого блока (через нормальное исполнение кода или выброс исключения).
-    
-    Базовая реализация - ReentrantLock. Поток, который захватил, но не освободил ReentrantLock, владеет этим локом. Как и intrinsic лок, данный лок является reentrant. В общем случае, если поток запрашивает лок, который удерживается другим потоком, запрашивающий поток блокируется до освобождения лока. Однако если поток запрашивает лок, которым он уже владеет в данный момент, запрос удовлетворяется.
-    
-    Таким образом, reentrancy означает, что локи захватываются на основе per thread, а не per invocation. Реализуется ассоциацией с каждым локом счётчика захватов. Когда счётчик равен нулю, лок считается незанятым. Когда поток захватывает прежде не занятый лок, JVM записывает владельца лока и увеличивает счётчик на единицу. Если тот же поток захватывает лок снова, счётчик опять увеличивается, а когда освобождает - уменьшается. Когда счётчик становится равным нулю, лок освобождается.
-    
-    Let's take a look at the methods in the Lock interface:
-    
-    **void lock()** – acquire the lock if it's available; if the lock isn't available a thread gets blocked until the lock is released
-    
-    **void lockInterruptibly()** – this is similar to the lock(), but it allows the blocked thread to be interrupted and resume the execution through a thrown java.lang.InterruptedException
-    
-    **boolean tryLock()** – this is a non-blocking version of lock() method; it attempts to acquire the lock immediately, return true if locking succeeds
-    
-    **boolean tryLock(long timeout, TimeUnit timeUnit)** – this is similar to tryLock(), except it waits up the given timeout before giving up trying to acquire the Lock
-    
-    **void unlock()** – unlocks the Lock instance
-    
-    A locked instance should always be unlocked to avoid deadlock condition. A recommended code block to use the lock should contain a try/catch and finally block:
-    
-      
-    
-- **ReentrantLock**
-    
-    ReentrantLock class implements the Lock interface. It offers the same concurrency and memory semantics, as the implicit monitor lock accessed using synchronized methods and statements, with extended capabilities.
-    
-    We need to make sure that we are wrapping the lock() and the unlock() calls in the try-finally block to avoid the deadlock situations.
-    
-    Let's see how the tryLock() works:
-    
-    ```Java
-    public void performTryLock(){
-    	//...
-    	boolean isLockAcquired = lock.tryLock(1, TimeUnit.SECONDS);
-    	
-    	if(isLockAcquired) {
-    		try {
-    			//Critical section here
-    		} finally {
-    			lock.unlock();
-    		}
-    	}
-    	//...
-    }
-    ```
-    
-      
-    
-    In this case, the thread calling tryLock(), will wait for one second and will give up waiting if the lock isn't available.
-    
-    [![](https://lh6.googleusercontent.com/3M_KyJS72b9ox7CDpwwZT8qKxUECFlZfKdy4xMf-gB0rBO_v7vayGloPlQoNQjHjhf1j76-iTot7nRhvLi4c45v-nXW9YiYMVLpOc1mEe-7WWoOQrejMBikhEBqLqn8ZMyzsHdqqWLwRv0lykjMprC797wtzmH4ZINWn54ij31ptz65uWVSE-JfDagtG)](https://lh6.googleusercontent.com/3M_KyJS72b9ox7CDpwwZT8qKxUECFlZfKdy4xMf-gB0rBO_v7vayGloPlQoNQjHjhf1j76-iTot7nRhvLi4c45v-nXW9YiYMVLpOc1mEe-7WWoOQrejMBikhEBqLqn8ZMyzsHdqqWLwRv0lykjMprC797wtzmH4ZINWn54ij31ptz65uWVSE-JfDagtG)
-    
+- [BlockingQueue](Concurrent_Collections.md#BlockingQueue)
+- [Collections.synchronizedCollection()](Concurrent_Collections.md#Collections.synchronizedCollection())
+- [ConcurrentHashMap](Concurrent_Collections.md#ConcurrentHashMap)
+- [CopyOnWrite](Concurrent_Collections.md#CopyOnWrite)
+## Locks
 - **ReadWriteLock**
-    
-    - поддерживает пару связанных блокировок: одну для операций только для чтения, а другую - для записи. Блокировка чтения может удерживаться одновременно несколькими потоками чтения, пока нет писателей. Блокировка записи является исключительной.
-    
-    [![](https://lh4.googleusercontent.com/i1mCU_Wanf0y7BNItmATsNYLVq-yc9je3-Sg2jd-cT1JolwcJ0q4yswe35XppcFRyGqw7e1R_rbHWxvKIeyKV_fxuCvRvgGuFMafwZSjBTsgxILMKHPH0gMzneGd8t6BvF5gfI-M9xEgcT3a8yqcR8FyAi8iZGCJ61QFoJCXatp19Pu5jKyhnu4TW5lt)](https://lh4.googleusercontent.com/i1mCU_Wanf0y7BNItmATsNYLVq-yc9je3-Sg2jd-cT1JolwcJ0q4yswe35XppcFRyGqw7e1R_rbHWxvKIeyKV_fxuCvRvgGuFMafwZSjBTsgxILMKHPH0gMzneGd8t6BvF5gfI-M9xEgcT3a8yqcR8FyAi8iZGCJ61QFoJCXatp19Pu5jKyhnu4TW5lt)
-    
 - **ReentrantReadWriteLock**
-    
-    **ReentrantReadWriteLock**
-    
-    ReentrantReadWriteLock class implements the ReadWriteLock interface.
-    
-    Let's see rules for acquiring the ReadLock or WriteLock by a thread:
-    
-    Read Lock – if no thread acquired the write lock or requested for it then multiple threads can acquire the read lock
-    
-    Write Lock – if no threads are reading or writing then only one thread can acquire the write lock
-    
-    ```Java
-    Map<String,String> syncHashMap = new HashMap<>();
-    ReadWriteLock lock = new ReentrantReadWriteLock();
-    // ...
-    Lock writeLock = lock.writeLock();
-    
-    public void put(String key, String value) {
-    	try {
-    		writeLock.lock();
-    		syncHashMap.put(key, value);
-    	} finally {
-    		writeLock.unlock();
-    	}
-    }
-    
-    public String remove(String key){
-    	try {
-    		writeLock.lock();
-    		return syncHashMap.remove(key);
-    	} finally {
-    		writeLock.unlock();
-    	}
-    }
-    ```
-    
 - **StampedLock**
-    
-    ### **StampedLock**
-    
-    StampedLock is introduced in Java 8. It also supports both read and write locks. However, lock acquisition methods return a stamp that is used to release a lock or to check if the lock is still valid:
-    
-    ```Java
-    Map<String,String> map = new HashMap<>();
-    private StampedLock lock = new StampedLock();
-    
-    public void put(String key, String value){
-    long stamp = lock.writeLock();
-    try {
-    map.put(key, value);
-    } finally {
-    lock.unlockWrite(stamp);
-    }
-    }
-    
-    public String get(String key) throws InterruptedException {
-    long stamp = lock.readLock();
-    try {
-    return map.get(key);
-    } finally {
-    lock.unlockRead(stamp);
-    }
-    }
-    ```
-    
-    Another feature provided by StampedLock is optimistic locking. Most of the time read operations don't need to wait for write operation completion and as a result of this, the full-fledged read lock isn't required.
-    
-    Instead, we can upgrade to read lock:
-    
-    ```Java
-    public String readWithOptimisticLock(String key) {
-    
-    long stamp = lock.tryOptimisticRead();
-    
-    String value = map.get(key);
-    
-    if(!lock.validate(stamp)) {
-    
-    stamp = lock.readLock();
-    
-    try {
-    
-    return map.get(key);
-    
-    } finally {
-    
-    lock.unlock(stamp);
-    
-    }
-    
-    }
-    
-    return value;
-    
-    }
-    ```
-    
 - **Condition**
-    
-    ### **Condition**
-    
-    The Condition class provides the ability for a thread to wait for some condition to occur while executing the critical section.
-    
-    This can occur when a thread acquires the access to the critical section but doesn't have the necessary condition to perform its operation. For example, a reader thread can get access to the lock of a shared queue, which still doesn't have any data to consume.
-    
-    Traditionally Java provides wait(), notify() and notifyAll() methods for thread intercommunication. Conditions have similar mechanisms, but in addition, we can specify multiple conditions:
-    
-    ```Java
-    Stack<String> stack = new Stack<>();
-    int CAPACITY = 5;
-    ReentrantLock lock = new ReentrantLock();
-    Condition stackEmptyCondition = lock.newCondition();
-    Condition stackFullCondition = lock.newCondition();
-    public void pushToStack(String item){
-    try {
-    lock.lock();
-    
-    while(stack.size() == CAPACITY) {
-    
-    stackFullCondition.await();
-    
-    }
-    
-    stack.push(item);
-    
-    stackEmptyCondition.signalAll();
-    
-    } finally {
-    
-    lock.unlock();
-    
-    }
-    
-    }
-    
-    public String popFromStack() {
-    
-    try {
-    
-    lock.lock();
-    
-    while(stack.size() == 0) {
-    
-    stackEmptyCondition.await();
-    
-    }
-    
-    return stack.pop();
-    
-    } finally {
-    
-    stackFullCondition.signalAll();
-    
-    lock.unlock();
-    
-    }
-    
-    }
-    ```
-    
 - **Lock vs Synchronized Block**
-    
-    There are few differences between the use of synchronized block and using Lock API's:
-    
-    - A synchronized block is fully contained within a method – we can have Lock API's lock() and unlock() operation in separate methods
-    - A synchronized block doesn't support the fairness, any thread can acquire the lock once released, no preference can be specified. We can achieve fairness within the Lock APIs by specifying the fairness property. It makes sure that longest waiting thread is given access to the lock
-    - A thread gets blocked if it can't get an access to the synchronized block. The Lock API provides tryLock() method. The thread acquires lock only if it's available and not held by any other thread. This reduces blocking time of thread waiting for the lock
-    - A thread which is in “waiting” state to acquire the access to synchronized block, can't be interrupted. The Lock API provides a method lockInterruptibly() which can be used to interrupt the thread when it's waiting for the lock
-- **Issues**
-    
-    ### **Deadlock**
-    
-    Состояние, когда два потока заняли ресурсы, к которым хочет обратиться противоположный поток.
-    
-    [![](https://lh6.googleusercontent.com/DXsm3HSpw0DERaD-_P40kw4VKEckc0smXKGTBru1Q4YoXFHcZtAEW_GmTWworT2uVfvvNjYl4_9ETHlhVIkOoTxFdIEKt8hCPZ6sKKxz77Psi2TCF-TzDemLnh84eLSaCO9MBb9MbbWNjbGJAcuCRgW-19vo6u0lMOevwciR7BdT5xKNMcQ9tmFAEF3h)](https://lh6.googleusercontent.com/DXsm3HSpw0DERaD-_P40kw4VKEckc0smXKGTBru1Q4YoXFHcZtAEW_GmTWworT2uVfvvNjYl4_9ETHlhVIkOoTxFdIEKt8hCPZ6sKKxz77Psi2TCF-TzDemLnh84eLSaCO9MBb9MbbWNjbGJAcuCRgW-19vo6u0lMOevwciR7BdT5xKNMcQ9tmFAEF3h)
-    
-    **Deadlock Prevention**
-    
-    - **Lock Ordering -** **If you make sure that all locks are always taken in the same order by any thread, deadlocks cannot occur.**
-    - **Lock Timeout** - put a timeout on lock attempts meaning a thread trying to obtain a lock will only try for so long before giving up. If a thread does not succeed in taking all necessary locks within the given timeout, it will backup, free all locks taken, wait for a random amount of time and then retry.
-    - **Interruptible lock** acquisition allows locking to be used within cancellable activities.The lockInterruptibly method allows us to try and acquire a lock while being available for interruption.
-    
-    [![](https://lh4.googleusercontent.com/UP1izeTODqei8g9lRM-vXaJjaYXkI3pAEyLNIaicD0-Hjn0yI5S2Ca9urpuspvvn1WBhZqpHcR7sKGPt65A4BnAtN3CtIvIkZBdIpurJY8-bs8aMrEQ5WCeKucWENtjkb3yHZJnP8vRfPN2R1l60H9aB-x3m9RnfAtvQYimo75o1q2KldfhyjLT1tSR2)](https://lh4.googleusercontent.com/UP1izeTODqei8g9lRM-vXaJjaYXkI3pAEyLNIaicD0-Hjn0yI5S2Ca9urpuspvvn1WBhZqpHcR7sKGPt65A4BnAtN3CtIvIkZBdIpurJY8-bs8aMrEQ5WCeKucWENtjkb3yHZJnP8vRfPN2R1l60H9aB-x3m9RnfAtvQYimo75o1q2KldfhyjLT1tSR2)
-    
-    **Анализ объектов в дедлоке**
-    
-    JJVM allows you to diagnose deadlocks by displaying them in thread dumps. Such dumps include information on the state of the flow. If it is locked, the dump contains information about the monitor the stream is waiting to release. JVM looks at a graph of expected (busy) monitors before output of the dump threads, and if it finds a loop, it adds information about mutual locking, specifying the monitors and threads involved.
-    
-    [![](https://lh4.googleusercontent.com/tdEfKXhXZZbAiKG1APXMwRZkOcXxqnMu0zQspMUVsUu0Vo5l5RqW5y4Ob0qfsY_fapEVt_DZ7GTzrc6wOB0KxJR3-wgShq9kAo8O6tvD2tWnxdybpGg_Jzf2Pxk1es6z3wptQ1RmoNiQkHJt4ybA3wOtTpbhyX-6q-zRNlw12E3wkdR7cGqrHZqiPV9k)](https://lh4.googleusercontent.com/tdEfKXhXZZbAiKG1APXMwRZkOcXxqnMu0zQspMUVsUu0Vo5l5RqW5y4Ob0qfsY_fapEVt_DZ7GTzrc6wOB0KxJR3-wgShq9kAo8O6tvD2tWnxdybpGg_Jzf2Pxk1es6z3wptQ1RmoNiQkHJt4ybA3wOtTpbhyX-6q-zRNlw12E3wkdR7cGqrHZqiPV9k)
-    
-
-## JMM
-
+## Locks Issues
+- Deadlock
+- LiveLock
+# JMM
 Модель памяти Java описывает поведение потоков в среде исполнения Java. Модель памяти — часть семантики языка Java, и описывает, на что может и на что не должен рассчитывать программист, разрабатывающий ПО не для конкретной Java-машины, а для Java в целом.
-
-**Visibility**
-
+## Visibility
 One thread may not see the changes made by another because the variables are saved to the registers and the local CPU cache
-
-**Reordering**
-
+## Reordering
 Compiler can move operations to improve performance
 
 **Happens before** - Пусть есть поток X и поток Y (не обязательно отличающийся от потока X). И пусть есть операции A (выполняющаяся в потоке X) и B (выполняющаяся в потоке Y).
