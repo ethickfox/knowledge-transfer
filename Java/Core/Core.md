@@ -1,43 +1,67 @@
-OOP - a programming methodology based on representing a program as a set of objects, each of which is an instance of a certain class, and the classes form an inheritance hierarchy.
+# Java Core
 
-- **Encapsulation  
-      
-    **Hiding the state and implementation of the class and providing a public API for interacting with the class and its instances. Example: a class with private fields and access via getters and setters
-    - public - все
-    - protected - наследник и пакет
-    - default - пакет
-    - private - только сам класс
-- **Inheritance** a mechanism that allows you to build some classes on the basis of others (children based on parent classes), in which the child class inherits the behavior and state of the parent.
-- **Polymorphism** the ability to identically use objects with the same interface without information about the specific type of this object
-    - Static(раннее связывание) - behavior depends on the type of transmitted data (**overloading**)
+# Object Oriented Programming
+**OOP** - a programming methodology based on representing a program as a set of objects, each of which is an instance of a certain class, and the classes form an inheritance hierarchy.
+What are the limitations of OOP?
+- The length of the programms developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slower execution of the programme.
+- We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
+- Programmers need to have brilliant designing skill and programming skill along with proper planning because using OOP is little bit tricky.
+- OOPs take time to get used to it. The thought process involved in object-oriented programming may not be natural for some people.
+- Everything is treated as object in OOP so before applying it we need to have excellent thinking in terms of objects.
+- This style of developing software also necessitates a significant amount of preparation and forethought. The OOP code might be hard to comprehend if you don't have the relevant class documentation.
+## Encapsulation
+Hiding the state and implementation of the class and providing a public API for interacting with the class and its instances. 
+- Data Encapsulation is an Object-Oriented Programming concept of hiding the data attributes and their behaviours in a single unit.
+- It helps developers to follow modularity while developing software by ensuring that each object is independent of other objects by having its own methods, attributes, and functionalities.
+- It is used for the security of the private properties of an object and hence serves the purpose of data hiding.
+Example: a class with private fields and access via getters and setters
+- public - все
+- protected - наследник и пакет
+- default - пакет
+- private - только сам класс
+## Inheritance
+a mechanism that allows you to build some classes on the basis of others (children based on parent classes), in which the child class inherits the behavior and state of the parent.
+### Multi-Inheritance
+Originally, in Java we didn't have multi-inheritance so we didn’t face the diamond problem. With the emergence of default methods, the diamond problem may arise. Candidates may be asked what will happen if we have two unrelated interfaces that have a default method with the same signature and different implementation, and we want to implement these two interfaces in a class. the problem will arise at the compilation level, and will return a compilation error. One solution is to override this method in the class. Another option is to use composition: if you have one class that implements one interface, you can try to represent it as an inner class inside of another class.
+
+Java does not support the multiple inheritance for classes, which means that a class can only inherit from a single superclass.
+
+But you can implement multiple interfaces with a single class, and some of the methods of those interfaces may be defined as _default_ and have an implementation. This allows you to have a safer way of mixing different functionality in a single class.
+## Polymorphism 
+the ability to identically use objects with the same interface without information about the specific type of this object
+- Static(раннее связывание) - behavior depends on the type of transmitted data (**overloading**)
         - Возвращаемый тип не имеет значения
         - Влияет только разное количество или тип параметров
-    - Dynamic (позднее связывание) - behavior depends on the type of object on which the method is called(**overriding**/переопределение).
+- Dynamic (позднее связывание) - behavior depends on the type of object on which the method is called(**overriding**/переопределение).
         - Те же аргументы
         - Тот же или более узкий тип возвращаемых данных
         - Расширение модификаторов доступ
         - Более узкие ошибки/не указывать их или unchecked
-- **Abstraction** - highlighting common characteristics and functionality of objects or systems, ignoring unnecessary details. Пример: Банковское приложение/автомобиль
-
-### **Дополнение**
-
-- **Aggregation** - the inner class can exist separately from the outer class.
-    - Static Inner class (Lazily initialized)
-        - `static` inner class does not have access to members of the outer class
-- **Composition** - внутренний класс полностью инкапсулирован внешним классом. Внешний мир не может получить ссылку на внутренний класс отдельно от внешнего. Он живет и умирает вместе с внешним
+## Abstraction
+highlighting common characteristics and functionality of objects or systems, ignoring unnecessary details.
+Пример: Банковское приложение/автомобиль
+## Aggregation
+the inner class can exist separately from the outer class.
+- Static Inner class (Lazily initialized)  `static` inner class does not have access to members of the outer class
+## Composition
+внутренний класс полностью инкапсулирован внешним классом. Внешний мир не может получить ссылку на внутренний класс отдельно от внешнего. Он живет и умирает вместе с внешним
     - Inner Class
-- **Delegation** — перепоручение задачи от внешнего объекта внутреннему
+
+### Advantages of composition before inheritance.
+Inheritance lags behind composition in the following scenarios:
+- Multiple-inheritance is not possible in Java. Classes can only extend from one superclass. In cases where multiple functionalities are required, for example - to read and write information into the file, the pattern of composition is preferred. The writer, as well as reader functionalities, can be made use of by considering them as the private members.
+- Composition assists in attaining high flexibility and prevents breaking of encapsulation.
+- Unit testing is possible with composition and not inheritance. When a developer wants to test a class composing a different class, then Mock Object can be created for signifying the composed class to facilitate testing. This technique is not possible with the help of inheritance as the derived class cannot be tested without the help of the superclass in inheritance.
+- The loosely coupled nature of composition is preferable over the tightly coupled nature of inheritance.
+## Delegation
+перепоручение задачи от внешнего объекта внутреннему
 - Внутренние классы
 - Анонимные классы
 - Локальные классы
-
-## **Object**
-
+## Object
 Класс, от которого неявно наследуются все объекты в Java
-
-### **Методы**
-
-- Пустой конструктор
+### Methods
+- Empty Constructor
 - getClass
 - hashCode
 - equals
@@ -47,26 +71,20 @@ OOP - a programming methodology based on representing a program as a set of obje
 - notify
 - notifyAll
 - wait
-- wait с параметрами
-
-### **equals + hashCode**
-
+- wait with params
+### equals & hashCode
 **hashCode** - метод для вычисления хэш функции. Дефолтная реализация зависит от jvm, может основываться на адресе объекта в памяти. При переопределении следует учитывать следующие правила:
-
 - для одного и того-же объекта, хеш-код всегда будет одинаковым;
 - если объекты одинаковые, то и хеш-коды одинаковые
 - если хеш-коды равны, то входные объекты не всегда равны(коллизия)
 - если хеш-коды разные, то и объекты гарантировано разные;
-
 **equals** - сравнивает объекты по содержанию
-
-- объект равен самому себе
-- если а == b, то ba
-- если аb и аc, то bc
+- a == a
+- if а == b -> b == a
+- if а == b && а == c -> b == c
 - постоянность - результат меняется только при изменении входящих в него полей
-- не равен null
-
-```Java
+- != null
+```java
 @Override
 public boolean equals(Object o) {
     if (o == this)
@@ -79,42 +97,30 @@ public boolean equals(Object o) {
     return this.amount == other.amount && currencyCodeEquals;
 }
 ```
+### static
+Статические поля или переменные инициализируются после загрузки класса в память. 
+Статичный блок НЕ может пробросить перехваченные исключения, но может выбросить не перехваченные. В таком случае возникнет «Exception Initializer Error». 
+На практике, любое исключение возникшее во время выполнения и инициализации статических полей, будет завёрнуто Java в эту ошибку. Это также самая частая причина ошибки «No Class Def Found Error», т.к. класс не находился в памяти во время обращения к нему.
+## Interface
+### Маркерный Interface
+Интерфейс без методов, с помощью которого можно помечать другие классы, тем самым предоставляя доп информацию о классе. Например `Serializible`, `Clonable`
+### Функциональный Interface
+Интерфейс с одним не реализованным методом. За исключением default и методов Object’a. Используется для лямбд.
 
-### **static**
-
-Статические поля или переменные инициализируются после загрузки класса в память. Статичный блок НЕ может пробросить перехваченные исключения, но может выбросить не перехваченные. В таком случае возникнет «Exception Initializer Error». На практике, любое исключение возникшее во время выполнения и инициализации статических полей, будет завёрнуто Java в эту ошибку. Это также самая частая причина ошибки «No Class Def Found Error», т.к. класс не находился в памяти во время обращения к нему.
-
-## **Интерфейс**
-
-### **Маркерный интерфейс**
-
-Интерфейс без методов, с помощью которого можно помечать другие классы, тем самым предоставляя доп информацию о классе. Например Serializible(позволяет сериализировать), Clonable(Позволяет клонировать объекты)
-
-### **Функциональный интерфейс**
-
-Интерфейс с одним не реализованным методом. За исключением дефолттных и методов Object’a. Используется для лямбд.
-
-## **Immutable objects**
-
+# Immutable objects
 Immutable objects are those objects whose state can not be changed once created. Class whose objects possess this characteristic can be termed as immutable class.
 
-### **Steps for creating an immutable class**
-
+### Steps for creating an immutable class
 - Declare all instance variable with private and final
 - Remove setter methods
 - Initialize all variables in constructor
 - Perform cloning of mutable objects while returning from getter method
-
-### **Immutable classes thread safe**
-
+### Immutable classes thread safe
 Immutable classes are thread safe because you can not change state of immutable objects, so even if two thread access immutable object in parallel, it won’t create any issue.
-
 ### **Immutable collections**
-
 Collections.unmodifiable* - wraps collection into unmodifiable, returns UnsupportedOperationException for editing operations and returns object itself in case of getting operations. So objects should be immutable too.
 
-## **Типизация**
-
+# Типизация
 - **Статическая‌** ‌- проверка типов на стадии компиляции
 - Динамическая ‌- проверка типов на стадии исполнения
 - **Сильная‌** ‌- нельзя смешивать разные типы(к числу нельзя добавить строку)
@@ -122,86 +128,27 @@ Collections.unmodifiable* - wraps collection into unmodifiable, returns Unsuppor
 - **Явная‌** все типы нужно указывать самому
 - неявная - типы не нужно указывать
 
-# **Exceptions**
-
-## **Иерархия**
-
+# Exceptions
 [![](https://lh5.googleusercontent.com/Jp6mEK6hNZfF9Ap8Zp6yGmJqlFGB55hg-nVdJJV0Mf7KFsI2NEK6QWQIY8a8FIotOQjmc0waMza-bwcbiyQf2DQIIsMGs59ADipZ3fnuib-OB44bsEUf9ARJmNBsBDYsxMGsTQRurnoKC7TsPhQZPODfO-tNVUuF7RSpKK7fxfXfwPWi0byUhZT4zbr9)](https://lh5.googleusercontent.com/Jp6mEK6hNZfF9Ap8Zp6yGmJqlFGB55hg-nVdJJV0Mf7KFsI2NEK6QWQIY8a8FIotOQjmc0waMza-bwcbiyQf2DQIIsMGs59ADipZ3fnuib-OB44bsEUf9ARJmNBsBDYsxMGsTQRurnoKC7TsPhQZPODfO-tNVUuF7RSpKK7fxfXfwPWi0byUhZT4zbr9)
-
-## **Типы исключений**
-
-### **checked**
-
-Исключения, которые необходимо проверять, без этого не пройдет компилци
-
-### **unchecked**
-
-Исключения, которые можно не проверять
-
-## **Обработка**
-
+## Типы исключений
+- **checked** - Исключения, которые необходимо проверять, без этого не пройдет компилци
+- **unchecked** - Исключения, которые можно не проверять
+### Обработка
 Поймать исключение можно с помощью try-catch-finally. В случе если было выброшено исключение, поток, в котором оно выброшено завершает работу.
-
 ### **throws**
-
 Указывает, что метод может выбросить исключение. При наследовании можно добавлять uncheked, не указывать, либо сужать
-
-### **try with resources**
-
+### try with resources
 Новый вид try catch, который сам может закрывать ресурсы(если они наследуются от AutoCloseable), с которыми работал, вне зависимости от того, было ли исключение
-
-### **finally**
-
+### finally
 Блок выполняется всегда(кроме System.exit()).
+
+
+
 
 # Questions
 
 ### OOP
 
-- What are the limitations of OOP?
-    - The length of the programms developed using OOP language is much larger than the procedural approach. Since the programme becomes larger in size, it requires more time to be executed that leads to slower execution of the programme.
-    - We can not apply OOP everywhere as it is not a universal language. It is applied only when it is required. It is not suitable for all types of problems.
-    - Programmers need to have brilliant designing skill and programming skill along with proper planning because using OOP is little bit tricky.
-    - OOPs take time to get used to it. The thought process involved in object-oriented programming may not be natural for some people.
-    - Everything is treated as object in OOP so before applying it we need to have excellent thinking in terms of objects.
-    - This style of developing software also necessitates a significant amount of preparation and forethought. The OOP code might be hard to comprehend if you don't have the relevant class documentation.
-- What do you mean by data encapsulation?
-    - Data Encapsulation is an Object-Oriented Programming concept of hiding the data attributes and their behaviours in a single unit.
-    - It helps developers to follow modularity while developing software by ensuring that each object is independent of other objects by having its own methods, attributes, and functionalities.
-    - It is used for the security of the private properties of an object and hence serves the purpose of data hiding.
-- What do you mean by data inheritance?
-    
-    Mechanism that allows you to build some classes on the basis of others (children based on parent classes), in which the child class inherits the behaviour and state of the parent.
-    
-- What problems might you face within multi-inheritance?
-    
-    Originally, in Java we didn't have multi-inheritance so we didn’t face the diamond problem. With the emergence of default methods, the diamond problem may arise. Candidates may be asked what will happen if we have two unrelated interfaces that have a default method with the same signature and different implementation, and we want to implement these two interfaces in a class. the problem will arise at the compilation level, and will return a compilation error. One solution is to override this method in the class. Another option is to use composition: if you have one class that implements one interface, you can try to represent it as an inner class inside of another class.
-    
-- Does Java Have Multiple Inheritance?
-    
-    does not support the multiple inheritance for classes, which means that a class can only inherit from a single superclass.
-    
-    But you can implement multiple interfaces with a single class, and some of the methods of those interfaces may be defined as _default_ and have an implementation. This allows you to have a safer way of mixing different functionality in a single class.
-    
-- Advantages of composition before inheritance.
-    
-    Inheritance lags behind composition in the following scenarios:
-    
-    - Multiple-inheritance is not possible in Java. Classes can only extend from one superclass. In cases where multiple functionalities are required, for example - to read and write information into the file, the pattern of composition is preferred. The writer, as well as reader functionalities, can be made use of by considering them as the private members.
-    - Composition assists in attaining high flexibility and prevents breaking of encapsulation.
-    - Unit testing is possible with composition and not inheritance. When a developer wants to test a class composing a different class, then Mock Object can be created for signifying the composed class to facilitate testing. This technique is not possible with the help of inheritance as the derived class cannot be tested without the help of the superclass in inheritance.
-    - The loosely coupled nature of composition is preferable over the tightly coupled nature of inheritance.
-- What do you mean by data **Polymorphism**?
-    
-    ability to identically use objects with the same interface without information about the specific type of this object
-    
-    - Static(раннее связывание) - behaviour depends on the type of transmitted data (**overloading**)
-    - Dynamic (позднее связывание) - behaviour depends on the type of object on which the method is called(**overriding**/переопределение).
-- What do you mean by data **Abstraction**?
-    
-    Highlighting common characteristics and functionality of objects or systems, ignoring unnecessary details.
-    
-- What are Composition and Aggregation?
     
     Composition, and Aggregation help to build (Has - A - Relationship) between classes and objects. But both are not the same in the end. 
     

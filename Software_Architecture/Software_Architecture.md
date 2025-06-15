@@ -8,7 +8,7 @@
 - [Monitoring Observability](Software_Architecture/Monitoring_Observability.md)
 - [Domain Driven Design](Software_Architecture/Domain_Driven_Design.md)
 - [Development methodologies](Software_Architecture/Development_methodologies.md)
-- [Designing Data Intensive Applications](Software_Architecture/Designing_Data_Intensive_Applications.md)
+- [Designing Data Intensive Applications](Designing_Data_Intensive_Applications/Designing_Data_Intensive_Applications.md)
 - [Deployment Strategies](Software_Architecture/Deployment_Strategies.md)
 - [Clean Code](Software_Architecture/Clean_Code/Clean_Code.md)
 - [Monolithic Architecture](Software_Architecture/System_Architecture/Monolithic_Architecture.md)
