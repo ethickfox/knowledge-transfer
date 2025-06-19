@@ -1,5 +1,4 @@
 # Java Core
-
 # Object Oriented Programming
 **OOP** - a programming methodology based on representing a program as a set of objects, each of which is an instance of a certain class, and the classes form an inheritance hierarchy.
 What are the limitations of OOP?
@@ -149,11 +148,11 @@ Collections.unmodifiable* - wraps collection into unmodifiable, returns Unsuppor
 
 ### OOP
 
-    
-    Composition, and Aggregation help to build (Has - A - Relationship) between classes and objects. But both are not the same in the end. 
-    
-    - if the container object destroys then the contained objects will also get destroyed automatically. So here we can say that there is a strong association between the objects. So this Strong Association is called **Composition**.
-    - if the class is destroyed then the inner object will become free to bind with other objects. Because container objects only hold the references of contained objects. So here is the weak association between the objects. And this weak association is called **Aggregation**.
+
+Composition, and Aggregation help to build (Has - A - Relationship) between classes and objects. But both are not the same in the end. 
+
+- if the container object destroys then the contained objects will also get destroyed automatically. So here we can say that there is a strong association between the objects. So this Strong Association is called **Composition**.
+- if the class is destroyed then the inner object will become free to bind with other objects. Because container objects only hold the references of contained objects. So here is the weak association between the objects. And this weak association is called **Aggregation**.
 - Describe the Difference Between equals() and ==
     
     The == operator allows you to compare two objects for “sameness” (i.e. that both variables refer to the same object in memory). It is important to remember that the _new_ keyword always creates a new object which will not pass the _==_ equality with any other object, even if they seem to have the same value:

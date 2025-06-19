@@ -178,3 +178,42 @@ Preventing this kind of anomaly requires another type of guarantee: consistent p
 If the database always applies writes in the same order, reads always see
 a consistent prefix, so this anomaly cannot happen. However, in many distributed databases, different partitions operate independently, so there is no global ordering of writes: when a user reads from the database, they may see some parts of the database in an older state and some in a newer state.
 One solution is to make sure that any writes that are causally related to each other are written to the same partition—but in some applications that cannot be done efficiently. There are also algorithms that explicitly keep track of causal dependencies,
+
+# Multi-Leader Replication
+We call this a multi-leader configuration (also known as master–master or active/active replication) In this setup, each leader simultaneously acts as a follower to the other leaders.
+It rarely makes sense to use a multi-leader setup within a single datacenter, because the benefits rarely outweigh the added complexity. However, there are some situtions in which this configuration is reasonable.
+## Multi-datacenter operation
+In a multi-leader configuration, you can have a leader in each datacenter. Within each datacenter, regular leader–
+follower replication is used; between datacenters, each datacenter’s leader replicates
+its changes to the leaders in other datacenters.
+![](_img/Pasted%20image%2020250619102907.png)
+Let’s compare how the single-leader and multi-leader configurations fare in a multi-
+datacenter deployment:
+**Performance**
+In a single-leader configuration, every write must go over the internet to the
+datacenter with the leader.
+In a multi-leader configuration, every write can be processed in the local datacenter
+and is replicated asynchronously to the other datacenters.
+**Tolerance of datacenter outages**
+In a single-leader configuration, if the datacenter with the leader fails, failover
+can promote a follower in another datacenter to be leader. In a multi-leader con‐
+figuration, each datacenter can continue operating independently of the others,
+and replication catches up when the failed datacenter comes back online.
+**Tolerance of network problems**
+Traffic between datacenters usually goes over the public internet, which may be
+less reliable than the local network within a datacenter. A single-leader configu‐
+ration is very sensitive to problems in this inter-datacenter link, because writes
+are made synchronously over this link. A multi-leader configuration with asyn‐
+chronous replication can usually tolerate network problems better: a temporary
+network interruption does not prevent writes being processed.
+
+Although multi-leader replication has advantages, it also has a big downside: the
+same data may be concurrently modified in two different datacenters, and those write conflicts must be resolved
+**Clients with offline operation**
+Another situation in which multi-leader replication is appropriate is if you have an
+application that needs to continue to work while it is disconnected from the internet.
+In this case, every device has a local database that acts as a leader (it accepts write
+requests), and there is an asynchronous multi-leader replication process (sync)
+between the replicas of your calendar on all of your devices. The replication lag may
+be hours or even days, depending on when you have internet access available.
+From an architectural point of view, this setup is essentially the same as multi-leader replication between datacenters, taken to the extreme: each device is a “datacenter,” and the network connection between them is extremely unreliable.
