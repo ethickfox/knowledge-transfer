@@ -247,6 +247,116 @@ There are various ways of achieving convergent conflict resolution:
 - Somehow merge the values together—e.g., order them alphabetically and then concatenate them
 - Record the conflict in an explicit data structure that preserves all information, and write application code that resolves the conflict at some later time
 Note that conflict resolution usually applies at the level of an individual row or docu‐
-ment, not for an entire transaction. Thus, if you have a transaction that atomi‐
-cally makes several different writes (see Chapter 7), each write is still considered
+ment, not for an entire transaction. Thus, if you have a transaction that atomically makes several different writes (see Chapter 7), each write is still considered
 separately for the purposes of conflict resolution.
+
+- Conflict-free replicated datatypes (CRDTs) are a family of data structures
+for sets, maps, ordered lists, counters, etc. that can be concurrently edited by
+multiple users, and which automatically resolve conflicts in sensible ways.
+- Mergeable persistent data structures track history explicitly, similarly to the
+Git version control system, and use a three-way merge function (whereas CRDTs
+use two-way merges).
+- Operational transformation is the conflict resolution algorithm behind col‐
+laborative editing applications such as Etherpad and Google Docs. It
+was designed particularly for concurrent editing of an ordered list of items, such
+as the list of characters that constitute a text document.
+
+# Multi-Leader Replication Topologies
+A **replication topology** describes the communication paths along which writes are
+propagated from one node to another.
+A replication topology describes the communication paths along which writes are
+propagated from one node to another:
+![](_img/Pasted%20image%2020250623190935.png)
+The most general topology is all-to-all (Figure 5-8 [c]), in which every leader sends its
+writes to every other leader.
+
+- circular topology [34], in which each
+node receives writes from one node and forwards those writes (plus any writes of its
+own) to one other node.
+- Another popular topology has the shape of a star:v one desig‐
+nated root node forwards writes to all of the other nodes. The star topology can be
+generalized to a tree.
+
+In circular and star topologies, a write may need to pass through several nodes before
+it reaches all replicas. Therefore, nodes need to forward data changes they receive
+from other nodes. To prevent infinite replication loops, each node is given a unique
+identifier, and in the replication log, each write is tagged with the identifiers of all the
+nodes it has passed through. When a node receives a data change that is tagged with its own identifier, that data change is ignored, because the node knows that it
+has already been processed.
+A problem with circular and star topologies is that if just one node fails, it can inter‐
+rupt the flow of replication messages between other nodes,
+The fault tolerance of a more densely connected topology (such as
+all-to-all) is better because it allows messages to travel along different paths, avoiding
+a single point of failure.
+On the other hand, all-to-all topologies can have issues too. In particular, some net‐
+work links may be faster than others (e.g., due to network congestion), with the result
+that some replication messages may “overtake”
+
+In Figure 5-9, client A inserts a row into a table on leader 1, and client B updates that
+row on leader 3. However, leader 2 may receive the writes in a different order: it may
+first receive the update (which, from its point of view, is an update to a row that does
+not exist in the database) and only later receive the corresponding insert (which
+should have preceded the update).
+This is a problem of causality, similar to the one we saw in “Consistent Prefix Reads” the update depends on the prior insert, so we need to make sure that all
+nodes process the insert first, and then the update. 
+To order these events correctly, a technique called version vectors can be used
+If you are using a system with multi-leader replication, it is worth being aware of
+these issues, carefully reading the documentation, and thoroughly testing your data‐
+base to ensure that it really does provide the guarantees you believe it to have.
+
+# Leaderless Replication
+Some data storage systems take a different approach, abandoning the concept of a
+leader and allowing any replica to directly accept writes from clients. Some of the ear‐
+liest replicated data systems were leaderless [1, 44], but the idea was mostly forgotten
+during the era of dominance of relational databases. It once again became a fashiona‐
+ble architecture for databases after Amazon used it for its in-house Dynamo system
+[37].vi Riak, Cassandra, and Voldemort are open source datastores with leaderless
+replication models inspired by Dynamo, so this kind of database is also known as
+Dynamo-style.
+## Writing to the Database When a Node Is Down
+Imagine you have a database with three replicas, and one of the replicas is currently
+unavailable—perhaps it is being rebooted to install a system update. In a leader-based configuration, if you want to continue processing writes, you may need to perform a
+failover. On the other hand, in a leaderless configuration, failover does not exist.
+Now imagine that the unavailable node comes back online, and clients start reading
+from it. Any writes that happened while the node was down are missing from that
+node. Thus, if you read from that node, you may get stale (outdated) values as
+responses.
+To solve that problem, when a client reads from the database, it doesn’t just send its
+request to one replica: read requests are also sent to several nodes in parallel. The cli‐
+ent may get different responses from different nodes; i.e., the up-to-date value from
+one node and a stale value from another. Version numbers are used to determine
+which value is newer
+The replication scheme should ensure that eventually all the data is copied to every
+replica. After an unavailable node comes back online, how does it catch up on the
+writes that it missed?
+**Read repair**
+When a client makes a read from several nodes in parallel, it can detect any stale
+responses. For example, in Figure 5-10, user 2345 gets a version 6 value from rep‐
+lica 3 and a version 7 value from replicas 1 and 2. The client sees that replica 3
+has a stale value and writes the newer value back to that replica. This approach
+works well for values that are frequently read.
+**Anti-entropy process**
+In addition, some datastores have a background process that constantly looks for
+differences in the data between replicas and copies any missing data from one
+replica to another. Unlike the replication log in leader-based replication, this
+anti-entropy process does not copy writes in any particular order, and there may
+be a significant delay before data is copied.
+### Quorums for reading and writing
+If we know that every successful write is guaranteed to be present on at least two out
+of three replicas, that means at most one replica can be stale. Thus, if we read from at
+least two replicas, we can be sure that at least one of the two is up to date. If the third
+replica is down or slow to respond, reads can nevertheless continue returning an up-
+to-date value.
+More generally, if there are n replicas, every write must be confirmed by w nodes to
+be considered successful, and we must query at least r nodes for each read.
+The quorum condition, w + r > n, allows the system to tolerate unavailable nodes as
+follows:
+• If w < n, we can still process writes if a node is unavailable.
+• If r < n, we can still process reads if a node is unavailable.
+• With n = 3, w = 2, r = 2 we can tolerate one unavailable node.
+• With n = 5, w = 3, r = 3 we can tolerate two unavailable nodes. This case is illus‐
+trated in Figure 5-11.
+• Normally, reads and writes are always sent to all n replicas in parallel. The
+parameters w and r determine how many nodes we wait for—i.e., how many of
+the n nodes need to report success before we consider the read or write to be suc‐
+cessful.
