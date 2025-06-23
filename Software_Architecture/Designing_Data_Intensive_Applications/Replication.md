@@ -217,3 +217,36 @@ requests), and there is an asynchronous multi-leader replication process (sync)
 between the replicas of your calendar on all of your devices. The replication lag may
 be hours or even days, depending on when you have internet access available.
 From an architectural point of view, this setup is essentially the same as multi-leader replication between datacenters, taken to the extreme: each device is a “datacenter,” and the network connection between them is extremely unreliable.
+
+# Handling Write Conflicts
+in a multi-leader setup, both writes are successful, and the conflict is only detected asynchronously at some later point in time. At that time, it may be too late to ask the user to resolve the conflict.
+![](_img/Pasted%20image%2020250623184856.png)
+You could make the conflict detection synchronous—i.e., wait for the
+write to be replicated to all replicas before telling the user that the write was success‐
+ful. However, by doing so, you would lose the main advantage of multi-leader repli‐
+cation: allowing each replica to accept writes independently. If you want synchronous
+conflict detection, you might as well just use single-leader replication.
+
+The simplest strategy for dealing with conflicts is to avoid them: if the application can
+ensure that all writes for a particular record go through the same leader, then con‐
+flicts cannot occur. Since many implementations of multi-leader replication handle
+conflicts quite poorly, avoiding conflicts is a frequently recommended approach
+For example, in an application where a user can edit their own data, you can ensure
+that requests from a particular user are always routed to the same datacenter and use
+the leader in that datacenter for reading and writing. Different users may have differ‐
+ent “home” datacenters
+## Converging toward a consistent state
+If each replica simply applied writes in the order that it saw the writes, the database
+would end up in an inconsistent state: the final value would be C at leader 1 and B at
+leader 2. That is not acceptable—every replication scheme must ensure that the data
+is eventually the same in all replicas. Thus, the database must resolve the conflict in a convergent way, which means that all replicas must arrive at the same final value
+when all changes have been replicated.
+There are various ways of achieving convergent conflict resolution:
+- Give each write a unique ID (e.g., a timestamp, a long random number, a UUID, or a hash of the key and value), pick the write with the highest ID as the winner, and throw away the other writes. Although this approach is popular, it is dangerously prone to data loss
+- Give each replica a unique ID, and let writes that originated at a higher-numbered replica always take precedence over writes that originated at a lower-numbered replica. This approach also implies data loss.
+- Somehow merge the values together—e.g., order them alphabetically and then concatenate them
+- Record the conflict in an explicit data structure that preserves all information, and write application code that resolves the conflict at some later time
+Note that conflict resolution usually applies at the level of an individual row or docu‐
+ment, not for an entire transaction. Thus, if you have a transaction that atomi‐
+cally makes several different writes (see Chapter 7), each write is still considered
+separately for the purposes of conflict resolution.
