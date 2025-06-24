@@ -360,3 +360,45 @@ trated in Figure 5-11.
 parameters w and r determine how many nodes we wait for—i.e., how many of
 the n nodes need to report success before we consider the read or write to be suc‐
 cessful.
+## Limitations of Quorum Consistency
+Often, r and w are chosen to be a majority (more than n/2) of nodes, because that
+ensures w + r > n while still tolerating up to n/2 node failures. But quorums are not
+necessarily majorities—it only matters that the sets of nodes used by the read and
+write operations overlap in at least one node. Other quorum assignments are possi‐
+ble, which allows some flexibility in the design of distributed algorithms
+However, even with w + r > n, there are likely to be edge cases where stale values are returned. These depend on the implementation, but possible scenarios include:
+- If a sloppy quorum is used, the w writes may end up on different nodes than the r reads, so there is no longer a guaranteed overlap between the r nodes and the w nodes
+- If two writes occur concurrently, it is not clear which one happened first. In this case, the only safe solution is to merge the concurrent writes
+- If a write happens concurrently with a read, the write may be reflected on only some of the replicas. In this case, it’s undetermined whether the read returns the old or the new value.
+- If a write succeeded on some replicas but failed on others (for example because the disks on some nodes are full), and overall succeeded on fewer than w replicas, it is not rolled back on the replicas where it succeeded. This means that if a write was reported as failed, subsequent reads may or may not return the value from that write
+- If a node carrying a new value fails, and its data is restored from a replica carrying an old value, the number of replicas storing the new value may fall below w, breaking the quorum condition.
+### Monitoring staleness
+For leader-based replication, the database typically exposes metrics for the replication
+lag, which you can feed into a monitoring system. This is possible because writes are
+applied to the leader and to followers in the same order, and each node has a position
+in the replication log (the number of writes it has applied locally). By subtracting a
+follower’s current position from the leader’s current position, you can measure the
+amount of replication lag. However, in systems with leaderless replication, there is no fixed order in which
+writes are applied, which makes monitoring more difficult.
+## Sloppy Quorums and Hinted Handoff
+In a large cluster (with significantly more than n nodes) it’s likely that the client can
+connect to some database nodes during the network interruption, just not to the
+nodes that it needs to assemble a quorum for a particular value. In that case, database
+designers face a trade-off:
+• Is it better to return errors to all requests for which we cannot reach a quorum of
+w or r nodes?
+• Or should we accept writes anyway, and write them to some nodes that are
+reachable but aren’t among the n nodes on which the value usually lives?
+The latter is known as a sloppy quorum [37]: writes and reads still require w and r
+successful responses, but those may include nodes that are not among the designated n “home” nodes for a value.
+Once the network interruption is fixed, any writes that one node temporarily
+accepted on behalf of another node are sent to the appropriate “home” nodes. This called hinted handoff.
+Sloppy quorums are particularly useful for increasing write availability: as long as any
+w nodes are available, the database can accept writes. However, this means that even
+when w + r > n, you cannot be sure to read the latest value for a key, because the
+latest value may have been temporarily written to some nodes outside of n
+### Multi-datacenter operation
+Each write from a client is sent to all replicas, regardless of datacen‐
+ter, but the client usually only waits for acknowledgment from a quorum of nodes
+within its local datacenter so that it is unaffected by delays and interruptions on the
+cross-datacenter link. The higher-latency writes to other datacenters are often configured to happen asynchronously, although there is some flexibility in the configuration
