@@ -7,3 +7,4 @@
 # [Encoding](Encoding.md)
 # [Distributed Data](Distributed_Data.md)
 # [Replication](Replication.md)
+# [Partitioning](Partitioning.md)

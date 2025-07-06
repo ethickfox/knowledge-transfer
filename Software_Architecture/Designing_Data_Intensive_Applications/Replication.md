@@ -402,3 +402,125 @@ Each write from a client is sent to all replicas, regardless of datacen‐
 ter, but the client usually only waits for acknowledgment from a quorum of nodes
 within its local datacenter so that it is unaffected by delays and interruptions on the
 cross-datacenter link. The higher-latency writes to other datacenters are often configured to happen asynchronously, although there is some flexibility in the configuration
+# Detecting Concurrent Writes
+Dynamo-style databases allow several clients to concurrently write to the same key,
+which means that conflicts will occur even if strict quorums are used. The situation is
+similar to multi-leader replication (see “Handling Write Conflicts” on page 171),
+although in Dynamo-style databases conflicts can also arise during read repair or
+hinted handoff.
+The problem is that events may arrive in a different order at different nodes, due to
+variable network delays and partial failures. For example, two cli‐
+ents, A and B, simultaneously writing to a key X in a three-node datastore:
+- Node 1 receives the write from A, but never receives the write from B due to a transient outage.
+- Node 2 first receives the write from A, then the write from B.
+- Node 3 first receives the write from B, then the write from A.
+If each node simply overwrote the value for a key whenever it received a write request
+from a client, the nodes would become permanently inconsistent,
+In order to become eventually consistent, the replicas should converge toward the
+same value.
+
+Last write wins (discarding concurrent writes)
+One approach for achieving eventual convergence is to declare that each replica need
+only store the most “recent” value and allow “older” values to be overwritten and dis‐
+carded.
+Then, as long as we have some way of unambiguously determining which
+write is more “recent,” and every write is eventually copied to every replica, the repli‐
+cas will eventually converge to the same value.
+Even though the writes don’t have a natural ordering, we can force an arbitrary order
+on them. For example, we can attach a timestamp to each write, pick the biggest
+timestamp as the most “recent,” and discard any writes with an earlier timestamp.
+This conflict resolution algorithm, called last write wins (LWW), is the only sup‐
+ported conflict resolution method in Cassandra
+LWW achieves the goal of eventual convergence, but at the cost of durability: if there
+are several concurrent writes to the same key, even if they were all reported as suc‐
+cessful to the client (because they were written to w replicas), only one of the writes
+will survive and the others will be silently discarded.
+There are some situations, such as caching, in which lost writes are perhaps accepta‐
+ble. If losing data is not acceptable, LWW is a poor choice for conflict resolution.
+The only safe way of using a database with LWW is to ensure that a key is only writ‐
+ten once and thereafter treated as immutable, thus avoiding any concurrent updates
+to the same key. For example, a recommended way of using Cassandra is to use a
+UUID as the key, thus giving each write operation a unique key
+
+## The “happens-before” relationship and concurrency
+An operation A happens before another operation B if B knows about A, or depends
+on A, or builds upon A in some way. Whether one operation happens before another
+operation is the key to defining what concurrency means. In fact, we can simply say
+that two operations are concurrent if neither happens before the other (i.e., neither
+knows about the other)
+Capturing the happens-before relationship
+Note that the server can determine whether two operations are concurrent by looking
+at the version numbers—it does not need to interpret the value itself (so the value
+could be any data structure)
+The server maintains a version number for every key, increments the version
+number every time that key is written, and stores the new version number along
+with the value written.
+• When a client reads a key, the server returns all values that have not been over‐
+written, as well as the latest version number. A client must read a key before
+writing.
+• When a client writes a key, it must include the version number from the prior
+read, and it must merge together all values that it received in the prior read. (The
+response from a write request can be like a read, returning all current values,
+which allows us to chain several writes like in the shopping cart example.)
+• When the server receives a write with a particular version number, it can over‐
+write all values with that version number or below (since it knows that they have
+been merged into the new value), but it must keep all values with a higher ver‐
+sion number (because those values are concurrent with the incoming write).
+
+Merging concurrently written values
+With the example of a shopping cart, a reasonable approach to merging siblings is to
+just take the union. In Figure 5-14, the two final siblings are [milk, flour, eggs,
+bacon] and [eggs, milk, ham]; note that milk and eggs appear in both, even
+though they were each only written once. The merged value might be something like
+[milk, flour, eggs, bacon, ham], without duplicates.
+However, if you want to allow people to also remove things from their carts, and not
+just add things, then taking the union of siblings may not yield the right result: if you
+merge two sibling carts and an item has been removed in only one of them, then the
+removed item will reappear in the union of the siblings [37]
+an item cannot simply be deleted from the database when it is removed; instead,
+the system must leave a marker with an appropriate version number to indicate that
+the item has been removed when merging siblings. Such a deletion marker is known
+as a tombstone.
+Version vectors
+single version number to capture dependencies between opera‐
+tions, but that is not sufficient when there are multiple replicas accepting writes con‐
+currently. Instead, we need to use a version number per replica as well as per key.
+Each replica increments its own version number when processing a write, and also
+keeps track of the version numbers it has seen from each of the other replicas. This
+information indicates which values to overwrite and which values to keep as siblings.
+The collection of version numbers from all the replicas is called a version vector [56].
+A few variants of this idea are in use, but the most interesting is probably the dotted
+version vector
+## Summary
+In this chapter we looked at the issue of replication. Replication can serve several purposes:
+
+### High availability
+Keeping the system running, even when one machine (or several machines, or an entire datacenter) goes down
+### Disconnected operation
+Allowing an application to continue working when there is a network interrup
+tion
+### Latency
+Placing data geographically close to users, so that users can interact with it faster
+### Scalability
+Being able to handle a higher volume of reads than a single machine could handle, by performing reads on replicas
+### Single-leader replication
+Clients send all writes to a single node (the leader), which sends a stream of data change events to the other replicas (followers). Reads can be performed on any replica, but reads from followers might be stale.
+
+Single-leader replication is popular because it is fairly easy to understand and there is no conflict resolution to worry about
+### Multi-leader replication
+Clients send each write to one of several leader nodes, any of which can accept writes. The leaders send streams of data change events to each other and to any follower nodes.
+### Leaderless replication
+Clients send each write to several nodes, and read from several nodes in parallel in order to detect and correct nodes with stale data
+
+Multi-leader replication and Leaderless replication could be more robust in the presence of faulty nodes, network interruptions and latency spikes - at cost of very weak consistency guaranties 
+
+Replication can be synchronous or asynchronous, which has a profound effect on the system behavior when there is a fault. Although asynchronous replication can be fast when the system is running smoothly, it’s important to figure out what happens when replication lag increases and servers fail. If a leader fails and you promote an asynchronously updated follower to be the new leader, recently committed data may be lost.
+
+ Few consistency models which are helpful for deciding how an application should behave under replication lag:
+
+### Read-after-write consistency
+Users should always see data that they submitted themselves.
+### Monotonic reads
+After users have seen the data at one point in time, they shouldn’t later see the data from some earlier point in time.
+### Consistent prefix reads
+Users should see the data in a state that makes causal sense: for example, seeing a question and it's reply in correct order 
