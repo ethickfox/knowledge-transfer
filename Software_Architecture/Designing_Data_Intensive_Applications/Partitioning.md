@@ -115,3 +115,52 @@ and more complicated, because a write to a single document may now affect multip
 In practice, updates to global secondary indexes are often asynchronous (that is, if
 you read the index shortly after a write, the change you just made may not yet be
 reflected in the index)
+
+## Rebalancing Partitions
+The process of moving load from one node in the cluster to another is called rebalancing.
+rebalancing is usually expected to meet some minimum requirements:
+• After rebalancing, the load (data storage, read and write requests) should be shared fairly between the nodes in the cluster.
+• While rebalancing is happening, the database should continue accepting reads and writes.
+• No more data than necessary should be moved between nodes, to make rebalancing fast and to minimize the network and disk I/O load.
+
+### Strategies for Rebalancing
+
+Fixed number of partitions
+create many more partitions than there are nodes, and assign several partitions to each node. For example, a database running on a cluster of 10 nodes may be split into 1,000 partitions
+Now, if a node is added to the cluster, the new node can steal a few partitions from every existing node until partitions are fairly distributed once again.
+The only thing that changes is
+the assignment of partitions to nodes. This change of assignment is not immediate — it takes some time to transfer a large amount of data over the network — so the old assignment of partitions is used for any reads and writes that happen while the transfer is in progress.
+
+Dynamic partitioning
+When a partition grows to exceed a configured size (on
+HBase, the default is 10 GB), it is split into two partitions so that approximately half of the data ends up on each side of the split
+Conversely, if lots of data is deleted
+and a partition shrinks below some threshold, it can be merged with an adjacent partition.
+An advantage of dynamic partitioning is that the number of partitions adapts to the
+total data volume. If there is only a small amount of data, a small number of partitions is sufficient, so overheads are small;
+an empty database starts off with a single partition, since
+there is no a priori information about where to draw the partition boundaries. While
+the dataset is small—until it hits the point at which the first partition is split—all
+writes have to be processed by a single node while the other nodes sit idle.
+
+Partitioning proportionally to nodes
+makes the number of partitions proportional to the number of nodes—in other words, to have a fixed number of partitions per node
+When a new node joins the cluster, it randomly chooses a fixed number of existing
+partitions to split, and then takes ownership of one half of each of those split parti‐
+tions while leaving the other half of each partition in place.
+
+## Automatic or Manual Rebalancing
+There is a gradient between fully automatic rebalancing (the system decides automat‐
+ically when to move partitions from one node to another, without any administrator
+interaction) and fully manual (the assignment of partitions to nodes is explicitly con‐
+figured by an administrator, and only changes when the administrator explicitly
+reconfigures it)Fully automated rebalancing can be convenient, because there is less operational
+work to do for normal maintenance. However, it can be unpredictable. Rebalancing
+is an expensive operation, because it requires rerouting requests and moving a large
+amount of data from one node to another. If it is not done carefully, this process can
+overload the network or the nodes and harm the performance of other requests while
+the rebalancing is in progress.
+Such automation can be dangerous in combination with automatic failure detection.
+it can be a good thing to have a human in the loop for rebalancing.
+It’s slower than a fully automatic process, but it can help prevent operational
+surprises.
