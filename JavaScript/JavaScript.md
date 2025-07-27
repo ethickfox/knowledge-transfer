@@ -193,3 +193,163 @@ res = sum.apply(obj, [32, 14]) // all args as array
 const func = sum.bind(obj) // binds context to the function
 res = func(12, 32) // called with context of obj
 ```
+
+# DOM
+window - объект окна
+1. DOM -> document.body.background.color = "33AB"
+2. BOM
+3. JS
+Chrome dev tools 
+Select dom element on page -> console -> $0.style.background = "0F00"
+
+Selector
+``` html
+<div> -> 'div'
+<div class="block"> -> '.block'
+<div id="block"> -> '#block'
+<input type="text"> -> '[type=text]' or 'input.name[type=text]'
+```
+
+``` js
+let el = document.querySelector('div')
+```
+
+``` js
+/**
+* <div>
+*  some text
+* </div>
+**/
+
+let el = document.querySelector('div')
+console.log(el.innerText) //if only text
+console.log(el.innerHtml) //if html tag inside
+
+let newEl = document.createElement('p') // create new element
+el.append(newEl) //add this element to some text
+newEl.remove() // to delete element
+```
+
+Events
+Mouse
+1. click
+2. contextmenu
+3. mouseover
+Keyboard
+4. keydown
+Form
+5. Submit
+6. Focus
+
+Usage
+``` html
+<button onclick="handler()">
+	Button
+</button>
+```
+Evet Listeners
+```js
+el.addEventListener('click', handler);
+
+function handler(event){
+	console.log(event.currentTarget);
+}
+el.removeEventListener('click', handler);
+```
+
+# Utils
+Date
+``` js
+let date = new Date();
+let start = Date.now();
+let end = Date.parse(timeStamp);
+date.getMonths()
+date.getDay()
+date.getDate()
+date.toString()
+date.toUTCString()
+
+```
+Errors
+``` js
+try {
+	let error = new Error('Bad Data');
+	throw error;
+} catch(error) {
+	error.name
+	error.message
+	error.stack
+}
+```
+Math
+``` js
+Math.log(x)
+Math.sqrt(4)
+
+Math.round(x)
+Math.floor(x)
+Math.ceil(c)
+
+Math.random() // [0-1)
+```
+Regex
+``` js
+const regexOption1 = new RegExp('pattern')
+const regexOption2 = /pattern/
+const regexOption3 = new RegExp('pattern', 'g') // g -> global(not only first match, but all)
+const regexOption4 = /pattern/i // i -> case insensetive
+const regexOption5 = /pattern/m // m ->  multiline
+
+if(regexOption5.test(str)){
+	console.log('Contains')
+}
+console.log(str.match(regexOption5)) // returnsstring value
+console.log(str.replace(regexOption5, " and "))
+```
+Local storage
+Cookie
+``` js
+document.cookie = "user=John"
+document.cookie = "token=1234441;max-age=3600" //adds a new one(user cookie is not removed)
+
+```
+localStorage
+Saves information even after browser restart
+Could store only strings
+``` js
+const obj = {
+	f1 : "1",
+	f2 : "2"
+}
+const value = JSON.stringify(obj);
+localStorage.setItem('key', value)
+
+const storedValue = localStorage.getItem('key')
+const newObj = JSON.parse(storedValue);
+
+localStorage.removeItem('key')
+localStorage.clear() // removes all
+```
+sessionStorage
+Same as  localStorage, but information is deleted after restart
+
+fetch
+``` js
+const url = 'someUrl'
+fetch(url).then((response)=>{ // get request
+	//response.status()
+	//response.text()
+	return response.json()
+})
+.then((data) => {
+    console.log(data) 
+})
+
+const options = {
+	method: "post",
+	headers: "",
+	data: ""
+}
+
+fetch(url, options)
+```

@@ -164,3 +164,40 @@ Such automation can be dangerous in combination with automatic failure detection
 it can be a good thing to have a human in the loop for rebalancing.
 It’s slower than a fully automatic process, but it can help prevent operational
 surprises.
+
+## Request Routing
+when a client wants to make a
+request, how does it know which node to connect to? As partitions are rebalanced,
+the assignment of partitions to nodes changes. Somebody needs to stay on top of
+those changes in order to answer the question: if I want to read or write the key “foo”,
+which IP address and port number do I need to connect to?
+This is an instance of a more general problem called service discovery, which isn’t
+limited to just databases. Any piece of software that is accessible over a network has
+this problem, especially if it is aiming for high availability (running in a redundant
+configuration on multiple machines)
+there are a few different approaches to this problem
+1. Allow clients to contact any node (e.g., via a round-robin load balancer). If that
+node coincidentally owns the partition to which the request applies, it can handle
+the request directly; otherwise, it forwards the request to the appropriate node,
+receives the reply, and passes the reply along to the client.
+2. Send all requests from clients to a routing tier first, which determines the node
+that should handle each request and forwards it accordingly. This routing tier
+does not itself handle any requests; it only acts as a partition-aware load balancer.
+3. Require that clients be aware of the partitioning and the assignment of partitions
+to nodes. In this case, a client can connect directly to the appropriate node,
+without any intermediary.
+
+Many distributed data systems rely on a separate coordination service such as Zoo‐
+Keeper to keep track of this cluster metadata,
+Cassandra and Riak take a different approach: they use a gossip protocol among the
+nodes to disseminate any changes in cluster state. Requests can be sent to any node,
+and that node forwards them to the appropriate node for the requested partition
+
+## Parallel Query Execution
+massively parallel processing (MPP) relational database products, often
+used for analytics, are much more sophisticated in the types of queries they support.
+A typical data warehouse query contains several join, filtering, grouping, and aggre‐
+gation operations. The MPP query optimizer breaks this complex query into a num‐
+ber of execution stages and partitions, many of which can be executed in parallel on
+different nodes of the database cluster. Queries that involve scanning over large parts
+of the dataset particularly benefit from such parallel execution.
