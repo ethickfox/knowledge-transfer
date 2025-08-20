@@ -5,3 +5,5 @@ plugins:
 title: Knowledge Transfer
 description: Ethickfox kb page with all notes
 show_downloads: false
+github:
+  repository_url:
