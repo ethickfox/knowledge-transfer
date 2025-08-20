@@ -94,9 +94,30 @@ It’s common mistake to assume that synchronization is needed only when writing
 
 Every shared mutable variable should be guarded by exactly one lock.
 
+By shared, we mean that a variable could be accessed by multiple threads; by mutable, we mean that its value could change during its lifetime.
 
-### [Sharing objects](Sharing%20objects.md)
+If multiple threads access the same mutable state variable without appropriate synchronization, your program is broken. There are three ways to fix it: • Don’t share the state variable across threads;
+• Make the state variable immutable;or
+• Use synchronization whenever accessing the state variable.
 
-### Composing Objects
+It is far easier to design a class to be thread-safe than to retrofit it for thread safety later.
 
-### Building Blocks
+A class is thread-safe if it behaves correctly when accessed from multiple threads, regardless of the scheduling or interleaving of the execution of those threads by the runtime environment, and with no additional synchronization or other coordination on the part of the calling code.
+No set of operations performed sequentially or concurrently on instances of a thread-safe class can cause an instance to be in an invalid state.
+
+The most common type of race condition is check-then-act, where a potentially stale observation is used to make a decision on what to do next. check-then-act: you observe something to be true (ﬁle X doesn’t exist) and then take action based on that observation (create X); but in fact the observation could have become invalid between the time you observed it and the time you acted on it (someone else created X in the meantime), causing a problem (unexpected exception, overwritten data, file corruption).
+
+Read-modify-write operations, like incrementing a counter, define a transformation of an object’s state in terms of its previous state. To increment a counter, you have to know its previous value and make sure no one else changes or uses that value while you are in mid-update.
+
+Operations A and B are atomic with respect to each other if, from the perspective of a thread executing A, when another thread executes B, either all of B has executed or none of it has. An atomic operation is one that is atomic with respect to all operations, including itself, that operate on the same state.
+
+To ensure thread safety, check-then-act operations (like lazy initialization) and read-modify-write operations (like increment) must always be atomic. We refer collectively to check-then-act and read-modify-write sequences as compound actions: sequences of operations that must be executed atomically in order to remain thread-safe.
+
+## Locking
+
+
+# [Sharing objects](Sharing%20objects.md)
+
+# Composing Objects
+
+# Building Blocks
