@@ -120,4 +120,4 @@ holds.
 When multiple variables participate in an invariant, they are not independent: the value of one constrains the allowed value(s) of the others. Thus when updating one, you must update the others in the same atomic operation.
 Similarly, the two values cannot be fetched simultaneously: between the time when thread A fetches the two values, thread B could have changed them, and again A may observe that the invariant does not hold. To preserve state consistency, update related state variables in a single atomic operation.
 
-Nikita. Java concurrency in practice (Function). Kindle Edition. 
+Intrinsic locks
