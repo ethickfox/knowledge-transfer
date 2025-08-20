@@ -1,4 +1,4 @@
-# [Thread Safety](In_practice/Thread_Safety.md)
+# [Thread Safety](In_Practice/Thread_Safety.md)
 
 # [Sharing objects](Sharing%20objects.md)
 
