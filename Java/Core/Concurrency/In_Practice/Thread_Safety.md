@@ -1,5 +1,5 @@
 
-Thread Safety
+# Thread Safety
 
 Race Condition
 
@@ -114,4 +114,10 @@ Operations A and B are atomic with respect to each other if, from the perspectiv
 
 To ensure thread safety, check-then-act operations (like lazy initialization) and read-modify-write operations (like increment) must always be atomic. We refer collectively to check-then-act and read-modify-write sequences as compound actions: sequences of operations that must be executed atomically in order to remain thread-safe.
 
-## Locking
+# Locking
+The definition of thread safety requires that invariants be preserved regardless of timing or interleaving of operations in multiple threads.
+holds. 
+When multiple variables participate in an invariant, they are not independent: the value of one constrains the allowed value(s) of the others. Thus when updating one, you must update the others in the same atomic operation.
+Similarly, the two values cannot be fetched simultaneously: between the time when thread A fetches the two values, thread B could have changed them, and again A may observe that the invariant does not hold. To preserve state consistency, update related state variables in a single atomic operation.
+
+Nikita. Java concurrency in practice (Function). Kindle Edition. 
