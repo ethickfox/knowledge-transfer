@@ -1,4 +1,7 @@
-Visibility
+# Sharing Objects
+We want not only to prevent one thread from modifying the state of an object when another is using it, but also to ensure that when a thread modiﬁes the state of an object, other threads can actually see the changes that were made. But without synchronization, this may not happen. You can ensure that objects are published safely either by using explicit synchronization or by taking advantage of the synchronization built into library classes.
+
+## Visibility
 
 There is no guarantee that reading thread will see variable written by another thread on a timely basis or even at all. In order to ensure visibility of memory writes across threads, you must use synchronisation
 
