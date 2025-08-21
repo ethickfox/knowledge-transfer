@@ -46,10 +46,10 @@ Locking is not just about mutual exclusion; it is also about memory visibility. 
 ## Volatile variables
 volatile - means the variable is shared by different threads and operations on that variable shouldn’t be reordered and cached. From a memory perspective writing volatile variable is like exiting synchronization block and reading - is entering.
 
+accessing a volatile variable performs no locking and so cannot cause the executing thread to block, making volatile variables a lighter-weight synchronization mechanism than synchronized.
 Use volatile variables only when they simplify implementing and verifying your synchronization policy. Good use is checking a status flag to determine when to exit the loop.
 
 Semantics of volatile are not strong enough to perform increment operation(count++) atomic,
-
 Locking can guarantee both - visibility and atomacity, while volatile only visibility
 
 You can use volatile variable only when all criteria are met:
@@ -59,3 +59,4 @@ You can use volatile variable only when all criteria are met:
 3. Locking is not required for any other reason while the variable is being accessed
 
   
+# Publication and escape
