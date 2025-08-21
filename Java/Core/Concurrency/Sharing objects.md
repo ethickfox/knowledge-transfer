@@ -7,7 +7,17 @@ There is no guarantee that reading thread will see variable written by another t
 
 In this case program might output 42, 0 or stuck
 
-![Untitled 3 5.png](../../_img/Untitled%203%205.png)
+```
+public class NoVisibility { private static boolean ready; private static int number; private static class ReaderThread extends Thread { public void run() {
+while (!ready)
+Thread.yield();
+System.out.println(number);
+}
+}  public static void main(String[] args) { new ReaderThread().start();
+number = 42;
+ready = true; }
+}
+```
 
 This might happen due to **reordering.** In order to have a better performance compiler might cache and reorder operations. When the main thread writes first to number and then to ready without synchronization, the reader thread could see these operations in different order or not at all.
 
