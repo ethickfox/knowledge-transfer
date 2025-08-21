@@ -144,7 +144,38 @@ When a class has invariants that involve more than one state variable, there is 
 
 For every invariant that involves more than one variable, all the variables involved in that invariant must be guarded by the same lock.
 
-Nikita. Java concurrency in practice (Function). Kindle Edition. 
+# Liveness and performance
+Acquiring and releasing a lock has some overhead, so it is undesirable to break down synchronized blocks too far (such as factoring ++hits into its own synchronized block), even if this would not compromise atomicity. CachedFactorizer holds the lock when accessing state variables and for the duration of compound actions, but releases it before executing the potentially long-running factorization operation. This preserves thread safety without unduly affecting concurrency; the code paths in each of the synchronized blocks are “short enough”.
+
+
+```
+@ThreadSafe
+public class CachedFactorizer implements Servlet { @GuardedBy("this") private BigInteger lastNumber;
+@GuardedBy("this") private BigInteger[] lastFactors;
+@GuardedBy("this") private long hits;
+@GuardedBy("this") private long cacheHits; public synchronized long getHits() { return hits; } public synchronized double getCacheHitRatio() { return (double) cacheHits / (double) hits; }  public void service(ServletRequest req, ServletResponse resp) { BigInteger i = extractFromRequest(req);
+BigInteger[] factors = null;
+synchronized (this) { ++hits;
+if (i.equals(lastNumber)) {
+++cacheHits;
+factors = lastFactors.clone();
+}
+}
+if (factors == null) {
+factors = factor(i);
+synchronized (this) {
+lastNumber = i;
+lastFactors = factors.clone();
+}
+}
+encodeIntoResponse(resp, factors);
+}
+}
+```
+Deciding how big or small to make synchronized blocks may require tradeoffs among competing design forces, including safety (which must not be compromised), simplicity, and performance. Sometimes simplicity and performance are at odds with each other, although as CachedFactorizer illustrates, a reasonable balance can usually be found.
+
+Whenever you use locking, you should be aware of what the code in the block is doing and how likely it is to take a long time to execute. Holding a lock for a long time, either because you are doing something compute-intensive or because you execute a potentially blocking operation, introduces the risk of liveness or performance problems.
+
 
 
 
