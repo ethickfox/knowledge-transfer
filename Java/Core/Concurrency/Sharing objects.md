@@ -2,12 +2,13 @@
 We want not only to prevent one thread from modifying the state of an object when another is using it, but also to ensure that when a thread modiﬁes the state of an object, other threads can actually see the changes that were made. But without synchronization, this may not happen. You can ensure that objects are published safely either by using explicit synchronization or by taking advantage of the synchronization built into library classes.
 
 ## Visibility
+In order to ensure visibility of memory writes across threads, you must use synchronization.
 
 There is no guarantee that reading thread will see variable written by another thread on a timely basis or even at all. In order to ensure visibility of memory writes across threads, you must use synchronisation
 
 In this case program might output 42, 0 or stuck
 
-```
+``` java
 public class NoVisibility { private static boolean ready; private static int number; private static class ReaderThread extends Thread { public void run() {
 while (!ready)
 Thread.yield();
@@ -18,10 +19,12 @@ number = 42;
 ready = true; }
 }
 ```
-
+NoVisibility could loop forever because the value of ready might never become visible to the reader thread. Even more strangely, NoVisibility could print zero because the write to ready might be made visible to the reader thread before the write to number, a phenomenon known as reordering.
 This might happen due to **reordering.** In order to have a better performance compiler might cache and reorder operations. When the main thread writes first to number and then to ready without synchronization, the reader thread could see these operations in different order or not at all.
 
-Always use propper synchronisation, when data accessed from different threads
+to avoid these complex issues: always use the proper synchronization whenever data is shared across threads.
+
+## Stale data
 
 Als e there might be a stale data(outdated), unless synchronization used every time a variable is accessed
 
