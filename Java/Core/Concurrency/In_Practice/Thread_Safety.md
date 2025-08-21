@@ -14,7 +14,7 @@ public class UnsafeSequence {
 }
 ```
 
-![Untitled 43.png](Untitled%2043.png)
+![Untitled 43.png](../Untitled%2043.png)
 
 ```java
 @ThreadSafe
@@ -120,4 +120,12 @@ holds.
 When multiple variables participate in an invariant, they are not independent: the value of one constrains the allowed value(s) of the others. Thus when updating one, you must update the others in the same atomic operation.
 Similarly, the two values cannot be fetched simultaneously: between the time when thread A fetches the two values, thread B could have changed them, and again A may observe that the invariant does not hold. To preserve state consistency, update related state variables in a single atomic operation.
 
-Intrinsic locks
+## Intrinsic locks
+Java provides a built-in locking mechanism for enforcing atomicity: the synchronized block.
+Static synchronized methods use the Class object for the lock.
+Every Java object can implicitly act as a lock for purposes of synchronization; these built-in locks are called intrinsic locks or monitor locks. The lock is automatically acquired by the executing thread before entering a synchronized block and automatically released when control exits the synchronized block, whether by the normal control path or by throwing an exception out of the block. The only way to acquire an intrinsic lock is to enter a synchronized block or method guarded by that lock.
+
+Intrinsic locks in Java act as mutexes (or mutual exclusion locks), which means that at most one thread may own the lock. When thread A attempts to acquire a lock held by thread B, A must wait, or block,until B releases it. If B never releases the lock, A waits forever.
+
+## Reentrancy
+
