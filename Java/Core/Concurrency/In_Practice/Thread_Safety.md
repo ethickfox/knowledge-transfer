@@ -132,6 +132,19 @@ When a thread requests a lock that is already held by another thread, the reques
 When a thread acquires a previously unheld lock, the JVM records the owner and sets the acquisition count to one. If that same thread acquires the lock again, the count is incremented, and when the owning thread exits the synchronized block, the count is decremented. When the count reaches zero, the lock is released.
 
 # Guarding state with locks
+if synchronization is used to coordinate access to a variable, it is needed everywhere that variable is accessed.
+It is a common mistake to assume that synchronization needs to be used only when writing to shared variables; this is simply not true.
+For each mutable state variable that may be accessed by more than one thread, all accesses to that variable must be performed with the same lock held. In this case, we say that the variable is guarded by that lock.
+
+Every shared, mutable variable should be guarded by exactly one lock. Make it clear to maintainers which lock that is.
+
+A common locking convention is to encapsulate all mutable state within an object and to protect it from concurrent access by synchronizing any code path that accesses mutable state using the object’s intrinsic lock. This pattern is used by many thread-safe classes, such as Vector and other synchronized collection classes.
+
+When a class has invariants that involve more than one state variable, there is an additional requirement: each variable participating in the invariant must be guarded by the same lock. This allows you to access or update them in a single atomic operation, preserving the invariant.
+
+For every invariant that involves more than one variable, all the variables involved in that invariant must be guarded by the same lock.
+
+Nikita. Java concurrency in practice (Function). Kindle Edition. 
 
 
 
