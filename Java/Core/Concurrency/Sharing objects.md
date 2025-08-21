@@ -33,11 +33,10 @@ This might happen due to **reordering.** In order to have a better performance c
 to avoid these complex issues: always use the proper synchronization whenever data is shared across threads.
 
 ## Stale data
-
-Als e there might be a stale data(outdated), unless synchronization used every time a variable is accessed
+When the reader thread examines ready, it may see an out-of-date value. Unless synchronization is used every time a variable is accessed, it is possible to see a stale value for that variable. Worse, staleness is not all-or-nothing: a thread can see an up-to-date value of one variable but a stale value of another variable that was written first.
 
 64 bit variables(double, long) that are not marked as volatile are read and written in two 32 bit operations.
-
+## Locking and visibility
 Locking is also about memory visibility
 
 volatile - means the variable is shared by different threads and operations on that variable shouldn’t be reordered and cached. From a memory perspective writing volatile variable is like exiting synchronization block and reading - is entering.
