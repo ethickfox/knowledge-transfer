@@ -121,8 +121,29 @@ private static ThreadLocal<Connection> connectionHolder = new ThreadLocal<Connec
 };
 public static Connection getConnection() { return connectionHolder.get();}
 ```
+# Immutability
+An immutable object is one whose state cannot be changed after construction. Immutable objects are inherently thread-safe; their invariants are established by the constructor, and if their state cannot be changed, these invariants always hold.
+``` java
+@Immutable
+class OneValueCache {
+  private final BigInteger lastNumber;
+  private final BigInteger[] lastFactors;
 
+  public OneValueCache(BigInteger i,  BigInteger[] factors) {
+    lastNumber = i;
+    lastFactors = Arrays.copyOf(factors, factors.length);
+  }
 
+  public BigInteger[] getFactors(BigInteger i) {
+    if (lastNumber == null || !lastNumber.equals(i))
+      return null;
+    else
+      return Arrays.copyOf(lastFactors, lastFactors.length);
+  }
+}
+```
+Immutable holder for caching a number and its factors.  holder object, you would have to use locking to ensure atomicity; with an immutable one, once a thread acquires a reference to it, it need never worry about another thread modifying its state. If the variables are to be updated, a new holder object is created, but any threads working with the previous holder still see it in a consistent state.
+# Safe publication
 
 
 
