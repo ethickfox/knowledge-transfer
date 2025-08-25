@@ -60,3 +60,69 @@ You can use volatile variable only when all criteria are met:
 
   
 # Publication and escape
+Publishing an object means making it available to code outside of its current scope, such as by storing a reference to it where other code can find it, returning it from a nonprivate method, or passing it to a method in another class.
+
+The most blatant form of publication is to store a reference in a public static field, where any class and thread could see it,
+Publishing an object also publishes any objects referred to by its nonprivate fields. More generally, any object that is reachable from a published object by following some chain of nonprivate field references and method calls has also been published.
+
+``` java
+public class ThisEscape {
+  public ThisEscape(EventSource source) { source.registerListener(
+    new EventListener() {
+      public void onEvent(Event e) { doSomething(e);}
+    });
+  }
+}
+```
+
+ThisEscape illustrates an important special case of escape—when the this references escapes during construction. When the inner EventListener instance is published, so is the enclosing ThisEscape instance. But an object is in a predictable, consistent state only after its constructor returns, so publishing an object from within its constructor can publish an incompletely constructed object. This is true even if the publication is the last statement in the constructor. If the this reference escapes during construction, the object is considered not properly constructed.
+
+A common mistake that can let the this reference escape during construction is to start a thread from a constructor. When an object creates a thread from its constructor, it almost always shares its this reference with the new thread, either explicitly (by passing it to the constructor) or implicitly (because the Thread or Runnable is an inner class of the owning object). The new thread might then be able to see the owning object before it is fully constructed. There’s nothing wrong with creating a thread in a constructor, but it is best not to start the thread immediately. Instead, expose a start or initialize method that starts the owned thread.
+
+# Thread conﬁnement
+This technique, thread conﬁnement,is one of the simplest ways to achieve thread safety. When an object is conﬁned to a thread, such usage is automatically thread-safe even if the confined object itself is not
+
+## Ad-hoc thread confinement
+Ad-hoc thread conﬁnement describes when the responsibility for maintaining thread conﬁnement falls entirely on the implementation. Ad-hoc thread confinement can be fragile because none of the language features, such as visibility modiﬁers or local variables, helps confine the object to the target thread.
+A special case of thread conﬁnement applies to volatile variables. It is safe to perform read-modify-write operations on shared volatile variables as long as you ensure that the volatile variable is only written from a single thread. In this case, you are conﬁning the modiﬁcation to a single thread to prevent race conditions, and the visibility guarantees for volatile variables ensure that other threads see the most up-to-date value.
+Because of its fragility, ad-hoc thread conﬁnement should be used sparingly; if possible, use one of the stronger forms of thread confinment
+## Stack confinement
+Stack conﬁnement is a special case of thread conﬁnement in which an object can only be reached through local variables. Local variables are intrinsically conﬁned to the executing thread; they exist on the executing thread’s stack, which is not accessible to other threads.
+Stack conﬁnement (also called within-thread or thread-local usage, but not to be confused with the ThreadLocal library class) is simpler to maintain and less fragile than ad-hoc thread confinement.
+``` java
+public int loadTheArk(Collection<Animal> candidates) {
+  SortedSet<Animal> animals;
+  int numPairs = 0;
+  Animal candidate = null; // animals confined to method,
+  // don’t let them escape!
+  animals = new TreeSet<Animal>(new SpeciesGenderComparator());
+  animals.addAll(candidates);
+  for (Animal a : animals) {
+    if (candidate == null || !candidate.isPotentialMate(a)) {
+      candidate = a;
+   } else {
+    ark.load(new AnimalPair(candidate, a));
+    ++numPairs;
+    candidate = null;
+    }
+  }
+  return numPairs;
+}
+```
+Maintaining stack conﬁnement for object references requires a little more assistance from the programmer to ensure that the referent does not escape. In loadTheArk, we instantiate a TreeSet and store a reference to it in animals. At this point, there is exactly one reference to the Set, held in a local variable and therefore conﬁned to the executing thread. However, if we were to publish a reference to the Set (or any of its internals), the conﬁnement would be violated and the animals would escape.
+
+# ThreadLocal
+A more formal means of maintaining thread confinement is ThreadLocal,which allows you to associate a per-thread value with a value-holding object. ThreadLocal provides get and set accessor methods that maintain a separate copy of the value for each thread that uses it, so a get returns the most recent value passed to set from the currently executing thread.
+``` java
+private static ThreadLocal<Connection> connectionHolder = new ThreadLocal<Connection>() {
+  public Connection initialValue() {
+    return DriverManager.getConnection(DB_URL);
+  }
+};
+public static Connection getConnection() { return connectionHolder.get();}
+```
+
+
+
+
+
