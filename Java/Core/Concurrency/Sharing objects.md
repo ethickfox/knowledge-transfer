@@ -144,6 +144,38 @@ class OneValueCache {
 ```
 Immutable holder for caching a number and its factors.  holder object, you would have to use locking to ensure atomicity; with an immutable one, once a thread acquires a reference to it, it need never worry about another thread modifying its state. If the variables are to be updated, a new holder object is created, but any threads working with the previous holder still see it in a consistent state.
 # Safe publication
+Java Memory Model offers a special guarantee of initialization safety for sharing immutable objects. As we’ve seen, that an object reference becomes visible to another thread does not necessarily mean that the state of that object is visible to the consuming thread. In order to guarantee a consistent view of the object’s state, synchronization is needed. Immutable objects, on the other hand, can be safely accessed even when synchronization is not used to publish the object reference. For this guarantee of initialization safety to hold, all of the requirements for immutability must be met: unmodifiable state, all fields are final, and proper construction.
+
+This guarantee extends to the values of all final fields of properly constructed objects; final fields can be safely accessed without additional synchronization. However, if final fields refer to mutable objects, synchronization is still required to access the state of the objects they refer to.
+
+Objects that are not immutable must be safely published, which usually entails synchronization by both the publishing and the consuming thread.
+
+To publish an object safely, both the reference to the object and the object’s state must be made visible to other threads at the same time. A properly constructed object can be safely published by: • Initializing an object reference from a static initializer;
+• Storing a reference to it into a volatile field or AtomicReference;
+• Storing a reference to it into a final field of a properly constructed object;
+or
+• Storing a reference to it into a field that is properly guarded by a
+lock.
+- Placing a key or value in a Hashtable, synchronizedMap,or ConcurrentMap safely publishes it to any thread that retrieves it from the Map (whether directly or via an iterator);
+• Placing an element in a Vector, CopyOnWriteArrayList, CopyOnWriteArraySet, synchronizedList, or synchronizedSet safely publishes it to any thread that retrieves it from the collection;
+• Placing an element on a BlockingQueue or a ConcurrentLinkedQueue safely publishes it to any thread that retrieves it from the queue.
+
+Static initializers are executed by the JVM at class initialization time; because of internal synchronization in the JVM, this mechanism is guaranteed to safely publish any objects initialized in this way
+
+Objects that are not technically immutable, but whose state will not be modiﬁed after publication, are called effectively immutable.
+
+Safely published eﬀectively immutable objects can be used safely by any thread without additional synchronization.
+modiﬁcations. To share mutable objects safely, they must be safely published and be either thread-safe or guarded by a lock. The publication requirements for an object depend on its mutability:
+• Immutable objects can be published through any mechanism;
+• Eﬀectively immutable objects must be safely published;
+• Mutable objects must be safely published, and must be either threadsafe or guarded by a lock.
+## Sharing objects safely
+When you publish an object, you should document how the object can be accessed.
+- Thread-conﬁned. A thread-confined object is owned exclusively by and conﬁned to one thread, and can be modiﬁed by its owning thread.
+- Shared read-only. A shared read-only object can be accessed concurrently by multiple threads without additional synchronization, but cannot be modified by any thread. Shared read-only objects include immutable and eﬀectively immutable objects.
+- Shared thread-safe. A thread-safe object performs synchronization internally, so multiple threads can freely access it through its public interface without further synchronization.
+- Guarded. A guarded object can be accessed only with a speciﬁc lock held. Guarded objects include those that are encapsulated within other thread-safe objects and published objects that are known to be guarded by a specific lock.
+
 
 
 
