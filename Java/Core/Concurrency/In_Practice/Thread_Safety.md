@@ -1,4 +1,3 @@
-
 # Thread Safety
 
 Race Condition

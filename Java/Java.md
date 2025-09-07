@@ -5,7 +5,7 @@
 4. [Generics](Core/Generics.md)
 5. [Collections](Core/Collections.md)
 ## Concurrency
-1. [Concurrency Deep Dive](Core/Concurrency/Concurrency_Deep_Dive.md)
+1. [Concurrency Deep Dive](Core/Concurrency/In_Practice/Concurrency_Deep_Dive.md)
 2. [Concurrency](Core/Concurrency/Concurrency.md)
 ## Effective Java
 1. [Effective Java](Core/Effective_Java/Effective_Java.md)

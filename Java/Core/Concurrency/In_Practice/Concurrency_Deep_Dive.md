@@ -6,7 +6,6 @@ time slicing than to let one program run to completion and then start another
 
 ## [Fundamentals](Fundamentals.md)
 
-
 ## Structuring Concurrent Applications
 
 ### Task Execution
