@@ -13,5 +13,8 @@ Moreover, TCP considers a packet to be lost if it is not acknowledged within som
 
 rather than using configured constant timeouts, systems can continually  measure response times and their variability (jitter), and automatically adjust time‐  outs according to the observed response time distribution. This can be done with a  Phi Accrual failure detector [30], which is used for example in Akka and Cassandra  [31]. TCP retransmission timeouts also work similarly
 
+# Unreliable Clocks 
 
+- A time-of-day clock does what you intuitively expect of a clock: it returns the current  date and time according to some calendar (also known as wall-clock time). For exam‐  ple, clock_gettime(CLOCK_REALTIME) on Linuxv and System.currentTimeMillis()  in Java return the number of seconds (or milliseconds) since the epoch: midnight  UTC on January 1, 1970, according to the Gregorian calendar, not counting leap sec‐  onds. Some systems use other dates as their reference point. 
+- A monotonic clock is suitable for measuring a duration (time interval), such as a  timeout or a service’s response time: clock_gettime(CLOCK_MONOTONIC) on Linux  and System.nanoTime() in Java are monotonic clocks, for example. The name comes  from the fact that they are guaranteed to always move forward (whereas a time-ofday clock may jump back in time). the absolute  value of the clock is meaningless: it might be the number of nanoseconds since the  computer was started, or something similarly arbitrary. In particular, it makes no  sense to compare monotonic clock values from two different computers, because they  don’t mean the same thing. 
 
