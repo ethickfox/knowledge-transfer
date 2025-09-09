@@ -16,5 +16,27 @@ rather than using configured constant timeouts, systems can continually  measure
 # Unreliable Clocks 
 
 - A time-of-day clock does what you intuitively expect of a clock: it returns the current  date and time according to some calendar (also known as wall-clock time). For exam‐  ple, clock_gettime(CLOCK_REALTIME) on Linuxv and System.currentTimeMillis()  in Java return the number of seconds (or milliseconds) since the epoch: midnight  UTC on January 1, 1970, according to the Gregorian calendar, not counting leap sec‐  onds. Some systems use other dates as their reference point. 
-- A monotonic clock is suitable for measuring a duration (time interval), such as a  timeout or a service’s response time: clock_gettime(CLOCK_MONOTONIC) on Linux  and System.nanoTime() in Java are monotonic clocks, for example. The name comes  from the fact that they are guaranteed to always move forward (whereas a time-ofday clock may jump back in time). the absolute  value of the clock is meaningless: it might be the number of nanoseconds since the  computer was started, or something similarly arbitrary. In particular, it makes no  sense to compare monotonic clock values from two different computers, because they  don’t mean the same thing. 
+- A monotonic clock is suitable for measuring a duration (time interval), such as a  timeout or a service’s response time: clock_gettime(CLOCK_MONOTONIC) on Linux  and System.nanoTime() in Java are monotonic clocks, for example. The name comes  from the fact that they are guaranteed to always move forward (whereas a time-ofday clock may jump back in time). the absolute  value of the clock is meaningless: it might be the number of nanoseconds since the  computer was started, or something similarly arbitrary. In particular, it makes no  sense to compare monotonic clock values from two different computers, because they  don’t mean the same thing.
+
+One option is for the leader to obtain a lease from the other nodes, which is similar to  a lock with a timeout [63]. Only one node can hold the lease at any one time—thus,  when a node obtains a lease, it knows that it is the leader for some amount of time,  until the lease expires. In order to remain leader, the node must periodically renew the lease before it expires. If the node fails, it stops renewing the lease, so another  node can take over when it expires. 
+
+``` cpp
+while (true) {
+  request = getIncomingRequest();  // Ensure that the lease always has at least 10 seconds remaining
+ if (lease.expiryTimeMillis - System.currentTimeMillis() < 10000) {
+  lease = lease.renew();
+ }
+
+ if (lease.isValid()) {
+  process(request);
+ }
+} 
+```
+What’s wrong with this code?
+- it’s relying on synchronized clocks: the expiry  time on the lease is set by a different machine example), and it’s being compared to the local  system clock. If the clocks are out of sync by more than a few seconds, this code will  start doing strange things.
+- even if we change the protocol to only use the local monotonic clock, there  is another problem: the code assumes that very little time passes between the point  that it checks the time (System.currentTimeMillis()) and the time when the  request is processed (process(request)). Normally this code runs very quickly, so  the 10 second buffer is more than enough to ensure that the lease doesn’t expire in  the middle of processing a request.  However, what if there is an unexpected pause in the execution of the program? For  example, imagine the thread stops for 15 seconds around the line lease.isValid()  before finally continuing.
+- the application performs synchronous disk access, a thread may be paused  waiting for a slow disk I/O operation to complete [68]. In many languages, disk  access can happen surprisingly, even if the code doesn’t explicitly mention file  access—for example, the Java classloader lazily loads class files when they are first  used, which could happen at any time in the program execution. I/O pauses and  GC pauses may even conspire to combine their delays [69]. If the disk is actually  a network filesystem or network block device (such as Amazon’s EBS), the I/O  latency is further subject to the variability of network delays
+
+
+
 
