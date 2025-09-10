@@ -42,7 +42,13 @@ What’s wrong with this code?
 An emerging idea is to treat GC pauses like brief planned outages of a node, and to  let other nodes handle requests from clients while one node is collecting its garbage.  If the runtime can warn the application that a node soon requires a GC pause, the  application can stop sending new requests to that node, wait for it to finish process‐  ing outstanding requests, and then perform the GC while no requests are in progress.  This trick hides GC pauses from clients and reduces the high percentiles of response  time [70, 71]. Some latency-sensitive financial trading systems [72] use this approach. 
 A variant of this idea is to use the garbage collector only for short-lived objects  (which are fast to collect) and to restart processes periodically, before they accumu‐  late enough long-lived objects to require a full GC of long-lived objects [65, 73]. One  node can be restarted at a time, and traffic can be shifted away from the node before  the planned restart, like in a rolling upgrade
 
+## The Truth Is Defined by the Majority 
+A distributed system cannot exclusively rely on a single node, because a  node may fail at any time, potentially leaving the system stuck and unable to recover.  Instead, many distributed algorithms rely on a quorum, that is, voting among the  nodes. decisions require some  minimum number of votes from several nodes in order to reduce the dependence on  any one particular node. Most commonly, the quorum is an absolute majority of more than half the nodes 
 
+### Fencing tokens 
+When using a lock or lease to protect access to some resource, we need to ensure that a node that is under a false belief of being “the  chosen one” cannot disrupt the rest of the system. A fairly simple technique that ach‐  ieves this goal is called fencing,
+Let’s assume that every time the lock server grants a lock or lease, it also returns a  fencing token, which is a number that increases every time a lock is granted (e.g.,  incremented by the lock service). We can then require that every time a client sends a  write request to the storage service, it must include its current fencing token. 
 
+ 
 
 
