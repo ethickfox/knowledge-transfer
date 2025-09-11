@@ -64,5 +64,14 @@ System models for node failures.
 
 For modeling real systems, the partially synchronous model with crash-recovery  faults is generally the most useful model.
 #### Correctness of an algorithm 
-
+if we are generating fencing tokens  for a lock 303), we may require the algorithm to have  the following properties: 
+- Uniqueness
+- Monotonic sequence
+- Availability - A node that requests a fencing token and does not crash eventually receives a  response.
+it is worth distinguishing between two different kinds of  properties: safety and liveness properties. In the example just given, uniqueness and  monotonic sequence are safety properties, but availability is a liveness property. 
+A giveaway is that liveness properties  often include the word “eventually” in their definition.
+A liveness property works the other way round: it may not hold at some point in  time
+After a safety property has been violated, the violation cannot be undone—the  damage is already done. 
+Safety is often informally defined as nothing bad happens, and liveness as something  good eventually happens.
+## Summary 
 
