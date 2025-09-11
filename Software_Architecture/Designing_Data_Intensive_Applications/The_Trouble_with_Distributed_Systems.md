@@ -50,7 +50,19 @@ When using a lock or lease to protect access to some resource, we need to ensure
 Let’s assume that every time the lock server grants a lock or lease, it also returns a  fencing token, which is a number that increases every time a lock is granted (e.g.,  incremented by the lock service). We can then require that every time a client sends a  write request to the storage service, it must include its current fencing token. 
 ### Byzantine Faults 
 Although we assume that nodes are generally honest, it can be worth adding mecha‐  nisms to software that guard against weak forms of “lying”—for example, invalid  messages due to hardware issues, software bugs, and misconfiguration. Such protec‐  tion mechanisms are not full-blown Byzantine fault tolerance, as they would not  withstand a determined adversary, but they are nevertheless simple and pragmatic  steps toward better reliability.
+### System Model and Reality 
+We formalize the kinds of faults that we expect to happen in a system by defining a system model, which is an abstraction that  describes what things an algorithm may assume. 
+With regard to timing assumptions:
+- Synchronous model - you know that network delay, pauses, and clock  drift will never exceed some fixed upper bound. The synchronous model is  not a realistic model of most practical systems
+- Partially synchronous model- that a system behaves like a synchronous system most of  the time, but it sometimes exceeds the bounds for network delay, process pauses,  and clock drift. This is a realistic model of many systems: most of the time,  networks and processes are quite well behaved—otherwise we would never be  able to get anything done—but we have to reckon with the fact that any timing  assumptions may be shattered occasionally.
+- Asynchronous model - In this model, an algorithm is not allowed to make any timing assumption — in  fact, it does not even have a clock
 
- 
+System models for node failures.
+- Crash-stop faults - algorithm may assume that a node can fail in only  one way, namely by crashing.that node is gone forever—it never  comes back.
+- Crash-recovery faults - We assume that nodes may crash at any moment, and perhaps start responding  again after some unknown time. time. In the crash-recovery model, nodes are assumed  to have stable storage (i.e., nonvolatile disk storage) that is preserved across  crashes, while the in-memory state is assumed to be lost. 
+- Byzantine (arbitrary) faults - Nodes may do absolutely anything, including trying to trick and deceive other  nodes
+
+For modeling real systems, the partially synchronous model with crash-recovery  faults is generally the most useful model.
+#### Correctness of an algorithm 
 
 
