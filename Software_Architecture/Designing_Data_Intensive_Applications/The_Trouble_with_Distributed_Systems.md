@@ -48,6 +48,8 @@ A distributed system cannot exclusively rely on a single node, because a  node m
 ### Fencing tokens 
 When using a lock or lease to protect access to some resource, we need to ensure that a node that is under a false belief of being “the  chosen one” cannot disrupt the rest of the system. A fairly simple technique that ach‐  ieves this goal is called fencing,
 Let’s assume that every time the lock server grants a lock or lease, it also returns a  fencing token, which is a number that increases every time a lock is granted (e.g.,  incremented by the lock service). We can then require that every time a client sends a  write request to the storage service, it must include its current fencing token. 
+### Byzantine Faults 
+Although we assume that nodes are generally honest, it can be worth adding mecha‐  nisms to software that guard against weak forms of “lying”—for example, invalid  messages due to hardware issues, software bugs, and misconfiguration. Such protec‐  tion mechanisms are not full-blown Byzantine fault tolerance, as they would not  withstand a determined adversary, but they are nevertheless simple and pragmatic  steps toward better reliability.
 
  
 
