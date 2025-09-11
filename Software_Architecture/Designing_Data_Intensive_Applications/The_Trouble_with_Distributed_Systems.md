@@ -73,5 +73,3 @@ A giveaway is that liveness properties  often include the word “eventually” 
 A liveness property works the other way round: it may not hold at some point in  time
 After a safety property has been violated, the violation cannot be undone—the  damage is already done. 
 Safety is often informally defined as nothing bad happens, and liveness as something  good eventually happens.
-## Summary 
-
