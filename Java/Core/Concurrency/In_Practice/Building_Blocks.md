@@ -32,4 +32,84 @@ Replacing synchronized collections with concurrent collections can oﬀer dramat
 # Synchronizers
 A synchronizer is any object that coordinates the control flow of threads based on its state.
 ## Latches
+A latch is a synchronizer that can delay the progress of threads until it reaches its terminal state. A latch acts as a gate: until the latch reaches the terminal state the gate is closed and no thread can pass, and in the terminal state the gate opens, allowing all threads to pass. Once the latch reaches the terminal state, it cannot change state again, so it remains open forever. Latches can be used to ensure that certain activities do not proceed until other one-time activities complete,
+CountDownLatch is a flexible latch implementation that can be used in any of these situations; it allows one or more threads to wait for a set of events to occur. The latch state consists of a counter initialized to a positive number, representing the number of events to wait for.
+FutureTask also acts like a latch. A computation represented by a FutureTask is implemented with a Callable, the result-bearing equivalent of Runnable, and can be in one of three states: waiting to run, running, or completed. Completion subsumes all the ways a computation can complete, including normal completion, cancellation, and exception. Once a FutureTask enters the completed state, it stays in that state forever.
 
+Counting semaphores are used to control the number of activities that can access a certain resource or perform a given action at the same time. Semaphore manages a set of virtual permits; the initial number of permits is passed to the Semaphore constructor.
+
+Barriers
+Barriers are similar to latches in that they block a group of threads until some event has occurred. The key difference is that with a barrier, all the threads must come together at a barrier point at the same time in order to proceed.
+proceed. 
+Latches are for waiting for events; barriers are for waiting for other threads.
+CyclicBarrier allows a fixed number of parties to rendezvous repeatedly at a barrier point and is useful in parallel iterative algorithms that break down a problem into a fixed number of independent subproblems. Threads call await when they reach the barrier point, and await blocks until all the threads have reached the barrier point. If all threads meet at the barrier point, the barrier has been successfully passed, in which case all threads are released and the barrier is reset so it can be used again.
+Another form of barrier is Exchanger, a two-party barrier in which the parties exchange data at the barrier point. Exchangers are useful when the parties perform asymmetric activities, for example when one thread fills a buffer with data and the other thread consumes the data from the buffer; these threads could use an Exchanger to meet and exchange a full buffer for an empty one. When two threads exchange objects via an Exchanger, the exchange constitutes a safe publication of both objects to the other party.
+
+Building an efficient, scalable result cache
+Example of cache
+``` java
+class Memoizer3<A, V> implements Computable<A, V> {  
+    private final Map<A, Future<V>> cache = new ConcurrentHashMap<>();  
+    private final Computable<A, V> c;  
+  
+    public Memoizer3(Computable<A, V> c) {  
+        this.c = c;  
+    }  
+  
+    public V compute(final A arg) throws ExecutionException, InterruptedException {  
+        Future<V> f = cache.get(arg);  
+        if (f == null) {  
+            Callable<V> eval = () -> c.compute(arg);  
+            FutureTask<V> ft = new FutureTask<>(eval);  
+            f = ft;  
+            cache.put(arg, ft);  
+            ft.run(); // call to c.compute happens here  
+        }  
+        return f.get();  
+    }  
+}
+```
+Memoizer3 is vulnerable to this problem because a compound action (putif-absent) is performed on the backing map that cannot be made atomic using locking.
+
+Caching a Future instead of a value creates the possibility of cache pollution: if a computation is cancelled or fails, future attempts to compute the result will also indicate cancellation or failure. To avoid this, Memoizer removes the Future from the cache if it detects that the computation was cancelled; it might also be desirable to remove the Future upon detecting a RuntimeException if the computation might succeed on a future attempt.
+``` java
+class Memoizer4<A, V> implements Computable<A, V> {  
+    private final ConcurrentMap<A, Future<V>> cache = new ConcurrentHashMap<A, Future<V>>();  
+    private final Computable<A, V> c;  
+  
+    public Memoizer4(Computable<A, V> c) {  
+        this.c = c;  
+    }  
+  
+    public V compute(final A arg) throws InterruptedException {  
+        while (true) {  
+            Future<V> f = cache.get(arg);  
+            if (f == null) {  
+                Callable<V> eval = () -> c.compute(arg);  
+                FutureTask<V> ft = new FutureTask<>(eval);  
+                f = cache.putIfAbsent(arg, ft);  
+                if (f == null) {  
+                    f = ft;  
+                    ft.run();  
+                }  
+            }  
+            try {  
+                return f.get();  
+            } catch (CancellationException e) {  
+                cache.remove(arg, f);  
+            } catch (ExecutionException e) {  
+            }  
+        }  
+    }  
+}
+```
+
+
+Summary
+- Guard each mutable variable with a lock.
+- Guard all variables in an invariant with the same lock.
+- Hold locks for the duration of compound actions.
+- A program that accesses a mutable variable from multiple threads without synchronization is a broken program.
+- Don’t rely on clever reasoning about why you don’t need to synchronize.
+- Include thread safety in the design process—or explicitly document that your class is not thread-safe.
+- Document your synchronization policy.
