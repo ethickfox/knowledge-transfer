@@ -277,3 +277,67 @@ x = nullptr;
 int* n = nullptr;
 std::cout << *n << std::endl;
 ```
+
+# Templated types
+A template type is a special type that can take on different types when the type is initialized. std::vector uses a template type:
+``` cpp
+#include <vector>
+#include <iostream>
+
+int main () {
+	std:: vector<int› v;
+	
+	v. push_back(2);
+	v. push_back(3);
+	v. push_back(5);
+	
+	std:: cout << v[0] << std::endl;
+	std:: cout << v[1] << std::endl;
+	std:: cout << v[2] << std::endl;
+
+	return 0;
+}
+```
+A template variable is defined by declaring it before the beginning of a class or function:
+``` cpp
+template <typename T>
+class List{
+	private: 
+	T data_;
+}
+
+template <typename T>
+int max(T a, T b) {
+	if (a › b) {
+		return a; 
+	} 
+	return b;
+}
+
+```
+
+# Inheritance
+``` cpp
+namespace uiuc {
+	class Cube : public Shape {
+		public:
+			Cube(double width, uiuc::HSLAPixel color); 
+			double getVolume() const;
+			
+		private:
+			uiuc: :HSLAPixel color_;
+	}
+}
+```
+
+Initialization list available for constructor
+The syntax to initialize the base class is called the initializer list and can be used for several purposes:
+
+- ﻿﻿Initialize a base class
+- ﻿﻿Initialize the current class using another constructor
+- ﻿﻿Initialize the default values of member variables
+``` cpp
+Cube:: Cube(double width, uiuc::HSLAPixel color) : Shape(width) {
+	color_ = color;
+}
+```
