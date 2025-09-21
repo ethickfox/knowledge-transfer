@@ -6,21 +6,7 @@ time slicing than to let one program run to completion and then start another
 
 ## [Fundamentals](Fundamentals.md)
 
-## Structuring Concurrent Applications
-
-### Task Execution
-
-### Cancellation and Shutdown
-
-### Applying ThreadPool
-
-## Liveness, Performance, Testing
-
-### Avoiding Liveness Hazards
-
-### Performance and Scalability
-
-### Testing Concurrent Programs
+## [Structuring Concurrent Applications](Structuring_Concurrent_Applications.md)
 
 ## Advanced Topics
 
