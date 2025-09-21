@@ -337,7 +337,15 @@ The syntax to initialize the base class is called the initializer list and can b
 - ﻿﻿Initialize the current class using another constructor
 - ﻿﻿Initialize the default values of member variables
 ``` cpp
-Cube:: Cube(double width, uiuc::HSLAPixel color) : Shape(width) {
+Cube::Cube(double width, uiuc::HSLAPixel color) : Shape(width) {
 	color_ = color;
+}
+
+Shape::Shape() : Shape (1) {
+// Nothing•
+}
+
+Shape::Shape(double width) : width_(width) {
+// Nothing•
 }
 ```
