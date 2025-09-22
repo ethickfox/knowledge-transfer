@@ -26,3 +26,21 @@ RejectedExecutionException. Once all tasks have completed, the ExecutorService t
 
 Scheduled thread pools  letting you provide multiple threads for executing deferred and periodic tasks.
 
+# Finding exploitable parallelism
+``` java
+Executionpublic interface Callable<V> {
+  V call() throws Exception;
+}
+
+public interface Future<V> {
+  boolean cancel(boolean mayInterruptIfRunning); boolean isCancelled();
+  boolean isDone();
+  V get() throws InterruptedException, ExecutionException, CancellationException;
+  V get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, CancellationException, TimeoutException;
+}
+```
+CompletionService combines the functionality of an Executor and a BlockingQueue.You can submit Callable tasks to it for execution and use the queuelike methods take and poll to retrieve completed results,
+- The primary challenge in executing tasks within a time budget is making sure that you don’t wait longer than the time budget to get an answer or find out that one is not forthcoming. The timed version of Future.get supports this requirement: it returns as soon as the result is ready, but throws TimeoutException if the result is not ready within the timeout period.
+- A secondary problem when using timed tasks is to stop them when they run out of time, so they do not waste computing resources by continuing to compute a result that will not be used.
+
+
