@@ -42,5 +42,11 @@ public interface Future<V> {
 CompletionService combines the functionality of an Executor and a BlockingQueue.You can submit Callable tasks to it for execution and use the queuelike methods take and poll to retrieve completed results,
 - The primary challenge in executing tasks within a time budget is making sure that you don’t wait longer than the time budget to get an answer or find out that one is not forthcoming. The timed version of Future.get supports this requirement: it returns as soon as the result is ready, but throws TimeoutException if the result is not ready within the timeout period.
 - A secondary problem when using timed tasks is to stop them when they run out of time, so they do not waste computing resources by continuing to compute a result that will not be used.
+# Cancellation and Shutdown
+Java does not provide any mechanism for safely forcing a thread to stop what it is doing.1 Instead, it provides interruption, a cooperative mechanism that lets one thread ask another to stop what it is doing.
+An activity is cancellable if external code can move it to completion before its normal completion.
+One such cooperative mechanism is setting a “cancellation requested” flag that the task checks periodically; if it finds the flag set, the task terminates early.
+
+A task that wants to be cancellable must have a cancellation policy that speciﬁes the “how”, “when”, and “what” of cancellation—how other code can request cancellation, when the task checks whether cancellation has been requested, and what actions the task takes in response to a cancellation request.
 
 
