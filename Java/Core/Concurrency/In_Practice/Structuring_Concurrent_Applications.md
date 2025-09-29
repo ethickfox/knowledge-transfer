@@ -54,4 +54,27 @@ Just as task code should not make assumptions about what interruption means to i
 
 ExecutorService.submit returns a Future describing the task. Future has a cancel method that takes a boolean argument, mayInterruptIfRunning,and returns a value indicating whether the cancellation attempt was successful. (This tells you only whether it was able to deliver the interruption, not whether the task detected and acted on it.)
 
-# Stopping a thread-based service
+# JVM shutdown
+The JVM can shut down in either an orderly or abrupt manner. 
+An orderly shutdown is initiated when
+- the last “normal” (nondaemon) thread terminates
+- someone calls System.exit
+- by other platform-specific means (such as sending a SIGINT or hitting Ctrl-C).
+
+While this is the standard and preferred way for the JVM to shut down, it can also be shut down abruptly by
+- calling Runtime.halt
+- by killing the JVM process through the operating system (such as sending a SIGKILL).
+In an orderly shutdown, the JVM first starts all registered shutdown hooks. Shutdown hooks are unstarted threads that are registered with Runtime.addShutdownHook. The JVM makes no guarantees on the order in which shutdown hooks are started.
+``` java
+Runtime.getRuntime().addShutdownHook(new Thread() {
+	public void run() {
+		try {
+			LogService.this.stop();
+		} catch (InterruptedException ignored) {
+		}
+	}
+});
+```
+
+Sometimes you want to create a thread that performs some helper function but you don’t want the existence of this thread to prevent the JVM from shutting down. This is what daemon threads are for.
+shutdown. When the JVM halts, any remaining daemon threads are abandoned— finally blocks are not executed, stacks are not unwound—the JVM just exits.
