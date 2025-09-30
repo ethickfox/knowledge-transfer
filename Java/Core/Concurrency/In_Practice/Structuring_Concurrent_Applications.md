@@ -78,3 +78,19 @@ Runtime.getRuntime().addShutdownHook(new Thread() {
 
 Sometimes you want to create a thread that performs some helper function but you don’t want the existence of this thread to prevent the JVM from shutting down. This is what daemon threads are for.
 shutdown. When the JVM halts, any remaining daemon threads are abandoned— finally blocks are not executed, stacks are not unwound—the JVM just exits.
+
+# Applying Thread Pools 
+
+Tasks that exploit thread confinement. Single-threaded executors make stronger  promises about concurrency than do arbitrary thread pools. They guarantee that tasks are not executed concurrently, which allows you to relax the  thread safety of task code. Objects can be confined to the task thread, thus  enabling tasks designed to run in that thread to access those objects without  synchronization, even if those resources are not thread-safe. This forms an  implicit coupling between the task and the execution policy.
+
+ThreadLocal allows each thread to have its own private “version” of a variable. However, executors are free to reuse threads as  they see fit. The standard Executor implementations may reap idle threads  when demand is low and add new ones when demand is high, and also replace a worker thread with a fresh one if an unchecked exception is thrown  from a task. ThreadLocal makes sense to use in pool threads only if the  thread-local value has a lifetime that is bounded by that of a task; ThreadLocal should not be used in pool threads to communicate values between  tasks. 
+
+Thread pools work best when tasks are homogeneous and independent. Mixing long-running and short-running tasks risks “clogging” the pool unless it is  very large; submitting tasks that depend on other tasks risks deadlock unless  the pool is unbounded.
+
+## Thread starvation deadlock 
+If tasks that depend on other tasks execute in a thread pool, they can deadlock. In  a single-threaded executor, a task that submits another task to the same executor  and waits for its result will always deadlock.
+
+Threads are executing tasks that are blocked waiting for other  tasks still on the work queue. This is called thread starvation deadlock, and can occur  whenever a pool task initiates an unbounded blocking wait for some resource or  condition that can succeed only through the action of another pool task,
+
+Whenever you submit to an Executor tasks that are not independent, be  aware of the possibility of thread starvation deadlock, and document any  pool sizing or configuration constraints in the code or configuration file  where the Executor is configured. 
+
