@@ -100,3 +100,19 @@ For compute-intensive tasks, an Ncpu-processor system usually achieves optimum u
 
 For tasks that also include I/O or other blocking operations, you want a larger  pool, since not all of the threads will be schedulable at all times. In order to size  the pool properly, you must estimate the ratio of waiting time to compute time  for your tasks; this estimate need not be precise and can be obtained through pro-  filing or instrumentation.
 
+# ThreadPoolExecutor 
+ThreadPoolExecutor allows you to supply a BlockingQueue to hold tasks  awaiting execution. There are three basic approaches to task queueing: unbounded queue, bounded queue, and synchronous handoff. The choice of queue  interacts with other configuration parameters such as pool size. 
+
+The default for newFixedThreadPool and newSingleThreadExecutor is to use  an unbounded LinkedBlockingQueue. Tasks will queue up if all worker threads  are busy, but the queue could grow without bound if the tasks keep arriving faster  than they can be executed. 
+
+A more stable resource management strategy is to use a bounded queue, such  as an ArrayBlockingQueue or a bounded LinkedBlockingQueue or PriorityBlockingQueue. Bounded queues help prevent resource exhaustion but introduce  the question of what to do with new tasks when the queue is full.
+
+For very large or unbounded pools, you can also bypass queueing entirely and  instead hand off tasks directly from producers to worker threads using a SynchronousQueue. A SynchronousQueue is not really a queue at all, but a mechanism  for managing handoffs between threads. In order to put an element on a SynchronousQueue, another thread must already be waiting to accept the handoff. If  no thread is waiting but the current pool size is less than the maximum, ThreadPoolExecutor creates a new thread; otherwise the task is rejected according to  the saturation policy.
+
+The newCachedThreadPool factory uses a SynchronousQueue. 
+The newCachedThreadPool factory is a good default choice for an Executor, providing better queuing performance than a fixed thread pool.5  A fixed size thread pool is a good choice when you need to limit the  number of concurrent tasks for resource-management purposes, as in a  server application that accepts requests from network clients and would  otherwise be vulnerable to overload. 
+
+## Saturation policies 
+The  saturation policy for a ThreadPoolExecutor can be modified by calling setRejectedExecutionHandler. (The saturation policy is also used when a task is  submitted to an Executor that has been shut down.) Several implementations of  RejectedExecutionHandler are provided, each implementing a different saturation policy: AbortPolicy, CallerRunsPolicy, DiscardPolicy, and DiscardOldestPolicy.  The default
+The caller-runs policy implements a form of throttling that neither discards  tasks nor throws an exception, but instead tries to slow down the flow of new  tasks by pushing some of the work back to the caller. It executes the newly  submitted task not in a pool thread, but in the thread that calls execute.
+
