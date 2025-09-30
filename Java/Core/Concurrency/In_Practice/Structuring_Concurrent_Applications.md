@@ -94,3 +94,9 @@ Threads are executing tasks that are blocked waiting for other  tasks still on t
 
 Whenever you submit to an Executor tasks that are not independent, be  aware of the possibility of thread starvation deadlock, and document any  pool sizing or configuration constraints in the code or configuration file  where the Executor is configured. 
 
+## Sizing thread pools 
+The ideal size for a thread pool depends on the types of tasks that will be submitted and the characteristics of the deployment system. Thread pool sizes should  rarely be hard-coded; instead pool sizes should be provided by a configuration  mechanism or computed dynamically by consulting Runtime.availableProcessors. 
+For compute-intensive tasks, an Ncpu-processor system usually achieves optimum utilization with a thread pool of Ncpu + 1 threads. (Even compute-intensive  threads occasionally take a page fault or pause for some other reason, so an “extra” runnable thread prevents CPU cycles from going unused when this happens.) 
+
+For tasks that also include I/O or other blocking operations, you want a larger  pool, since not all of the threads will be schedulable at all times. In order to size  the pool properly, you must estimate the ratio of waiting time to compute time  for your tasks; this estimate need not be precise and can be obtained through pro-  filing or instrumentation.
+
