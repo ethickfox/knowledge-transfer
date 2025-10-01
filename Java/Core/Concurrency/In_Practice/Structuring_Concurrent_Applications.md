@@ -116,3 +116,21 @@ The newCachedThreadPool factory is a good default choice for an Executor, provid
 The  saturation policy for a ThreadPoolExecutor can be modified by calling setRejectedExecutionHandler. (The saturation policy is also used when a task is  submitted to an Executor that has been shut down.) Several implementations of  RejectedExecutionHandler are provided, each implementing a different saturation policy: AbortPolicy, CallerRunsPolicy, DiscardPolicy, and DiscardOldestPolicy.  The default
 The caller-runs policy implements a form of throttling that neither discards  tasks nor throws an exception, but instead tries to slow down the flow of new  tasks by pushing some of the work back to the caller. It executes the newly  submitted task not in a pool thread, but in the thread that calls execute.
 
+ThreadPoolExecutor was designed for extension, providing several “hooks” for  subclasses to override—beforeExecute, afterExecute, and terminated—that  can be used to extend the behavior of ThreadPoolExecutor. 
+
+Sequential loop iterations are suitable for parallelization when each iteration is independent of the others and the work done in each iteration of  the loop body is significant enough to offset the cost of managing a new  task. 
+
+Callers of parallelRecursive can wait for all the results by creating an Executor specific to the  traversal and using shutdown and awaitTermination,
+
+``` java
+	public<T> Collection<T> getParallelResults(List<Node<T>> nodes)  throws InterruptedException {
+	ExecutorService exec = Executors.newCachedThreadPool();
+	Queue<T> resultQueue = new ConcurrentLinkedQueue<T>();
+
+	parallelRecursive(exec, nodes, resultQueue);  exec.shutdown();
+	exec.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
+
+	return resultQueue;
+} 
+```
+
