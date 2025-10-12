@@ -181,3 +181,13 @@ class Dispatcher {
 ```
 Because you don’t know what is happening on the other side of the call,  calling an alien method with a lock held is difficult to analyze and therefore risky. 
 Calling a method with no locks held is called an open call, and  classes that rely on open calls are more well-behaved and composable than classes  that make calls with locks held.
+## Deadlock analysis with thread dumps 
+A thread dump includes a stack  trace for each running thread, similar to the stack trace that accompanies an exception. 
+- Thread dumps also include locking information, such as which locks are  held by each thread, in which stack frame they were acquired, and which lock a  blocked thread is waiting to acquire.
+- Before generating a thread dump, the JVM  searches the is-waiting-for graph for cycles to find deadlocks.
+- If it finds one, it  includes deadlock information identifying which locks and threads are involved,  and where in the program the offending lock acquisitions are. 
+## Starvation 
+Starvation occurs when a thread is perpetually denied access to resources it needs  in order to make progress; the most commonly starved resource is CPU cycles.  Starvation in Java applications can be caused by inappropriate use of thread priorities. It can also be caused by executing nonterminating constructs (infinite loops  or resource waits that do not terminate) with a lock held, since other threads that  need that lock will never be able to acquire it. 
+It is generally wise to resist the temptation to tweak thread priorities. As  soon as you start modifying priorities, the behavior of your application becomes  platform-specific and you introduce the risk of starvation. You can often spot a  program that is trying to recover from priority tweaking or other responsiveness  problems by the presence of Thread.sleep or Thread.yield calls in odd places,  in an attempt to give more time to lower-priority threads.
+## Livelock 
+Livelock is a form of liveness failure in which a thread, while not blocked, still  cannot make progress because it keeps retrying an operation that will always  fail. Livelock often occurs in transactional messaging applications, where the  messaging infrastructure rolls back a transaction if a message cannot be processed  successfully, and puts it back at the head of the queue.
