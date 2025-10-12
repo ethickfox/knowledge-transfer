@@ -134,3 +134,50 @@ Callers of parallelRecursive can wait for all the results by creating an Executo
 } 
 ```
 
+# Avoiding Liveness Hazards
+indiscriminate use of locking can cause lock-ordering deadlocks.  Similarly, we use thread pools and semaphores to bound resource consumption,  but failure to understand the activities being bounded can cause resource deadlocks. 
+## Dynamic lock order deadlocks 
+It may appear as if all the threads acquire  their locks in the same order, but in fact the lock order depends on the order of  arguments passed to transferMoney, and these in turn might depend on external  inputs. Deadlock can occur if two threads call transferMoney at the same time, one transferring from X to Y, and the other doing the opposite:
+```
+A: transferMoney(myAccount, yourAccount, 10);  
+B: transferMoney(yourAccount, myAccount, 20); 
+```
+
+``` java
+public void transferMoney(Account fromAccount,
+	Account toAccount,
+	DollarAmount amount)  throws InsufficientFundsException {  
+	synchronized (fromAccount) {
+	    synchronized (toAccount) {  
+		    if (fromAccount.getBalance().compareTo(amount) < 0) {
+		      throw new InsufficientFundsException();  
+		    } else {  
+			    fromAccount.debit(amount);
+			    toAccount.credit(amount);
+			}
+		}
+	 }
+}
+```
+Deadlocks like this one can be spotted — look  for nested lock acquisitions. Since the order of arguments is out of our control,  to fix the problem we must induce an ordering on the locks and acquire them  according to the induced ordering consistently throughout the application. 
+If Account has a unique, immutable, comparable key such as an account number, inducing a lock ordering is even easier: order objects by their key and lock.
+## Deadlocks between cooperating objects 
+Invoking an alien method with a lock held is asking for liveness trouble.  The alien method might acquire other locks (risking deadlock) or block  for an unexpectedly long time, stalling other threads that need the lock  you hold. 
+```java
+class Taxi { 
+	public synchronized void setLocation(Point location) {  
+		this.location = location;  
+		if (location.equals(destination))  
+			dispatcher.notifyAvailable(this);  
+		} 
+	}
+}
+
+class Dispatcher { 
+	public synchronized void notifyAvailable(Taxi taxi) {  
+		availableTaxis.add(taxi);  
+	} 
+}
+```
+Because you don’t know what is happening on the other side of the call,  calling an alien method with a lock held is difficult to analyze and therefore risky. 
+Calling a method with no locks held is called an open call, and  classes that rely on open calls are more well-behaved and composable than classes  that make calls with locks held.
