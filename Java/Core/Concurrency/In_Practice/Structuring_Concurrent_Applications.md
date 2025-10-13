@@ -191,3 +191,20 @@ Starvation occurs when a thread is perpetually denied access to resources it nee
 It is generally wise to resist the temptation to tweak thread priorities. As  soon as you start modifying priorities, the behavior of your application becomes  platform-specific and you introduce the risk of starvation. You can often spot a  program that is trying to recover from priority tweaking or other responsiveness  problems by the presence of Thread.sleep or Thread.yield calls in odd places,  in an attempt to give more time to lower-priority threads.
 ## Livelock 
 Livelock is a form of liveness failure in which a thread, while not blocked, still  cannot make progress because it keeps retrying an operation that will always  fail. Livelock often occurs in transactional messaging applications, where the  messaging infrastructure rolls back a transaction if a message cannot be processed  successfully, and puts it back at the head of the queue.
+
+# Performance versus scalability 
+Scalability describes the ability to improve throughput or capacity when  additional computing resources (such as additional CPUs, memory, storage, or I/O bandwidth) are added. 
+
+Two aspects of performance—how fast and how much—are completely  separate, and sometimes even at odds with each other. In order to achieve higher  scalability or better hardware utilization, we often end up increasing the amount  of work done to process each individual task, such as when we divide tasks into  multiple “pipelined” subtasks.
+
+Avoid premature optimization. First make it right, then make it fast—if it  is not already fast enough.
+
+Most performance decisions involve multiple variables and are highly situational. Before deciding that one approach is “faster” than another, ask yourself  some questions: 
+- What do you mean by “faster”?
+- Under what conditions will this approach actually be faster?
+	- Under light or  heavy load? With large or small data sets?
+ 	- Can you support your answer  with measurements?
+ - How often are these conditions likely to arise in your situation?
+	 - Can you  support your answer with measurements?
+- Is this code likely to be used in other situations where the conditions may  be different?
+- What hidden costs, such as increased development or maintenance risk, are  you trading for this improved performance? Is this a good tradeoff? 
