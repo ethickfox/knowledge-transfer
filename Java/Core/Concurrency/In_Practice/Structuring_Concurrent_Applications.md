@@ -207,4 +207,81 @@ Most performance decisions involve multiple variables and are highly situational
  - How often are these conditions likely to arise in your situation?
 	 - Can you  support your answer with measurements?
 - Is this code likely to be used in other situations where the conditions may  be different?
-- What hidden costs, such as increased development or maintenance risk, are  you trading for this improved performance? Is this a good tradeoff? 
+- What hidden costs, such as increased development or maintenance risk, are  you trading for this improved performance? Is this a good tradeoff?
+
+All concurrent applications have some sources of serialization; if you think  yours does not, look again. 
+
+## Context switching 
+hand, if there are more runnable threads than CPUs,  eventually the OS will preempt one thread so that another can use the CPU. This  causes a context switch, which requires saving the execution context of the currently running thread and restoring the execution context of the newly scheduled  thread. 
+
+When a new thread is switched in, the data it needs is unlikely to be in the local  processor cache, so a context switch causes a flurry of cache misses, and thus  threads run a little more slowly when they are first scheduled. 
+
+When a thread blocks because it is waiting for a contended lock, the JVM  usually suspends the thread and allows it to be switched out. If threads block  frequently, they will be unable to use their full scheduling quantum. A program  that does more blocking (blocking I/O, waiting for contended locks, or waiting  on condition variables) incurs more context switches than one that is CPU-bound,  increasing scheduling overhead and reducing throughput.
+
+The actual cost of context switching varies across platforms, but a good rule of  thumb is that a context switch costs the equivalent of 5,000 to 10,000 clock cycles,  or several microseconds on most current processors. 
+
+The vmstat command on Unix systems and the perfmon tool on Windows  systems report the number of context switches and the percentage of time spent  in the kernel. High kernel usage (over 10%) often indicates heavy scheduling  activity, which may be caused by blocking due to I/O or lock contention. 
+
+The performance cost of synchronization comes from several sources. The visibility guarantees provided by synchronized and volatile may entail using special  instructions called memory barriers that can flush or invalidate caches, flush hardware write buffers, and stall execution pipelines. Memory barriers may also have  indirect performance consequences because they inhibit other compiler optimizations; most operations cannot be reordered with memory barriers. 
+
+When assessing the performance impact of synchronization, it is important  to distinguish between contended and uncontended synchronization. The synchronized mechanism is optimized for the uncontended case (volatile is always  uncontended), and at this writing, the performance cost of a “fast-path” uncontended synchronization ranges from 20 to 250 clock cycles for most systems.  While this is certainly not zero, the effect of needed, uncontended synchronization is rarely significant in overall application performance
+Modern JVMs can reduce the cost of incidental synchronization by optimizing  away locking that can be proven never to contend. If a lock object is accessible  only to the current thread, the JVM is permitted to optimize away a lock acquisition because there is no way another thread could synchronize on the same lock. 
+More sophisticated JVMs can use escape analysis to identify when a local object  reference is never published to the heap and is therefore thread-local.
+Even without escape analysis, compilers can also perform lock coarsening, the  merging of adjacent synchronized blocks using the same lock.
+Don’t worry excessively about the cost of uncontended synchronization.  The basic mechanism is already quite fast, and JVMs can perform additional optimizations that further reduce or eliminate the cost. Instead,  focus optimization efforts on areas where lock contention actually occurs. 
+
+Synchronization by one thread can also affect the performance of other  threads. Synchronization creates traffic on the shared memory bus; this bus  has a limited bandwidth and is shared across all processors. If threads must  compete for synchronization bandwidth, all threads using synchronization will  suffer.
+
+## Blocking 
+When locking is contended, the losing thread(s) must block. The JVM  can implement blocking either via spin-waiting (repeatedly trying to acquire the  lock until it succeeds) or by suspending the blocked thread through the operating  system.
+
+# Reducing lock contention 
+The principal threat to scalability in concurrent applications is the exclusive resource lock. 
+Two factors influence the likelihood of contention for a lock: how often that  lock is requested and how long it is held once acquired. If the product of these  factors is sufficiently small, then most attempts to acquire the lock will be uncontended, and lock contention will not pose a significant scalability impediment. If,  however, the lock is in sufficiently high demand, threads will block waiting for it;  in the extreme case, processors will sit idle even though there is plenty of work  to do. 
+
+There are three ways to reduce lock contention:  
+• Reduce the duration for which locks are held
+This can be done by moving code that doesn’t require the lock out of  synchronized blocks, especially for expensive operations and potentially blocking operations such as I/O. 
+• Reduce the frequency with which locks are requested; or 
+• Replace exclusive locks with coordination mechanisms that permit  greater concurrency. 
+
+Because AttributeStore has only one state variable, attributes, we can improve it further by the technique of delegating thread safety (Section 4.3). By replacing attributes with a thread-safe Map (a Hashtable, synchronizedMap, or ConcurrentHashMap), AttributeStore can delegate all its thread safety obligations  to the underlying thread-safe collection.
+
+because the cost of synchronization is nonzero, breaking one  synchronized block into multiple synchronized blocks (correctness permitting)  at some point becomes counterproductive in terms of performance.9 The ideal  balance is of course platform-dependent, but in practice it makes sense to worry  about the size of a synchronized block only when you can move “substantial”  computation or blocking operations out of it. 
+
+## Reducing lock granularity 
+This can be accomplished by lock splitting and lock striping, which involve using  separate locks to guard multiple independent state variables previously guarded  by a single lock. These techniques reduce the granularity at which locking occurs,  potentially allowing greater scalability—but using more locks also increases the  risk of deadlock. 
+
+If a lock guards more than one independent state variable, you may be able  to improve scalability by splitting it into multiple locks that each guard different  variables. This results in each lock being requested less often. 
+
+Splitting a lock into two offers the greatest possibility for improvement when  the lock is experiencing moderate but not heavy contention. Splitting locks that  are experiencing little contention yields little net improvement in performance or  throughput, although it might increase the load threshold at which performance  starts to degrade due to contention.
+
+## Lock striping 
+Splitting a heavily contended lock into two is likely to result in two heavily contended locks. While this will produce a small scalability improvement by enabling  two threads to execute concurrently instead of one, it still does not dramatically  improve prospects for concurrency on a system with many processors.
+
+Lock splitting can sometimes be extended to partition locking on a variablesized set of independent objects, in which case it is called lock striping. For example, the implementation of ConcurrentHashMap uses an array of 16 locks, each of  which guards 1/16 of the hash buckets;
+
+One of the downsides of lock striping is that locking the collection for exclusive access is more difficult and costly than with a single lock. Usually an  operation can be performed by acquiring at most one lock, but occasionally you  need to lock the entire collection, as when ConcurrentHashMap needs to expand  the map and rehash the values into a larger set of buckets. This is typically done  by acquiring all of the locks in the stripe set.
+
+Keeping a separate count to speed up operations like size and isEmpty works  fine for a single-threaded or fully synchronized implementation, but makes it  much harder to improve the scalability of the implementation because every operation that modifies the map must now update the shared counter. Even if you  use lock striping for the hash chains, synchronizing access to the counter reintroduces the scalability problems of exclusive locking. What looked like a performance optimization—caching the results of the size operation—has turned into  a scalability liability. In this case, the counter is called a hot field because every  mutative operation needs to access it.  ConcurrentHashMap avoids this problem by having size enumerate the stripes  and add up the number of elements in each stripe, instead of maintaining a global  count. To avoid enumerating every element, ConcurrentHashMap maintains a  separate count field for each stripe, also guarded by the stripe lock.
+
+## Alternatives to exclusive locks 
+A third technique for mitigating the effect of lock contention is to forego the use  of exclusive locks in favor of a more concurrency-friendly means of managing  shared state. These include using the concurrent collections, read-write locks,  immutable objects and atomic variables. 
+- ReadWriteLock (see Chapter 13) enforces a multiple-reader, single-writer locking discipline: more than one reader can access the shared resource concurrently  so long as none of them wants to modify it, but writers must acquire the lock  excusively.
+- Atomic variables (see Chapter 15) offer a means of reducing the cost of updating “hot fields” such as statistics counters, sequence generators, or the reference to the first node in a linked data structure.The atomic variable classes provide very fine-grained (and therefore more scalable) atomic operations on integers  or object references, and are implemented using low-level concurrency primitives  (such as compare-and-swap) provided by most modern processors
+## Monitoring CPU utilization 
+When testing for scalability, the goal is usually to keep the processors fully utilized. Tools like vmstat and mpstat on Unix systems or perfmon on Windows  systems can tell you just how “hot” the processors are running. 
+Asymmetric utilization indicates that most of the computation is going on  in a small set of threads, and your application will not be able to take advantage  of additional processors. 
+If the CPUs are not fully utilized, you need to figure out why. There are several  likely causes: 
+- Insufficent load. It may be that the application being tested is just not subjected  to enough load. You can test for this by increasing the load and measuring  changes in utilization, response time, or service time.
+- I/O-bound. You can determine whether an application is disk-bound using  iostat or perfmon, and whether it is bandwidth-limited by monitoring  traffic levels on your network.
+- Externally bound. If your application depends on external services such as a  database or web service, the bottleneck may not be in your code.
+- Lock contention. Profiling tools can tell you how much lock contention your application is experiencing and which locks are “hot”. You can often get the  same information without a profiler through random sampling, triggering a  few thread dumps and looking for threads contending for locks. If a thread  is blocked waiting for a lock, the appropriate stack frame in the thread dump  indicates “waiting to lock monitor ...” Locks that are mostly uncontended  rarely show up in a thread dump; a heavily contended lock will almost always have at least one thread waiting to acquire it and so will frequently  appear in thread dumps.
+
+## Just say no to object pooling 
+allocation in  Java is now faster than malloc is in C: the common code path for new Object in  HotSpot 1.4.x and 5.0 is approximately ten machine instructions. 
+To work around “slow” object lifecycles, many developers turned to object  pooling, where objects are recycled instead of being garbage collected and allocated anew when needed. Even taking into account its reduced garbage collection  overhead, object pooling has been shown to be a performance loss14 for all but the  most expensive objects (and a serious loss for light- and medium-weight objects)  in single-threaded programs
+In concurrent applications, pooling fares even worse. When threads allocate  new objects, very little inter-thread coordination is required, as allocators typically  use thread-local allocation blocks to eliminate most synchronization on heap data  structures. But if those threads instead request an object from a pool, some synchronization is necessary to coordinate access to the pool data structure, creating  the possibility that a thread will block. Because blocking a thread due to lock  contention is hundreds of times more expensive than an allocation, even a small  amount of pool-induced contention would be a scalability bottleneck.(Even an  uncontended synchronization is usually more expensive than allocating an object.)
+
+
+
