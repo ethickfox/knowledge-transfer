@@ -282,6 +282,5 @@ If the CPUs are not fully utilized, you need to figure out why. There are severa
 allocation in  Java is now faster than malloc is in C: the common code path for new Object in  HotSpot 1.4.x and 5.0 is approximately ten machine instructions. 
 To work around “slow” object lifecycles, many developers turned to object  pooling, where objects are recycled instead of being garbage collected and allocated anew when needed. Even taking into account its reduced garbage collection  overhead, object pooling has been shown to be a performance loss14 for all but the  most expensive objects (and a serious loss for light- and medium-weight objects)  in single-threaded programs
 In concurrent applications, pooling fares even worse. When threads allocate  new objects, very little inter-thread coordination is required, as allocators typically  use thread-local allocation blocks to eliminate most synchronization on heap data  structures. But if those threads instead request an object from a pool, some synchronization is necessary to coordinate access to the pool data structure, creating  the possibility that a thread will block. Because blocking a thread due to lock  contention is hundreds of times more expensive than an allocation, even a small  amount of pool-induced contention would be a scalability bottleneck.(Even an  uncontended synchronization is usually more expensive than allocating an object.)
-
-
-
+## Reducing context switch overhead 
+Concurrent systems perform much better when most lock  acquisitions are uncontended, because contended lock acquisition means more  context switches.

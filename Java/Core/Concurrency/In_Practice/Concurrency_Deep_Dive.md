@@ -8,14 +8,4 @@ time slicing than to let one program run to completion and then start another
 
 ## [Structuring Concurrent Applications](Structuring_Concurrent_Applications.md)
 
-## Advanced Topics
-
-### Explicit Locks
-
-### Building Custom Synchronizers
-
-### Atomic Variables And NonBlocking Synchronizations
-
-### Java Memory Model
-
-### Annotations For Concurrency
+## [Testing Concurrent Programs](Testing_Concurrent_Programs.md)
