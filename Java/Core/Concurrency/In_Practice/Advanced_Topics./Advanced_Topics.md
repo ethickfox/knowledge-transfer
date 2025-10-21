@@ -28,3 +28,39 @@ ReentrantReadWriteLock provides reentrant locking semantics for both locks.  Lik
 
 ReadWriteMap uses a ReentrantReadWriteLock to wrap a Map so  that it can be shared safely by multiple readers and still prevent reader-writer or  writer-writer conflicts.7 In reality, ConcurrentHashMap’s performance is so good  that you would probably use it rather than this approach if all you needed was  a concurrent hash-based map, but this technique would be useful if you want  to provide more concurrent access to an alternate Map implementation such as  LinkedHashMap. 
 
+# Building Custom Synchronizers 
+State-dependent operations that block until the operation can proceed are more  convenient and less error-prone than those that simply fail. The built-in condition  queue mechanism enables threads to block until an object has entered a state that  allows progress and to wake blocked threads when they may be able to make  further progress.
+
+## Condition queues
+A condition queue gets its name because it gives a group of threads—called the  wait set—a way to wait for a specific condition to become true. Unlike typical  queues in which the elements are data items, the elements of a condition queue  are the threads waiting for the condition. 
+
+Just as each Java object can act as a lock, each object can also act as a condition  queue, and the wait, notify, and notifyAll methods in Object constitute the  API for intrinsic condition queues.
+
+``` java
+@ThreadSafe 
+public class BoundedBuffer<V> extends BaseBoundedBuffer<V> {
+  // CONDITION PREDICATE: not-full (!isFull())
+  // CONDITION PREDICATE: not-empty (!isEmpty())
+
+  public BoundedBuffer(int size) {super(size);}
+
+  // BLOCKS-UNTIL: not-full
+  public synchronized void put(V v) throws InterruptedException {
+    while (isFull())
+      wait();
+    doPut(v);
+    notifyAll();
+  }
+// BLOCKS-UNTIL: not-empty
+  public synchronized V take() throws InterruptedException {
+    while (isEmpty())
+      wait();
+    V v = doTake();
+    notifyAll();
+    return v;
+  }
+} 
+```
+This is simpler than the sleeping version, and is both more efficient  (waking up less frequently if the buffer state does not change) and more responsive (waking up promptly when an interesting state change happens). This is a big  improvement, but note that the introduction of condition queues didn’t change  the semantics compared to the sleeping version. It is simply an optimization  in several dimensions: CPU efficiency, context-switch overhead, and responsiveness.
+
+A production version should also include timed versions of put and take, so that blocking operations can time out if they cannot  complete within a time budget. The timed version of Object.wait makes this  easy to implement. 
