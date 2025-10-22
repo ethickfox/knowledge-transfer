@@ -64,3 +64,53 @@ public class BoundedBuffer<V> extends BaseBoundedBuffer<V> {
 This is simpler than the sleeping version, and is both more efficient  (waking up less frequently if the buffer state does not change) and more responsive (waking up promptly when an interesting state change happens). This is a big  improvement, but note that the introduction of condition queues didn’t change  the semantics compared to the sleeping version. It is simply an optimization  in several dimensions: CPU efficiency, context-switch overhead, and responsiveness.
 
 A production version should also include timed versions of put and take, so that blocking operations can time out if they cannot  complete within a time budget. The timed version of Object.wait makes this  easy to implement. 
+
+The key to using condition queues correctly is identifying the condition predicates  that the object may wait for. It is the condition predicate that causes much of the  confusion surrounding wait and notify, because it has no instantiation in the  API and nothing in either the language specification or the JVM implementation  ensures its correct use.
+The condition predicate is the precondition that makes an operation state-dependent  in the first place. In a bounded buffer, take can proceed only if the buffer is not  empty; otherwise it must wait. For take, the condition predicate is “the buffer is  not empty”,
+
+There is an important three-way relationship in a condition wait involving  locking, the wait method, and a condition predicate. The condition predicate  involves state variables, and the state variables are guarded by a lock, so before  testing the condition predicate, we must hold that lock. The lock object and the  condition queue object (the object on which wait and notify are invoked) must  also be the same object. 
+
+A single intrinsic condition queue may be used with more than one condition predicate. When your thread is awakened because someone called notifyAll, that doesn’t  mean that the condition predicate you were waiting for is now true. (This is like  having your toaster and coffee maker share a single bell; when it rings, you still  have to look to see which device raised the signal.)7 Additionally, wait is even  allowed to return “spuriously”—not in response to any thread calling notify. Maybe. It  might have been true at the time the notifying thread called notifyAll, but could  have become false again by the time you reacquire the lock. Other threads may  have acquired the lock and changed the object’s state between when your thread  was awakened and when wait reacquired the lock.
+
+For all these reasons, when you wake up from wait you must test the condition  predicate again, and go back to waiting (or fail) if it is not yet true. Since you  can wake up repeatedly without your condition predicate being true, you must  therefore always call wait from within a loop, testing the condition predicate in  each iteration. The
+``` java
+void stateDependentMethod() throws InterruptedException {
+  // condition predicate must be guarded by lock
+  synchronized(lock) {
+    while (!conditionPredicate())
+      lock.wait();  // object is now in desired state
+  }
+} 
+```
+When using condition waits (Object.wait or Condition.await):  
+- Always have a condition predicate—some test of object state that  must hold before proceeding;
+- Always test the condition predicate before calling wait, and again  after returning from wait;
+- Always call wait in a loop;
+- Ensure that the state variables making up the condition predicate are  guarded by the lock associated with the condition queue;
+- Hold the lock associated with the the condition queue when calling  wait, notify, or notifyAll; and
+- Do not release the lock after checking the condition predicate but  before acting on it.
+
+Another  form of liveness failure is missed signals. A missed signal occurs when a thread  must wait for a specific condition that is already true, but fails to check the condition predicate before waiting. Now the thread is waiting to be notified of an event  that has already occurred.
+Missed signals are the result of coding errors like those  warned against in the list above, such as failing to test the condition predicate  before calling wait.
+
+In order for take to unblock when the buffer becomes nonempty,  we must ensure that every code path in which the buffer could become nonempty  performs a notification.
+
+There are two notification methods in the condition queue API—notify and  notifyAll. To call either, you must hold the lock associated with the condition  queue object. Calling notify causes the JVM to select one thread waiting on that  condition queue to wake up; calling notifyAll wakes up all the threads waiting  on that condition queue. Because you must hold the lock on the condition queue  object when calling notify or notifyAll, and waiting threads cannot return from  wait without reacquiring the lock, the notifying thread should release the lock  quickly to ensure that the waiting threads are unblocked as soon as possible. 
+
+using notify instead of notifyAll can be dangerous, primarily because single notification is prone to a problem akin to missed  signals.  notifyAll should be preferred to single notify in most cases
+Single notify can be used instead of notifyAll only when both of the  following conditions hold:  
+- Uniform waiters. Only one condition predicate is associated with the  condition queue, and each thread executes the same logic upon returning from wait; 
+- One-in, one-out. A notification on the condition variable enables at most  one thread to proceed. 
+
+The notification done by put and take in BoundedBuffer is conservative: a  notification is performed every time an object is put into or removed from the  buffer. This could be optimized by observing that a thread can be released from a  wait only if the buffer goes from empty to not empty or from full to not full, and  notifying only if a put or take effected one of these state transitions. This is called  conditional notification. While conditional notification can improve performance, it  is tricky to get right (and also complicates the implementation of subclasses) and  so should be used carefully.
+
+``` java
+public synchronized void put(V v) throws InterruptedException {
+  while (isFull())
+    wait();
+  boolean wasEmpty = isEmpty();
+  doPut(v);
+  if (wasEmpty)
+    notifyAll();
+} 
+```
