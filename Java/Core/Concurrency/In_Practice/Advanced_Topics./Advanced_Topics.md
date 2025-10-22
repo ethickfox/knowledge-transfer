@@ -114,3 +114,19 @@ public synchronized void put(V v) throws InterruptedException {
     notifyAll();
 } 
 ```
+
+The condition predicate used by await is more complicated than simply testing isOpen. This is needed because if N threads are waiting at the gate at the time  it is opened, they should all be allowed to proceed. But, if the gate is opened and  closed in rapid succession, all threads might not be released if await examines  only isOpen: by the time all the threads receive the notification, reacquire the  lock, and emerge from wait, the gate may have closed again. So ThreadGate uses  a somewhat more complicated condition predicate: every time the gate is closed,  a “generation” counter is incremented, and a thread may pass await if the gate is  open now or if the gate has opened since this thread arrived at the gate. 
+``` java
+public class ThreadGate {
+// CONDITION-PREDICATE: opened-since(n) (isOpen || generation>n)  @GuardedBy("this") private boolean isOpen;  @GuardedBy("this") private int generation;  public synchronized void close() {  isOpen = false;  }  public synchronized void open() {  ++generation;  isOpen = true;  notifyAll();  }  // BLOCKS-UNTIL: opened-since(generation on entry)  public synchronized void await() throws InterruptedException {  int arrivalGeneration = generation;  while (!isOpen && arrivalGeneration == generation)  wait();  }  } 
+
+```
+A state-dependent class should either fully expose (and document) its waiting and notification protocols to subclasses, or prevent subclasses from participating in them at all. 
+
+One option for doing this is to effectively prohibit subclassing, either by making the class final or by hiding the condition queues, locks, and state variables  from subclasses.
+Otherwise, if the subclass does something to undermine the  way the base class uses notify, it needs to be able to repair the damage.
+
+It is generally best to encapsulate the condition queue so that it is not accessible outside the class hierarchy in which it is used. Otherwise, callers might be  tempted to think they understand your protocols for waiting and notification and  use them in a manner inconsistent with your design.
+Unfortunately, this advice—to encapsulate objects used as condition queues—  is not consistent with the most common design pattern for thread-safe classes, in  which an object’s intrinsic lock is used to guard its state
+
+Wellings (Wellings, 2004) characterizes the proper use of wait and notify in terms  of entry and exit protocols. For each state-dependent operation and for each operation that modifies state on which another operation has a state dependency,  you should define and document an entry and exit protocol. The entry protocol  is the operation’s condition predicate; the exit protocol involves examining any  state variables that have been changed by the operation to see if they might have  caused some other condition predicate to become true, and if so, notifying on the  associated condition queue. 
