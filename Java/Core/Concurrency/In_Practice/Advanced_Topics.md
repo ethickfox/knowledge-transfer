@@ -118,8 +118,27 @@ public synchronized void put(V v) throws InterruptedException {
 The condition predicate used by await is more complicated than simply testing isOpen. This is needed because if N threads are waiting at the gate at the time  it is opened, they should all be allowed to proceed. But, if the gate is opened and  closed in rapid succession, all threads might not be released if await examines  only isOpen: by the time all the threads receive the notification, reacquire the  lock, and emerge from wait, the gate may have closed again. So ThreadGate uses  a somewhat more complicated condition predicate: every time the gate is closed,  a “generation” counter is incremented, and a thread may pass await if the gate is  open now or if the gate has opened since this thread arrived at the gate. 
 ``` java
 public class ThreadGate {
-// CONDITION-PREDICATE: opened-since(n) (isOpen || generation>n)  @GuardedBy("this") private boolean isOpen;  @GuardedBy("this") private int generation;  public synchronized void close() {  isOpen = false;  }  public synchronized void open() {  ++generation;  isOpen = true;  notifyAll();  }  // BLOCKS-UNTIL: opened-since(generation on entry)  public synchronized void await() throws InterruptedException {  int arrivalGeneration = generation;  while (!isOpen && arrivalGeneration == generation)  wait();  }  } 
+// CONDITION-PREDICATE: opened-since(n) (isOpen || generation>n)  
+@GuardedBy("this")
+private boolean isOpen;  
+@GuardedBy("this") private int generation;  
 
+public synchronized void close() {
+  isOpen = false;  
+}  
+
+public synchronized void open() {
+  ++generation;
+  isOpen = true;
+  notifyAll();
+}
+// BLOCKS-UNTIL: opened-since(generation on entry)  
+public synchronized void await() throws InterruptedException {  
+	int arrivalGeneration = generation;
+	while (!isOpen && arrivalGeneration == generation)  
+		wait();  
+	}  
+}ß
 ```
 A state-dependent class should either fully expose (and document) its waiting and notification protocols to subclasses, or prevent subclasses from participating in them at all. 
 
@@ -130,3 +149,88 @@ It is generally best to encapsulate the condition queue so that it is not access
 Unfortunately, this advice—to encapsulate objects used as condition queues—  is not consistent with the most common design pattern for thread-safe classes, in  which an object’s intrinsic lock is used to guard its state
 
 Wellings (Wellings, 2004) characterizes the proper use of wait and notify in terms  of entry and exit protocols. For each state-dependent operation and for each operation that modifies state on which another operation has a state dependency,  you should define and document an entry and exit protocol. The entry protocol  is the operation’s condition predicate; the exit protocol involves examining any  state variables that have been changed by the operation to see if they might have  caused some other condition predicate to become true, and if so, notifying on the  associated condition queue. 
+
+## Explicit condition objects 
+A Condition is associated with a single Lock, just as a condition queue is  associated with a single intrinsic lock; to create a Condition, call Lock.newCondition on the associated lock. And just as Lock offers a richer feature set than  intrinsic locking, Condition offers a richer feature set than intrinsic condition  queues: multiple wait sets per lock, interruptible and uninterruptible condition  waits, deadline-based waiting, and a choice of fair or nonfair queueing. 
+Unlike intrinsic condition queues, you can have as many Condition objects per  Lock as you want.
+
+Hazard warning: The equivalents of wait, notify, and notifyAll for  Condition objects are await, signal, and signalAll. However, Condition extends Object, which means that it also has wait and notify methods. Be sure to use the proper versions—await and signal—  instead! 
+``` java
+@ThreadSafe  
+public class ConditionBoundedBuffer<T> {  
+	protected final Lock lock = new ReentrantLock();  // CONDITION PREDICATE: notFull (count < items.length)  
+	private final Condition notFull = lock.newCondition();  // CONDITION PREDICATE: notEmpty (count > 0) 
+	 private final Condition notEmpty = lock.newCondition();  
+	@GuardedBy("lock")  private final T[] items = (T[]) new Object[BUFFER_SIZE];  
+	@GuardedBy("lock") private int tail, head, count;  // BLOCKS-UNTIL: notFull 
+	public void put(T x) throws InterruptedException {  
+		lock.lock(); 
+		try {  
+			while (count == items.length)  
+				notFull.await();  
+			items[tail] = x;  
+			
+			if (++tail == items.length)  
+				tail = 0;  
+			++count;  
+			notEmpty.signal();  
+		} finally {  
+			lock.unlock();  
+		} 
+	}  // BLOCKS-UNTIL: notEmpty  
+	public T take() throws InterruptedException {  
+		lock.lock();  
+		try { 
+			while (count == 0)  
+				notEmpty.await();  
+			T x = items[head];  
+			items[head] = null;  
+			
+			if (++head == items.length)  
+				head = 0;  
+			--count;  
+			notFull.signal();  
+			return x;  
+		} finally {  
+			lock.unlock();  
+		}  
+	}  
+} 
+```
+As with built-in locks and condition queues, the three-way relationship  among the lock, the condition predicate, and the condition variable must also  hold when using explicit Locks and Conditions. The variables involved in the  condition predicate must be guarded by the Lock, and the Lock must be held  when testing the condition predicate and when calling await and signal.
+Choose between using explicit Conditions and intrinsic condition queues in  the same way as you would choose between ReentrantLock and synchronized:  use Condition if you need its advanced features such as fair queueing or multiple  wait sets per lock, and otherwise prefer intrinsic condition queues.
+
+## Anatomy of a synchronizer 
+implemented using a common base class, AbstractQueuedSynchronizer (AQS)—as are many other synchronizers. AQS is a framework for building locks and synchronizers, and a surprisingly broad range of  synchronizers can be built easily and efficiently using it. Not only are ReentrantLock and Semaphore built using AQS, but so are CountDownLatch, ReentrantReadWriteLock, SynchronousQueue, 12 and FutureTask. 
+## AbstractQueuedSynchronizer 
+The basic operations that an AQS-based synchronizer performs are some  variants of acquire and release. Acquisition is the state-dependent operation  and can always block. With a lock or semaphore, the meaning of acquire is  straightforward—acquire the lock or a permit—and the caller may have to wait  until the synchronizer is in a state where that can happen.
+
+AQS takes on the  task of managing some of the state for the synchronizer class: it manages a single integer of state information that can be manipulated through the protected  getState, setState, and compareAndSetState methods. This can be used to represent arbitrary state; for example, ReentrantLock uses it to represent the count  of times the owning thread has acquired the lock, Semaphore uses it to represent  the number of permits remaining, and FutureTask uses it to represent the state  of the task (not yet started, running, completed, cancelled).
+
+``` java
+@ThreadSafe  
+public class OneShotLatch {
+  private final Sync sync = new Sync();
+  
+  public void signal() {
+	  sync.releaseShared(0);
+  }  
+  
+  public void await() throws InterruptedException { 
+	  sync.acquireSharedInterruptibly(0);
+  }  
+  
+  private class Sync extends AbstractQueuedSynchronizer {  
+	  protected int tryAcquireShared(int ignored) {  // Succeed if latch is open (state == 1), else fail  
+		  return (getState() == 1)? 1: -1;  
+	  }  
+	  
+  protected boolean tryReleaseShared(int ignored) {  
+		  setState(1);// Latch is now open  return true;// Other threads may now be able to acquire  
+	}
+}
+```
+OneShotLatch could have been implemented by extending AQS rather than  delegating to it, but this is undesirable for several reasons [EJ Item 14]. Doing so  would undermine the simple (two-method) interface of OneShotLatch, and while  the public methods of AQS won’t allow callers to corrupt the latch state, callers  could easily use them incorrectly. None of the synchronizers in java.util.concurrent extends AQS directly—they all delegate to private inner subclasses of  AQS instead. 
+
+ FutureTask uses the AQS synchronization state to hold the task status—  running, completed, or cancelled. It also maintains additional state variables to  hold the result of the computation or the exception it threw. It further maintains  a reference to the thread that is running the computation (if it is currently in the  running state), so that it can be interrupted if the task is cancelled. 
+
