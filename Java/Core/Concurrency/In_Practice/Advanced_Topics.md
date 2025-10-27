@@ -234,3 +234,10 @@ OneShotLatch could have been implemented by extending AQS rather than  delegatin
 
  FutureTask uses the AQS synchronization state to hold the task status—  running, completed, or cancelled. It also maintains additional state variables to  hold the result of the computation or the exception it threw. It further maintains  a reference to the thread that is running the computation (if it is currently in the  running state), so that it can be interrupted if the task is cancelled. 
 
+# Atomic Variables and Nonblocking  Synchronization 
+of the classes in java.util.concurrent, such as Semaphore and ConcurrentLinkedQueue, provide better performance and scalability than alternatives  using synchronized.
+Atomic variables can also be used as “better volatile variables” even if you are  not developing nonblocking algorithms. Atomic variables offer the same memory  semantics as volatile variables, but with additional support for atomic updates—  making them ideal for counters, sequence generators, and statistics gathering  while offering better scalability than lock-based alternatives. 
+
+Volatile variables are a lighter-weight synchronization mechanism than locking because they do not involve context switches or thread scheduling. However,  volatile variables have some limitations compared to locking: while they provide  similar visibility guarantees, they cannot be used to construct atomic compound  actions. This means that volatile variables cannot be used when one variable depends on another, or when the new value of a variable depends on its old value. 
+
+
